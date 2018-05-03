@@ -3,5 +3,5 @@ pages:
       - Home: index.md
       - Cisco: cisco.md
       - Linux: linux.md
-theme:
-      name: 'material'
+#theme:
+#      name: 'material'
