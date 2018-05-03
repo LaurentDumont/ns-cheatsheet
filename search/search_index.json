@@ -32,7 +32,7 @@
         }, 
         {
             "location": "/linux/", 
-            "text": "Check which devices are impacted\n\n\nsort var/logs/VPN.20180109.070410  | grep -i key | uniq\n\n\n\n\nOnly show the device name to pipe into ssh-keygen\n\n\nsort var/logs/VPN.20180109.070410  | grep -i key | uniq | grep -Eo '^[^ ]+'\n\n\n\n\nsort /opt/rancid/var/logs/VPN.20180111.064300  | grep -i key | uniq | grep -Eo '^[^ ]+'\n\n\n\n\nRemove the public keys\n\n\nssh-keygen -f \n/opt/rancid/.ssh/known_hosts\n -R ###REMOTE_IP_OF_DEVICE###\n\n\n\n\nCheck the master zones (not ARPA or random files ) we are hosting\n\n\nls -alh --ignore=*.arpa* | wc -", 
+            "text": "Rancid - Check which devices are impacted\n\n\nsort var/logs/VPN.20180109.070410  | grep -i key | uniq\n\n\n\n\nRancid - Only show the device name to pipe into ssh-keygen\n\n\nsort var/logs/VPN.20180109.070410  | grep -i key | uniq | grep -Eo '^[^ ]+'\n\n\n\n\nsort /opt/rancid/var/logs/VPN.20180111.064300  | grep -i key | uniq | grep -Eo '^[^ ]+'\n\n\n\n\nSSH - Remove the public keys\n\n\nssh-keygen -f \n/opt/rancid/.ssh/known_hosts\n -R ###REMOTE_IP_OF_DEVICE###\n\n\n\n\nBIND DNS - Check the master zones (not ARPA or random files ) we are hosting\n\n\nls -alh --ignore=*.arpa* | wc -\n\n\n\n\nSMART HD Data - Get useful smartctl data\n\n\nsudo smartctl -a /dev/sdb | egrep \nSpin_Up_Time|Reallocated_Sector_Ct|Temperature|Current_Pending_Sector|Offline_Uncorrectable|Power_On_Hours\n\n\n\n\n\nNetwork - Create TAP Interface\n\n\ntunctl -t tap0\nifconfig tap0 10.1.1.100 netmask 255.255.255.0 up\n\n\n\n\nStart Linux stress test\n\n\nscreen -S stress-test -d -m stress --cpu 100 --io 100 --vm 20 --vm-bytes 1G --hdd 5 --timeout 24h", 
             "title": "Linux"
         }
     ]

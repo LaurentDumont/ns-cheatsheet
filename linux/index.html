@@ -84,23 +84,36 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p><strong>Check which devices are impacted</strong></p>
+<p><strong>Rancid - Check which devices are impacted</strong></p>
 <pre><code>sort var/logs/VPN.20180109.070410  | grep -i key | uniq
 </code></pre>
 
-<p><strong>Only show the device name to pipe into ssh-keygen</strong></p>
+<p><strong>Rancid - Only show the device name to pipe into ssh-keygen</strong></p>
 <pre><code>sort var/logs/VPN.20180109.070410  | grep -i key | uniq | grep -Eo '^[^ ]+'
 </code></pre>
 
 <pre><code>sort /opt/rancid/var/logs/VPN.20180111.064300  | grep -i key | uniq | grep -Eo '^[^ ]+'
 </code></pre>
 
-<p><strong>Remove the public keys</strong></p>
+<p><strong>SSH - Remove the public keys</strong></p>
 <pre><code>ssh-keygen -f &quot;/opt/rancid/.ssh/known_hosts&quot; -R ###REMOTE_IP_OF_DEVICE###
 </code></pre>
 
-<p><strong>Check the master zones (not ARPA or random files ) we are hosting</strong></p>
+<p><strong>BIND DNS - Check the master zones (not ARPA or random files ) we are hosting</strong></p>
 <pre><code>ls -alh --ignore=*.arpa* | wc -
+</code></pre>
+
+<p><strong>SMART HD Data - Get useful smartctl data</strong></p>
+<pre><code>sudo smartctl -a /dev/sdb | egrep &quot;Spin_Up_Time|Reallocated_Sector_Ct|Temperature|Current_Pending_Sector|Offline_Uncorrectable|Power_On_Hours&quot;
+</code></pre>
+
+<p><strong>Network - Create TAP Interface</strong></p>
+<pre><code>tunctl -t tap0
+ifconfig tap0 10.1.1.100 netmask 255.255.255.0 up
+</code></pre>
+
+<p><strong>Start Linux stress test</strong></p>
+<pre><code>screen -S stress-test -d -m stress --cpu 100 --io 100 --vm 20 --vm-bytes 1G --hdd 5 --timeout 24h
 </code></pre></div>
         </div>
 
