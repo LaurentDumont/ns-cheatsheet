@@ -1,0 +1,39 @@
+{
+    "docs": [
+        {
+            "location": "/", 
+            "text": "Welcome to MkDocs\n\n\nFor full documentation visit \nmkdocs.org\n.\n\n\nCommands\n\n\n\n\nmkdocs new [dir-name]\n - Create a new project.\n\n\nmkdocs serve\n - Start the live-reloading docs server.\n\n\nmkdocs build\n - Build the documentation site.\n\n\nmkdocs help\n - Print this help message.\n\n\n\n\nProject layout\n\n\nmkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Home"
+        }, 
+        {
+            "location": "/#welcome-to-mkdocs", 
+            "text": "For full documentation visit  mkdocs.org .", 
+            "title": "Welcome to MkDocs"
+        }, 
+        {
+            "location": "/#commands", 
+            "text": "mkdocs new [dir-name]  - Create a new project.  mkdocs serve  - Start the live-reloading docs server.  mkdocs build  - Build the documentation site.  mkdocs help  - Print this help message.", 
+            "title": "Commands"
+        }, 
+        {
+            "location": "/#project-layout", 
+            "text": "mkdocs.yml    # The configuration file.\ndocs/\n    index.md  # The documentation homepage.\n    ...       # Other markdown pages, images and other files.", 
+            "title": "Project layout"
+        }, 
+        {
+            "location": "/cisco/", 
+            "text": "General Troubleshooting\n\n\nIOS-XR\n\n\n!Check Policy-Map drops/number of packet matching the policy.\n\n\nshow policy-map interface $PHYSICAL_INTERFACE service instance $SVC_INST_ID\n\n\n\n\n!Show l2vpn xconnect status (ASR 9k)\n\n\nshow l2vpn service xconnect interface gigabitEthernet 0/1\n\n\n\n\n!Show l2vpn xconnect status with details (ASR 9k)\n\n\nshow l2vpn xconnect neighbor 192.252.143.75 pw-id 702 detail\n\n\n\n\n!Show service-instance traffic details (not xconnect, just local service instance)\n\n\nshow ethernet service instance id 205 int ten0/3/0 detail\n\n\n\n\nshow mpls l2transport vc vcid 395 detail\n\n\n\n\n!ASR 9000 | IOS-XE\n\n\nshow l2vpn service xconnect interface TenGigabitEthernet0/3/0\n\n\n\n\nshow l2vpn xconnect group OPEN01 xc-name OPEN01-C220\n\n\n\n\nshow l2vpn xconnect group PARA07 detail\n\n\n\n\n!BGP stuff | IOS-XE\n\n\nshow bgp summary | inc NEIGHBOR_IP\n\n\n\n\n!BGP stuff | IOS-XR\n\n\nshow ip bgp summary\nshow ip bgp neighbors\nshow ip bgp neighbors 1.1.1.1\n\n\n\n\n!Montrer les routes recu d'un neighbor en particulier\n\n\nconf t\nrouter bgp AS_NUMBER\n\n\n\n\n!Il faut activer le log des routes pour chacun des neighbors BGP concern\u00e9s\n\n\nneighbor 1.1.1.1 soft-reconfiguration inbound\nexit\nsh ip bgp neighbors 1.1.1.1 received-routes\nsh ip bgp neighbors 1.1.1.1 advertised-routes\n\n\n\n\nconf t\nrouter bgp AS_NUMBER\nneighbor 1.1.1.1 shutdown\n\n\n\n\n!Satellite 9k light levels\n\n\nshow nV satellite status\ntelnet vrf **nVSatellite 10.0.100.1\n!GigabitEthernet112/0/0/17 ---\n Satellite 112\ntelnet vrf **nVSatellite 10.0.112.1\n!Port 17 on ASR = Port 18 on Satellite\nsh satellite powerlevels port 30", 
+            "title": "Cisco"
+        }, 
+        {
+            "location": "/cisco/#general-troubleshooting", 
+            "text": "IOS-XR  !Check Policy-Map drops/number of packet matching the policy.  show policy-map interface $PHYSICAL_INTERFACE service instance $SVC_INST_ID  !Show l2vpn xconnect status (ASR 9k)  show l2vpn service xconnect interface gigabitEthernet 0/1  !Show l2vpn xconnect status with details (ASR 9k)  show l2vpn xconnect neighbor 192.252.143.75 pw-id 702 detail  !Show service-instance traffic details (not xconnect, just local service instance)  show ethernet service instance id 205 int ten0/3/0 detail  show mpls l2transport vc vcid 395 detail  !ASR 9000 | IOS-XE  show l2vpn service xconnect interface TenGigabitEthernet0/3/0  show l2vpn xconnect group OPEN01 xc-name OPEN01-C220  show l2vpn xconnect group PARA07 detail  !BGP stuff | IOS-XE  show bgp summary | inc NEIGHBOR_IP  !BGP stuff | IOS-XR  show ip bgp summary\nshow ip bgp neighbors\nshow ip bgp neighbors 1.1.1.1  !Montrer les routes recu d'un neighbor en particulier  conf t\nrouter bgp AS_NUMBER  !Il faut activer le log des routes pour chacun des neighbors BGP concern\u00e9s  neighbor 1.1.1.1 soft-reconfiguration inbound\nexit\nsh ip bgp neighbors 1.1.1.1 received-routes\nsh ip bgp neighbors 1.1.1.1 advertised-routes  conf t\nrouter bgp AS_NUMBER\nneighbor 1.1.1.1 shutdown  !Satellite 9k light levels  show nV satellite status\ntelnet vrf **nVSatellite 10.0.100.1\n!GigabitEthernet112/0/0/17 ---  Satellite 112\ntelnet vrf **nVSatellite 10.0.112.1\n!Port 17 on ASR = Port 18 on Satellite\nsh satellite powerlevels port 30", 
+            "title": "General Troubleshooting"
+        }, 
+        {
+            "location": "/linux/", 
+            "text": "", 
+            "title": "Linux"
+        }
+    ]
+}
