@@ -84,11 +84,23 @@
 </div></div>
                 <div class="col-md-9" role="main">
 
-<p>test
-test2
-test3</p>
-<pre><code class="python">def fn():
-    pass
+<p><strong>Check which devices are impacted</strong></p>
+<pre><code>sort var/logs/VPN.20180109.070410  | grep -i key | uniq
+</code></pre>
+
+<p><strong>Only show the device name to pipe into ssh-keygen</strong></p>
+<pre><code>sort var/logs/VPN.20180109.070410  | grep -i key | uniq | grep -Eo '^[^ ]+'
+</code></pre>
+
+<pre><code>sort /opt/rancid/var/logs/VPN.20180111.064300  | grep -i key | uniq | grep -Eo '^[^ ]+'
+</code></pre>
+
+<p><strong>Remove the public keys</strong></p>
+<pre><code>ssh-keygen -f &quot;/opt/rancid/.ssh/known_hosts&quot; -R ###REMOTE_IP_OF_DEVICE###
+</code></pre>
+
+<p><strong>Check the master zones (not ARPA or random files ) we are hosting</strong></p>
+<pre><code>ls -alh --ignore=*.arpa* | wc -
 </code></pre></div>
         </div>
 
