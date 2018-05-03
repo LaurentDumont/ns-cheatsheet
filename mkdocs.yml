@@ -1,7 +1,18 @@
-site_name: My Docs
+site_name: My own little internet Notepad.
+site_description: 'My own little space'
+site_author: 'Laurent Dumont'
+
 pages:
-      - Home: index.md
+      - Home: cisco.md
       - Cisco: cisco.md
       - Linux: linux.md
-#theme:
-#      name: 'material'
+
+theme:
+      name: 'material'
+      palette:
+        primary: 'grey'
+      logo:
+        icon: 'cloud circle'
+
+markdown_extensions:
+      - codehilite

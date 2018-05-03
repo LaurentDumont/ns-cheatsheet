@@ -1,5 +1,5 @@
 **Rancid - Check which devices are impacted**
-```
+```shell
 sort var/logs/VPN.20180109.070410  | grep -i key | uniq
 ```
 
@@ -7,6 +7,7 @@ sort var/logs/VPN.20180109.070410  | grep -i key | uniq
 ```
 sort var/logs/VPN.20180109.070410  | grep -i key | uniq | grep -Eo '^[^ ]+'
 ```
+
 ```
 sort /opt/rancid/var/logs/VPN.20180111.064300  | grep -i key | uniq | grep -Eo '^[^ ]+'
 ```
