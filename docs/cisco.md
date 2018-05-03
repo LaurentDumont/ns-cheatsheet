@@ -86,8 +86,8 @@ telnet vrf **nVSatellite 10.0.112.1
 sh satellite powerlevels port 30
 ```
 
-https://www.cisco.com/c/en/us/td/docs/routers/access/4400/troubleshooting/memorytroubleshooting/isr4000_mem.html
-https://www.cisco.com/c/en/us/support/docs/routers/4000-series-integrated-services-routers/210760-Monitor-CPU-Usage-On-ISR4300-Series.html
+<https://www.cisco.com/c/en/us/td/docs/routers/access/4400/troubleshooting/memorytroubleshooting/isr4000_mem.html>
+<https://www.cisco.com/c/en/us/support/docs/routers/4000-series-integrated-services-routers/210760-Monitor-CPU-Usage-On-ISR4300-Series.html>
 ```
 show process cpu sorted | ex 0.0
 ```
@@ -106,9 +106,7 @@ show processes cpu platform sorted
 ```
 show platform software status control-processor brief
 ```
-```
-Show CPU and Memory like "htop" for Linux
-```
+**Show CPU and Memory like "htop" for Linux**
 ```
 monitor platform software process rp active
 ```
