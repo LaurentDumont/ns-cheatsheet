@@ -32,7 +32,7 @@
         }, 
         {
             "location": "/linux/", 
-            "text": "test", 
+            "text": "test\ntest2", 
             "title": "Linux"
         }
     ]
