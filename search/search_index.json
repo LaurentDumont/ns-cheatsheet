@@ -32,7 +32,7 @@
         }, 
         {
             "location": "/linux/", 
-            "text": "test\ntest2\ntest3", 
+            "text": "test\ntest2\ntest3\n\n\ndef fn():\n    pass", 
             "title": "Linux"
         }
     ]
