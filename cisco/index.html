@@ -341,6 +341,32 @@ telnet vrf **nVSatellite 10.0.112.1
 !Port 17 on ASR = Port 18 on Satellite
 sh satellite powerlevels port 30
 </code></pre>
+
+<p>https://www.cisco.com/c/en/us/td/docs/routers/access/4400/troubleshooting/memorytroubleshooting/isr4000_mem.html
+https://www.cisco.com/c/en/us/support/docs/routers/4000-series-integrated-services-routers/210760-Monitor-CPU-Usage-On-ISR4300-Series.html</p>
+<pre><code>show process cpu sorted | ex 0.0
+</code></pre>
+
+<pre><code>show platform hardware qfp active datapath utilization
+</code></pre>
+
+<pre><code>show platform software status control-processor
+</code></pre>
+
+<pre><code>show platform software status control-processor brief
+</code></pre>
+
+<pre><code>show processes cpu platform sorted
+</code></pre>
+
+<pre><code>show platform software status control-processor brief
+</code></pre>
+
+<pre><code>Show CPU and Memory like &quot;htop&quot; for Linux
+</code></pre>
+
+<pre><code>monitor platform software process rp active
+</code></pre>
                 
                   
                 
