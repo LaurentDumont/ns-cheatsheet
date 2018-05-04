@@ -3,7 +3,7 @@ site_description: 'My own little space'
 site_author: 'Laurent Dumont'
 
 pages:
-      - Home: cisco.md
+      - Home: index.md
       - Cisco: cisco.md
       - Linux: linux.md
 

@@ -3,5 +3,5 @@ deploy-gh-pages:
 	git commit -m "More Stuff"
 	mkdocs gh-deploy
 	git add .
-	git commit -m "More Stuff"
+	git commit -m "More Stuff!"
 	git push origin master
