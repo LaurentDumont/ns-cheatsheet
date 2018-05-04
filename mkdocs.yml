@@ -1,12 +1,15 @@
-site_name: My own little internet Notepad.
+#Misc information
+site_name: Laurent Dumont - Internet notepad.
 site_description: 'My own little space'
 site_author: 'Laurent Dumont'
 
+#Page list
 pages:
       - Home: index.md
       - Cisco: cisco.md
       - Linux: linux.md
 
+#Theme customization
 theme:
       name: 'material'
       palette:
@@ -16,14 +19,17 @@ theme:
       favicon: 'images/tarsier_hi_elbows.ico'
 
 # Repository
-repo_name: 'squidfunk/mkdocs-material'
-repo_url: 'https://github.com/squidfunk/mkdocs-material'
+repo_name: 'ns-cheatsheet'
+repo_url: 'https://github.com/LaurentDumont/ns-cheatsheet'
 
 # Copyright
 copyright: 'Copyright &copy; Potato Tomato - Send my bitcoins - Laurent Dumont'
 
+#Enabled extensions
 markdown_extensions:
       - codehilite
+
+#Media Footer
 extra:
     social:
       - type: 'github'
