@@ -15,6 +15,13 @@ theme:
         icon: 'cloud circle'
       favicon: 'images/tarsier_hi_elbows.ico'
 
+# Repository
+repo_name: 'squidfunk/mkdocs-material'
+repo_url: 'https://github.com/squidfunk/mkdocs-material'
+
+# Copyright
+copyright: 'Copyright &copy; Potato Tomato - Send my bitcoins - Laurent Dumont'
+
 markdown_extensions:
       - codehilite
 extra:
