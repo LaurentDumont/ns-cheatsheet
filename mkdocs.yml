@@ -23,7 +23,7 @@ repo_name: 'ns-cheatsheet'
 repo_url: 'https://github.com/LaurentDumont/ns-cheatsheet'
 
 # Copyright
-copyright: 'Copyright &copy; Potato Tomato - Send my bitcoins - Laurent Dumont'
+copyright: 'Copyright &copy; Potato Tomato - Send me bitcoins - Laurent Dumont'
 
 #Enabled extensions
 markdown_extensions:
