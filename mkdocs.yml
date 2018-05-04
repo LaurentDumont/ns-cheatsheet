@@ -17,3 +17,9 @@ theme:
 
 markdown_extensions:
       - codehilite
+extra:
+    social:
+      - type: 'github'
+        link: 'https://github.com/laurentdumont'
+      - type: 'linkedin'
+        link: 'https://www.linkedin.com/in/laurentfdumont/'
