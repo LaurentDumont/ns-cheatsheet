@@ -22,7 +22,7 @@
         }, 
         {
             "location": "/gluster/", 
-            "text": "", 
+            "text": "sudo gluster peer probe kube2\n\n\n\n\n\nsudo gluster peer status\n\n\n\n\n\nsudo gluster volume create gluster-vol-1 replica 2 transport tcp kube1:/gluster/gluster-vol-1 kube2:/gluster/gluster-vol-1\n\n\n\n\n\nsudo gluster volume start gluster-vol-1", 
             "title": "Gluster"
         }
     ]
