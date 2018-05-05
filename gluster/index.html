@@ -40,7 +40,7 @@
     
     
       
-        <title>Generic Linux - Laurent Dumont - Internet notepad.</title>
+        <title>Gluster - Laurent Dumont - Internet notepad.</title>
       
     
     
@@ -119,7 +119,7 @@
                 Laurent Dumont - Internet notepad.
               </span>
               <span class="md-header-nav__topic">
-                Generic Linux
+                Gluster
               </span>
             
           
@@ -258,6 +258,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../linux/" title="Generic Linux" class="md-nav__link">
+      Generic Linux
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -266,22 +278,10 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
     
-    <a href="./" title="Generic Linux" class="md-nav__link md-nav__link--active">
-      Generic Linux
-    </a>
-    
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../gluster/" title="Gluster" class="md-nav__link">
+    <a href="./" title="Gluster" class="md-nav__link md-nav__link--active">
       Gluster
     </a>
+    
   </li>
 
     
@@ -297,49 +297,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/linux.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/gluster.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Generic Linux</h1>
+                  <h1>Gluster</h1>
                 
-                <p><strong>Rancid - Check which devices are impacted</strong></p>
-<div class="codehilite"><pre><span></span>sort var/logs/VPN.20180109.070410  <span class="p">|</span> grep -i key <span class="p">|</span> uniq
-</pre></div>
-
-
-<p><strong>Rancid - Only show the device name to pipe into ssh-keygen</strong></p>
-<div class="codehilite"><pre><span></span>sort var/logs/VPN.20180109.070410  | grep -i key | uniq | grep -Eo &#39;^[^ ]+&#39;
-</pre></div>
-
-
-<div class="codehilite"><pre><span></span>sort /opt/rancid/var/logs/VPN.20180111.064300  | grep -i key | uniq | grep -Eo &#39;^[^ ]+&#39;
-</pre></div>
-
-
-<p><strong>SSH - Remove the public keys</strong></p>
-<div class="codehilite"><pre><span></span>ssh-keygen -f &quot;/opt/rancid/.ssh/known_hosts&quot; -R ###REMOTE_IP_OF_DEVICE###
-</pre></div>
-
-
-<p><strong>BIND DNS - Check the master zones (not ARPA or random files ) we are hosting</strong></p>
-<div class="codehilite"><pre><span></span>ls -alh --ignore=*.arpa* | wc -
-</pre></div>
-
-
-<p><strong>SMART HD Data - Get useful smartctl data</strong></p>
-<div class="codehilite"><pre><span></span>sudo smartctl -a /dev/sdb | egrep &quot;Spin_Up_Time|Reallocated_Sector_Ct|Temperature|Current_Pending_Sector|Offline_Uncorrectable|Power_On_Hours&quot;
-</pre></div>
-
-
-<p><strong>Network - Create TAP Interface</strong></p>
-<div class="codehilite"><pre><span></span>tunctl -t tap0
-ifconfig tap0 10.1.1.100 netmask 255.255.255.0 up
-</pre></div>
-
-
-<p><strong>Start Linux stress test</strong></p>
-<div class="codehilite"><pre><span></span>screen -S stress-test -d -m stress --cpu 100 --io 100 --vm 20 --vm-bytes 1G --hdd 5 --timeout 24h
-</pre></div>
+                
                 
                   
                 
@@ -360,7 +323,7 @@ ifconfig tap0 10.1.1.100 netmask 255.255.255.0 up
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../cisco/" title="Cisco" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../linux/" title="Generic Linux" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -369,25 +332,11 @@ ifconfig tap0 10.1.1.100 netmask 255.255.255.0 up
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Cisco
+                Generic Linux
               </span>
             </div>
           </a>
         
-        
-          <a href="../gluster/" title="Gluster" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Gluster
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
