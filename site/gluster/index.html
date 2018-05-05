@@ -302,7 +302,20 @@
                 
                   <h1>Gluster</h1>
                 
-                
+                <div class="codehilite"><pre><span></span>sudo gluster peer probe kube2
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>sudo gluster peer status
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>sudo gluster volume create gluster-vol-1 replica 2 transport tcp kube1:/gluster/gluster-vol-1 kube2:/gluster/gluster-vol-1
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>sudo gluster volume start gluster-vol-1
+</pre></div>
                 
                   
                 
