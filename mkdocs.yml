@@ -7,8 +7,10 @@ site_author: 'Laurent Dumont'
 pages:
       - Home: index.md
       - Cisco: cisco.md
+      - Cisco-CCNA: ccna.md
       - Generic Linux: linux.md
       - Gluster: gluster.md
+      - Prometheus: prometheus.md
 
 #Theme customization
 theme:
