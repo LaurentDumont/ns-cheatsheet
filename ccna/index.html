@@ -335,6 +335,47 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#autonegociation-speed-and-duplex" title="Autonegociation - Speed and Duplex" class="md-nav__link">
+    Autonegociation - Speed and Duplex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-range" title="Interface range" class="md-nav__link">
+    Interface range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp-and-udp" title="TCP and UDP" class="md-nav__link">
+    TCP and UDP
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp" title="TCP" class="md-nav__link">
+    TCP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp" title="UDP" class="md-nav__link">
+    UDP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -383,6 +424,18 @@
   <li class="md-nav__item">
     <a href="../prometheus/" title="Prometheus" class="md-nav__link">
       Prometheus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../iperf/" title="iPerf" class="md-nav__link">
+      iPerf
     </a>
   </li>
 
@@ -454,6 +507,47 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#autonegociation-speed-and-duplex" title="Autonegociation - Speed and Duplex" class="md-nav__link">
+    Autonegociation - Speed and Duplex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-range" title="Interface range" class="md-nav__link">
+    Interface range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp-and-udp" title="TCP and UDP" class="md-nav__link">
+    TCP and UDP
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp" title="TCP" class="md-nav__link">
+    TCP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp" title="UDP" class="md-nav__link">
+    UDP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -482,18 +576,34 @@
                 
                 <h2 id="cisco-security">Cisco Security</h2>
 <h3 id="user-and-access-management">User and access management</h3>
+<p>Enable secret takes precedence over enable password.</p>
+<div class="codehilite"><pre><span></span>enable password potato
+enable secret potato2
+
+enable password = potato2
+</pre></div>
+
+
 <p>Create user with default privilege 15 level</p>
 <div class="codehilite"><pre><span></span>conf t
 username $USERNAME privilege 15 secret $PASSWORD
 </pre></div>
 
 
-<p>Login local = Local username database</p>
+<p>login = password and username of the vty itself.
+login local = Local username database</p>
 <div class="codehilite"><pre><span></span>conf t
 line con 0
 login local
 exec-timeout 0 0
 logging synchronous
+</pre></div>
+
+
+<p>Line VTY user are set to privilege 15 automatically.</p>
+<div class="codehilite"><pre><span></span>conf t
+line vty 0 15
+privilege level 15
 </pre></div>
 
 
@@ -555,6 +665,42 @@ errdisable recovery interval 30
 <li>Layer 2 vlan must exist</li>
 <li>Physical interface with vlan attached to must be in UP and UP.</li>
 <li>Can be a trunk with vlan allowed or an access port with the vlan.</li>
+</ul>
+<h3 id="autonegociation-speed-and-duplex">Autonegociation - Speed and Duplex</h3>
+<ul>
+<li>Highest speed supported by both is used.</li>
+<li>Full duplex supported by both is used.</li>
+<li><strong>DO NOT</strong> set one side auto and the other side forced.</li>
+<li>Symptoms --&gt; Slow Upload, irregular speed, packet loss, CRC/Runt frames errors on the interface</li>
+</ul>
+<h3 id="interface-range">Interface range</h3>
+<div class="codehilite"><pre><span></span><span class="kr">interface</span> <span class="nx">range</span> <span class="nx">fastethernet</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="mi">24</span>
+<span class="kr">interface</span> <span class="nx">range</span> <span class="nx">fastethernet</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="mi">24</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">26</span>
+</pre></div>
+
+
+<h3 id="tcp-and-udp">TCP and UDP</h3>
+<h4 id="tcp">TCP</h4>
+<ul>
+<li>Guarantees delivery of segments</li>
+<li>Error Detection and recovery</li>
+<li>TCP Windowing
+  *</li>
+<li>Connection-oriented</li>
+<li>Three-way handshake</li>
+<li>SYN FLAG / ACK FLAG</li>
+<li>Source ---&gt; Destination : SYN</li>
+<li>Destination ---&gt; Source : SYN-ACK</li>
+<li>Source ---&gt; Destination : ACK</li>
+<li>Connection Established</li>
+</ul>
+<p><img alt="TARSIER" src="../images/tcp-3way-handshake.gif" /></p>
+<h4 id="udp">UDP</h4>
+<ul>
+<li>"Best Effort"</li>
+<li>No Error Detection</li>
+<li>No Windowing</li>
+<li>Connectionless - Data is sent without the remote peer being aware.</li>
 </ul>
                 
                   
