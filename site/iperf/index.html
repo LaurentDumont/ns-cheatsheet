@@ -35,22 +35,22 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="/images/tarsier_hi_elbows.ico">
+      <link rel="shortcut icon" href="../images/tarsier_hi_elbows.ico">
       <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
     
     
       
-        <title>Laurent Dumont - Internet notepad.</title>
+        <title>iPerf - Laurent Dumont - Internet notepad.</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/application.8d40d89b.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.8d40d89b.css">
       
-        <link rel="stylesheet" href="/assets/stylesheets/application-palette.6079476c.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.6079476c.css">
       
     
     
-      <script src="/assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -102,7 +102,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="/" title="Laurent Dumont - Internet notepad." class="md-header-nav__button md-logo">
+        <a href=".." title="Laurent Dumont - Internet notepad." class="md-header-nav__button md-logo">
           
             <i class="md-icon">cloud circle</i>
           
@@ -119,7 +119,7 @@
                 Laurent Dumont - Internet notepad.
               </span>
               <span class="md-header-nav__topic">
-                
+                iPerf
               </span>
             
           
@@ -236,7 +236,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/" title="Home" class="md-nav__link">
+    <a href=".." title="Home" class="md-nav__link">
       Home
     </a>
   </li>
@@ -248,7 +248,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/cisco/" title="Cisco" class="md-nav__link">
+    <a href="../cisco/" title="Cisco" class="md-nav__link">
       Cisco
     </a>
   </li>
@@ -260,7 +260,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/ccna/" title="Cisco-CCNA" class="md-nav__link">
+    <a href="../ccna/" title="Cisco-CCNA" class="md-nav__link">
       Cisco-CCNA
     </a>
   </li>
@@ -272,7 +272,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/linux/" title="Generic Linux" class="md-nav__link">
+    <a href="../linux/" title="Generic Linux" class="md-nav__link">
       Generic Linux
     </a>
   </li>
@@ -284,7 +284,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/gluster/" title="Gluster" class="md-nav__link">
+    <a href="../gluster/" title="Gluster" class="md-nav__link">
       Gluster
     </a>
   </li>
@@ -296,7 +296,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/prometheus/" title="Prometheus" class="md-nav__link">
+    <a href="../prometheus/" title="Prometheus" class="md-nav__link">
       Prometheus
     </a>
   </li>
@@ -306,11 +306,18 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="/iperf/" title="iPerf" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+    <a href="./" title="iPerf" class="md-nav__link md-nav__link--active">
       iPerf
     </a>
+    
   </li>
 
     
@@ -325,8 +332,35 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
+                
+                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/iperf.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>iPerf</h1>
+                
+                <p><strong>UDP TEST (DDOS like test where you send traffic to the other endpoint without any policing.</strong><br />
+iPerf3 does not allow you to send traffic directly for UDP. It needs to "connect" to an iPerf3 endpoint, even for UDP.</p>
+<div class="codehilite"><pre><span></span>./iperf -c TARGET_IP -u -i 2 -b 9m -t 600
+</pre></div>
 
+
+<p><strong>IPERF SERVER TCP</strong></p>
+<div class="codehilite"><pre><span></span>./iperf -s -i 2
+</pre></div>
+
+
+<p><strong>IPERF CLIENT TCP UPLOAD AND THEN DOWNLOAD</strong></p>
+<div class="codehilite"><pre><span></span>./iperf -c IPERF_SERVER -i 2 -t 100 -p 5001 -P5 -w 1M -r
+</pre></div>
+
+
+<p><strong>IPERF CLIENT TCP UPLOAD AND DOWNLOAD AT THE SAME TIME</strong></p>
+<div class="codehilite"><pre><span></span>./iperf -c IPERF_SERVER -i 2 -t 100 -p 5001 -P5 -w 1M -r
+</pre></div>
+                
+                  
+                
+              
               
                 
 
@@ -339,6 +373,27 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../prometheus/" title="Prometheus" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Prometheus
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -373,9 +428,9 @@
       
     </div>
     
-      <script src="/assets/javascripts/application.b438e6c5.js"></script>
+      <script src="../assets/javascripts/application.b438e6c5.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:""}})</script>
+      <script>app.initialize({version:"0.17.3",url:{base:".."}})</script>
       
     
     

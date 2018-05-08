@@ -17,7 +17,7 @@
         }, 
         {
             "location": "/ccna/", 
-            "text": "Cisco Security\n\n\nUser and access management\n\n\nCreate user with default privilege 15 level\n\n\nconf t\nusername $USERNAME privilege 15 secret $PASSWORD\n\n\n\n\n\nLogin local = Local username database\n\n\nconf t\nline con 0\nlogin local\nexec-timeout 0 0\nlogging synchronous\n\n\n\n\n\nservice password-encryption\n\n\n\n\n\nPort-Security\n\n\nEnabling port security on port\nCannot be enabled on a trunk/dynamic/auto port. Must be an access port.\n\n\nconf\n \nt\n\n\ninterface\n \ngigabitethernet0\n/\n1\n\n\nswitchport\n \nport\n-\nsecurity\n\n\n\n\n\n\nKeep MAC addresses when port-shutdown or switch reload.\n\n\nconf\n \nt\n\n\ninterface\n \ngigabitethernet0\n/\n1\n\n\nswitchport\n \nport\n-\nsecurity\n\n\nswitchport\n \nport\n-\nsecurity\n \nmac\n-\naddress\n \nsticky\n\n\n\n\n\n\nMac aging\n\n\nDynamic MAC aging default = 0\n\nabsolute timer = Counts down irregardless of traffic\n\ninactivity timer = resets when traffic is seen from MAC.\n\nmaximum - Default 1\nIf you raise the number of max MAC addresses on a port, you can run static and dynamic MAC detection.\n\n\nViolation option\n\n\nprotect\n - Drops traffic, no SYSLOG, no SNMP Trap, no counters increased  \n\n\nrestrict\n - Drops traffic, generate SNMP trap, generate SYSLOG.\n\n\nshutdown\n - Default, increase violation counters, Port shutdown in error-disabled.  \n\n\nShow port-security commands\n\n\nshow port-security interface fastethernet 0/1\n\n\n\n\n\nshow port-security address\n\n\n\n\n\nError disabled recovery\n\nDefault recovery 300 seconds\n\n\nconf t\nerrordisable recovery cause ?\nerrordisable recovery cause psecure-violation\nerrdisable recovery interval 30\n\n\n\n\n\nshow errdisable recovery\n\n\n\n\n\nVLAN interfaces (SVI)\n\n\n\n\nLayer 2 vlan must exist\n\n\nPhysical interface with vlan attached to must be in UP and UP.\n\n\nCan be a trunk with vlan allowed or an access port with the vlan.", 
+            "text": "Cisco Security\n\n\nUser and access management\n\n\nEnable secret takes precedence over enable password.\n\n\nenable password potato\nenable secret potato2\n\nenable password = potato2\n\n\n\n\n\nCreate user with default privilege 15 level\n\n\nconf t\nusername $USERNAME privilege 15 secret $PASSWORD\n\n\n\n\n\nlogin = password and username of the vty itself.\nlogin local = Local username database\n\n\nconf t\nline con 0\nlogin local\nexec-timeout 0 0\nlogging synchronous\n\n\n\n\n\nLine VTY user are set to privilege 15 automatically.\n\n\nconf t\nline vty 0 15\nprivilege level 15\n\n\n\n\n\nservice password-encryption\n\n\n\n\n\nPort-Security\n\n\nEnabling port security on port\nCannot be enabled on a trunk/dynamic/auto port. Must be an access port.\n\n\nconf\n \nt\n\n\ninterface\n \ngigabitethernet0\n/\n1\n\n\nswitchport\n \nport\n-\nsecurity\n\n\n\n\n\n\nKeep MAC addresses when port-shutdown or switch reload.\n\n\nconf\n \nt\n\n\ninterface\n \ngigabitethernet0\n/\n1\n\n\nswitchport\n \nport\n-\nsecurity\n\n\nswitchport\n \nport\n-\nsecurity\n \nmac\n-\naddress\n \nsticky\n\n\n\n\n\n\nMac aging\n\n\nDynamic MAC aging default = 0\n\nabsolute timer = Counts down irregardless of traffic\n\ninactivity timer = resets when traffic is seen from MAC.\n\nmaximum - Default 1\nIf you raise the number of max MAC addresses on a port, you can run static and dynamic MAC detection.\n\n\nViolation option\n\n\nprotect\n - Drops traffic, no SYSLOG, no SNMP Trap, no counters increased  \n\n\nrestrict\n - Drops traffic, generate SNMP trap, generate SYSLOG.\n\n\nshutdown\n - Default, increase violation counters, Port shutdown in error-disabled.  \n\n\nShow port-security commands\n\n\nshow port-security interface fastethernet 0/1\n\n\n\n\n\nshow port-security address\n\n\n\n\n\nError disabled recovery\n\nDefault recovery 300 seconds\n\n\nconf t\nerrordisable recovery cause ?\nerrordisable recovery cause psecure-violation\nerrdisable recovery interval 30\n\n\n\n\n\nshow errdisable recovery\n\n\n\n\n\nVLAN interfaces (SVI)\n\n\n\n\nLayer 2 vlan must exist\n\n\nPhysical interface with vlan attached to must be in UP and UP.\n\n\nCan be a trunk with vlan allowed or an access port with the vlan.\n\n\n\n\nAutonegociation - Speed and Duplex\n\n\n\n\nHighest speed supported by both is used.\n\n\nFull duplex supported by both is used.\n\n\nDO NOT\n set one side auto and the other side forced.\n\n\nSymptoms --\n Slow Upload, irregular speed, packet loss, CRC/Runt frames errors on the interface\n\n\n\n\nInterface range\n\n\ninterface\n \nrange\n \nfastethernet\n \n0\n/\n1\n-\n24\n\n\ninterface\n \nrange\n \nfastethernet\n \n0\n/\n1\n-\n24\n,\n25\n,\n26\n\n\n\n\n\n\nTCP and UDP\n\n\nTCP\n\n\n\n\nGuarantees delivery of segments\n\n\nError Detection and recovery\n\n\nTCP Windowing\n  *\n\n\nConnection-oriented\n\n\nThree-way handshake\n\n\nSYN FLAG / ACK FLAG\n\n\nSource ---\n Destination : SYN\n\n\nDestination ---\n Source : SYN-ACK\n\n\nSource ---\n Destination : ACK\n\n\nConnection Established\n\n\n\n\n\n\nUDP\n\n\n\n\n\"Best Effort\"\n\n\nNo Error Detection\n\n\nNo Windowing\n\n\nConnectionless - Data is sent without the remote peer being aware.", 
             "title": "Cisco-CCNA"
         }, 
         {
@@ -27,7 +27,7 @@
         }, 
         {
             "location": "/ccna/#user-and-access-management", 
-            "text": "Create user with default privilege 15 level  conf t\nusername $USERNAME privilege 15 secret $PASSWORD  Login local = Local username database  conf t\nline con 0\nlogin local\nexec-timeout 0 0\nlogging synchronous  service password-encryption", 
+            "text": "Enable secret takes precedence over enable password.  enable password potato\nenable secret potato2\n\nenable password = potato2  Create user with default privilege 15 level  conf t\nusername $USERNAME privilege 15 secret $PASSWORD  login = password and username of the vty itself.\nlogin local = Local username database  conf t\nline con 0\nlogin local\nexec-timeout 0 0\nlogging synchronous  Line VTY user are set to privilege 15 automatically.  conf t\nline vty 0 15\nprivilege level 15  service password-encryption", 
             "title": "User and access management"
         }, 
         {
@@ -51,6 +51,31 @@
             "title": "VLAN interfaces (SVI)"
         }, 
         {
+            "location": "/ccna/#autonegociation-speed-and-duplex", 
+            "text": "Highest speed supported by both is used.  Full duplex supported by both is used.  DO NOT  set one side auto and the other side forced.  Symptoms --  Slow Upload, irregular speed, packet loss, CRC/Runt frames errors on the interface", 
+            "title": "Autonegociation - Speed and Duplex"
+        }, 
+        {
+            "location": "/ccna/#interface-range", 
+            "text": "interface   range   fastethernet   0 / 1 - 24  interface   range   fastethernet   0 / 1 - 24 , 25 , 26", 
+            "title": "Interface range"
+        }, 
+        {
+            "location": "/ccna/#tcp-and-udp", 
+            "text": "", 
+            "title": "TCP and UDP"
+        }, 
+        {
+            "location": "/ccna/#tcp", 
+            "text": "Guarantees delivery of segments  Error Detection and recovery  TCP Windowing\n  *  Connection-oriented  Three-way handshake  SYN FLAG / ACK FLAG  Source ---  Destination : SYN  Destination ---  Source : SYN-ACK  Source ---  Destination : ACK  Connection Established", 
+            "title": "TCP"
+        }, 
+        {
+            "location": "/ccna/#udp", 
+            "text": "\"Best Effort\"  No Error Detection  No Windowing  Connectionless - Data is sent without the remote peer being aware.", 
+            "title": "UDP"
+        }, 
+        {
             "location": "/linux/", 
             "text": "Rancid - Check which devices are impacted\n\n\nsort var/logs/VPN.20180109.070410  \n|\n grep -i key \n|\n uniq\n\n\n\n\n\nRancid - Only show the device name to pipe into ssh-keygen\n\n\nsort var/logs/VPN.20180109.070410  | grep -i key | uniq | grep -Eo \n^[^ ]+\n\n\n\n\n\n\nsort /opt/rancid/var/logs/VPN.20180111.064300  | grep -i key | uniq | grep -Eo \n^[^ ]+\n\n\n\n\n\n\nSSH - Remove the public keys\n\n\nssh-keygen -f \n/opt/rancid/.ssh/known_hosts\n -R ###REMOTE_IP_OF_DEVICE###\n\n\n\n\n\nBIND DNS - Check the master zones (not ARPA or random files ) we are hosting\n\n\nls -alh --ignore=*.arpa* | wc -\n\n\n\n\n\nSMART HD Data - Get useful smartctl data\n\n\nsudo smartctl -a /dev/sdb | egrep \nSpin_Up_Time|Reallocated_Sector_Ct|Temperature|Current_Pending_Sector|Offline_Uncorrectable|Power_On_Hours\n\n\n\n\n\n\nNetwork - Create TAP Interface\n\n\ntunctl -t tap0\nifconfig tap0 10.1.1.100 netmask 255.255.255.0 up\n\n\n\n\n\nStart Linux stress test\n\n\nscreen -S stress-test -d -m stress --cpu 100 --io 100 --vm 20 --vm-bytes 1G --hdd 5 --timeout 24h", 
             "title": "Generic Linux"
@@ -64,6 +89,11 @@
             "location": "/prometheus/", 
             "text": "#Docker volume - Prometheus config\nsudo docker volume create prometheus-config\n\n#Docker volume - Prometheus metrics and adata\nsudo docker volume create prometheus-data\n\nsudo docker run -d -p 9090:9090 -v prometheus-config:/prometheus-config -v prometheus-data:/prometheus prom/prometheus --config.file=/prometheus-config/prometheus.yml\n\n\n\n\n\nGrafana container\n\n\nsudo docker volume create grafana-config\nsudo docker run \\\n  -d \\\n  -p 3000:3000 \\\n  --name=grafana \\\n  -v grafana-storage:/var/lib/grafana \\\n  -e \nGF_SECURITY_ADMIN_PASSWORD=PASSWORD_HERE\n \\\n  grafana/grafana", 
             "title": "Prometheus"
+        }, 
+        {
+            "location": "/iperf/", 
+            "text": "UDP TEST (DDOS like test where you send traffic to the other endpoint without any policing.\n\niPerf3 does not allow you to send traffic directly for UDP. It needs to \"connect\" to an iPerf3 endpoint, even for UDP.\n\n\n./iperf -c TARGET_IP -u -i 2 -b 9m -t 600\n\n\n\n\n\nIPERF SERVER TCP\n\n\n./iperf -s -i 2\n\n\n\n\n\nIPERF CLIENT TCP UPLOAD AND THEN DOWNLOAD\n\n\n./iperf -c IPERF_SERVER -i 2 -t 100 -p 5001 -P5 -w 1M -r\n\n\n\n\n\nIPERF CLIENT TCP UPLOAD AND DOWNLOAD AT THE SAME TIME\n\n\n./iperf -c IPERF_SERVER -i 2 -t 100 -p 5001 -P5 -w 1M -r", 
+            "title": "iPerf"
         }
     ]
 }
