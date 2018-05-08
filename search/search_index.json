@@ -62,7 +62,7 @@
         }, 
         {
             "location": "/prometheus/", 
-            "text": "#Docker volume - Prometheus config\nsudo docker volume create prometheus-config\n\n#Docker volume - Prometheus metrics and adata\nsudo docker volume create prometheus-data\n\nsudo docker run -d -p 9090:9090 -v prometheus-config:/prometheus-config -v prometheus-data:/prometheus prom/prometheus --config.file=/prometheus-config/prometheus.yml", 
+            "text": "#Docker volume - Prometheus config\nsudo docker volume create prometheus-config\n\n#Docker volume - Prometheus metrics and adata\nsudo docker volume create prometheus-data\n\nsudo docker run -d -p 9090:9090 -v prometheus-config:/prometheus-config -v prometheus-data:/prometheus prom/prometheus --config.file=/prometheus-config/prometheus.yml\n\n\n\n\n\nGrafana container\n\n\nsudo docker volume create grafana-config\nsudo docker run \\\n  -d \\\n  -p 3000:3000 \\\n  --name=grafana \\\n  -v grafana-storage:/var/lib/grafana \\\n  -e \nGF_SECURITY_ADMIN_PASSWORD=PASSWORD_HERE\n \\\n  grafana/grafana", 
             "title": "Prometheus"
         }
     ]
