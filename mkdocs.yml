@@ -11,6 +11,7 @@ pages:
       - Generic Linux: linux.md
       - Gluster: gluster.md
       - Prometheus: prometheus.md
+      - iPerf: iperf.md
 
 #Theme customization
 theme:
