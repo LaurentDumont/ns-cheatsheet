@@ -364,15 +364,35 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#udp" title="UDP" class="md-nav__link">
     UDP
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-numbers" title="Port Numbers" class="md-nav__link">
+    Port Numbers
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp" title="DHCP" class="md-nav__link">
+    DHCP
+  </a>
   
 </li>
         
@@ -536,15 +556,35 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#udp" title="UDP" class="md-nav__link">
     UDP
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-numbers" title="Port Numbers" class="md-nav__link">
+    Port Numbers
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp" title="DHCP" class="md-nav__link">
+    DHCP
+  </a>
   
 </li>
         
@@ -684,8 +724,8 @@ errdisable recovery interval 30
 <ul>
 <li>Guarantees delivery of segments</li>
 <li>Error Detection and recovery</li>
-<li>TCP Windowing
-  *</li>
+<li>Sequence numbers and ACK to recover from lost/corrupt packets</li>
+<li>TCP Windowing</li>
 <li>Connection-oriented</li>
 <li>Three-way handshake</li>
 <li>SYN FLAG / ACK FLAG</li>
@@ -693,15 +733,40 @@ errdisable recovery interval 30
 <li>Destination ---&gt; Source : SYN-ACK</li>
 <li>Source ---&gt; Destination : ACK</li>
 <li>Connection Established</li>
+<li>When connection is terminated - 4 Way Handshake</li>
+<li>Client ---&gt; Server : FIN, ACK</li>
+<li>Client &lt;--- Server : ACK</li>
+<li>Client &lt;--- Server : ACK, FIN</li>
+<li>Client ---&gt; Server : ACK</li>
+<li>Flow control and Windowing</li>
+<li>The receiver increases the Window size / controls the flow.</li>
+<li>The receiver asks for more data when traffic flows well --&gt; No errors/retransmits on packets.</li>
 </ul>
-<p><img alt="TARSIER" src="../images/tcp-3way-handshake.gif" /></p>
-<h4 id="udp">UDP</h4>
+<p><img alt="TCP-3WAY" src="../images/tcp-3way-handshake.gif" /></p>
+<h3 id="udp">UDP</h3>
 <ul>
 <li>"Best Effort"</li>
 <li>No Error Detection</li>
 <li>No Windowing</li>
 <li>Connectionless - Data is sent without the remote peer being aware.</li>
 </ul>
+<h4 id="port-numbers">Port Numbers</h4>
+<p>Well-known port number<br />
+| Protocol / Transport  | Port  |
+|-------------|-----|
+| HTTPS / TCP | 443 |
+| SNMP / UDP  | 161 |
+| SMTP / TCP  | 25 |
+| TELNET / TCP  | 22 |
+| SSH / TCP  | 23 |</p>
+<p>Socket ---&gt; Combination of an ipaddress and a port number.<br />
+192.168.1.1:10000</p>
+<h3 id="dhcp">DHCP</h3>
+<p>DORA
+Discover - Broadcast from client.
+Offer - DHCP server receives Discover and sends unicast offer to client.
+Request - Client sends request for the offered IP address.
+Ack - DHCP server ack the client request and assigns the IP.</p>
                 
                   
                 
