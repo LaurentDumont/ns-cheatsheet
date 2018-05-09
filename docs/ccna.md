@@ -111,8 +111,8 @@ interface range fastethernet 0/1-24,25,26
 #### TCP ####
 * Guarantees delivery of segments
 * Error Detection and recovery
+  * Sequence numbers and ACK to recover from lost/corrupt packets
 * TCP Windowing
-  *
 * Connection-oriented
   * Three-way handshake
   * SYN FLAG / ACK FLAG
@@ -120,12 +120,43 @@ interface range fastethernet 0/1-24,25,26
   * Destination ---> Source : SYN-ACK
   * Source ---> Destination : ACK
   * Connection Established
+* When connection is terminated - 4 Way Handshake
+  * Client ---> Server : FIN, ACK
+  * Client <--- Server : ACK
+  * Client <--- Server : ACK, FIN
+  * Client ---> Server : ACK
+* Flow control and Windowing
+  * The receiver increases the Window size / controls the flow.
+  * The receiver asks for more data when traffic flows well --> No errors/retransmits on packets.
 
-![TARSIER](/images/tcp-3way-handshake.gif)
 
 
-#### UDP ####
+![TCP-3WAY](/images/tcp-3way-handshake.gif)
+
+### UDP ###
 * "Best Effort"
 * No Error Detection
 * No Windowing
 * Connectionless - Data is sent without the remote peer being aware.
+
+#### Port Numbers ####
+
+Well-known port number  
+| Protocol / Transport  | Port  |
+|-------------|-----|
+| HTTPS / TCP | 443 |
+| SNMP / UDP  | 161 |
+| SMTP / TCP  | 25 |
+| TELNET / TCP  | 22 |
+| SSH / TCP  | 23 |
+
+Socket ---> Combination of an ipaddress and a port number.  
+192.168.1.1:10000
+
+
+### DHCP ###
+DORA
+Discover - Broadcast from client.
+Offer - DHCP server receives Discover and sends unicast offer to client.
+Request - Client sends request for the offered IP address.
+Ack - DHCP server ack the client request and assigns the IP.
