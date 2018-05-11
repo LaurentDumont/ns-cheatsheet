@@ -10,9 +10,9 @@ iPerf3 does not allow you to send traffic directly for UDP. It needs to "connect
 ```
 **IPERF CLIENT TCP UPLOAD AND THEN DOWNLOAD**
 ```
-./iperf -c IPERF_SERVER -i 2 -t 100 -p 5001 -P5 -w 1M -r
+./iperf -c IPERF_SERVER -i 2 -t 100 -p 5001 -P5 -w 1M -R
 ```
 **IPERF CLIENT TCP UPLOAD AND DOWNLOAD AT THE SAME TIME**
 ```
-./iperf -c IPERF_SERVER -i 2 -t 100 -p 5001 -P5 -w 1M -r
+./iperf -c IPERF_SERVER -i 2 -t 100 -p 5001 -P5 -w 1M -d
 ```

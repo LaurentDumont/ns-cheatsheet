@@ -129,8 +129,6 @@ interface range fastethernet 0/1-24,25,26
   * The receiver increases the Window size / controls the flow.
   * The receiver asks for more data when traffic flows well --> No errors/retransmits on packets.
 
-
-
 ![TCP-3WAY](/images/tcp-3way-handshake.gif)
 
 ### UDP ###
@@ -153,10 +151,77 @@ Well-known port number
 Socket ---> Combination of an ipaddress and a port number.  
 192.168.1.1:10000
 
-
 ### DHCP ###
 DORA
 Discover - Broadcast from client.
 Offer - DHCP server receives Discover and sends unicast offer to client.
 Request - Client sends request for the offered IP address.
 Ack - DHCP server ack the client request and assigns the IP.
+
+### Routing - Static Routes ###
+
+```
+ip route destination_subnet destination_mask [local-router-exit-interface | next-hop-ip-address]
+
+ip route 2.2.2.2 255.255.255.0 192.168.1.1
+
+#Default Route
+ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
+
+```
+
+### Routing - Distance Vector Protocols ###
+
+**RIPv1 | IGRP**
+* Full route table update at fixed interval. Every 30 seconds for RIP.
+* Do not subnet VLSM.
+* No Packet authentication.
+
+**RIPv2**
+* Supports VLSM
+* Multicasts from router updates - 224.0.0.9
+* Supports Authentication
+* Supports route summarization.
+
+**Split Horizon**
+* A route cannot be advertised via an interface that received the route in the first place.
+* No split horizon on frame-relay.
+
+**Route Poisoning**
+* When all routers have the same routing table --> State of convergence
+* Slow to converge
+* When router removes a subnet that is local to itself.
+  * Send update that shows 16 hops for the removed subnet.
+  * Other routers will receive the update and remove the route from their own routing tables as 16 hops marks a subnet as unreachable.
+
+**Hops**
+* Measures of distance to reach a specific subnet.
+* Does not care about interface speed - only hop count.
+
+#### Enabling RIPv2 ####
+```
+conf t
+router rip
+
+#Show protocols active on router
+show ip protocols
+
+#Enable specific version of RIPv2 per interface or global.
+interface gig0/1
+ip rip send version 2
+
+conf t
+router rip
+rip version 2
+network 10.10.10.0
+network 10.10.11.0
+
+#Disable auto summary
+conf t
+router rip
+no auto-summary
+
+#Enable split Horizon
+interface serial0/1/0
+ip split-horizon
+```
