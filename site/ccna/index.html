@@ -396,6 +396,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#routing-static-routes" title="Routing - Static Routes" class="md-nav__link">
+    Routing - Static Routes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-distance-vector-protocols" title="Routing - Distance Vector Protocols" class="md-nav__link">
+    Routing - Distance Vector Protocols
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-ripv2" title="Enabling RIPv2" class="md-nav__link">
+    Enabling RIPv2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -588,6 +615,33 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#routing-static-routes" title="Routing - Static Routes" class="md-nav__link">
+    Routing - Static Routes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-distance-vector-protocols" title="Routing - Distance Vector Protocols" class="md-nav__link">
+    Routing - Distance Vector Protocols
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-ripv2" title="Enabling RIPv2" class="md-nav__link">
+    Enabling RIPv2
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -767,6 +821,64 @@ Discover - Broadcast from client.
 Offer - DHCP server receives Discover and sends unicast offer to client.
 Request - Client sends request for the offered IP address.
 Ack - DHCP server ack the client request and assigns the IP.</p>
+<h3 id="routing-static-routes">Routing - Static Routes</h3>
+<div class="codehilite"><pre><span></span>ip route destination_subnet destination_mask [local-router-exit-interface | next-hop-ip-address]
+
+ip route 2.2.2.2 255.255.255.0 192.168.1.1
+
+#Default Route
+ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
+</pre></div>
+
+
+<h3 id="routing-distance-vector-protocols">Routing - Distance Vector Protocols</h3>
+<p><strong>RIPv1 | IGRP</strong>
+<em> Full route table update at fixed interval. Every 30 seconds for RIP.
+</em> Do not subnet VLSM.
+* No Packet authentication.</p>
+<p><strong>RIPv2</strong>
+<em> Supports VLSM
+</em> Multicasts from router updates - 224.0.0.9
+<em> Supports Authentication
+</em> Supports route summarization.</p>
+<p><strong>Split Horizon</strong>
+<em> A route cannot be advertised via an interface that received the route in the first place.
+</em> No split horizon on frame-relay.</p>
+<p><strong>Route Poisoning</strong>
+<em> When all routers have the same routing table --&gt; State of convergence
+</em> Slow to converge
+* When router removes a subnet that is local to itself.
+  * Send update that shows 16 hops for the removed subnet.
+  * Other routers will receive the update and remove the route from their own routing tables as 16 hops marks a subnet as unreachable.</p>
+<p><strong>Hops</strong>
+<em> Measures of distance to reach a specific subnet.
+</em> Does not care about interface speed - only hop count.</p>
+<h4 id="enabling-ripv2">Enabling RIPv2</h4>
+<div class="codehilite"><pre><span></span><span class="nx">conf</span> <span class="nx">t</span>
+<span class="nx">router</span> <span class="nx">rip</span>
+
+<span class="err">#</span><span class="nx">Show</span> <span class="nx">protocols</span> <span class="nx">active</span> <span class="nx">on</span> <span class="nx">router</span>
+<span class="nx">show</span> <span class="nx">ip</span> <span class="nx">protocols</span>
+
+<span class="err">#</span><span class="nx">Enable</span> <span class="nx">specific</span> <span class="nx">version</span> <span class="nx">of</span> <span class="nx">RIPv2</span> <span class="nx">per</span> <span class="kr">interface</span> <span class="nx">or</span> <span class="nx">global</span><span class="p">.</span>
+<span class="kr">interface</span> <span class="nx">gig0</span><span class="o">/</span><span class="mi">1</span>
+<span class="nx">ip</span> <span class="nx">rip</span> <span class="nx">send</span> <span class="nx">version</span> <span class="mi">2</span>
+
+<span class="nx">conf</span> <span class="nx">t</span>
+<span class="nx">router</span> <span class="nx">rip</span>
+<span class="nx">rip</span> <span class="nx">version</span> <span class="mi">2</span>
+<span class="nx">network</span> <span class="mf">10.10</span><span class="p">.</span><span class="mf">10.0</span>
+<span class="nx">network</span> <span class="mf">10.10</span><span class="p">.</span><span class="mf">11.0</span>
+
+<span class="err">#</span><span class="nx">Disable</span> <span class="nx">auto</span> <span class="nx">summary</span>
+<span class="nx">conf</span> <span class="nx">t</span>
+<span class="nx">router</span> <span class="nx">rip</span>
+<span class="nx">no</span> <span class="nx">auto</span><span class="o">-</span><span class="nx">summary</span>
+
+<span class="err">#</span><span class="nx">Enable</span> <span class="nx">split</span> <span class="nx">Horizon</span>
+<span class="kr">interface</span> <span class="nx">serial0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="nx">ip</span> <span class="nx">split</span><span class="o">-</span><span class="nx">horizon</span>
+</pre></div>
                 
                   
                 
