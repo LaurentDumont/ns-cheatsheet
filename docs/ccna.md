@@ -188,7 +188,7 @@ ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
 * No split horizon on frame-relay.
 
 **Route Poisoning**
-* When all routers have the same routing table --> State of convergence
+* When all routers have the same routing table --> State of convergence  
 * Slow to converge
 * When router removes a subnet that is local to itself.
   * Send update that shows 16 hops for the removed subnet.
@@ -225,3 +225,39 @@ no auto-summary
 interface serial0/1/0
 ip split-horizon
 ```
+
+Confirming that RIPV2 works.
+```
+show ip protocols
+show ip rip database
+```
+
+Clear RIP routes.
+```
+clear ip route *
+```
+
+#### Passive interfaces ####
+Prevents sending RIPv2 updates from interfaces where it's not necessary.
+
+```
+conf t
+router rip
+passive-interface fastethernet0/1
+passive-interface fastethernet0/2
+```
+
+```
+conf t
+router rip
+passive-interface default
+no passive-interface fastethernet0/1
+no passive-interface fastethernet0/2
+```
+
+### Routing Administrative disntance ###
+
+1) The prefix mask is considered first. The more specific route is installed.
+2) If the prefix max is "=" ---> Administrative Distance is checked. The route with the lowest ADs wins.
+
+![ROUTING-AD](/images/ad.png)
