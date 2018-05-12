@@ -418,8 +418,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#passive-interfaces" title="Passive interfaces" class="md-nav__link">
+    Passive interfaces
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-administrative-disntance" title="Routing Administrative disntance" class="md-nav__link">
+    Routing Administrative disntance
+  </a>
   
 </li>
         
@@ -637,8 +651,22 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#passive-interfaces" title="Passive interfaces" class="md-nav__link">
+    Passive interfaces
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-administrative-disntance" title="Routing Administrative disntance" class="md-nav__link">
+    Routing Administrative disntance
+  </a>
   
 </li>
         
@@ -845,7 +873,7 @@ ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
 <em> A route cannot be advertised via an interface that received the route in the first place.
 </em> No split horizon on frame-relay.</p>
 <p><strong>Route Poisoning</strong>
-<em> When all routers have the same routing table --&gt; State of convergence
+<em> When all routers have the same routing table --&gt; State of convergence<br />
 </em> Slow to converge
 * When router removes a subnet that is local to itself.
   * Send update that shows 16 hops for the removed subnet.
@@ -879,6 +907,40 @@ ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
 <span class="kr">interface</span> <span class="nx">serial0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
 <span class="nx">ip</span> <span class="nx">split</span><span class="o">-</span><span class="nx">horizon</span>
 </pre></div>
+
+
+<p>Confirming that RIPV2 works.</p>
+<div class="codehilite"><pre><span></span>show ip protocols
+show ip rip database
+</pre></div>
+
+
+<p>Clear RIP routes.</p>
+<div class="codehilite"><pre><span></span>clear ip route *
+</pre></div>
+
+
+<h4 id="passive-interfaces">Passive interfaces</h4>
+<p>Prevents sending RIPv2 updates from interfaces where it's not necessary.</p>
+<div class="codehilite"><pre><span></span>conf t
+router rip
+passive-interface fastethernet0/1
+passive-interface fastethernet0/2
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>conf t
+router rip
+passive-interface default
+no passive-interface fastethernet0/1
+no passive-interface fastethernet0/2
+</pre></div>
+
+
+<h3 id="routing-administrative-disntance">Routing Administrative disntance</h3>
+<p>1) The prefix mask is considered first. The more specific route is installed.
+2) If the prefix max is "=" ---&gt; Administrative Distance is checked. The route with the lowest ADs wins.</p>
+<p><img alt="ROUTING-AD" src="../images/ad.png" /></p>
                 
                   
                 
