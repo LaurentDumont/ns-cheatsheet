@@ -404,8 +404,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#routing-distance-vector-protocols" title="Routing - Distance Vector Protocols" class="md-nav__link">
-    Routing - Distance Vector Protocols
+  <a href="#routing-distance-vector-protocols-rip" title="Routing - Distance Vector Protocols - RIP" class="md-nav__link">
+    Routing - Distance Vector Protocols - RIP
   </a>
   
     <nav class="md-nav">
@@ -425,14 +425,21 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rip-load-balancing" title="RIP Load Balancing" class="md-nav__link">
+    RIP Load Balancing
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#routing-administrative-disntance" title="Routing Administrative disntance" class="md-nav__link">
-    Routing Administrative disntance
+  <a href="#routing-administrative-distance" title="Routing Administrative distance" class="md-nav__link">
+    Routing Administrative distance
   </a>
   
 </li>
@@ -637,8 +644,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#routing-distance-vector-protocols" title="Routing - Distance Vector Protocols" class="md-nav__link">
-    Routing - Distance Vector Protocols
+  <a href="#routing-distance-vector-protocols-rip" title="Routing - Distance Vector Protocols - RIP" class="md-nav__link">
+    Routing - Distance Vector Protocols - RIP
   </a>
   
     <nav class="md-nav">
@@ -658,14 +665,21 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#rip-load-balancing" title="RIP Load Balancing" class="md-nav__link">
+    RIP Load Balancing
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#routing-administrative-disntance" title="Routing Administrative disntance" class="md-nav__link">
-    Routing Administrative disntance
+  <a href="#routing-administrative-distance" title="Routing Administrative distance" class="md-nav__link">
+    Routing Administrative distance
   </a>
   
 </li>
@@ -833,14 +847,37 @@ errdisable recovery interval 30
 <li>Connectionless - Data is sent without the remote peer being aware.</li>
 </ul>
 <h4 id="port-numbers">Port Numbers</h4>
-<p>Well-known port number<br />
-| Protocol / Transport  | Port  |
-|-------------|-----|
-| HTTPS / TCP | 443 |
-| SNMP / UDP  | 161 |
-| SMTP / TCP  | 25 |
-| TELNET / TCP  | 22 |
-| SSH / TCP  | 23 |</p>
+<p>Well-known port numbers:  </p>
+<table>
+<thead>
+<tr>
+<th>Protocol / Transport</th>
+<th>Port</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTPS / TCP</td>
+<td>443</td>
+</tr>
+<tr>
+<td>SNMP / UDP</td>
+<td>161</td>
+</tr>
+<tr>
+<td>SMTP / TCP</td>
+<td>25</td>
+</tr>
+<tr>
+<td>TELNET / TCP</td>
+<td>22</td>
+</tr>
+<tr>
+<td>SSH / TCP</td>
+<td>23</td>
+</tr>
+</tbody>
+</table>
 <p>Socket ---&gt; Combination of an ipaddress and a port number.<br />
 192.168.1.1:10000</p>
 <h3 id="dhcp">DHCP</h3>
@@ -859,7 +896,7 @@ ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
 </pre></div>
 
 
-<h3 id="routing-distance-vector-protocols">Routing - Distance Vector Protocols</h3>
+<h3 id="routing-distance-vector-protocols-rip">Routing - Distance Vector Protocols - RIP</h3>
 <p><strong>RIPv1 | IGRP</strong>
 <em> Full route table update at fixed interval. Every 30 seconds for RIP.
 </em> Do not subnet VLSM.
@@ -879,8 +916,9 @@ ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
   * Send update that shows 16 hops for the removed subnet.
   * Other routers will receive the update and remove the route from their own routing tables as 16 hops marks a subnet as unreachable.</p>
 <p><strong>Hops</strong>
-<em> Measures of distance to reach a specific subnet.
-</em> Does not care about interface speed - only hop count.</p>
+<em> Metric for RIPv2.
+</em> Measures of distance to reach a specific subnet.
+* Does not care about interface speed - only hop count.</p>
 <h4 id="enabling-ripv2">Enabling RIPv2</h4>
 <div class="codehilite"><pre><span></span><span class="nx">conf</span> <span class="nx">t</span>
 <span class="nx">router</span> <span class="nx">rip</span>
@@ -937,9 +975,18 @@ no passive-interface fastethernet0/2
 </pre></div>
 
 
-<h3 id="routing-administrative-disntance">Routing Administrative disntance</h3>
-<p>1) The prefix mask is considered first. The more specific route is installed.
-2) If the prefix max is "=" ---&gt; Administrative Distance is checked. The route with the lowest ADs wins.</p>
+<h4 id="rip-load-balancing">RIP Load Balancing</h4>
+<p>1) If a subnet is reachable through two paths with the same hope count --&gt; Load balance across the two links.</p>
+<p>Disabling equal cost load balancing</p>
+<div class="codehilite"><pre><span></span>conf t
+router rip
+maximum-path 1
+</pre></div>
+
+
+<h3 id="routing-administrative-distance">Routing Administrative distance</h3>
+<p>1) The prefix mask is considered first. The more specific route is installed.<br />
+2) If the prefix max is "=" ---&gt; Administrative Distance is checked. The route with the lowest ADs wins.  </p>
 <p><img alt="ROUTING-AD" src="../images/ad.png" /></p>
                 
                   
