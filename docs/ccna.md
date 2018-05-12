@@ -139,7 +139,8 @@ interface range fastethernet 0/1-24,25,26
 
 #### Port Numbers ####
 
-Well-known port number  
+Well-known port numbers:  
+
 | Protocol / Transport  | Port  |
 |-------------|-----|
 | HTTPS / TCP | 443 |
@@ -170,7 +171,7 @@ ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
 
 ```
 
-### Routing - Distance Vector Protocols ###
+### Routing - Distance Vector Protocols - RIP ###
 
 **RIPv1 | IGRP**
 * Full route table update at fixed interval. Every 30 seconds for RIP.
@@ -195,6 +196,7 @@ ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
   * Other routers will receive the update and remove the route from their own routing tables as 16 hops marks a subnet as unreachable.
 
 **Hops**
+* Metric for RIPv2.
 * Measures of distance to reach a specific subnet.
 * Does not care about interface speed - only hop count.
 
@@ -255,9 +257,19 @@ no passive-interface fastethernet0/1
 no passive-interface fastethernet0/2
 ```
 
-### Routing Administrative disntance ###
+#### RIP Load Balancing ####
+1) If a subnet is reachable through two paths with the same hope count --> Load balance across the two links.
 
-1) The prefix mask is considered first. The more specific route is installed.
-2) If the prefix max is "=" ---> Administrative Distance is checked. The route with the lowest ADs wins.
+Disabling equal cost load balancing
+```
+conf t
+router rip
+maximum-path 1
+```
+
+### Routing Administrative distance ###
+
+1) The prefix mask is considered first. The more specific route is installed.  
+2) If the prefix max is "=" ---> Administrative Distance is checked. The route with the lowest ADs wins.  
 
 ![ROUTING-AD](/images/ad.png)
