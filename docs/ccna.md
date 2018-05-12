@@ -272,4 +272,4 @@ maximum-path 1
 1) The prefix mask is considered first. The more specific route is installed.  
 2) If the prefix max is "=" ---> Administrative Distance is checked. The route with the lowest ADs wins.  
 
-![ROUTING-AD](/images/ad.png)
+![ROUTING-AD](/images/admin-routing-dist.png)
