@@ -2,17 +2,17 @@
 iPerf3 does not allow you to send traffic directly for UDP. It needs to "connect" to an iPerf3 endpoint, even for UDP.
 
 ```
-./iperf -c TARGET_IP -u -i 2 -b 9m -t 600
+./iperf -c TARGET_IP --udp --interval 2 --bandwidth 9m
 ```
 **IPERF SERVER TCP**
 ```
-./iperf -s -i 2
+./iperf --server
 ```
 **IPERF CLIENT TCP UPLOAD AND THEN DOWNLOAD**
 ```
-./iperf -c IPERF_SERVER -i 2 -t 100 -p 5001 -P5 -w 1M -R
+./iperf --client IPERF_SERVER --tradeoff --window 1M
 ```
 **IPERF CLIENT TCP UPLOAD AND DOWNLOAD AT THE SAME TIME**
 ```
-./iperf -c IPERF_SERVER -i 2 -t 100 -p 5001 -P5 -w 1M -d
+./iperf --client IPERF_SERVER --dualtest --window 1M
 ```

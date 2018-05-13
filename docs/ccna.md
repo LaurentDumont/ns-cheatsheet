@@ -61,6 +61,32 @@ inactivity timer = resets when traffic is seen from MAC.
 maximum - Default 1
 If you raise the number of max MAC addresses on a port, you can run static and dynamic MAC detection.
 
+#### MAC address conversion ####
+
+| Character  | HEX  |
+|-------------|-----|
+| a | 10 |
+| b | 11 |
+| c | 12 |
+| d | 13 |
+| e | 14 |
+| f | 15 |
+
+* One digit hex ---> 0-9 or A-F
+* Two digit hex ---> Left to Right, units of 16 ---> units of 1.
+
+Hexadecimal A7 to decimal
+A = 10 units of 16 (A=16) ---> 160  
+7 = 7 units of 1 ---> 7  
+160 + 7 = 167
+
+Decimal 241 to Hexadecimal
+1. f = 15 * 16
+2. 1 = 1 * 1
+3. F1
+
+
+
 #### Violation option  
 **protect** - Drops traffic, no SYSLOG, no SNMP Trap, no counters increased    
 **restrict** - Drops traffic, generate SNMP trap, generate SYSLOG.  
@@ -153,11 +179,11 @@ Socket ---> Combination of an ipaddress and a port number.
 192.168.1.1:10000
 
 ### DHCP ###
-DORA
-Discover - Broadcast from client.
-Offer - DHCP server receives Discover and sends unicast offer to client.
-Request - Client sends request for the offered IP address.
-Ack - DHCP server ack the client request and assigns the IP.
+**DORA**
+1. Discover - Broadcast from client.  
+2. Offer - DHCP server receives Discover and sends unicast offer to client.  
+3. Request - Client sends request for the offered IP address.  
+4. Ack - DHCP server ack the client request and assigns the IP.  
 
 ### Routing - Static Routes ###
 
@@ -267,9 +293,28 @@ router rip
 maximum-path 1
 ```
 
+#### Default route in RIP ####
+
+```
+conf t
+router rip
+default-information originate
+```
+
 ### Routing Administrative distance ###
 
 1) The prefix mask is considered first. The more specific route is installed.  
 2) If the prefix max is "=" ---> Administrative Distance is checked. The route with the lowest ADs wins.  
 
 ![ROUTING-AD](/images/admin-routing-dist.png)
+
+### Floating static routes ###
+
+If a route with a lower AD is removed from the routing table, the static route will be added and become active.
+
+```
+conf t
+ip route 2.2.2.0 255.255.255.0 21.1.1.2 [static route metric here | higher than routing protocol 1-255 ]
+```
+
+### Subnetting ###
