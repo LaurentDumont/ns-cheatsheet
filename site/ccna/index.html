@@ -1000,28 +1000,38 @@ ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
 
 
 <h3 id="routing-distance-vector-protocols-rip">Routing - Distance Vector Protocols - RIP</h3>
-<p><strong>RIPv1 | IGRP</strong>
-<em> Full route table update at fixed interval. Every 30 seconds for RIP.
-</em> Do not subnet VLSM.
-<em> No Packet authentication.
-<strong>RIPv2</strong>
-</em> Supports VLSM.
-<em> Multicasts from router updates - 224.0.0.9 instead of broadcast (RIPv1)
-</em> Supports Authentication.
-<em> Supports route summarization.
-<strong>Split Horizon</strong>
-</em> A route cannot be advertised via an interface that received the route in the first place.
-<em> No split horizon on frame-relay.
-<strong>Route Poisoning</strong>
-</em> When all routers have the same routing table --&gt; State of convergence<br />
-<em> Slow to converge
-</em> When router removes a subnet that is local to itself.
-  * Send update that shows 16 hops for the removed subnet.
-  * Other routers will receive the update and remove the route from their own routing tables as 16 hops marks a subnet as unreachable.</p>
-<p><strong>Hops</strong>
-<em> Metric for RIPv2.
-</em> Measures of distance to reach a specific subnet.
-* Does not care about interface speed - only hop count.</p>
+<p><strong>RIPv1 / IGRP</strong></p>
+<ul>
+<li>Full route table update at fixed interval. Every 30 seconds for RIP.</li>
+<li>Do not subnet VLSM.</li>
+<li>No Packet authentication.</li>
+</ul>
+<p><strong>RIPv2</strong></p>
+<ul>
+<li>Supports VLSM.</li>
+<li>Multicasts from router updates - 224.0.0.9 instead of broadcast (RIPv1)</li>
+<li>Supports Authentication.</li>
+<li>Supports route summarization.</li>
+</ul>
+<p><strong>Split Horizon</strong></p>
+<ul>
+<li>A route cannot be advertised via an interface that received the route in the first place.</li>
+<li>No split horizon on frame-relay.</li>
+</ul>
+<p><strong>Route Poisoning</strong></p>
+<ul>
+<li>When all routers have the same routing table --&gt; State of convergence  </li>
+<li>Slow to converge</li>
+<li>When router removes a subnet that is local to itself.</li>
+<li>Send update that shows 16 hops for the removed subnet.</li>
+<li>Other routers will receive the update and remove the route from their own routing tables as 16 hops marks a subnet as unreachable.</li>
+</ul>
+<p><strong>Hops</strong></p>
+<ul>
+<li>Metric for RIPv2.</li>
+<li>Measures of distance to reach a specific subnet.</li>
+<li>Does not care about interface speed - only hop count.</li>
+</ul>
 <h4 id="enabling-ripv2">Enabling RIPv2</h4>
 <div class="codehilite"><pre><span></span><span class="nx">conf</span> <span class="nx">t</span>
 <span class="nx">router</span> <span class="nx">rip</span>
