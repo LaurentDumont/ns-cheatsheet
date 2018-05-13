@@ -199,6 +199,28 @@ ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
 
 ### Routing - Distance Vector Protocols - RIP ###
 
+**RIPv1 | IGRP**
+* Full route table update at fixed interval. Every 30 seconds for RIP.
+* Do not subnet VLSM.
+* No Packet authentication.
+
+**RIPv2**
+* Supports VLSM.
+* Multicasts from router updates - 224.0.0.9 instead of broadcast (RIPv1)
+* Supports Authentication.
+* Supports route summarization.
+
+**Split Horizon**
+* A route cannot be advertised via an interface that received the route in the first place.
+* No split horizon on frame-relay.
+
+**Route Poisoning**
+* When all routers have the same routing table --> State of convergence  
+* Slow to converge
+* When router removes a subnet that is local to itself.
+  * Send update that shows 16 hops for the removed subnet.
+  * Other routers will receive the update and remove the route from their own routing tables as 16 hops marks a subnet as unreachable.
+
 **Hops**
 * Metric for RIPv2.
 * Measures of distance to reach a specific subnet.
