@@ -1005,9 +1005,9 @@ ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
 </em> Do not subnet VLSM.
 * No Packet authentication.</p>
 <p><strong>RIPv2</strong>
-<em> Supports VLSM
-</em> Multicasts from router updates - 224.0.0.9
-<em> Supports Authentication
+<em> Supports VLSM.
+</em> Multicasts from router updates - 224.0.0.9 instead of broadcast (RIPv1)
+<em> Supports Authentication.
 </em> Supports route summarization.</p>
 <p><strong>Split Horizon</strong>
 <em> A route cannot be advertised via an interface that received the route in the first place.
