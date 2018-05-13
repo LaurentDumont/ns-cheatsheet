@@ -317,6 +317,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#mac-address-conversion" title="MAC address conversion" class="md-nav__link">
+    MAC address conversion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#violation-option" title="Violation option" class="md-nav__link">
     Violation option
   </a>
@@ -432,6 +439,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#default-route-in-rip" title="Default route in RIP" class="md-nav__link">
+    Default route in RIP
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -440,6 +454,20 @@
           <li class="md-nav__item">
   <a href="#routing-administrative-distance" title="Routing Administrative distance" class="md-nav__link">
     Routing Administrative distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-static-routes" title="Floating static routes" class="md-nav__link">
+    Floating static routes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subnetting" title="Subnetting" class="md-nav__link">
+    Subnetting
   </a>
   
 </li>
@@ -557,6 +585,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#mac-address-conversion" title="MAC address conversion" class="md-nav__link">
+    MAC address conversion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#violation-option" title="Violation option" class="md-nav__link">
     Violation option
   </a>
@@ -672,6 +707,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#default-route-in-rip" title="Default route in RIP" class="md-nav__link">
+    Default route in RIP
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -680,6 +722,20 @@
           <li class="md-nav__item">
   <a href="#routing-administrative-distance" title="Routing Administrative distance" class="md-nav__link">
     Routing Administrative distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-static-routes" title="Floating static routes" class="md-nav__link">
+    Floating static routes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subnetting" title="Subnetting" class="md-nav__link">
+    Subnetting
   </a>
   
 </li>
@@ -770,6 +826,53 @@ absolute timer = Counts down irregardless of traffic<br />
 inactivity timer = resets when traffic is seen from MAC.<br />
 maximum - Default 1
 If you raise the number of max MAC addresses on a port, you can run static and dynamic MAC detection.</p>
+<h4 id="mac-address-conversion">MAC address conversion</h4>
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>HEX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>10</td>
+</tr>
+<tr>
+<td>b</td>
+<td>11</td>
+</tr>
+<tr>
+<td>c</td>
+<td>12</td>
+</tr>
+<tr>
+<td>d</td>
+<td>13</td>
+</tr>
+<tr>
+<td>e</td>
+<td>14</td>
+</tr>
+<tr>
+<td>f</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>One digit hex ---&gt; 0-9 or A-F</li>
+<li>Two digit hex ---&gt; Left to Right, units of 16 ---&gt; units of 1.</li>
+</ul>
+<p>Hexadecimal A7 to decimal
+A = 10 units of 16 (A=16) ---&gt; 160<br />
+7 = 7 units of 1 ---&gt; 7<br />
+160 + 7 = 167</p>
+<p>Decimal 241 to Hexadecimal
+1. f = 15 * 16
+2. 1 = 1 * 1
+3. F1</p>
 <h4 id="violation-option">Violation option</h4>
 <p><strong>protect</strong> - Drops traffic, no SYSLOG, no SNMP Trap, no counters increased  <br />
 <strong>restrict</strong> - Drops traffic, generate SNMP trap, generate SYSLOG.<br />
@@ -881,11 +984,11 @@ errdisable recovery interval 30
 <p>Socket ---&gt; Combination of an ipaddress and a port number.<br />
 192.168.1.1:10000</p>
 <h3 id="dhcp">DHCP</h3>
-<p>DORA
-Discover - Broadcast from client.
-Offer - DHCP server receives Discover and sends unicast offer to client.
-Request - Client sends request for the offered IP address.
-Ack - DHCP server ack the client request and assigns the IP.</p>
+<p><strong>DORA</strong>
+1. Discover - Broadcast from client.<br />
+2. Offer - DHCP server receives Discover and sends unicast offer to client.<br />
+3. Request - Client sends request for the offered IP address.<br />
+4. Ack - DHCP server ack the client request and assigns the IP.  </p>
 <h3 id="routing-static-routes">Routing - Static Routes</h3>
 <div class="codehilite"><pre><span></span>ip route destination_subnet destination_mask [local-router-exit-interface | next-hop-ip-address]
 
@@ -984,10 +1087,25 @@ maximum-path 1
 </pre></div>
 
 
+<h4 id="default-route-in-rip">Default route in RIP</h4>
+<div class="codehilite"><pre><span></span>conf t
+router rip
+default-information originate
+</pre></div>
+
+
 <h3 id="routing-administrative-distance">Routing Administrative distance</h3>
 <p>1) The prefix mask is considered first. The more specific route is installed.<br />
 2) If the prefix max is "=" ---&gt; Administrative Distance is checked. The route with the lowest ADs wins.  </p>
 <p><img alt="ROUTING-AD" src="../images/admin-routing-dist.png" /></p>
+<h3 id="floating-static-routes">Floating static routes</h3>
+<p>If a route with a lower AD is removed from the routing table, the static route will be added and become active.</p>
+<div class="codehilite"><pre><span></span>conf t
+ip route 2.2.2.0 255.255.255.0 21.1.1.2 [static route metric here | higher than routing protocol 1-255 ]
+</pre></div>
+
+
+<h3 id="subnetting">Subnetting</h3>
                 
                   
                 

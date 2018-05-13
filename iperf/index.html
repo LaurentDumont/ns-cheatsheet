@@ -340,22 +340,22 @@
                 
                 <p><strong>UDP TEST (DDOS like test where you send traffic to the other endpoint without any policing.</strong><br />
 iPerf3 does not allow you to send traffic directly for UDP. It needs to "connect" to an iPerf3 endpoint, even for UDP.</p>
-<div class="codehilite"><pre><span></span>./iperf -c TARGET_IP -u -i 2 -b 9m -t 600
+<div class="codehilite"><pre><span></span>./iperf -c TARGET_IP --udp --interval 2 --bandwidth 9m
 </pre></div>
 
 
 <p><strong>IPERF SERVER TCP</strong></p>
-<div class="codehilite"><pre><span></span>./iperf -s -i 2
+<div class="codehilite"><pre><span></span>./iperf --server
 </pre></div>
 
 
 <p><strong>IPERF CLIENT TCP UPLOAD AND THEN DOWNLOAD</strong></p>
-<div class="codehilite"><pre><span></span>./iperf -c IPERF_SERVER -i 2 -t 100 -p 5001 -P5 -w 1M -R
+<div class="codehilite"><pre><span></span>./iperf --client IPERF_SERVER --tradeoff --window 1M
 </pre></div>
 
 
 <p><strong>IPERF CLIENT TCP UPLOAD AND DOWNLOAD AT THE SAME TIME</strong></p>
-<div class="codehilite"><pre><span></span>./iperf -c IPERF_SERVER -i 2 -t 100 -p 5001 -P5 -w 1M -d
+<div class="codehilite"><pre><span></span>./iperf --client IPERF_SERVER --dualtest --window 1M
 </pre></div>
                 
                   
