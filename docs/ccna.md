@@ -205,9 +205,9 @@ ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
 * No Packet authentication.
 
 **RIPv2**
-* Supports VLSM
-* Multicasts from router updates - 224.0.0.9
-* Supports Authentication
+* Supports VLSM.
+* Multicasts from router updates - 224.0.0.9 instead of broadcast (RIPv1)
+* Supports Authentication.
 * Supports route summarization.
 
 **Split Horizon**
