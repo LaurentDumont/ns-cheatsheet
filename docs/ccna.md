@@ -37,7 +37,7 @@ privilege level 15
 service password-encryption
 ```
 
-### Port-Security
+### Port-Security ###
 
 Enabling port security on port
 Cannot be enabled on a trunk/dynamic/auto port. Must be an access port.
@@ -54,7 +54,7 @@ interface gigabitethernet0/1
 switchport port-security
 switchport port-security mac-address sticky
 ```
-#### Mac aging
+### MAC aging ###
 Dynamic MAC aging default = 0  
 absolute timer = Counts down irregardless of traffic  
 inactivity timer = resets when traffic is seen from MAC.  
@@ -224,7 +224,6 @@ ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
 * When router removes a subnet that is local to itself.
   * Send update that shows 16 hops for the removed subnet.
   * Other routers will receive the update and remove the route from their own routing tables as 16 hops marks a subnet as unreachable.
-
 
 **Hops**
 
