@@ -384,3 +384,21 @@ ip route 2.2.2.0 255.255.255.0 21.1.1.2 [static route metric here | higher than 
 3. Range of valid addresses --> 150.10.64.1 to 150.10.127.254
 
 ### Access Lists ###
+
+* All ACL have an implicit DENY ALL ALL at the end.
+* The search is done TOP to BOTTOM
+* When a match is found, that's the end of the search. Any remaining lines are not examined.
+
+#### Standard ACL ####
+
+* Can only match on the SOURCE ip address of a packet.
+* Standard Access list number : 1 --> 99
+* Standard expanded access list number : 1300 --> 1999
+
+#### Extended ACL ####
+
+
+#### Wildcard masks ####
+
+* 0 --> All bits must match.
+* 1 --> Does not need to match.
