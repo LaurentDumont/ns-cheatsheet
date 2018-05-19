@@ -525,6 +525,33 @@
     Access Lists
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-acl" title="Standard ACL" class="md-nav__link">
+    Standard ACL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-acl" title="Extended ACL" class="md-nav__link">
+    Extended ACL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wildcard-masks" title="Wildcard masks" class="md-nav__link">
+    Wildcard masks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -847,6 +874,33 @@
   <a href="#access-lists" title="Access Lists" class="md-nav__link">
     Access Lists
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#standard-acl" title="Standard ACL" class="md-nav__link">
+    Standard ACL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-acl" title="Extended ACL" class="md-nav__link">
+    Extended ACL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wildcard-masks" title="Wildcard masks" class="md-nav__link">
+    Wildcard masks
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1404,6 +1458,23 @@ ip route 2.2.2.0 255.255.255.0 21.1.1.2 [static route metric here | higher than 
 <li>Range of valid addresses --&gt; 150.10.64.1 to 150.10.127.254</li>
 </ol>
 <h3 id="access-lists">Access Lists</h3>
+<ul>
+<li>All ACL have an implicit DENY ALL ALL at the end.</li>
+<li>The search is done TOP to BOTTOM</li>
+<li>When a match is found, that's the end of the search. Any remaining lines are not examined.</li>
+</ul>
+<h4 id="standard-acl">Standard ACL</h4>
+<ul>
+<li>Can only match on the SOURCE ip address of a packet.</li>
+<li>Standard Access list number : 1 --&gt; 99</li>
+<li>Standard expanded access list number : 1300 --&gt; 1999</li>
+</ul>
+<h4 id="extended-acl">Extended ACL</h4>
+<h4 id="wildcard-masks">Wildcard masks</h4>
+<ul>
+<li>0 --&gt; All bits must match.</li>
+<li>1 --&gt; Does not need to match.</li>
+</ul>
                 
                   
                 
