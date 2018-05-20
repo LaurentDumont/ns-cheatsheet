@@ -10,6 +10,15 @@ enable secret potato2
 enable password = potato2
 ```
 
+Enable AAA (allow user with privilege 15 to login straight into enable mode)
+```
+conf t
+aaa new-model
+aaa authentication login default group local
+aaa authorization exec default group local
+```
+
+
 Create user with default privilege 15 level
 ```
 conf t
@@ -389,16 +398,27 @@ ip route 2.2.2.0 255.255.255.0 21.1.1.2 [static route metric here | higher than 
 * The search is done TOP to BOTTOM
 * When a match is found, that's the end of the search. Any remaining lines are not examined.
 
+#### Wildcard masks ####
+
+* 0 --> All bits must match.
+* 1 --> Does not need to match.
+
 #### Standard ACL ####
 
 * Can only match on the SOURCE ip address of a packet.
 * Standard Access list number : 1 --> 99
 * Standard expanded access list number : 1300 --> 1999
 
+```
+<1-99>       Standard IP access-list number
+<1300-1999>  Standard IP access-list number (expanded range)
+WORD         Access-list name
+```
+
+```
+ip access-list standard 5 deny 3.3.3.0 0.0.0.255
+interface fastethernet0
+ip access-group 5 in
+```
+
 #### Extended ACL ####
-
-
-#### Wildcard masks ####
-
-* 0 --> All bits must match.
-* 1 --> Does not need to match.
