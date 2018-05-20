@@ -529,6 +529,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#wildcard-masks" title="Wildcard masks" class="md-nav__link">
+    Wildcard masks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#standard-acl" title="Standard ACL" class="md-nav__link">
     Standard ACL
   </a>
@@ -538,13 +545,6 @@
           <li class="md-nav__item">
   <a href="#extended-acl" title="Extended ACL" class="md-nav__link">
     Extended ACL
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wildcard-masks" title="Wildcard masks" class="md-nav__link">
-    Wildcard masks
   </a>
   
 </li>
@@ -879,6 +879,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#wildcard-masks" title="Wildcard masks" class="md-nav__link">
+    Wildcard masks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#standard-acl" title="Standard ACL" class="md-nav__link">
     Standard ACL
   </a>
@@ -888,13 +895,6 @@
           <li class="md-nav__item">
   <a href="#extended-acl" title="Extended ACL" class="md-nav__link">
     Extended ACL
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#wildcard-masks" title="Wildcard masks" class="md-nav__link">
-    Wildcard masks
   </a>
   
 </li>
@@ -937,6 +937,14 @@
 enable secret potato2
 
 enable password = potato2
+</pre></div>
+
+
+<p>Enable AAA (allow user with privilege 15 to login straight into enable mode)</p>
+<div class="codehilite"><pre><span></span>conf t
+aaa new-model
+aaa authentication login default group local
+aaa authorization exec default group local
 </pre></div>
 
 
@@ -1463,18 +1471,30 @@ ip route 2.2.2.0 255.255.255.0 21.1.1.2 [static route metric here | higher than 
 <li>The search is done TOP to BOTTOM</li>
 <li>When a match is found, that's the end of the search. Any remaining lines are not examined.</li>
 </ul>
+<h4 id="wildcard-masks">Wildcard masks</h4>
+<ul>
+<li>0 --&gt; All bits must match.</li>
+<li>1 --&gt; Does not need to match.</li>
+</ul>
 <h4 id="standard-acl">Standard ACL</h4>
 <ul>
 <li>Can only match on the SOURCE ip address of a packet.</li>
 <li>Standard Access list number : 1 --&gt; 99</li>
 <li>Standard expanded access list number : 1300 --&gt; 1999</li>
 </ul>
+<div class="codehilite"><pre><span></span>&lt;1-99&gt;       Standard IP access-list number
+&lt;1300-1999&gt;  Standard IP access-list number (expanded range)
+WORD         Access-list name
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="nx">ip</span> <span class="nx">access</span><span class="o">-</span><span class="nx">list</span> <span class="nx">standard</span> <span class="mi">5</span> <span class="nx">deny</span> <span class="mf">3.3</span><span class="p">.</span><span class="mf">3.0</span> <span class="mf">0.0</span><span class="p">.</span><span class="mf">0.255</span>
+<span class="kr">interface</span> <span class="nx">fastethernet0</span>
+<span class="nx">ip</span> <span class="nx">access</span><span class="o">-</span><span class="nx">group</span> <span class="mi">5</span> <span class="k">in</span>
+</pre></div>
+
+
 <h4 id="extended-acl">Extended ACL</h4>
-<h4 id="wildcard-masks">Wildcard masks</h4>
-<ul>
-<li>0 --&gt; All bits must match.</li>
-<li>1 --&gt; Does not need to match.</li>
-</ul>
                 
                   
                 
