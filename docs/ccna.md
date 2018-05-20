@@ -188,7 +188,7 @@ Socket ---> Combination of an ipaddress and a port number.
 192.168.1.1:10000
 
 ### DHCP ###
-**DORA**
+**DORA**  
 1. Discover - Broadcast from client.  
 2. Offer - DHCP server receives Discover and sends unicast offer to client.  
 3. Request - Client sends request for the offered IP address.  
