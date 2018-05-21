@@ -306,15 +306,15 @@
     Port-Security
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#mac-aging" title="Mac aging" class="md-nav__link">
-    Mac aging
+  <a href="#mac-aging" title="MAC aging" class="md-nav__link">
+    MAC aging
   </a>
   
-</li>
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#mac-address-conversion" title="MAC address conversion" class="md-nav__link">
@@ -549,8 +549,70 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#named-extendedstandard-acl" title="Named Extended/Standard ACL" class="md-nav__link">
+    Named Extended/Standard ACL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acl-on-vty-lines" title="ACL on VTY lines" class="md-nav__link">
+    ACL on VTY lines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acl-sequence-numbers" title="ACL Sequence numbers" class="md-nav__link">
+    ACL Sequence numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-to-apply-acls" title="Where to apply ACLs" class="md-nav__link">
+    Where to apply ACLs
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ntp-network-time-protocol" title="NTP - Network Time Protocol" class="md-nav__link">
+    NTP - Network Time Protocol
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stratum-level-of-accuracy-of-the-ntp-server" title="Stratum - Level of accuracy of the NTP server." class="md-nav__link">
+    Stratum - Level of accuracy of the NTP server.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ntp-modes" title="NTP Modes" class="md-nav__link">
+    NTP Modes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-pat-network-address-translation-port-address-translation" title="NAT / PAT - Network Address Translation / Port Address Translation" class="md-nav__link">
+    NAT / PAT - Network Address Translation / Port Address Translation
+  </a>
   
 </li>
         
@@ -656,15 +718,15 @@
     Port-Security
   </a>
   
-    <nav class="md-nav">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
-  <a href="#mac-aging" title="Mac aging" class="md-nav__link">
-    Mac aging
+  <a href="#mac-aging" title="MAC aging" class="md-nav__link">
+    MAC aging
   </a>
   
-</li>
+    <nav class="md-nav">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#mac-address-conversion" title="MAC address conversion" class="md-nav__link">
@@ -899,8 +961,70 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#named-extendedstandard-acl" title="Named Extended/Standard ACL" class="md-nav__link">
+    Named Extended/Standard ACL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acl-on-vty-lines" title="ACL on VTY lines" class="md-nav__link">
+    ACL on VTY lines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acl-sequence-numbers" title="ACL Sequence numbers" class="md-nav__link">
+    ACL Sequence numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-to-apply-acls" title="Where to apply ACLs" class="md-nav__link">
+    Where to apply ACLs
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ntp-network-time-protocol" title="NTP - Network Time Protocol" class="md-nav__link">
+    NTP - Network Time Protocol
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stratum-level-of-accuracy-of-the-ntp-server" title="Stratum - Level of accuracy of the NTP server." class="md-nav__link">
+    Stratum - Level of accuracy of the NTP server.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ntp-modes" title="NTP Modes" class="md-nav__link">
+    NTP Modes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-pat-network-address-translation-port-address-translation" title="NAT / PAT - Network Address Translation / Port Address Translation" class="md-nav__link">
+    NAT / PAT - Network Address Translation / Port Address Translation
+  </a>
   
 </li>
         
@@ -992,7 +1116,7 @@ Cannot be enabled on a trunk/dynamic/auto port. Must be an access port.</p>
 </pre></div>
 
 
-<h4 id="mac-aging">Mac aging</h4>
+<h3 id="mac-aging">MAC aging</h3>
 <p>Dynamic MAC aging default = 0<br />
 absolute timer = Counts down irregardless of traffic<br />
 inactivity timer = resets when traffic is seen from MAC.<br />
@@ -1495,6 +1619,105 @@ WORD         Access-list name
 
 
 <h4 id="extended-acl">Extended ACL</h4>
+<ul>
+<li>Can match on source AND/OR destination.</li>
+</ul>
+<h4 id="named-extendedstandard-acl">Named Extended/Standard ACL</h4>
+<ul>
+<li>Allows naming of Access list instead of number.</li>
+<li>Valid for Standard and Extended ACL.</li>
+<li>Cannot have an Extended and Standard ACL with the same name.</li>
+<li>You need to use <code>ip access-list standard | extended</code> instead of <code>access-list</code></li>
+</ul>
+<div class="codehilite"><pre><span></span>conf t
+ip access-list extended BLOCK11
+deny ip 3.3.3.0 0.0.0.255 11.11.11.0 0.0.0.255
+permet ip any any
+</pre></div>
+
+
+<h4 id="acl-on-vty-lines">ACL on VTY lines</h4>
+<div class="codehilite"><pre><span></span>conf t
+line vty 0 14
+access-class MGMT-NETWORKS in
+</pre></div>
+
+
+<h4 id="acl-sequence-numbers">ACL Sequence numbers</h4>
+<ul>
+<li>Allows moving and deletion of specific lines within the ACL.</li>
+<li>You cannot move or reassign a sequence number.</li>
+<li>You need to delete and recreate the line with the new sequence number.</li>
+</ul>
+<div class="codehilite"><pre><span></span>conf t
+ip access-list extended 101
+no $SEQUENCE_NUMVER
+</pre></div>
+
+
+<h4 id="where-to-apply-acls">Where to apply ACLs</h4>
+<ul>
+<li>Apply Extended ACLs as close to the <strong>source</strong> of the traffic.</li>
+<li>Apply Standard ACL as close to the <strong>destination</strong> as possible.</li>
+</ul>
+<h3 id="ntp-network-time-protocol">NTP - Network Time Protocol</h3>
+<ul>
+<li>Creates a single source of time for all device on the network.</li>
+<li>UDP Port 123</li>
+</ul>
+<h4 id="stratum-level-of-accuracy-of-the-ntp-server">Stratum - Level of accuracy of the NTP server.</h4>
+<ul>
+<li>0 --&gt; Atomic clocks</li>
+<li>1 --&gt; Gets time from a stratum 0 NTP server.</li>
+</ul>
+<h4 id="ntp-modes">NTP Modes</h4>
+<ul>
+<li>Master : Set the device itself as the master and will synch with itself to synchronize time.</li>
+<li>Peer : The two devices will dynamically synchronize time between the two.</li>
+<li>Server : The client device will ask time from the server. Does not send time synchronize requests to the server.</li>
+<li>Broadcast Mode : Broadcast mode for NTP packets.</li>
+</ul>
+<div class="codehilite"><pre><span></span>!*** Set the device itself as the master NTP server.
+conf t
+ntp master
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>!*** Set the NTP server for the device.
+conf t
+ntp server ntp.nist.ca
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>conf t
+ntp peer ntp.potato.com
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>!*** Show all ntp services from which the device will sync it&#39;s clock. Also shows the preferred device.
+show ntp associations
+
+show ntp status
+
+show clock
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="o">!***</span> <span class="nx">Under</span> <span class="nx">device</span> <span class="kr">interface</span> <span class="nx">configuration</span><span class="p">.</span>
+<span class="o">!***</span> <span class="nx">Sets</span> <span class="nx">broadcast</span> <span class="nx">server</span> <span class="nx">mode</span> <span class="p">(</span><span class="nx">send</span> <span class="nx">updates</span><span class="p">)</span>
+<span class="nx">conf</span> <span class="nx">t</span>
+<span class="kr">interface</span> <span class="nx">serial</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="nx">ntp</span> <span class="nx">broadcast</span>
+
+
+<span class="o">!***</span> <span class="nx">Set</span> <span class="nx">client</span> <span class="nx">broadcast</span> <span class="nx">mode</span>
+<span class="nx">conf</span> <span class="nx">t</span>
+<span class="kr">interface</span> <span class="nx">serial</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="nx">ntp</span> <span class="nx">broadcast</span> <span class="nx">client</span>
+</pre></div>
+
+
+<h3 id="nat-pat-network-address-translation-port-address-translation">NAT / PAT - Network Address Translation / Port Address Translation</h3>
                 
                   
                 
