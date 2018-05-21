@@ -10,6 +10,15 @@ enable secret potato2
 enable password = potato2
 ```
 
+Enable AAA (allow user with privilege 15 to login straight into enable mode)
+```
+conf t
+aaa new-model
+aaa authentication login default group local
+aaa authorization exec default group local
+```
+
+
 Create user with default privilege 15 level
 ```
 conf t
@@ -179,7 +188,7 @@ Socket ---> Combination of an ipaddress and a port number.
 192.168.1.1:10000
 
 ### DHCP ###
-**DORA**
+**DORA**  
 1. Discover - Broadcast from client.  
 2. Offer - DHCP server receives Discover and sends unicast offer to client.  
 3. Request - Client sends request for the offered IP address.  
@@ -323,3 +332,92 @@ ip route 2.2.2.0 255.255.255.0 21.1.1.2 [static route metric here | higher than 
 ```
 
 ### Subnetting ###
+
+|| 128  | 64  | 32 | 16 | 8 | 4 | 2 | 1 |
+|-----|-------------|-----|-----|-----|-----|-----|-----|-----|
+|45| 0 |0 |0 |0 |1 |1 | 0| 1|
+
+200.17.100.3
+
+| | 128  | 64  | 32 | 16 | 8 | 4 | 2 | 1 |
+|-----|-------------|-----|-----|-----|-----|-----|-----|-----|
+| 200| 1| 1 | 0| 0| 1|0 |0 |0 |
+| 17| 0| 0| 0| 1|0 |0 |0 | 1 |
+| 100| 0 |1 |1 |0 |0 |1 |0 |0 |
+| 3| 0| 0| 0| 0| 0| 0|1 | 1|
+
+11001000.00010001.01100100.00000011
+
+#### Network class ####
+
+||Class A| Class B| Class C
+|----|----|----|----|
+| 1st Octet range| 1 - 126 | 128 - 191 | 192 - 223 |
+| Network Mask | 255.0.0.0 - /8 |255.255.0.0 - /16 | 255.255.255.0 - /24 |
+
+#### Number of subnet in a network - 200.1.1.0 /27 ####
+
+1. Find the class of the subnet --> Class C (+192)
+2. A class C is a /24 by default.
+3. /27 - /24 = 3 subnet bits.
+4. Number of subnet --> 2^Number_subnet_bits_remaining --> 2^3 --> 2 * 2 * 2 = 8 subnets
+
+#### Number of hosts per subnet - 200.1.1.0 /27 ####
+
+1. Find the number of host bits --> /32 - /27 --> /5 host bits
+2. Find the number of valid host per subnet - remove subnet and broadcast address.
+3. (2^(number of host bits))-2 --> 2^5 --> 2 * 2 * 2 * 2 * 2 --> 32 - 2 --> 30
+
+#### Find the Subnet of an IP address - 10.17.2.14/18 ####
+
+1. /18 = First two octets = 16 bits + 2 bits from third octet
+2. 10.17.00000010
+3. 10.17.**00** 000000 --> Total of 18 bits for subnet address
+4. Subnet address = 10.17.0.0/18
+
+####  Find the broadcast and range of valid addresses in subnet - 210.46.110.0 /25 ####
+
+1. /32 - /25 = last 7 bits --> host bits
+2. 01111111 --> 64 + 32 +16 +8 + 4 + 2 +1 --> 96 + 16 + 15 --> 96 + 31 --> Broadcast = 210.46.110.127
+
+####  Find the broadcast and range of valid addresses in subnet - 150.10.64.0 /18 ####
+
+1. /32 - /18 = last 14 bits --> host bits
+
+| | 128  | 64  | 32 | 16 | 8 | 4 | 2 | 1 |
+|-----|-------------|-----|-----|-----|-----|-----|-----|-----|
+| 64| 0| 1 | 0| 0| 0|0 |0 |0 |
+
+2. Broadcast --> 150.10.0**1111111.11111111** --> 150.10.127.255
+3. Range of valid addresses --> 150.10.64.1 to 150.10.127.254
+
+### Access Lists ###
+
+* All ACL have an implicit DENY ALL ALL at the end.
+* The search is done TOP to BOTTOM
+* When a match is found, that's the end of the search. Any remaining lines are not examined.
+
+#### Wildcard masks ####
+
+* 0 --> All bits must match.
+* 1 --> Does not need to match.
+
+#### Standard ACL ####
+
+* Can only match on the SOURCE ip address of a packet.
+* Standard Access list number : 1 --> 99
+* Standard expanded access list number : 1300 --> 1999
+
+```
+<1-99>       Standard IP access-list number
+<1300-1999>  Standard IP access-list number (expanded range)
+WORD         Access-list name
+```
+
+```
+ip access-list standard 5 deny 3.3.3.0 0.0.0.255
+interface fastethernet0
+ip access-group 5 in
+```
+
+#### Extended ACL ####
