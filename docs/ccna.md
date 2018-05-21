@@ -421,3 +421,104 @@ ip access-group 5 in
 ```
 
 #### Extended ACL ####
+
+* Can match on source AND/OR destination.
+
+#### Named Extended/Standard ACL ####
+
+* Allows naming of Access list instead of number.
+* Valid for Standard and Extended ACL.
+* Cannot have an Extended and Standard ACL with the same name.
+* You need to use `ip access-list standard | extended` instead of `access-list`
+
+```
+conf t
+ip access-list extended BLOCK11
+deny ip 3.3.3.0 0.0.0.255 11.11.11.0 0.0.0.255
+permet ip any any
+```
+
+#### ACL on VTY lines ####
+
+```
+conf t
+line vty 0 14
+access-class MGMT-NETWORKS in
+```
+
+#### ACL Sequence numbers####
+
+* Allows moving and deletion of specific lines within the ACL.
+* You cannot move or reassign a sequence number.
+* You need to delete and recreate the line with the new sequence number.
+
+```
+conf t
+ip access-list extended 101
+no $SEQUENCE_NUMVER
+```
+
+#### Where to apply ACLs ####
+
+* Apply Extended ACLs as close to the **source** of the traffic.
+* Apply Standard ACL as close to the **destination** as possible.
+
+
+### NTP - Network Time Protocol ###
+
+* Creates a single source of time for all device on the network.
+* UDP Port 123
+
+#### Stratum - Level of accuracy of the NTP server. ####
+* 0 --> Atomic clocks
+* 1 --> Gets time from a stratum 0 NTP server.
+
+#### NTP Modes ####
+* Master : Set the device itself as the master and will synch with itself to synchronize time.
+* Peer : The two devices will dynamically synchronize time between the two.
+* Server : The client device will ask time from the server. Does not send time synchronize requests to the server.
+* Broadcast Mode : Broadcast mode for NTP packets.
+
+
+```
+!*** Set the device itself as the master NTP server.
+conf t
+ntp master
+```
+
+```
+!*** Set the NTP server for the device.
+conf t
+ntp server ntp.nist.ca
+```
+
+```
+conf t
+ntp peer ntp.potato.com
+```
+
+```
+!*** Show all ntp services from which the device will sync it's clock. Also shows the preferred device.
+show ntp associations
+
+show ntp status
+
+show clock
+```
+
+```
+!*** Under device interface configuration.
+!*** Sets broadcast server mode (send updates)
+conf t
+interface serial 0/1/0
+ntp broadcast
+
+
+!*** Set client broadcast mode
+conf t
+interface serial 0/1/0
+ntp broadcast client
+
+```
+
+### NAT / PAT - Network Address Translation / Port Address Translation ###
