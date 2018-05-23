@@ -522,3 +522,67 @@ ntp broadcast client
 ```
 
 ### NAT / PAT - Network Address Translation / Port Address Translation ###
+
+* Local --> Private address
+* Global --> Public routable address
+
+* Inside Local --> **Local Address** being translated to External.
+* Inside Global --> **External Address** that is used during the NAT.
+* Outside Local --> **Non-routable** addresses of the host on the remote network.
+* Outside Global --> **Routable** addresses of the host on the remote network.
+
+#### Static NAT ####
+
+* One to one mapping of an Inside Local to a Inside Global.
+  * I.E : Map a public IP to the internal IP of a server.
+
+```
+!*** Place on the interfaces closest to the hosts.
+ip nat inside
+
+!*** Place on the WAN interface.
+ip nat outside
+
+!*** Setup Static NAT / One to one mapping
+ip nat inside source static 10.1.1.2 200.1.1.1
+
+
+!*** Show translations
+show ip nat translations
+
+!*** Show NAT statistics
+show ip nat statistics
+
+!*** clear ip nat table to reset the NAT mappings
+clear ip nat translations *
+```
+
+#### Dynamic NAT ####
+
+Allow the NAT of a pool of internal address to a pool of outside addresses.
+
+```
+!*** Create IP NAT Pool
+ip nat pool CCNA 200.1.1.1 200.1.1.5 prefix-length 24
+
+!*** Create the access-list of internal host that will be NAT.
+access-list 2 permit host 10.1.1.2
+access-list 2 permit host 10.1.1.22
+
+!*** Create the NAT function for the access-list 2 and the pool CCNA  
+ip nat inside source list 2 pool CCNA
+
+```
+
+#### Port address translation - NAT Overload ####
+
+Allows the mapping of multiple inside addresses to a single outside address using a combination of the IP address / Port Number in ordre to uniquely identify each flow of data.
+
+```
+!*** Overload of the inside addresses to the outside address
+ip nat inside source list 2 interface serial0/1/0 overload
+```
+
+#### IPV6 ####
+
+* Solution to the IPv4 exhaustion.
