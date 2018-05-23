@@ -614,6 +614,40 @@
     NAT / PAT - Network Address Translation / Port Address Translation
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-nat" title="Static NAT" class="md-nav__link">
+    Static NAT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-nat" title="Dynamic NAT" class="md-nav__link">
+    Dynamic NAT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-address-translation-nat-overload" title="Port address translation - NAT Overload" class="md-nav__link">
+    Port address translation - NAT Overload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv6" title="IPV6" class="md-nav__link">
+    IPV6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1025,6 +1059,40 @@
   <a href="#nat-pat-network-address-translation-port-address-translation" title="NAT / PAT - Network Address Translation / Port Address Translation" class="md-nav__link">
     NAT / PAT - Network Address Translation / Port Address Translation
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-nat" title="Static NAT" class="md-nav__link">
+    Static NAT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-nat" title="Dynamic NAT" class="md-nav__link">
+    Dynamic NAT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-address-translation-nat-overload" title="Port address translation - NAT Overload" class="md-nav__link">
+    Port address translation - NAT Overload
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv6" title="IPV6" class="md-nav__link">
+    IPV6
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -1718,6 +1786,69 @@ show clock
 
 
 <h3 id="nat-pat-network-address-translation-port-address-translation">NAT / PAT - Network Address Translation / Port Address Translation</h3>
+<ul>
+<li>Local --&gt; Private address</li>
+<li>
+<p>Global --&gt; Public routable address</p>
+</li>
+<li>
+<p>Inside Local --&gt; <strong>Local Address</strong> being translated to External.</p>
+</li>
+<li>Inside Global --&gt; <strong>External Address</strong> that is used during the NAT.</li>
+<li>Outside Local --&gt; <strong>Non-routable</strong> addresses of the host on the remote network.</li>
+<li>Outside Global --&gt; <strong>Routable</strong> addresses of the host on the remote network.</li>
+</ul>
+<h4 id="static-nat">Static NAT</h4>
+<ul>
+<li>One to one mapping of an Inside Local to a Inside Global.</li>
+<li>I.E : Map a public IP to the internal IP of a server.</li>
+</ul>
+<div class="codehilite"><pre><span></span>!*** Place on the interfaces closest to the hosts.
+ip nat inside
+
+!*** Place on the WAN interface.
+ip nat outside
+
+!*** Setup Static NAT / One to one mapping
+ip nat inside source static 10.1.1.2 200.1.1.1
+
+
+!*** Show translations
+show ip nat translations
+
+!*** Show NAT statistics
+show ip nat statistics
+
+!*** clear ip nat table to reset the NAT mappings
+clear ip nat translations *
+</pre></div>
+
+
+<h4 id="dynamic-nat">Dynamic NAT</h4>
+<p>Allow the NAT of a pool of internal address to a pool of outside addresses.</p>
+<div class="codehilite"><pre><span></span>!*** Create IP NAT Pool
+ip nat pool CCNA 200.1.1.1 200.1.1.5 prefix-length 24
+
+!*** Create the access-list of internal host that will be NAT.
+access-list 2 permit host 10.1.1.2
+access-list 2 permit host 10.1.1.22
+
+!*** Create the NAT function for the access-list 2 and the pool CCNA  
+ip nat inside source list 2 pool CCNA
+</pre></div>
+
+
+<h4 id="port-address-translation-nat-overload">Port address translation - NAT Overload</h4>
+<p>Allows the mapping of multiple inside addresses to a single outside address using a combination of the IP address / Port Number in ordre to uniquely identify each flow of data.</p>
+<div class="codehilite"><pre><span></span>!*** Overload of the inside addresses to the outside address
+ip nat inside source list 2 interface serial0/1/0 overload
+</pre></div>
+
+
+<h4 id="ipv6">IPV6</h4>
+<ul>
+<li>Solution to the IPv4 exhaustion.</li>
+</ul>
                 
                   
                 
