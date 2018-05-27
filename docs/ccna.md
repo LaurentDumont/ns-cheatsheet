@@ -583,6 +583,103 @@ Allows the mapping of multiple inside addresses to a single outside address usin
 ip nat inside source list 2 interface serial0/1/0 overload
 ```
 
-#### IPV6 ####
+### IPv6 ###
 
 * Solution to the IPv4 exhaustion.
+* 128 bit addresses
+* 8 blocks of 4 HEX characters.
+* IANA (Internet Assigned Numbers Authority) - Assigns IP blocks to RIR (Regional Internet Registry - ARIN, RIPE, AFRINIC, APNIC, LACNIC.
+
+#### Compressing IPv6 addresses ####
+
+* Compress consecutive blocks of 0000 with ::
+  * Can only do once per IPv6 addresses
+* Remove leading 0 in blocks.
+
+#### Assigning IPv6 addresses to interfaces ####
+
+```
+!### Enable IPv6 Routing for the router.
+ipv6 unicast-routing
+
+!### Assign an IPv6 address to an interface
+interface fastethernet0/1
+ipv6 address 2001:1111:2222:1::1/64
+```
+
+#### Types of IPv6 addresses. ####
+
+* There is no broadcast - only Unicast and Multicast.
+
+* Global Unicast addresses
+
+
+* Link-local addresses : Addresses used in links directly.
+  * Routers will not route those packets.
+  * Addresses will always start FE80:0000:0000:0000 (FE80:/10)
+  * 64-bit interface identifier - EUI-64 process
+
+#### EUI-64 Process ####
+
+1. Take MAC address of the interface
+2. 11-22-33-aa-bb-cc
+3. Divide in half and insert FFFE.
+  * 11-22-33-FF-FE-AA-BB-CC
+  * 1122:33FF:FEAA:BBCC
+4. Do the bit inversion (invert the 7th bit of the address)
+  1. 1122:33FF:FEAA:BBCC --> 1322:33FF:FEAA:BBCC
+
+#### Use EUI-64 process for global unicast address. ####
+
+```
+ipv6 address 2001:1111:2222:1::/64 eui-64
+```
+
+### IPv6 NDP - Neighbor Discovery Process ###
+
+* Allows IPv6 enabled device to discover hosts and routers on an IPv6 enabled network. The discovery process is different for routers and hosts.
+
+#### NDP - Router Discovery ####
+
+1. Hosts multicast packet - Router Solicitation (RS) message - Destination address FF02::2 - All-IPv6-Routers address
+2. Routers receives RS on FF02::2 and sends RA (Router Advertisement).
+ * If the soliciting node **HAS** an IPv6 address --> RA is unicast to the host.
+ * If the soliciting node **DOES NOT** have an IPv6 address --> RA is sent to FF02::1 - "All-IPV6-Nodes"
+ * RA are also sent to FF02::1 every 200 seconds.
+   * FF02::1 --> All IPv6 hosts.
+
+
+#### NDP - Host Discovery ####
+
+* NS --> Neighbor Solicitation.
+* NA --> Neighbor Advertisement.
+  * NA is sent to SNMA - Solicited-node multicast address.
+    * Always begin with FF02::1:FF
+    * Contains the last 6 HEX characters of the interface mac address. That way only the relevant hosts will receive the requested NA.
+* Host that receives the NA, add the entry to the NDP table - same purpose as the ARP table.
+
+#### DHCP and IPv6 ####
+
+* Same basic functionality as IPv4 but two different types of DHCPv6 servers : Stateful and Stateless.
+
+##### Stateful DHCP #####
+
+* SARR (instead of DORA)
+1. Solicit - Client
+2. Advertise - Server offers the address to the Client
+3. Request - Client request the previously offered lease to the server
+4. Reply - The Server confirms the lease to the client
+
+Stateful DHCP does not send "Default Gateway" in the DHCP lease. That part is discovered during the NDP process with NA and NS messages.
+
+##### Stateless DHCP #####
+
+* Stateless autoconfiguration - SLAAC.
+* Hosts will generate their own ip addresses from information received during the RA - RS process. RA messages will contain the subnet prefix and the prefix length. The host will then create it's own IP address adding it's own interface identifier at the end.
+
+
+#### IPv6 - Duplicate Address Detection - DAD ####
+
+Prevents duplicate addresses from being used on the network.
+1. The host will send an NS (with the source address all :: - 128 zeros - unspecified ipv6 address) to the address it wants to use to FF02::1 (All IPV6 nodes)
+2. If it gets a response, it means that a host is already using that address.
