@@ -747,6 +747,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#ipv6-packet-header" title="IPv6 Packet Header" class="md-nav__link">
+    IPv6 Packet Header
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1291,6 +1298,13 @@
           <li class="md-nav__item">
   <a href="#ipv6-duplicate-address-detection-dad" title="IPv6 - Duplicate Address Detection - DAD" class="md-nav__link">
     IPv6 - Duplicate Address Detection - DAD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv6-packet-header" title="IPv6 Packet Header" class="md-nav__link">
+    IPv6 Packet Header
   </a>
   
 </li>
@@ -2054,6 +2068,9 @@ ip nat inside source list 2 interface serial0/1/0 overload
 <li>Solution to the IPv4 exhaustion.</li>
 <li>128 bit addresses</li>
 <li>8 blocks of 4 HEX characters.</li>
+<li>No more broadcast - only multicasts.</li>
+<li>Easier summarization.</li>
+<li>Can be run without a DHCP server.</li>
 <li>IANA (Internet Assigned Numbers Authority) - Assigns IP blocks to RIR (Regional Internet Registry - ARIN, RIPE, AFRINIC, APNIC, LACNIC.</li>
 </ul>
 <h4 id="compressing-ipv6-addresses">Compressing IPv6 addresses</h4>
@@ -2079,6 +2096,9 @@ ip nat inside source list 2 interface serial0/1/0 overload
 </li>
 <li>
 <p>Global Unicast addresses</p>
+</li>
+<li>
+<p>Routable public addresses</p>
 </li>
 <li>
 <p>Link-local addresses : Addresses used in links directly.</p>
@@ -2148,6 +2168,17 @@ ip nat inside source list 2 interface serial0/1/0 overload
 <p>Prevents duplicate addresses from being used on the network.
 1. The host will send an NS (with the source address all :: - 128 zeros - unspecified ipv6 address) to the address it wants to use to FF02::1 (All IPV6 nodes)
 2. If it gets a response, it means that a host is already using that address.</p>
+<h4 id="ipv6-packet-header">IPv6 Packet Header</h4>
+<ul>
+<li>Version : Set to 6</li>
+<li>Traffic class : Replaces "Type of Service". Allow level of importance with QOS.</li>
+<li>Flow Label: NEW FIELD - Allow traffic priorities and categorization. Works with QOS and Traffic Class.</li>
+<li>Payload Length: Total length of packet</li>
+<li>Hop Limit : Like the TTL field of IPv4. Each hope decreases the counter by 1.</li>
+<li>Next Header : Equivalent to the Protocol field.</li>
+<li>Source Address : Source Address of the packet</li>
+<li>Destination Address : Destination Address of the packet</li>
+</ul>
                 
                   
                 
