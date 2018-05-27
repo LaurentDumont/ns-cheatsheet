@@ -588,6 +588,9 @@ ip nat inside source list 2 interface serial0/1/0 overload
 * Solution to the IPv4 exhaustion.
 * 128 bit addresses
 * 8 blocks of 4 HEX characters.
+* No more broadcast - only multicasts.
+* Easier summarization.
+* Can be run without a DHCP server.
 * IANA (Internet Assigned Numbers Authority) - Assigns IP blocks to RIR (Regional Internet Registry - ARIN, RIPE, AFRINIC, APNIC, LACNIC.
 
 #### Compressing IPv6 addresses ####
@@ -612,7 +615,7 @@ ipv6 address 2001:1111:2222:1::1/64
 * There is no broadcast - only Unicast and Multicast.
 
 * Global Unicast addresses
-
+  * Routable public addresses
 
 * Link-local addresses : Addresses used in links directly.
   * Routers will not route those packets.
@@ -648,7 +651,6 @@ ipv6 address 2001:1111:2222:1::/64 eui-64
  * RA are also sent to FF02::1 every 200 seconds.
    * FF02::1 --> All IPv6 hosts.
 
-
 #### NDP - Host Discovery ####
 
 * NS --> Neighbor Solicitation.
@@ -677,9 +679,19 @@ Stateful DHCP does not send "Default Gateway" in the DHCP lease. That part is di
 * Stateless autoconfiguration - SLAAC.
 * Hosts will generate their own ip addresses from information received during the RA - RS process. RA messages will contain the subnet prefix and the prefix length. The host will then create it's own IP address adding it's own interface identifier at the end.
 
-
 #### IPv6 - Duplicate Address Detection - DAD ####
 
 Prevents duplicate addresses from being used on the network.
 1. The host will send an NS (with the source address all :: - 128 zeros - unspecified ipv6 address) to the address it wants to use to FF02::1 (All IPV6 nodes)
 2. If it gets a response, it means that a host is already using that address.
+
+#### IPv6 Packet Header ####
+
+* Version : Set to 6
+* Traffic class : Replaces "Type of Service". Allow level of importance with QOS.
+* Flow Label: NEW FIELD - Allow traffic priorities and categorization. Works with QOS and Traffic Class.
+* Payload Length: Total length of packet
+* Hop Limit : Like the TTL field of IPv4. Each hope decreases the counter by 1.
+* Next Header : Equivalent to the Protocol field.
+* Source Address : Source Address of the packet
+* Destination Address : Destination Address of the packet
