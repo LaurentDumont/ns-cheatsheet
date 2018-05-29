@@ -42,6 +42,7 @@ line vty 0 15
 privilege level 15
 ```
 
+"Encrypt" passwords in the startup-config.
 ```
 service password-encryption
 ```
@@ -695,3 +696,25 @@ Prevents duplicate addresses from being used on the network.
 * Next Header : Equivalent to the Protocol field.
 * Source Address : Source Address of the packet
 * Destination Address : Destination Address of the packet
+
+### Logging and Timestamps ###
+
+Change the aspect and format of timestamps for SYSLOG and DEBUG message.
+```
+service timestamps log datetime
+
+!### Add year to log timestamps.
+service timestamps log datetime year
+
+!### Add millisecond to log timestamps.
+service timestamps log datetime msec
+
+service timestamps log datetime year msec show-timezone
+```
+
+#### Logging to remote server ####
+
+```
+
+
+```
