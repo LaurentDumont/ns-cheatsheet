@@ -713,8 +713,3 @@ service timestamps log datetime year msec show-timezone
 ```
 
 #### Logging to remote server ####
-
-```
-
-
-```
