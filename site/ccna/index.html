@@ -759,6 +759,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#logging-and-timestamps" title="Logging and Timestamps" class="md-nav__link">
+    Logging and Timestamps
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logging-to-remote-server" title="Logging to remote server" class="md-nav__link">
+    Logging to remote server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1314,6 +1334,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#logging-and-timestamps" title="Logging and Timestamps" class="md-nav__link">
+    Logging and Timestamps
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logging-to-remote-server" title="Logging to remote server" class="md-nav__link">
+    Logging to remote server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1381,6 +1421,7 @@ privilege level 15
 </pre></div>
 
 
+<p>"Encrypt" passwords in the startup-config.</p>
 <div class="codehilite"><pre><span></span>service password-encryption
 </pre></div>
 
@@ -2179,6 +2220,23 @@ ip nat inside source list 2 interface serial0/1/0 overload
 <li>Source Address : Source Address of the packet</li>
 <li>Destination Address : Destination Address of the packet</li>
 </ul>
+<h3 id="logging-and-timestamps">Logging and Timestamps</h3>
+<p>Change the aspect and format of timestamps for SYSLOG and DEBUG message.</p>
+<div class="codehilite"><pre><span></span>service timestamps log datetime
+
+!### Add year to log timestamps.
+service timestamps log datetime year
+
+!### Add millisecond to log timestamps.
+service timestamps log datetime msec
+
+service timestamps log datetime year msec show-timezone
+</pre></div>
+
+
+<h4 id="logging-to-remote-server">Logging to remote server</h4>
+<div class="codehilite"><pre><span></span>
+</pre></div>
                 
                   
                 
