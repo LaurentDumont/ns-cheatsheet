@@ -779,6 +779,27 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#banner-configuration" title="Banner configuration" class="md-nav__link">
+    Banner configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdp-cisco-discovery-protocol" title="CDP - Cisco Discovery Protocol" class="md-nav__link">
+    CDP - Cisco Discovery Protocol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lldp-link-layer-discovery-protocols" title="LLDP - Link Layer Discovery Protocols" class="md-nav__link">
+    LLDP - Link Layer Discovery Protocols
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1351,6 +1372,27 @@
         
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#banner-configuration" title="Banner configuration" class="md-nav__link">
+    Banner configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdp-cisco-discovery-protocol" title="CDP - Cisco Discovery Protocol" class="md-nav__link">
+    CDP - Cisco Discovery Protocol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lldp-link-layer-discovery-protocols" title="LLDP - Link Layer Discovery Protocols" class="md-nav__link">
+    LLDP - Link Layer Discovery Protocols
+  </a>
   
 </li>
         
@@ -2235,6 +2277,73 @@ service timestamps log datetime year msec show-timezone
 
 
 <h4 id="logging-to-remote-server">Logging to remote server</h4>
+<p><img alt="SYSLOG-SEV-LEVELS" src="../images/syslog-sev-levels.png" /></p>
+<p>Enable logging to the console.</p>
+<div class="codehilite"><pre><span></span>logging console
+</pre></div>
+
+
+<p>Enable buffered logging. Local buffer on the server.</p>
+<div class="codehilite"><pre><span></span>logging buffer
+</pre></div>
+
+
+<p>Enable logging to a remote server.</p>
+<div class="codehilite"><pre><span></span>logging host $SYSLOG_SERVER_IPADDRESS
+</pre></div>
+
+
+<p>Enable console logging on SSH/Telnet session</p>
+<div class="codehilite"><pre><span></span>conf t
+logging monitor
+exit
+terminal monitor
+</pre></div>
+
+
+<h3 id="banner-configuration">Banner configuration</h3>
+<p>Three types of banners.</p>
+<ul>
+<li>Login : Shown during the login prompt. Telnet and SSH.</li>
+<li>Exec : Shown after the user logs in. Telnet and SSH.</li>
+<li>MOTD : Shown along the login prompt. SSHv2 --&gt; SHOWN AFTER LOGIN INTO THE DEVICE WITH EXEC BANNER.</li>
+</ul>
+<h3 id="cdp-cisco-discovery-protocol">CDP - Cisco Discovery Protocol</h3>
+<ul>
+<li>Default timers</li>
+<li>Hold Timer - 180 seconds - After 180 seconds, the entry is removed.</li>
+<li>Advertisement timer - 60 seconds.</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="nx">show</span> <span class="nx">cdp</span> <span class="nx">neighbors</span>
+<span class="nx">show</span> <span class="nx">cdp</span> <span class="nx">neighbors</span> <span class="nx">details</span>
+<span class="nx">show</span> <span class="nx">cdp</span> <span class="nx">entry</span> <span class="nx">$REMOTE_DEVICE_HOSTNAME</span>
+
+<span class="o">!***</span> <span class="nx">Enable</span> <span class="nx">CDP</span> <span class="nx">globally</span><span class="p">.</span>
+<span class="nx">cdp</span> <span class="nx">run</span>
+<span class="nx">no</span> <span class="nx">cdp</span> <span class="nx">run</span>
+
+<span class="o">!***</span> <span class="nx">Enable</span> <span class="nx">CDP</span> <span class="nx">on</span> <span class="nx">an</span> <span class="kr">interface</span>
+<span class="kr">interface</span> <span class="nx">fastethernet0</span><span class="o">/</span><span class="mi">0</span>
+<span class="nx">cdp</span> <span class="nx">enable</span>
+<span class="nx">no</span> <span class="nx">cdp</span> <span class="nx">enable</span>
+
+<span class="o">!***</span> <span class="nx">Show</span> <span class="nx">CDP</span> <span class="nx">information</span>
+<span class="nx">show</span> <span class="nx">cdp</span> <span class="nx">information</span>
+<span class="nx">show</span> <span class="nx">cdp</span> <span class="kr">interface</span> <span class="nx">fastethernet</span> <span class="mi">0</span><span class="o">/</span><span class="mi">0</span>
+</pre></div>
+
+
+<h3 id="lldp-link-layer-discovery-protocols">LLDP - Link Layer Discovery Protocols</h3>
+<div class="codehilite"><pre><span></span>show lldp
+
+conf t
+lldp run
+
+show lldp neighbor detail
+</pre></div>
+
+
+<p><img alt="SYSLOG-SEV-LEVELS" src="../images/cdp-lldp.png" /></p>
                 
                   
                 
