@@ -783,5 +783,4 @@ lldp run
 show lldp neighbor detail
 
 ```
-
 ![SYSLOG-SEV-LEVELS](/images/cdp-lldp.png)
