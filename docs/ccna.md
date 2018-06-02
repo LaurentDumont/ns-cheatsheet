@@ -786,3 +786,11 @@ show lldp neighbor detail
 
 ```
 ![SYSLOG-SEV-LEVELS](/images/cdp-lldp.png)
+
+### Confreg Register and Password Recovery
+
+* RONMON mode --> Allow to boot IOS without reading the NVRAM router config.
+```
+show version | include register
+config-register 0x2142
+```
