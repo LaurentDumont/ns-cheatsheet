@@ -800,6 +800,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#confreg-register-and-password-recovery" title="Confreg Register and Password Recovery" class="md-nav__link">
+    Confreg Register and Password Recovery
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1392,6 +1399,13 @@
           <li class="md-nav__item">
   <a href="#lldp-link-layer-discovery-protocols" title="LLDP - Link Layer Discovery Protocols" class="md-nav__link">
     LLDP - Link Layer Discovery Protocols
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confreg-register-and-password-recovery" title="Confreg Register and Password Recovery" class="md-nav__link">
+    Confreg Register and Password Recovery
   </a>
   
 </li>
@@ -2345,6 +2359,13 @@ show lldp neighbor detail
 
 
 <p><img alt="SYSLOG-SEV-LEVELS" src="../images/cdp-lldp.png" /></p>
+<h3 id="confreg-register-and-password-recovery">Confreg Register and Password Recovery</h3>
+<ul>
+<li>RONMON mode --&gt; Allow to boot IOS without reading the NVRAM router config.</li>
+</ul>
+<div class="codehilite"><pre><span></span>show version | include register
+config-register 0x2142
+</pre></div>
                 
                   
                 
