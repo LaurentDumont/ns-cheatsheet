@@ -713,3 +713,75 @@ service timestamps log datetime year msec show-timezone
 ```
 
 #### Logging to remote server ####
+
+![SYSLOG-SEV-LEVELS](/images/syslog-sev-levels.png)
+
+Enable logging to the console.
+```
+logging console
+```
+
+Enable buffered logging. Local buffer on the server.
+```
+logging buffer
+```
+
+Enable logging to a remote server.
+```
+logging host $SYSLOG_SERVER_IPADDRESS
+```
+
+Enable console logging on SSH/Telnet session
+```
+conf t
+logging monitor
+exit
+terminal monitor
+```
+
+### Banner configuration ###
+
+Three types of banners.
+
+* Login : Shown during the login prompt. Telnet and SSH.
+* Exec : Shown after the user logs in. Telnet and SSH.
+* MOTD : Shown along the login prompt. SSHv2 --> SHOWN AFTER LOGIN INTO THE DEVICE WITH EXEC BANNER.
+
+### CDP - Cisco Discovery Protocol ###
+
+* Default timers
+ * Hold Timer - 180 seconds - After 180 seconds, the entry is removed.
+ * Advertisement timer - 60 seconds.
+
+```
+show cdp neighbors
+show cdp neighbors details
+show cdp entry $REMOTE_DEVICE_HOSTNAME
+
+!*** Enable CDP globally.
+cdp run
+no cdp run
+
+!*** Enable CDP on an interface
+interface fastethernet0/0
+cdp enable
+no cdp enable
+
+!*** Show CDP information
+show cdp information
+show cdp interface fastethernet 0/0
+```
+
+### LLDP - Link Layer Discovery Protocols
+
+```
+show lldp
+
+conf t
+lldp run
+
+show lldp neighbor detail
+
+```
+
+![SYSLOG-SEV-LEVELS](/images/cdp-lldp.png)

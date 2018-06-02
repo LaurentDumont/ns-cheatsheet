@@ -37,3 +37,9 @@ ifconfig tap0 10.1.1.100 netmask 255.255.255.0 up
 ```
 screen -S stress-test -d -m stress --cpu 100 --io 100 --vm 20 --vm-bytes 1G --hdd 5 --timeout 24h
 ```
+
+**Install markdown-pdf**
+```
+sudo npm install -g phantomjs --unsafe-perm
+sudo npm install -g markdown-pdf --unsafe-perm
+```
