@@ -774,6 +774,8 @@ show cdp interface fastethernet 0/0
 
 ### LLDP - Link Layer Discovery Protocols
 
+You can disable the received and transmit of LLDP packets per interface. That is not possible for CDP.
+
 ```
 show lldp
 
