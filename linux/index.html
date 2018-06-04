@@ -382,6 +382,17 @@ ifconfig tap0 10.1.1.100 netmask 255.255.255.0 up
 <div class="codehilite"><pre><span></span>sudo npm install -g phantomjs --unsafe-perm
 sudo npm install -g markdown-pdf --unsafe-perm
 </pre></div>
+
+
+<p>Debug Radius, FreeIPA, LDAP</p>
+<div class="codehilite"><pre><span></span>radiusd -X 2&gt;&amp;1 | tee debugfile
+
+tail -f /var/log/dirsrv/slapd-EVENT-DHMTL-CA/access
+
+radtest ldumont user_ldap_password 10.0.99.22 1812 shared_radius_secret
+
+ldapwhoami -vvv -h 10.0.99.22 -p 389 -D uid=ldumont,cn=users,cn=accounts,dc=event,dc=dhmtl,dc=ca -x -w user_ldap_password
+</pre></div>
                 
                   
                 
