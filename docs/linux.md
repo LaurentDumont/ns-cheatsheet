@@ -43,3 +43,15 @@ screen -S stress-test -d -m stress --cpu 100 --io 100 --vm 20 --vm-bytes 1G --hd
 sudo npm install -g phantomjs --unsafe-perm
 sudo npm install -g markdown-pdf --unsafe-perm
 ```
+
+Debug Radius, FreeIPA, LDAP
+```
+radiusd -X 2>&1 | tee debugfile
+
+tail -f /var/log/dirsrv/slapd-EVENT-DHMTL-CA/access
+
+radtest ldumont user_ldap_password 10.0.99.22 1812 shared_radius_secret
+
+ldapwhoami -vvv -h 10.0.99.22 -p 389 -D uid=ldumont,cn=users,cn=accounts,dc=event,dc=dhmtl,dc=ca -x -w user_ldap_password
+
+```
