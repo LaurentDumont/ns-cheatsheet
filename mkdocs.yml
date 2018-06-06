@@ -12,6 +12,7 @@ pages:
       - Gluster: gluster.md
       - Prometheus: prometheus.md
       - iPerf: iperf.md
+      - Juniper: juniper.md
 
 #Theme customization
 theme:
