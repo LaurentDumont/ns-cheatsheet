@@ -359,6 +359,16 @@
             "location": "/iperf/", 
             "text": "UDP TEST (DDOS like test where you send traffic to the other endpoint without any policing.\n\niPerf3 does not allow you to send traffic directly for UDP. It needs to \"connect\" to an iPerf3 endpoint, even for UDP.\n\n\n./iperf -c TARGET_IP --udp --interval 2 --bandwidth 9m\n\n\n\n\n\nIPERF SERVER TCP\n\n\n./iperf --server\n\n\n\n\n\nIPERF CLIENT TCP UPLOAD AND THEN DOWNLOAD\n\n\n./iperf --client IPERF_SERVER --tradeoff --window 1M\n\n\n\n\n\nIPERF CLIENT TCP UPLOAD AND DOWNLOAD AT THE SAME TIME\n\n\n./iperf --client IPERF_SERVER --dualtest --window 1M", 
             "title": "iPerf"
+        }, 
+        {
+            "location": "/juniper/", 
+            "text": "Radius configuration\n\n\nedit\n\n\nset\n \nsystem\n \nradius\n-\nserver\n \n$\nRADIUS_SERVER_IP_HERE\n \nsource\n-\naddress\n \n$\nSWITCH_IP_HERE\n\n\nset\n \nsystem\n \nradius\n-\nserver\n \n$\nRADIUS_SERVER_IP_HERE\n \nsecret\n \n$\nPASSWORD_HERE\n\n\n\nset\n \nsystem\n \nauthentication\n-\norder\n \n[\n \npassword\n \nradius\n \n]\n\n\n\nset\n \nsystem\n \nlogin\n \nuser\n \nremote\n \nclass\n \nsuper\n-\nuser", 
+            "title": "Juniper"
+        }, 
+        {
+            "location": "/juniper/#radius-configuration", 
+            "text": "edit  set   system   radius - server   $ RADIUS_SERVER_IP_HERE   source - address   $ SWITCH_IP_HERE  set   system   radius - server   $ RADIUS_SERVER_IP_HERE   secret   $ PASSWORD_HERE  set   system   authentication - order   [   password   radius   ]  set   system   login   user   remote   class   super - user", 
+            "title": "Radius configuration"
         }
     ]
 }
