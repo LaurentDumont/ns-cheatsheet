@@ -110,3 +110,16 @@ show platform software status control-processor brief
 ```
 monitor platform software process rp active
 ```
+
+### Cisco Radius
+
+```
+conf t
+aaa new-model
+
+aaa group server radius DHMTL-RADIUS
+server-private 10.0.99.22 auth-port 1812 acct-port 1813 key $INSERT_RADIUS_SHARED_SECRET_HERE
+
+aaa authentication login default group DHMTL-RADIUS local
+aaa authorization exec default group DHMTL-RADIUS local
+```
