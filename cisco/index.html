@@ -279,6 +279,19 @@
     General Troubleshooting
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cisco-radius" title="Cisco Radius" class="md-nav__link">
+    Cisco Radius
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -386,6 +399,19 @@
   <a href="#general-troubleshooting" title="General Troubleshooting" class="md-nav__link">
     General Troubleshooting
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cisco-radius" title="Cisco Radius" class="md-nav__link">
+    Cisco Radius
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -519,6 +545,18 @@ sh satellite powerlevels port 30
 
 <p><strong>Show CPU and Memory like "htop" for Linux</strong></p>
 <div class="codehilite"><pre><span></span>monitor platform software process rp active
+</pre></div>
+
+
+<h3 id="cisco-radius">Cisco Radius</h3>
+<div class="codehilite"><pre><span></span>conf t
+aaa new-model
+
+aaa group server radius DHMTL-RADIUS
+server-private 10.0.99.22 auth-port 1812 acct-port 1813 key $INSERT_RADIUS_SHARED_SECRET_HERE
+
+aaa authentication login default group DHMTL-RADIUS local
+aaa authorization exec default group DHMTL-RADIUS local
 </pre></div>
                 
                   
