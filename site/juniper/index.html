@@ -418,6 +418,14 @@
 <span class="n">set</span> <span class="n">system</span> <span class="n">authentication</span><span class="o">-</span><span class="n">order</span> <span class="p">[</span> <span class="n">password</span> <span class="n">radius</span> <span class="p">]</span>
 
 <span class="n">set</span> <span class="n">system</span> <span class="n">login</span> <span class="n">user</span> <span class="n">remote</span> <span class="k">class</span> <span class="nb">super</span><span class="o">-</span><span class="n">user</span>
+
+<span class="cp">#Create user profiles based on FreeIPA group.</span>
+
+<span class="n">edit</span> <span class="n">system</span> <span class="n">login</span>
+<span class="n">set</span> <span class="n">user</span> <span class="n">HELPDESK</span> <span class="k">class</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span>
+<span class="n">set</span> <span class="n">user</span> <span class="n">OPERATOR</span> <span class="k">class</span> <span class="nb">super</span><span class="o">-</span><span class="n">user</span>
+<span class="n">set</span> <span class="n">user</span> <span class="n">remote</span> <span class="n">full</span><span class="o">-</span><span class="n">name</span> <span class="s">&quot;default remote access user template&quot;</span>
+<span class="n">set</span> <span class="n">user</span> <span class="n">remote</span> <span class="k">class</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span>
 </pre></div>
                 
                   
