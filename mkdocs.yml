@@ -13,6 +13,7 @@ pages:
       - Prometheus: prometheus.md
       - iPerf: iperf.md
       - Juniper: juniper.md
+      - Netbox: netbox.md
 
 #Theme customization
 theme:
