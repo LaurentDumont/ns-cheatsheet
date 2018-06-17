@@ -282,6 +282,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#troubleshooting-cisco-isr-memory" title="Troubleshooting Cisco ISR Memory." class="md-nav__link">
+    Troubleshooting Cisco ISR Memory.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#cisco-radius" title="Cisco Radius" class="md-nav__link">
     Cisco Radius
   </a>
@@ -404,6 +411,13 @@
         <li class="md-nav__item">
   <a href="#general-troubleshooting" title="General Troubleshooting" class="md-nav__link">
     General Troubleshooting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting-cisco-isr-memory" title="Troubleshooting Cisco ISR Memory." class="md-nav__link">
+    Troubleshooting Cisco ISR Memory.
   </a>
   
 </li>
@@ -545,6 +559,22 @@ sh satellite powerlevels port 30
 
 <p><strong>Show CPU and Memory like "htop" for Linux</strong></p>
 <div class="codehilite"><pre><span></span>monitor platform software process rp active
+</pre></div>
+
+
+<h3 id="troubleshooting-cisco-isr-memory">Troubleshooting Cisco ISR Memory.</h3>
+<p>Show IOS processes memory usage.</p>
+<div class="codehilite"><pre><span></span>show processes memory
+</pre></div>
+
+
+<p>Show platform CPU and Memory usage</p>
+<div class="codehilite"><pre><span></span>show platform resources
+</pre></div>
+
+
+<p>Show IOS-XE Memory usage (not IOS)</p>
+<div class="codehilite"><pre><span></span>show platform software status control-processor brief
 </pre></div>
 
 
