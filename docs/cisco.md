@@ -110,6 +110,23 @@ show platform software status control-processor brief
 monitor platform software process rp active
 ```
 
+### Troubleshooting Cisco ISR Memory.
+
+Show IOS processes memory usage.
+```
+show processes memory
+```
+
+Show platform CPU and Memory usage
+```
+show platform resources
+```
+
+Show IOS-XE Memory usage (not IOS)
+```
+show platform software status control-processor brief
+```
+
 ### Cisco Radius
 
 ```
