@@ -134,8 +134,13 @@ conf t
 aaa new-model
 
 aaa group server radius DHMTL-RADIUS
-server-private 10.0.99.22 auth-port 1812 acct-port 1813 key $INSERT_RADIUS_SHARED_SECRET_HERE
+ server-private 10.0.99.22 auth-port 1812 acct-port 1813 key $INSERT_KEY_HERE
+
+aaa group server tacacs+ DHMTL-TACACS
+ server-private 10.0.99.22 key $INSERT_KEY_HERE
 
 aaa authentication login default group DHMTL-RADIUS local
 aaa authorization exec default group DHMTL-RADIUS local
+aaa accounting commands 15 default start-stop group DHMTL-TACACS
+aaa accounting commands 3 default start-stop group DHMTL-TACACS
 ```
