@@ -5,6 +5,10 @@ show configuration
 
 show logging messsage
 
+show | compare
+
+show | display set
+
 ```
 
 ### Radius configuration ###
