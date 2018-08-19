@@ -1,3 +1,15 @@
+## Ethernet and Frames
+
+* Unicast frames: For just one host
+* Broadcast frames: ff:ff:ff:ff:ff:ff - For all devices on a single internet LAN.
+* Multicast frames: Forwarded to a subnet for the hosts on a ethernet LAN.
+
+##### Ethernet "Type" field
+* 0800 = IPv4
+* 86DD = IPv6
+
+Hub = port needs to be at half-duplex
+
 ## Cisco Security
 
 ### User and access management

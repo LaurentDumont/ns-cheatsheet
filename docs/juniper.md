@@ -1,3 +1,12 @@
+### Useful commands
+
+```
+show configuration
+
+show logging messsage
+
+```
+
 ### Radius configuration ###
 
 ```
