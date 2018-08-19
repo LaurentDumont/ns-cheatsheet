@@ -1,76 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
      <loc>/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-08-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
      <loc>/cisco/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-08-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
      <loc>/ccna/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-08-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
      <loc>/linux/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-08-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
      <loc>/gluster/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-08-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
      <loc>/prometheus/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-08-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
      <loc>/iperf/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-08-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
      <loc>/juniper/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-08-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
      <loc>/netbox/</loc>
-     <lastmod>2018-06-18</lastmod>
+     <lastmod>2018-08-18</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
 </urlset>
