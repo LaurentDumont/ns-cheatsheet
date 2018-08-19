@@ -55,3 +55,17 @@ radtest ldumont user_ldap_password 10.0.99.22 1812 shared_radius_secret
 ldapwhoami -vvv -h 10.0.99.22 -p 389 -D uid=ldumont,cn=users,cn=accounts,dc=event,dc=dhmtl,dc=ca -x -w user_ldap_password
 
 ```
+
+## When Windows 10 Creator upgrade breaks Linux Grub
+```
+    set root=(hd0,msdos5)
+    set prefix=(hd0,msdos5)/boot/grub
+    insmod normal
+    normal
+```
+
+When in the OS - to make the changes permanent.
+```
+sudo update-grub
+sudo grub-install disk
+```
