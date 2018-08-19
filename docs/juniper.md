@@ -9,6 +9,7 @@ show | compare
 
 show | display set
 
+show interface terse
 ```
 
 ### Radius configuration ###
