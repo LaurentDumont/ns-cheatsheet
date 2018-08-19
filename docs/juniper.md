@@ -10,6 +10,12 @@ show | compare
 show | display set
 
 show interface terse
+
+show chassis hardware
+
+show route
+
+show interface | incl (proto|Desc)
 ```
 
 ### Radius configuration ###
