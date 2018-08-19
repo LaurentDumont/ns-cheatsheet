@@ -16,6 +16,8 @@ show chassis hardware
 show route
 
 show interface | incl (proto|Desc)
+
+show system process
 ```
 
 ### Radius configuration ###
