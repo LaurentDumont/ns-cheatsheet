@@ -494,10 +494,10 @@ ldapwhoami -vvv -h 10.0.99.22 -p 389 -D uid=ldumont,cn=users,cn=accounts,dc=even
 
 
 <h2 id="when-windows-10-creator-upgrade-breaks-linux-grub">When Windows 10 Creator upgrade breaks Linux Grub</h2>
-<div class="codehilite"><pre><span></span>    set root=(hd0,msdos5)
-    set prefix=(hd0,msdos5)/boot/grub
-    insmod normal
-    normal
+<div class="codehilite"><pre><span></span>set root=(hd0,msdos5)
+set prefix=(hd0,msdos5)/boot/grub
+insmod normal
+normal
 </pre></div>
 
 
@@ -508,7 +508,8 @@ sudo grub-install disk
 
 
 <h2 id="upgrading-to-debian-testing-breaks-apt-when-trying-to-downgrade">Upgrading to Debian testing breaks APT when trying to downgrade.</h2>
-<p>/etc/apt/preferences.d/allow-downgrade</p>
+<p>Replace "Ubuntu" with "Debian" if you are running Debian
+/etc/apt/preferences.d/allow-downgrade</p>
 <div class="codehilite"><pre><span></span>Package: *
 Pin: release o=Ubuntu
 Pin-Priority: 1001
