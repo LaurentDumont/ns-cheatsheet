@@ -69,3 +69,20 @@ When in the OS - to make the changes permanent.
 sudo update-grub
 sudo grub-install disk
 ```
+
+## Upgrading to Debian testing breaks APT when trying to downgrade.
+/etc/apt/preferences.d/allow-downgrade
+```
+Package: *
+Pin: release o=Ubuntu
+Pin-Priority: 1001
+```
+
+```
+apt-get update
+apt-get upgrade
+```
+Remove the file after and
+```
+apt-get update
+```
