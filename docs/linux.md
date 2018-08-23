@@ -75,7 +75,7 @@ Replace "Ubuntu" with "Debian" if you are running Debian
 /etc/apt/preferences.d/allow-downgrade
 ```
 Package: *
-Pin: release o=Ubuntu
+Pin: release a=stable
 Pin-Priority: 1001
 ```
 
@@ -87,4 +87,14 @@ Remove the file after and
 ```
 apt-get update
 ```
+If you are missing gnome and the display doesn't work
+
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo apt-get install nvidia-driver
+sudo shutdown -r now
+```
+
 Should be good to go!
