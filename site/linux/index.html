@@ -511,7 +511,7 @@ sudo grub-install disk
 <p>Replace "Ubuntu" with "Debian" if you are running Debian
 /etc/apt/preferences.d/allow-downgrade</p>
 <div class="codehilite"><pre><span></span>Package: *
-Pin: release o=Ubuntu
+Pin: release a=stable
 Pin-Priority: 1001
 </pre></div>
 
@@ -523,6 +523,15 @@ apt-get upgrade
 
 <p>Remove the file after and</p>
 <div class="codehilite"><pre><span></span>apt-get update
+</pre></div>
+
+
+<p>If you are missing gnome and the display doesn't work</p>
+<div class="codehilite"><pre><span></span>sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo apt-get install nvidia-driver
+sudo shutdown -r now
 </pre></div>
 
 
