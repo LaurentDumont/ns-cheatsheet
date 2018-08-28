@@ -98,3 +98,12 @@ sudo shutdown -r now
 ```
 
 Should be good to go!
+
+
+### Unbalanced audio with Pulse audio
+```
+killall pulseaudio; rm -r ~/.config/pulse/* ; rm -r ~/.pulse*
+pulseaudio -k 
+```
+
+Reboot!
