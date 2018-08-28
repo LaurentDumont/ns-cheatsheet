@@ -310,6 +310,19 @@
     Upgrading to Debian testing breaks APT when trying to downgrade.
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unbalanced-audio-with-pulse-audio" title="Unbalanced audio with Pulse audio" class="md-nav__link">
+    Unbalanced audio with Pulse audio
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -412,6 +425,19 @@
   <a href="#upgrading-to-debian-testing-breaks-apt-when-trying-to-downgrade" title="Upgrading to Debian testing breaks APT when trying to downgrade." class="md-nav__link">
     Upgrading to Debian testing breaks APT when trying to downgrade.
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unbalanced-audio-with-pulse-audio" title="Unbalanced audio with Pulse audio" class="md-nav__link">
+    Unbalanced audio with Pulse audio
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -536,6 +562,13 @@ sudo shutdown -r now
 
 
 <p>Should be good to go!</p>
+<h3 id="unbalanced-audio-with-pulse-audio">Unbalanced audio with Pulse audio</h3>
+<div class="codehilite"><pre><span></span>killall pulseaudio; rm -r ~/.config/pulse/* ; rm -r ~/.pulse*
+pulseaudio -k 
+</pre></div>
+
+
+<p>Reboot!</p>
                 
                   
                 
