@@ -397,7 +397,7 @@
         }, 
         {
             "location": "/juniper/", 
-            "text": "Useful commands\n\n\nshow configuration\n\nshow logging messsage\n\nshow | compare\n\nshow | display set\n\nshow interface terse\n\nshow chassis hardware\n\nshow route\n\nshow interface | incl (proto|Desc)\n\nshow system process\n\n\n\n\n\nSyslog\n\n\nset system syslog host $IP_ADDRESS_HERE any error\n\n\n\n\n\nRadius configuration\n\n\nedit\n\n\nset\n \nsystem\n \nradius\n-\nserver\n \n$\nRADIUS_SERVER_IP_HERE\n \nsource\n-\naddress\n \n$\nSWITCH_IP_HERE\n\n\nset\n \nsystem\n \nradius\n-\nserver\n \n$\nRADIUS_SERVER_IP_HERE\n \nsecret\n \n$\nPASSWORD_HERE\n\n\n\nset\n \nsystem\n \nauthentication\n-\norder\n \n[\n \nradius\n \npassword\n \n]\n\n\n\n#Create user profiles based on FreeIPA group.\n\n\n\nedit\n \nsystem\n \nlogin\n\n\nset\n \nuser\n \nHELPDESK\n \nclass\n \nread\n-\nonly\n\n\nset\n \nuser\n \nOPERATOR\n \nclass\n \nsuper\n-\nuser\n\n\nset\n \nuser\n \nremote\n \nfull\n-\nname\n \ndefault remote access user template\n\n\nset\n \nuser\n \nremote\n \nclass\n \nread\n-\nonly", 
+            "text": "Useful commands\n\n\nshow configuration\n\nshow logging messsage\n\nshow | compare\n\nshow | display set\n\nshow interface terse\n\nshow chassis hardware\n\nshow route\n\nshow interface | incl (proto|Desc)\n\nshow system process\n\n\n\n\n\nSyslog\n\n\nset system syslog user * any emergency\nset system syslog host 10.0.99.28 any any\nset system syslog host 10.0.99.28 port 1514\nset system syslog file messages any notice\nset system syslog file messages authorization info\nset system syslog file interactive-commands interactive-commands any\n\n\n\n\n\nRadius configuration\n\n\nedit\n\n\nset\n \nsystem\n \nradius\n-\nserver\n \n$\nRADIUS_SERVER_IP_HERE\n \nsource\n-\naddress\n \n$\nSWITCH_IP_HERE\n\n\nset\n \nsystem\n \nradius\n-\nserver\n \n$\nRADIUS_SERVER_IP_HERE\n \nsecret\n \n$\nPASSWORD_HERE\n\n\n\nset\n \nsystem\n \nauthentication\n-\norder\n \n[\n \nradius\n \npassword\n \n]\n\n\n\n#Create user profiles based on FreeIPA group.\n\n\n\nedit\n \nsystem\n \nlogin\n\n\nset\n \nuser\n \nHELPDESK\n \nclass\n \nread\n-\nonly\n\n\nset\n \nuser\n \nOPERATOR\n \nclass\n \nsuper\n-\nuser\n\n\nset\n \nuser\n \nremote\n \nfull\n-\nname\n \ndefault remote access user template\n\n\nset\n \nuser\n \nremote\n \nclass\n \nread\n-\nonly", 
             "title": "Juniper"
         }, 
         {
@@ -407,7 +407,7 @@
         }, 
         {
             "location": "/juniper/#syslog", 
-            "text": "set system syslog host $IP_ADDRESS_HERE any error", 
+            "text": "set system syslog user * any emergency\nset system syslog host 10.0.99.28 any any\nset system syslog host 10.0.99.28 port 1514\nset system syslog file messages any notice\nset system syslog file messages authorization info\nset system syslog file interactive-commands interactive-commands any", 
             "title": "Syslog"
         }, 
         {
