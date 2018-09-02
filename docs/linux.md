@@ -55,3 +55,55 @@ radtest ldumont user_ldap_password 10.0.99.22 1812 shared_radius_secret
 ldapwhoami -vvv -h 10.0.99.22 -p 389 -D uid=ldumont,cn=users,cn=accounts,dc=event,dc=dhmtl,dc=ca -x -w user_ldap_password
 
 ```
+
+## When Windows 10 Creator upgrade breaks Linux Grub
+```
+set root=(hd0,msdos5)
+set prefix=(hd0,msdos5)/boot/grub
+insmod normal
+normal
+```
+
+When in the OS - to make the changes permanent.
+```
+sudo update-grub
+sudo grub-install disk
+```
+
+## Upgrading to Debian testing breaks APT when trying to downgrade.
+Replace "Ubuntu" with "Debian" if you are running Debian
+/etc/apt/preferences.d/allow-downgrade
+```
+Package: *
+Pin: release a=stable
+Pin-Priority: 1001
+```
+
+```
+apt-get update
+apt-get upgrade
+```
+Remove the file after and
+```
+apt-get update
+```
+If you are missing gnome and the display doesn't work
+
+```
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get dist-upgrade
+sudo apt-get install nvidia-driver
+sudo shutdown -r now
+```
+
+Should be good to go!
+
+
+### Unbalanced audio with Pulse audio
+```
+killall pulseaudio; rm -r ~/.config/pulse/* ; rm -r ~/.pulse*
+pulseaudio -k 
+```
+
+Reboot!
