@@ -423,7 +423,7 @@
         {
             "location": "/splunk/", 
             "text": "Clear the splunk index and all data gathered. Will delete most of the existing data!\n\n\ncd /opt/splunk/bin\n./splunk stop\n./splunk clean eventdata\n./splunk start", 
-            "title": "splunk"
+            "title": "Splunk"
         }
     ]
 }
