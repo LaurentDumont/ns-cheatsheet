@@ -20,6 +20,11 @@ show interface | incl (proto|Desc)
 show system process
 ```
 
+### Syslog
+```
+set system syslog host $IP_ADDRESS_HERE any error
+```
+
 ### Radius configuration ###
 
 ```
