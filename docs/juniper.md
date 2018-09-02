@@ -21,8 +21,14 @@ show system process
 ```
 
 ### Syslog
+
 ```
-set system syslog host $IP_ADDRESS_HERE any error
+set system syslog user * any emergency
+set system syslog host 10.0.99.28 any any
+set system syslog host 10.0.99.28 port 1514
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
 ```
 
 ### Radius configuration ###
