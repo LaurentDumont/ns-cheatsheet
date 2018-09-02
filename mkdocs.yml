@@ -14,7 +14,7 @@ pages:
       - iPerf: iperf.md
       - Juniper: juniper.md
       - Netbox: netbox.md
-      - splunk: splunk.md
+      - Splunk: splunk.md
 
 #Theme customization
 theme:
