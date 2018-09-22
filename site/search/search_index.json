@@ -397,13 +397,18 @@
         }, 
         {
             "location": "/juniper/", 
-            "text": "Useful commands\n\n\nshow configuration\n\nshow logging messsage\n\nshow | compare\n\nshow | display set\n\nshow interface terse\n\nshow chassis hardware\n\nshow route\n\nshow interface | incl (proto|Desc)\n\nshow system process\n\n\n\n\n\nRadius configuration\n\n\nedit\n\n\nset\n \nsystem\n \nradius\n-\nserver\n \n$\nRADIUS_SERVER_IP_HERE\n \nsource\n-\naddress\n \n$\nSWITCH_IP_HERE\n\n\nset\n \nsystem\n \nradius\n-\nserver\n \n$\nRADIUS_SERVER_IP_HERE\n \nsecret\n \n$\nPASSWORD_HERE\n\n\n\nset\n \nsystem\n \nauthentication\n-\norder\n \n[\n \nradius\n \npassword\n \n]\n\n\n\n#Create user profiles based on FreeIPA group.\n\n\n\nedit\n \nsystem\n \nlogin\n\n\nset\n \nuser\n \nHELPDESK\n \nclass\n \nread\n-\nonly\n\n\nset\n \nuser\n \nOPERATOR\n \nclass\n \nsuper\n-\nuser\n\n\nset\n \nuser\n \nremote\n \nfull\n-\nname\n \ndefault remote access user template\n\n\nset\n \nuser\n \nremote\n \nclass\n \nread\n-\nonly", 
+            "text": "Useful commands\n\n\nshow configuration\n\nshow logging messsage\n\nshow | compare\n\nshow | display set\n\nshow interface terse\n\nshow chassis hardware\n\nshow route\n\nshow interface | incl (proto|Desc)\n\nshow system process\n\n\n\n\n\nSyslog\n\n\nset system syslog user * any emergency\nset system syslog host 10.0.99.28 any any\nset system syslog host 10.0.99.28 port 1514\nset system syslog file messages any notice\nset system syslog file messages authorization info\nset system syslog file interactive-commands interactive-commands any\n\n\n\n\n\nRadius configuration\n\n\nedit\n\n\nset\n \nsystem\n \nradius\n-\nserver\n \n$\nRADIUS_SERVER_IP_HERE\n \nsource\n-\naddress\n \n$\nSWITCH_IP_HERE\n\n\nset\n \nsystem\n \nradius\n-\nserver\n \n$\nRADIUS_SERVER_IP_HERE\n \nsecret\n \n$\nPASSWORD_HERE\n\n\n\nset\n \nsystem\n \nauthentication\n-\norder\n \n[\n \nradius\n \npassword\n \n]\n\n\n\n#Create user profiles based on FreeIPA group.\n\n\n\nedit\n \nsystem\n \nlogin\n\n\nset\n \nuser\n \nHELPDESK\n \nclass\n \nread\n-\nonly\n\n\nset\n \nuser\n \nOPERATOR\n \nclass\n \nsuper\n-\nuser\n\n\nset\n \nuser\n \nremote\n \nfull\n-\nname\n \ndefault remote access user template\n\n\nset\n \nuser\n \nremote\n \nclass\n \nread\n-\nonly", 
             "title": "Juniper"
         }, 
         {
             "location": "/juniper/#useful-commands", 
             "text": "show configuration\n\nshow logging messsage\n\nshow | compare\n\nshow | display set\n\nshow interface terse\n\nshow chassis hardware\n\nshow route\n\nshow interface | incl (proto|Desc)\n\nshow system process", 
             "title": "Useful commands"
+        }, 
+        {
+            "location": "/juniper/#syslog", 
+            "text": "set system syslog user * any emergency\nset system syslog host 10.0.99.28 any any\nset system syslog host 10.0.99.28 port 1514\nset system syslog file messages any notice\nset system syslog file messages authorization info\nset system syslog file interactive-commands interactive-commands any", 
+            "title": "Syslog"
         }, 
         {
             "location": "/juniper/#radius-configuration", 
@@ -414,6 +419,11 @@
             "location": "/netbox/", 
             "text": "apt-get update\napt-get install -y postgresql libpq-dev\n\n\n\n\n\nsudo -u postgres psql\nCREATE DATABASE netbox\n;\n\nCREATE USER netbox WITH PASSWORD \nbigpotato\n;\n\nGRANT ALL PRIVILEGES ON DATABASE netbox TO netbox\n;\n\n\n\\q\n\n\n\n\n\n\napt-get install -y python3 python3-dev python3-setuptools build-essential libxml2-dev libxslt1-dev libffi-dev graphviz libpq-dev libssl-dev zlib1g-dev\neasy_install3 pip\n\n\n\n\n\nmkdir -p /opt/netbox/ \n \ncd\n /opt/netbox/\ngit clone -b master https://github.com/digitalocean/netbox.git .\npip3 install -r requirements.txt\npip3 install napalm\n\n\n\n\n\nsudo apt-get install libapache2-mod-wsgi\nsudo a2enmod wsgi\nsudo a2enmod proxy\nsudo a2enmod proxy_http\nsudo a2enmod headers\nsudo a2ensite netbox\nsudo service apache2 restart\n\n\n\n\n\nVirtualHost\n \n*:80\n\n    \nServerName\n netbox.northernsysadmin.com\n    \nRedirect\n permanent / https://netbox.northernsysadmin.com/\n\n/VirtualHost\n\n\n\nVirtualHost\n \n*:443\n\n    \nSSLEngine\n \non\n\n    \nSSLCertificateFile\n $FULL_CHAIN_CERT_HERE\n    \nSSLCertificateKeyFile\n $PRIVATE_KEY_CERT_HERE\n    \nProxyPreserveHost\n \nOn\n\n\n    \nServerName\n netbox.northernsysadmin.com\n\n    \nAlias\n \n/static\n \n/opt/netbox/netbox/static\n\n\n    \n# Needed to allow token-based API authentication\n\n    \nWSGIPassAuthorization\n \non\n\n\n    \nDirectory\n \n/\n\n          \nSetEnvIfNoCase\n Host netbox.northernsysadmin\\.com VALID_HOST\n          \nOrder\n Deny,Allow\n          \nDeny\n from \nAll\n\n          \nAllow\n from env=VALID_HOST\n    \n/Directory\n\n\n    \nDirectory\n \n/opt/netbox/netbox/static\n\n        \nOptions\n Indexes FollowSymLinks MultiViews\n        \nAllowOverride\n \nNone\n\n        \nRequire\n \nall\n granted\n    \n/Directory\n\n\n    \nLocation\n \n/static\n\n        \nProxyPass\n !\n    \n/Location\n\n\n    \nRequestHeader\n set \nX-Forwarded-Proto\n expr=%{REQUEST_SCHEME}\n    \nProxyPass\n / http://127.0.0.1:8001/\n    \nProxyPassReverse\n / http://127.0.0.1:8001/\n\n/VirtualHost", 
             "title": "Netbox"
+        }, 
+        {
+            "location": "/splunk/", 
+            "text": "Clear the splunk index and all data gathered. Will delete most of the existing data!\n\n\ncd /opt/splunk/bin\n./splunk stop\n./splunk clean eventdata\n./splunk start", 
+            "title": "Splunk"
         }
     ]
 }
