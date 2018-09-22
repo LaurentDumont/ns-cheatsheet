@@ -40,7 +40,7 @@
     
     
       
-        <title>iPerf - Laurent Dumont - Internet notepad.</title>
+        <title>Chef - Laurent Dumont - Internet notepad.</title>
       
     
     
@@ -97,6 +97,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
+      <a href="#chef-server-setup" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -119,7 +123,7 @@
                 Laurent Dumont - Internet notepad.
               </span>
               <span class="md-header-nav__topic">
-                iPerf
+                Chef
               </span>
             
           
@@ -306,18 +310,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
-    
-    
-    <a href="./" title="iPerf" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../iperf/" title="iPerf" class="md-nav__link">
       iPerf
     </a>
-    
   </li>
 
     
@@ -361,11 +358,52 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../chef/" title="Chef" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Chef
+      </label>
+    
+    <a href="./" title="Chef" class="md-nav__link md-nav__link--active">
       Chef
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chef-server-setup" title="Chef server setup" class="md-nav__link">
+    Chef server setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-roles-and-assign-cookbooks-to-them" title="Create roles and assign cookbooks to them." class="md-nav__link">
+    Create roles and assign cookbooks to them.
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -376,35 +414,111 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#chef-server-setup" title="Chef server setup" class="md-nav__link">
+    Chef server setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-roles-and-assign-cookbooks-to-them" title="Create roles and assign cookbooks to them." class="md-nav__link">
+    Create roles and assign cookbooks to them.
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/iperf.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/chef.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>iPerf</h1>
+                  <h1>Chef</h1>
                 
-                <p><strong>UDP TEST (DDOS like test where you send traffic to the other endpoint without any policing.</strong><br />
-iPerf3 does not allow you to send traffic directly for UDP. It needs to "connect" to an iPerf3 endpoint, even for UDP.</p>
-<div class="codehilite"><pre><span></span>./iperf -c TARGET_IP --udp --interval 2 --bandwidth 9m
+                <h3 id="chef-server-setup">Chef server setup</h3>
+<div class="codehilite"><pre><span></span>sudo dpkg -i /tmp/chef-server-core-&lt;version&gt;.deb
+chef-server-ctl reconfigure
+chef-server-ctl user-create USER_NAME FIRST_NAME LAST_NAME EMAIL &#39;PASSWORD&#39; --filename FILE_NAME
+chef-server-ctl org-create northernsysadmin &#39;Northern Sysadmin Inc&#39; --association_user sysadmin --filename /var/chef_ssh/northernsysadmin-validator.pem
 </pre></div>
 
 
-<p><strong>IPERF SERVER TCP</strong></p>
-<div class="codehilite"><pre><span></span>./iperf --server
+<div class="codehilite"><pre><span></span>knife ssl check
+knife ssl fetch
+
+knife cookbook upload $COOKBOOK_NAME_HERE
+knife client list
+knife cookbook list
 </pre></div>
 
 
-<p><strong>IPERF CLIENT TCP UPLOAD AND THEN DOWNLOAD</strong></p>
-<div class="codehilite"><pre><span></span>./iperf --client IPERF_SERVER --tradeoff --window 1M
+<div class="codehilite"><pre><span></span>knife bootstrap 10.255.255.8 --ssh-user sysadmin --ssh-password &#39;PASSWORD_HERE&#39; --sudo --use-sudo-password --node-name puppet-minion1 --run-list &#39;recipe[learn_chef_apache2]&#39;
 </pre></div>
 
 
-<p><strong>IPERF CLIENT TCP UPLOAD AND DOWNLOAD AT THE SAME TIME</strong></p>
-<div class="codehilite"><pre><span></span>./iperf --client IPERF_SERVER --dualtest --window 1M
+<div class="codehilite"><pre><span></span>knife node list
+knife node show $NODE_NAME
 </pre></div>
+
+
+<h3 id="create-roles-and-assign-cookbooks-to-them">Create roles and assign cookbooks to them.</h3>
+<p>roles/ntp.json</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ntp&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;NTP server role.&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;json_class&quot;</span><span class="p">:</span> <span class="s2">&quot;Chef::Role&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;default_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+     <span class="nt">&quot;chef_client&quot;</span><span class="p">:</span> <span class="p">{</span>
+       <span class="nt">&quot;interval&quot;</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+       <span class="nt">&quot;splay&quot;</span><span class="p">:</span> <span class="mi">1</span>
+     <span class="p">}</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;override_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="p">},</span>
+   <span class="nt">&quot;chef_type&quot;</span><span class="p">:</span> <span class="s2">&quot;role&quot;</span><span class="p">,</span>
+   <span class="nt">&quot;run_list&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;recipe[chef-client::default]&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;recipe[chef-client::delete_validation]&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;recipe[ntpd::default]&quot;</span>
+   <span class="p">],</span>
+   <span class="nt">&quot;env_run_lists&quot;</span><span class="p">:</span> <span class="p">{</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<ol>
+<li>Upload the role to the Chef Server : <code>knife role from file roles/web.json</code></li>
+<li>Check that the role is on the server : <code>knife role list</code> - <code>knife role show ntp</code></li>
+<li>Find node name from <code>knife node list</code> - <code>knife node run_list set puppet-minion1 "role[ntp]"</code></li>
+<li>Confirm that the role is applied to the Node : <code>knife node show puppet-minion1 --run-list</code></li>
+<li>Run <code>chef-client</code> on the node.</li>
+<li><code>knife ssh 10.255.255.8 'role:web' 'sudo chef-client' --ssh-user sysadmin --ssh-password 'PASSWORD_HERE' --sudo --use-sudo-password --node-name puppet-minion1</code></li>
+</ol>
                 
                   
                 
@@ -425,7 +539,7 @@ iPerf3 does not allow you to send traffic directly for UDP. It needs to "connect
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../prometheus/" title="Prometheus" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../splunk/" title="Splunk" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -434,25 +548,11 @@ iPerf3 does not allow you to send traffic directly for UDP. It needs to "connect
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Prometheus
+                Splunk
               </span>
             </div>
           </a>
         
-        
-          <a href="../juniper/" title="Juniper" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Juniper
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
