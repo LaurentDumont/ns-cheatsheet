@@ -14,6 +14,7 @@ pages:
       - iPerf: iperf.md
       - Juniper: juniper.md
       - Netbox: netbox.md
+      - Chef: chef.md
 
 #Theme customization
 theme:
