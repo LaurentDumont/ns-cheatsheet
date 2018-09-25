@@ -534,7 +534,7 @@ knife node show $NODE_NAME
 <li><code>knife ssh 10.255.255.8 'role:web' 'sudo chef-client' --ssh-user sysadmin --ssh-password 'PASSWORD_HERE' --sudo --use-sudo-password --node-name puppet-minion1</code></li>
 </ol>
 <h3 id="dependencies-in-cookbooks">Dependencies in cookbooks.</h3>
-<p>metadata.rb</p>
+<p>metadata.rb - keyword "depends" - Used to list the other coobooks from which the cookbook depends to run properly.</p>
 <div class="codehilite"><pre><span></span><span class="nb">name</span> <span class="s1">&#39;prometheus_node&#39;</span>
 <span class="n">maintainer</span> <span class="s1">&#39;Laurent Dumont&#39;</span>
 <span class="n">maintainer_email</span> <span class="s1">&#39;ldumont@northernsysadmin.com&#39;</span>
