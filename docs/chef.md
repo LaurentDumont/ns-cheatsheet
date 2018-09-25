@@ -57,7 +57,7 @@ roles/ntp.json
 6. `knife ssh 10.255.255.8 'role:web' 'sudo chef-client' --ssh-user sysadmin --ssh-password 'PASSWORD_HERE' --sudo --use-sudo-password --node-name puppet-minion1`
 
 ### Dependencies in cookbooks.
-metadata.rb
+metadata.rb - keyword "depends" - Used to list the other coobooks from which the cookbook depends to run properly.
 ```ruby
 name 'prometheus_node'
 maintainer 'Laurent Dumont'
