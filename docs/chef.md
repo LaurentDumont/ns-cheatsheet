@@ -55,3 +55,17 @@ roles/ntp.json
 4. Confirm that the role is applied to the Node : `knife node show puppet-minion1 --run-list`
 5. Run `chef-client` on the node.
 6. `knife ssh 10.255.255.8 'role:web' 'sudo chef-client' --ssh-user sysadmin --ssh-password 'PASSWORD_HERE' --sudo --use-sudo-password --node-name puppet-minion1`
+
+### Dependencies in cookbooks.
+metadata.rb
+```ruby
+name 'prometheus_node'
+maintainer 'Laurent Dumont'
+maintainer_email 'ldumont@northernsysadmin.com'
+license 'All Rights Reserved'
+description 'Installs/Configures prometheus-node'
+long_description 'Installs/Configures prometheus-node'
+version '0.1.1'
+depends 'tar'
+chef_version '>= 12.14' if respond_to?(:chef_version)
+```
