@@ -396,6 +396,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dependencies-in-cookbooks" title="Dependencies in cookbooks." class="md-nav__link">
+    Dependencies in cookbooks.
+  </a>
+  
+</li>
+      
       
       
       
@@ -435,6 +442,13 @@
         <li class="md-nav__item">
   <a href="#create-roles-and-assign-cookbooks-to-them" title="Create roles and assign cookbooks to them." class="md-nav__link">
     Create roles and assign cookbooks to them.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies-in-cookbooks" title="Dependencies in cookbooks." class="md-nav__link">
+    Dependencies in cookbooks.
   </a>
   
 </li>
@@ -519,6 +533,18 @@ knife node show $NODE_NAME
 <li>Run <code>chef-client</code> on the node.</li>
 <li><code>knife ssh 10.255.255.8 'role:web' 'sudo chef-client' --ssh-user sysadmin --ssh-password 'PASSWORD_HERE' --sudo --use-sudo-password --node-name puppet-minion1</code></li>
 </ol>
+<h3 id="dependencies-in-cookbooks">Dependencies in cookbooks.</h3>
+<p>metadata.rb</p>
+<div class="codehilite"><pre><span></span><span class="nb">name</span> <span class="s1">&#39;prometheus_node&#39;</span>
+<span class="n">maintainer</span> <span class="s1">&#39;Laurent Dumont&#39;</span>
+<span class="n">maintainer_email</span> <span class="s1">&#39;ldumont@northernsysadmin.com&#39;</span>
+<span class="n">license</span> <span class="s1">&#39;All Rights Reserved&#39;</span>
+<span class="n">description</span> <span class="s1">&#39;Installs/Configures prometheus-node&#39;</span>
+<span class="n">long_description</span> <span class="s1">&#39;Installs/Configures prometheus-node&#39;</span>
+<span class="n">version</span> <span class="s1">&#39;0.1.1&#39;</span>
+<span class="n">depends</span> <span class="s1">&#39;tar&#39;</span>
+<span class="n">chef_version</span> <span class="s1">&#39;&gt;= 12.14&#39;</span> <span class="k">if</span> <span class="nb">respond_to?</span><span class="p">(</span><span class="ss">:chef_version</span><span class="p">)</span>
+</pre></div>
                 
                   
                 
