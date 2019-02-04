@@ -1,4 +1,4 @@
-### Useful commands
+### Useful commands.
 
 ```
 show configuration
@@ -20,7 +20,7 @@ show interface | incl (proto|Desc)
 show system process
 ```
 
-### Syslog configuration
+### Syslog configuration.
 
 ```
 set system syslog user * any emergency
@@ -31,7 +31,7 @@ set system syslog file messages authorization info
 set system syslog file interactive-commands interactive-commands any
 ```
 
-### Radius configuration ###
+### Radius configuration.
 
 ```
 edit
@@ -49,7 +49,7 @@ set user remote full-name "default remote access user template"
 set user remote class read-only
 ```
 
-### Create a L3 VLAN interface ###
+### Create a L3 VLAN interface.
 ```
 set vlans MGMT vlan-id 69
 set interfaces ge-0/0/23 unit 0 family ethernet-switching port-mode trunk 666 vlan members 69
@@ -62,7 +62,7 @@ set vlans MGMT l3-interface vlan.69
 set system services ssh root-login allow
 ```
 
-### Create a default route
+### Create a default route.
 ```
 set routing-options static route 0.0.0.0/0 next-hop 10.10.69.1
 ```
