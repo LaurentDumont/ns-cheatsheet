@@ -118,7 +118,7 @@ set system login user prox-exporter-juniper authentication ssh-rsa "ssh-rsa AAAA
 set system login user prox-exporter-juniper class super-user
 ```
 
-### Password recovery
+### Password recovery.
 ```
 Boot normally.
 
