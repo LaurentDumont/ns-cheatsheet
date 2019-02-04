@@ -20,7 +20,7 @@ show interface | incl (proto|Desc)
 show system process
 ```
 
-### Syslog
+### Syslog configuration
 
 ```
 set system syslog user * any emergency
