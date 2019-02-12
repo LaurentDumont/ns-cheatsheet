@@ -557,10 +557,11 @@ neighbor 1.1.1.1 shutdown
 <p><strong>!Satellite 9k light levels</strong></p>
 <div class="codehilite"><pre><span></span>show nV satellite status
 telnet vrf **nVSatellite 10.0.100.1
+
 !GigabitEthernet112/0/0/17 ---&gt; Satellite 112
 telnet vrf **nVSatellite 10.0.112.1
 !Port 17 on ASR = Port 18 on Satellite
-sh satellite powerlevels port 30
+sh satellite powerlevels port 18
 </pre></div>
 
 
