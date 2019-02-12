@@ -79,10 +79,11 @@ neighbor 1.1.1.1 shutdown
 ```
 show nV satellite status
 telnet vrf **nVSatellite 10.0.100.1
+
 !GigabitEthernet112/0/0/17 ---> Satellite 112
 telnet vrf **nVSatellite 10.0.112.1
 !Port 17 on ASR = Port 18 on Satellite
-sh satellite powerlevels port 30
+sh satellite powerlevels port 18
 ```
 
 <https://www.cisco.com/c/en/us/td/docs/routers/access/4400/troubleshooting/memorytroubleshooting/isr4000_mem.html>
