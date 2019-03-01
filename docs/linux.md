@@ -56,7 +56,7 @@ ldapwhoami -vvv -h 10.0.99.22 -p 389 -D uid=ldumont,cn=users,cn=accounts,dc=even
 
 ```
 
-## When Windows 10 Creator upgrade breaks Linux Grub
+### When Windows 10 Creator upgrade breaks Linux Grub
 ```
 set root=(hd0,msdos5)
 set prefix=(hd0,msdos5)/boot/grub
@@ -70,7 +70,7 @@ sudo update-grub
 sudo grub-install disk
 ```
 
-## Upgrading to Debian testing breaks APT when trying to downgrade.
+### Upgrading to Debian testing breaks APT when trying to downgrade.
 Replace "Ubuntu" with "Debian" if you are running Debian
 /etc/apt/preferences.d/allow-downgrade
 ```
