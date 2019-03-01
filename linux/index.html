@@ -329,6 +329,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#create-gpg-key-and-export-the-key-format-for-signing-github-commits" title="Create GPG key and export the key format for signing Github commits" class="md-nav__link">
+    Create GPG key and export the key format for signing Github commits
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -469,6 +476,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#create-gpg-key-and-export-the-key-format-for-signing-github-commits" title="Create GPG key and export the key format for signing Github commits" class="md-nav__link">
+    Create GPG key and export the key format for signing Github commits
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -602,6 +616,22 @@ pulseaudio -k
 
 
 <p>Reboot!</p>
+<h3 id="create-gpg-key-and-export-the-key-format-for-signing-github-commits">Create GPG key and export the key format for signing Github commits</h3>
+<div class="codehilite"><pre><span></span>#Create the key
+gpg --gen-key
+
+#Show the key ID
+gpg --list-keys
+
+#Set the global Git sign key
+git config --global user.signingkey $KEY_ID_HERE
+
+#Set the GPG sign flag to true for all repos.
+git config --global commit.gpgsign true
+
+#Export the key with &quot;-----BEGIN PGP PUBLIC KEY BLOCK-----&quot;
+gpg --armor --export laurentfdumont@gmail.com &gt; mykey.asc
+</pre></div>
                 
                   
                 
