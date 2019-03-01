@@ -107,3 +107,22 @@ pulseaudio -k
 ```
 
 Reboot!
+
+### Create GPG key and export the key format for signing Github commits
+```
+#Create the key
+gpg --gen-key
+
+#Show the key ID
+gpg --list-keys
+
+#Set the global Git sign key
+git config --global user.signingkey $KEY_ID_HERE
+
+#Set the GPG sign flag to true for all repos.
+git config --global commit.gpgsign true
+
+#Export the key with "-----BEGIN PGP PUBLIC KEY BLOCK-----"
+gpg --armor --export laurentfdumont@gmail.com > mykey.asc
+
+```
