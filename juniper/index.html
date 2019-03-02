@@ -624,23 +624,31 @@
                   <h1>Juniper</h1>
                 
                 <h3 id="useful-commands">Useful commands.</h3>
-<div class="codehilite"><pre><span></span>show configuration
+<div class="codehilite"><pre><span></span># Show the current configuration.
+show configuration
 
-show logging messsage
+#Show the logs of the device.
+show log messsage
 
+#Show but compare
 show | compare
 
+#Show but display as a line configuration and not XML.
 show | display set
 
-show interface terse
+#Show interface list and status
+show interfaces terse
 
+#Show current hardware
 show chassis hardware
 
+#Show global routing table
 show route
 
 show interface | incl (proto|Desc)
 
-show system process
+#Show processus using memory and general system performance stats
+show system processes summary
 </pre></div>
 
 
