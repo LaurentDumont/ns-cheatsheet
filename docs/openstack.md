@@ -102,6 +102,7 @@ password = openstack2019
 
 ### Deploy Compute NOVA service on Controller node.
 ```
+```
 CREATE DATABASE nova_api;
 CREATE DATABASE nova;
 CREATE DATABASE nova_cell0;
