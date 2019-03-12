@@ -16,6 +16,8 @@ nav:
       - Netbox: netbox.md
       - Splunk: splunk.md
       - Chef: chef.md
+      - Openstack: openstack.md
+      - Docker: docker.md
 
 #Theme customization
 theme:
