@@ -582,66 +582,99 @@ password = openstack2019
 </pre></div>
 
 
-<p>CREATE DATABASE nova_api;
+<div class="codehilite"><pre><span></span>CREATE DATABASE nova_api;
 CREATE DATABASE nova;
 CREATE DATABASE nova_cell0;
-CREATE DATABASE placement;</p>
-<p>GRANT ALL PRIVILEGES ON nova_api.<em> TO 'nova'@'localhost' \
-  IDENTIFIED BY 'openstack2019';
-GRANT ALL PRIVILEGES ON nova_api.</em> TO 'nova'@'%' \
-  IDENTIFIED BY 'openstack2019';</p>
-<p>GRANT ALL PRIVILEGES ON nova.<em> TO 'nova'@'localhost' \
-  IDENTIFIED BY 'openstack2019';
-GRANT ALL PRIVILEGES ON nova.</em> TO 'nova'@'%' \
-  IDENTIFIED BY 'openstack2019';</p>
-<p>GRANT ALL PRIVILEGES ON nova_cell0.<em> TO 'nova'@'localhost' \
-  IDENTIFIED BY 'openstack2019';
-GRANT ALL PRIVILEGES ON nova_cell0.</em> TO 'nova'@'%' \
-  IDENTIFIED BY 'openstack2019';</p>
-<p>GRANT ALL PRIVILEGES ON placement.<em> TO 'placement'@'localhost' \
-  IDENTIFIED BY 'openstack2019';
-GRANT ALL PRIVILEGES ON placement.</em> TO 'placement'@'%' \
-  IDENTIFIED BY 'openstack2019';</p>
-<p>openstack user create --domain default --password-prompt nova</p>
-<p>openstack role add --project service --user nova admin</p>
-<p>openstack service create --name nova \
-  --description "OpenStack Compute" compute</p>
-<p>openstack endpoint create --region RegionOne \
-  compute public http://controller01:8774/v2.1</p>
-<p>openstack endpoint create --region RegionOne \
-  compute internal http://controller01:8774/v2.1</p>
-<p>openstack endpoint create --region RegionOne \
-  compute admin http://controller01:8774/v2.1</p>
-<p>openstack endpoint create --region RegionOne \
-  placement public http://controller01:8778</p>
-<p>openstack endpoint create --region RegionOne \
-  placement internal http://controller01:8778</p>
-<p>openstack endpoint create --region RegionOne \
-  placement admin http://controller01:8778</p>
-<p>modprobe br_netfilter
-echo "$(sysctl -w net.bridge.bridge-nf-call-iptables=1)" &gt;&gt; /etc/sysctl.conf
-echo "$(sysctl -w net.bridge.bridge-nf-call-ip6tables=1)" &gt;&gt; /etc/sysctl.conf
-sysctl -p /etc/sysctl.conf</p>
-<p>GRANT ALL PRIVILEGES ON neutron.* TO 'neutron'@'localhost' \
-  IDENTIFIED BY 'openstack2019';</p>
-<p>GRANT ALL PRIVILEGES ON neutron.* TO 'neutron'@'%' \
-  IDENTIFIED BY 'openstack2019';</p>
-<p>openstack endpoint create --region RegionOne \
-  network public http://controller01:9696</p>
-<p>openstack endpoint create --region RegionOne \
-  network internal http://controller01:9696</p>
-<p>openstack endpoint create --region RegionOne \
-  network admin http://controller01:9696</p>
-<p>openstack subnet create --network provider \
+CREATE DATABASE placement;
+
+
+GRANT ALL PRIVILEGES ON nova_api.* TO &#39;nova&#39;@&#39;localhost&#39; \
+  IDENTIFIED BY &#39;openstack2019&#39;;
+GRANT ALL PRIVILEGES ON nova_api.* TO &#39;nova&#39;@&#39;%&#39; \
+  IDENTIFIED BY &#39;openstack2019&#39;;
+
+GRANT ALL PRIVILEGES ON nova.* TO &#39;nova&#39;@&#39;localhost&#39; \
+  IDENTIFIED BY &#39;openstack2019&#39;;
+GRANT ALL PRIVILEGES ON nova.* TO &#39;nova&#39;@&#39;%&#39; \
+  IDENTIFIED BY &#39;openstack2019&#39;;
+
+GRANT ALL PRIVILEGES ON nova_cell0.* TO &#39;nova&#39;@&#39;localhost&#39; \
+  IDENTIFIED BY &#39;openstack2019&#39;;
+GRANT ALL PRIVILEGES ON nova_cell0.* TO &#39;nova&#39;@&#39;%&#39; \
+  IDENTIFIED BY &#39;openstack2019&#39;;
+
+GRANT ALL PRIVILEGES ON placement.* TO &#39;placement&#39;@&#39;localhost&#39; \
+  IDENTIFIED BY &#39;openstack2019&#39;;
+GRANT ALL PRIVILEGES ON placement.* TO &#39;placement&#39;@&#39;%&#39; \
+  IDENTIFIED BY &#39;openstack2019&#39;;
+
+
+openstack user create --domain default --password-prompt nova
+
+openstack role add --project service --user nova admin
+
+
+openstack service create --name nova \
+  --description &quot;OpenStack Compute&quot; compute
+
+openstack endpoint create --region RegionOne \
+  compute public http://controller01:8774/v2.1
+
+openstack endpoint create --region RegionOne \
+  compute internal http://controller01:8774/v2.1
+
+openstack endpoint create --region RegionOne \
+  compute admin http://controller01:8774/v2.1
+
+openstack endpoint create --region RegionOne \
+  placement public http://controller01:8778
+
+openstack endpoint create --region RegionOne \
+  placement internal http://controller01:8778
+
+
+openstack endpoint create --region RegionOne \
+  placement admin http://controller01:8778
+
+
+modprobe br_netfilter
+echo &quot;$(sysctl -w net.bridge.bridge-nf-call-iptables=1)&quot; &gt;&gt; /etc/sysctl.conf
+echo &quot;$(sysctl -w net.bridge.bridge-nf-call-ip6tables=1)&quot; &gt;&gt; /etc/sysctl.conf
+sysctl -p /etc/sysctl.conf
+
+
+
+GRANT ALL PRIVILEGES ON neutron.* TO &#39;neutron&#39;@&#39;localhost&#39; \
+  IDENTIFIED BY &#39;openstack2019&#39;;
+
+GRANT ALL PRIVILEGES ON neutron.* TO &#39;neutron&#39;@&#39;%&#39; \
+  IDENTIFIED BY &#39;openstack2019&#39;;
+
+openstack endpoint create --region RegionOne \
+  network public http://controller01:9696
+
+openstack endpoint create --region RegionOne \
+  network internal http://controller01:9696
+
+openstack endpoint create --region RegionOne \
+  network admin http://controller01:9696
+
+
+openstack subnet create --network provider \
   --allocation-pool start=10.13.0.100,end=10.13.0.200 \
   --dns-nameserver 10.13.0.1 --gateway 10.13.0.1 \
-  --subnet-range 10.13.0.0/24 provider</p>
-<p>openstack server create --flavor m1.nano --image cirros \
+  --subnet-range 10.13.0.0/24 provider
+
+
+
+openstack server create --flavor m1.nano --image cirros \
   --nic net-id=dee9dde7-0edb-4311-a06e-5ffb98144527 --security-group default \
-  provider-instance</p>
-<p>nova-manage cell_v2 map_cell0
+  provider-instance
+
+
+nova-manage cell_v2 map_cell0
 nova-manage db sync
-```</p>
+</pre></div>
                 
                   
                 
