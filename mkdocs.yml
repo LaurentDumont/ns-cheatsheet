@@ -18,7 +18,10 @@ nav:
       - Chef: chef.md
       - Openstack: openstack.md
       - Docker: docker.md
+      - Molecule: molecule.md
+      - Git: git.md
 
+    
 #Theme customization
 theme:
       name: 'material'
