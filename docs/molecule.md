@@ -12,3 +12,8 @@ pip install --user molecule
 #From within the role folder
 molecule init scenario -r my-role-name
 ```
+
+### Start a full testing run
+```
+sudo molecule test
+```

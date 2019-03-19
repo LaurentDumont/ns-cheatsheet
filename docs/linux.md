@@ -126,3 +126,14 @@ git config --global commit.gpgsign true
 gpg --armor --export laurentfdumont@gmail.com > mykey.asc
 
 ```
+
+
+### Using the "ip" tool to change connecticity"
+```
+ip link set $DEV_NAME down
+ip link set $DEV_NAME up
+
+ip route add default via $DEF_GW_IP dev $DEV_NAME
+ip addr add $IP_ADDR_CIDR dev $DEV_NAME
+ip addr delete $IP_ADDR_CIDR dev $DEV_NAME
+```
