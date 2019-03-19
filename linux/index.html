@@ -335,6 +335,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#using-the-ip-tool-to-change-connecticity" title="Using the "ip" tool to change connecticity"" class="md-nav__link">
+    Using the "ip" tool to change connecticity"
+  </a>
+  
+</li>
+      
       
       
       
@@ -454,6 +461,30 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../molecule/" title="Molecule" class="md-nav__link">
+      Molecule
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../git/" title="Git" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -496,6 +527,13 @@
         <li class="md-nav__item">
   <a href="#create-gpg-key-and-export-the-key-format-for-signing-github-commits" title="Create GPG key and export the key format for signing Github commits" class="md-nav__link">
     Create GPG key and export the key format for signing Github commits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-ip-tool-to-change-connecticity" title="Using the "ip" tool to change connecticity"" class="md-nav__link">
+    Using the "ip" tool to change connecticity"
   </a>
   
 </li>
@@ -643,6 +681,16 @@ git config --global commit.gpgsign true
 
 #Export the key with &quot;-----BEGIN PGP PUBLIC KEY BLOCK-----&quot;
 gpg --armor --export laurentfdumont@gmail.com &gt; mykey.asc
+</pre></div>
+
+
+<h3 id="using-the-ip-tool-to-change-connecticity">Using the "ip" tool to change connecticity"</h3>
+<div class="codehilite"><pre><span></span>ip link set $DEV_NAME down
+ip link set $DEV_NAME up
+
+ip route add default via $DEF_GW_IP dev $DEV_NAME
+ip addr add $IP_ADDR_CIDR dev $DEV_NAME
+ip addr delete $IP_ADDR_CIDR dev $DEV_NAME
 </pre></div>
                 
                   
