@@ -127,7 +127,6 @@ gpg --armor --export laurentfdumont@gmail.com > mykey.asc
 
 ```
 
-
 ### Using the "ip" tool to change connecticity"
 ```
 ip link set $DEV_NAME down
@@ -136,4 +135,11 @@ ip link set $DEV_NAME up
 ip route add default via $DEF_GW_IP dev $DEV_NAME
 ip addr add $IP_ADDR_CIDR dev $DEV_NAME
 ip addr delete $IP_ADDR_CIDR dev $DEV_NAME
+```
+
+### Fix BR and VMBR Linux bridges filtering LLDP packets
+```
+https://interestingtraffic.nl/2017/11/21/an-oddly-specific-post-about-group_fwd_mask/
+
+echo 16384 > /sys/class/net/$VMBR_INTERFACE/bridge/group_fwd_mask
 ```
