@@ -342,6 +342,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fix-br-and-vmbr-linux-bridges-filtering-lldp-packets" title="Fix BR and VMBR Linux bridges filtering LLDP packets" class="md-nav__link">
+    Fix BR and VMBR Linux bridges filtering LLDP packets
+  </a>
+  
+</li>
+      
       
       
       
@@ -485,6 +492,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../maas/" title="MAAS" class="md-nav__link">
+      MAAS
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -534,6 +553,13 @@
         <li class="md-nav__item">
   <a href="#using-the-ip-tool-to-change-connecticity" title="Using the "ip" tool to change connecticity"" class="md-nav__link">
     Using the "ip" tool to change connecticity"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-br-and-vmbr-linux-bridges-filtering-lldp-packets" title="Fix BR and VMBR Linux bridges filtering LLDP packets" class="md-nav__link">
+    Fix BR and VMBR Linux bridges filtering LLDP packets
   </a>
   
 </li>
@@ -691,6 +717,13 @@ ip link set $DEV_NAME up
 ip route add default via $DEF_GW_IP dev $DEV_NAME
 ip addr add $IP_ADDR_CIDR dev $DEV_NAME
 ip addr delete $IP_ADDR_CIDR dev $DEV_NAME
+</pre></div>
+
+
+<h3 id="fix-br-and-vmbr-linux-bridges-filtering-lldp-packets">Fix BR and VMBR Linux bridges filtering LLDP packets</h3>
+<div class="codehilite"><pre><span></span>https://interestingtraffic.nl/2017/11/21/an-oddly-specific-post-about-group_fwd_mask/
+
+echo 16384 &gt; /sys/class/net/$VMBR_INTERFACE/bridge/group_fwd_mask
 </pre></div>
                 
                   
