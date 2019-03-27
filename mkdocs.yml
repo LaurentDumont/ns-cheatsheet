@@ -20,6 +20,7 @@ nav:
       - Docker: docker.md
       - Molecule: molecule.md
       - Git: git.md
+      - MAAS: maas.md
 
     
 #Theme customization
