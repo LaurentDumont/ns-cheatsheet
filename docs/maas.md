@@ -1,7 +1,13 @@
 ## Adding a custom power provider for MAAS.
 
 
+### Install proxmoxer for Python3
+```
+pip3 install proxmoxer
+```
+
 ### Proxmox Script - source https://bugs.launchpad.net/maas/+bug/1805799
+
 ```python
 # Copyright 2018 Wojciech Rakoniewski  
 # This software is licensed under the
