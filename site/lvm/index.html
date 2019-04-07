@@ -40,7 +40,7 @@
     
     
       
-        <title>iPerf - Laurent Dumont - Internet notepad.</title>
+        <title>LVM - Laurent Dumont - Internet notepad.</title>
       
     
     
@@ -131,7 +131,7 @@
                 Laurent Dumont - Internet notepad.
               </span>
               <span class="md-header-nav__topic">
-                iPerf
+                LVM
               </span>
             
           
@@ -318,18 +318,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="iPerf" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../iperf/" title="iPerf" class="md-nav__link">
       iPerf
     </a>
-    
   </li>
 
     
@@ -469,11 +462,18 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../lvm/" title="LVM" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="LVM" class="md-nav__link md-nav__link--active">
       LVM
     </a>
+    
   </li>
 
     
@@ -501,29 +501,55 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/iperf.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/lvm.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>iPerf</h1>
+                  <h1>LVM</h1>
                 
-                <p><strong>UDP TEST (DDOS like test where you send traffic to the other endpoint without any policing.</strong><br />
-iPerf3 does not allow you to send traffic directly for UDP. It needs to "connect" to an iPerf3 endpoint, even for UDP.</p>
-<div class="codehilite"><pre><span></span>./iperf -c TARGET_IP --udp --interval 2 --bandwidth 9m
-</pre></div>
-
-
-<p><strong>IPERF SERVER TCP</strong></p>
-<div class="codehilite"><pre><span></span>./iperf --server
-</pre></div>
-
-
-<p><strong>IPERF CLIENT TCP UPLOAD AND THEN DOWNLOAD</strong></p>
-<div class="codehilite"><pre><span></span>./iperf --client IPERF_SERVER --tradeoff --window 1M
-</pre></div>
-
-
-<p><strong>IPERF CLIENT TCP UPLOAD AND DOWNLOAD AT THE SAME TIME</strong></p>
-<div class="codehilite"><pre><span></span>./iperf --client IPERF_SERVER --dualtest --window 1M
+                <h3 id="_1"></h3>
+<div class="codehilite"><pre><span></span>7  echo &quot;deb http://download.proxmox.com/debian/pve stretch pve-no-subscription&quot; &gt; /etc/apt/sources.list.d/pve-install-repo.list
+    8  wget http://download.proxmox.com/debian/proxmox-ve-release-5.x.gpg -O /etc/apt/trusted.gpg.d/proxmox-ve-release-5.x.gpg
+    9  apt update &amp;&amp; apt dist-upgrade
+   10  apt install proxmox-ve postfix open-iscsi
+   11  clear
+   12  shutdown -r now
+   13  mount /dev/sdb1 /storage
+   14  mkdir /storage
+   15  mount /dev/sdb1 /storage
+   16  mount /dev/sdb /storage
+   17  mount -t ext4 /dev/sdb /storage
+   18  dmesg | tail
+   19  fdisk -l
+   20  lvdisplay 
+   21  vgdisplay 
+   22  vgscan 
+   23  fdisk -l
+   24  clear
+   25  vgdisplay 
+   26  lvmdiskscan 
+   27  vgcreate 
+   28  vgcreate /dev/sdb1
+   29  pvs
+   30  vgcreate vg-storage /dev/sdb1
+   31  vgdisplay 
+   32  man lvcreate 
+   33  lvcreate -n storage -l 100%FREE vg-storage
+   34  lvdisplay 
+   35  clear
+   36  mkfs.ext4 /dev/vg-storage/storage
+   37  lvdisplay 
+   38  man mount
+   39  man mount
+   40  man mount
+   41  mount -t ext4 /dev/vg-storage/storage /storage
+   42  cd /storage
+   43  mkdir tata
+   44  ls
+   45  rm tata
+   46  rm -rf tata
+   47  clear
+   48  exit
+   49  history
 </pre></div>
                 
                   
@@ -545,7 +571,7 @@ iPerf3 does not allow you to send traffic directly for UDP. It needs to "connect
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../prometheus/" title="Prometheus" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../mysql/" title="MySQL/MariaDB" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -554,19 +580,19 @@ iPerf3 does not allow you to send traffic directly for UDP. It needs to "connect
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Prometheus
+                MySQL/MariaDB
               </span>
             </div>
           </a>
         
         
-          <a href="../juniper/" title="Juniper" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../security/" title="Security" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Juniper
+                Security
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
