@@ -40,7 +40,7 @@
     
     
       
-        <title>iPerf - Laurent Dumont - Internet notepad.</title>
+        <title>MySQL/MariaDB - Laurent Dumont - Internet notepad.</title>
       
     
     
@@ -131,7 +131,7 @@
                 Laurent Dumont - Internet notepad.
               </span>
               <span class="md-header-nav__topic">
-                iPerf
+                MySQL/MariaDB
               </span>
             
           
@@ -318,18 +318,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="iPerf" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../iperf/" title="iPerf" class="md-nav__link">
       iPerf
     </a>
-    
   </li>
 
     
@@ -457,11 +450,18 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../mysql/" title="MySQL/MariaDB" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+    <a href="./" title="MySQL/MariaDB" class="md-nav__link md-nav__link--active">
       MySQL/MariaDB
     </a>
+    
   </li>
 
     
@@ -501,30 +501,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/iperf.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/mysql.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>iPerf</h1>
+                  <h1>MySQL/MariaDB</h1>
                 
-                <p><strong>UDP TEST (DDOS like test where you send traffic to the other endpoint without any policing.</strong><br />
-iPerf3 does not allow you to send traffic directly for UDP. It needs to "connect" to an iPerf3 endpoint, even for UDP.</p>
-<div class="codehilite"><pre><span></span>./iperf -c TARGET_IP --udp --interval 2 --bandwidth 9m
-</pre></div>
-
-
-<p><strong>IPERF SERVER TCP</strong></p>
-<div class="codehilite"><pre><span></span>./iperf --server
-</pre></div>
-
-
-<p><strong>IPERF CLIENT TCP UPLOAD AND THEN DOWNLOAD</strong></p>
-<div class="codehilite"><pre><span></span>./iperf --client IPERF_SERVER --tradeoff --window 1M
-</pre></div>
-
-
-<p><strong>IPERF CLIENT TCP UPLOAD AND DOWNLOAD AT THE SAME TIME</strong></p>
-<div class="codehilite"><pre><span></span>./iperf --client IPERF_SERVER --dualtest --window 1M
-</pre></div>
+                
                 
                   
                 
@@ -545,7 +527,7 @@ iPerf3 does not allow you to send traffic directly for UDP. It needs to "connect
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../prometheus/" title="Prometheus" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../postgres/" title="Postgres" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -554,19 +536,19 @@ iPerf3 does not allow you to send traffic directly for UDP. It needs to "connect
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Prometheus
+                Postgres
               </span>
             </div>
           </a>
         
         
-          <a href="../juniper/" title="Juniper" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../lvm/" title="LVM" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Juniper
+                LVM
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
