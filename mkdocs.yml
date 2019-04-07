@@ -2,6 +2,7 @@
 site_name: Laurent Dumont - Internet notepad.
 site_description: 'My own little space'
 site_author: 'Laurent Dumont'
+google_analytics: ['UA-51757315-3', 'cheat.northernsysadmin.com']
 
 #Page list
 nav:
@@ -21,6 +22,10 @@ nav:
       - Molecule: molecule.md
       - Git: git.md
       - MAAS: maas.md
+      - Postgres: postgres.md
+      - MySQL/MariaDB: mysql.md
+      - LVM: lvm.md
+      - Security: security.md
 
     
 #Theme customization
