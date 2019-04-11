@@ -148,3 +148,26 @@ set snmp location “9880 Clark”
 set snmp contact "laurentfdumont@gmail.com"
 set snmp community cmaker authorization read-only
 ```
+
+### Aggregated interfaces (AE)
+```
+#Increase the number of AE interfaces.
+set chassis aggregated-devicesethernetdevice-count4 
+
+
+#Create the AE interface and the switching options.
+set interfaces ae3 description AE-LACP-ULTRABACON-PROXMOX
+set interfaces ae3 aggregated-ether-options lacp active
+set interfaces ae3 unit 0 family ethernet-switching port-mode trunk
+set interfaces ae3 unit 0 family ethernet-switching vlan members 69
+set interfaces ae3 unit 0 family ethernet-switching vlan members 99-100
+set interfaces ae3 unit 0 family ethernet-switching vlan members 210
+set interfaces ae3 unit 0 family ethernet-switching vlan members 2001
+set interfaces ae3 unit 0 family ethernet-switching native-vlan-id 666
+
+cmaker@ex2200-cmaker> show configuration interfaces ge-0/0/17 | display set 
+set interfaces ge-0/0/17 description LACP-ULTRABACON-PROXMOX
+set interfaces ge-0/0/17 ether-options 802.3ad ae3
+
+
+```
