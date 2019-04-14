@@ -16,6 +16,11 @@ gluster volume create $VOLUME_NAME $IPADDRESS_OR_DOMAINNAME:/$ROOT_MOUNT_POINT/$
 gluster volume start $VOLUME_NAME
 ```
 
+### Mount a gluster share.
+```
+mount -t glusterfs $GLUSTER_SERVER_IP:$SHARE_NAME $LOCAL_PATH
+```
+
 ```
 sudo gluster volume start gluster-vol-1
 ```
