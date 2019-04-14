@@ -329,6 +329,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mount-a-gluster-share" title="Mount a gluster share." class="md-nav__link">
+    Mount a gluster share.
+  </a>
+  
+</li>
+      
       
       
       
@@ -545,6 +552,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#mount-a-gluster-share" title="Mount a gluster share." class="md-nav__link">
+    Mount a gluster share.
+  </a>
+  
+</li>
+      
       
       
       
@@ -581,6 +595,11 @@
 <h3 id="no-replicate-single-server">No replicate - single server.</h3>
 <div class="codehilite"><pre><span></span>gluster volume create $VOLUME_NAME $IPADDRESS_OR_DOMAINNAME:/$ROOT_MOUNT_POINT/$SUBFOLDER
 gluster volume start $VOLUME_NAME
+</pre></div>
+
+
+<h3 id="mount-a-gluster-share">Mount a gluster share.</h3>
+<div class="codehilite"><pre><span></span>mount -t glusterfs $GLUSTER_SERVER_IP:$SHARE_NAME $LOCAL_PATH
 </pre></div>
 
 
