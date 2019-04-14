@@ -36,14 +36,15 @@ docker run -d -p 5800:5800 -p 5900:5900 -e IDRAC_HOST=IP_HERE -e IDRAC_USER=root
 docker volume create radarr-config
 
 sudo docker run \
+  -d \
   --name=radarr \
   -e PUID=109 \
   -e PGID=113 \
   -e TZ=America/Toronto \
   -p 7878:7878 \
   -v radarr-config:/config \
-  -v /storage/media/movies/:/movies \
-  -v /storage/torrents_download/:/downloads \
+  -v /storage/media-gluster/movies/:/movies \
+  -v /storage/media-gluster/downloads:/downloads \
   --restart unless-stopped \
   linuxserver/radarr
 ```
