@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../images/tarsier_hi_elbows.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
     
     
       
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.750b69bd.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -55,7 +55,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -69,8 +69,30 @@
     
     
       
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51757315-3"></script>
-<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-51757315-3")</script>
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-51757315-3", "cheat.northernsysadmin.com")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
@@ -126,22 +148,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Laurent Dumont - Internet notepad.
-              </span>
-              <span class="md-header-nav__topic">
-                Prometheus
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Laurent Dumont - Internet notepad.
+            </span>
+            <span class="md-header-nav__topic">
+              Prometheus
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -164,7 +183,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -175,20 +193,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
           </div>
         </div>
       
@@ -224,20 +240,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -506,25 +520,30 @@
                 
                   <h1>Prometheus</h1>
                 
-                <div class="codehilite"><pre><span></span>#Docker volume - Prometheus config
-sudo docker volume create prometheus-config
+                <div class="codehilite"><pre><span></span><span class="o">#</span><span class="n">Docker</span> <span class="n">volume</span> <span class="o">-</span> <span class="n">Prometheus</span> <span class="n">config</span>
+<span class="n">sudo</span> <span class="n">docker</span> <span class="n">volume</span> <span class="k">create</span> <span class="n">prometheus</span><span class="o">-</span><span class="n">config</span>
 
-#Docker volume - Prometheus metrics and adata
-sudo docker volume create prometheus-data
+<span class="o">#</span><span class="n">Docker</span> <span class="n">volume</span> <span class="o">-</span> <span class="n">Prometheus</span> <span class="n">metrics</span> <span class="k">and</span> <span class="n">adata</span>
+<span class="n">sudo</span> <span class="n">docker</span> <span class="n">volume</span> <span class="k">create</span> <span class="n">prometheus</span><span class="o">-</span><span class="k">data</span>
 
-sudo docker run -d -p 9090:9090 -v prometheus-config:/prometheus-config -v prometheus-data:/prometheus prom/prometheus --config.file=/prometheus-config/prometheus.yml
+<span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">p</span> <span class="mi">9090</span><span class="p">:</span><span class="mi">9090</span> <span class="o">-</span><span class="n">v</span> <span class="n">prometheus</span><span class="o">-</span><span class="n">config</span><span class="p">:</span><span class="o">/</span><span class="n">prometheus</span><span class="o">-</span><span class="n">config</span> <span class="o">-</span><span class="n">v</span> <span class="n">prometheus</span><span class="o">-</span><span class="k">data</span><span class="p">:</span><span class="o">/</span><span class="n">prometheus</span> <span class="n">prom</span><span class="o">/</span><span class="n">prometheus</span> <span class="c1">--config.file=/prometheus-config/prometheus.yml</span>
 </pre></div>
 
 
 <p>Grafana container</p>
-<div class="codehilite"><pre><span></span>sudo docker volume create grafana-config
-sudo docker run \
-  -d \
-  -p 3000:3000 \
-  --name=grafana \
-  -v grafana-storage:/var/lib/grafana \
-  -e &quot;GF_SECURITY_ADMIN_PASSWORD=PASSWORD_HERE&quot; \
-  grafana/grafana
+<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">docker</span> <span class="n">volume</span> <span class="k">create</span> <span class="n">grafana</span><span class="o">-</span><span class="n">config</span>
+<span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="err">\</span>
+  <span class="o">-</span><span class="n">d</span> <span class="err">\</span>
+  <span class="o">-</span><span class="n">p</span> <span class="mi">3000</span><span class="p">:</span><span class="mi">3000</span> <span class="err">\</span>
+  <span class="c1">--name=grafana \</span>
+  <span class="o">-</span><span class="n">v</span> <span class="n">grafana</span><span class="o">-</span><span class="k">storage</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">grafana</span> <span class="err">\</span>
+  <span class="o">-</span><span class="n">e</span> <span class="ss">&quot;GF_SECURITY_ADMIN_PASSWORD=PASSWORD_HERE&quot;</span> <span class="err">\</span>
+  <span class="n">grafana</span><span class="o">/</span><span class="n">grafana</span>
+</pre></div>
+
+
+<p>Blackbox exporter</p>
+<div class="codehilite"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">--</span><span class="n">rm</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">p</span> <span class="mi">9115</span><span class="p">:</span><span class="mi">9115</span> <span class="o">--</span><span class="n">name</span> <span class="n">blackbox_exporter</span> <span class="o">-</span><span class="n">v</span> <span class="ss">`pwd`</span><span class="p">:</span><span class="o">/</span><span class="n">config</span> <span class="n">prom</span><span class="o">/</span><span class="n">blackbox</span><span class="o">-</span><span class="n">exporter</span><span class="p">:</span><span class="n">master</span> <span class="o">--</span><span class="n">config</span><span class="p">.</span><span class="n">file</span><span class="o">=/</span><span class="n">config</span><span class="o">/</span><span class="n">blackbox</span><span class="p">.</span><span class="n">yml</span>
 </pre></div>
                 
                   
@@ -593,7 +612,6 @@ sudo docker run \
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
@@ -603,14 +621,13 @@ sudo docker run \
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.39abc4af.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../images/tarsier_hi_elbows.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
     
     
       
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.750b69bd.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -55,7 +55,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -69,8 +69,30 @@
     
     
       
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51757315-3"></script>
-<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-51757315-3")</script>
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-51757315-3", "cheat.northernsysadmin.com")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
@@ -130,22 +152,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Laurent Dumont - Internet notepad.
-              </span>
-              <span class="md-header-nav__topic">
-                Cisco-CCNA
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Laurent Dumont - Internet notepad.
+            </span>
+            <span class="md-header-nav__topic">
+              Cisco-CCNA
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -168,7 +187,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -179,20 +197,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
           </div>
         </div>
       
@@ -228,20 +244,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -1659,63 +1673,63 @@
 <h2 id="cisco-security">Cisco Security</h2>
 <h3 id="user-and-access-management">User and access management</h3>
 <p>Enable secret takes precedence over enable password.</p>
-<div class="codehilite"><pre><span></span>enable password potato
-enable secret potato2
+<div class="codehilite"><pre><span></span><span class="n">enable</span> <span class="n">password</span> <span class="n">potato</span>
+<span class="n">enable</span> <span class="n">secret</span> <span class="n">potato2</span>
 
-enable password = potato2
+<span class="n">enable</span> <span class="n">password</span> <span class="o">=</span> <span class="n">potato2</span>
 </pre></div>
 
 
 <p>Enable AAA (allow user with privilege 15 to login straight into enable mode)</p>
-<div class="codehilite"><pre><span></span>conf t
-aaa new-model
-aaa authentication login default group local
-aaa authorization exec default group local
+<div class="codehilite"><pre><span></span><span class="nv">conf</span> <span class="nv">t</span>
+<span class="nv">aaa</span> <span class="nv">new</span><span class="o">-</span><span class="nv">model</span>
+<span class="nv">aaa</span> <span class="nv">authentication</span> <span class="nv">login</span> <span class="nv">default</span> <span class="nv">group</span> <span class="nv">local</span>
+<span class="nv">aaa</span> <span class="nv">authorization</span> <span class="k">exec</span> <span class="nv">default</span> <span class="nv">group</span> <span class="nv">local</span>
 </pre></div>
 
 
 <p>Create user with default privilege 15 level</p>
-<div class="codehilite"><pre><span></span>conf t
-username $USERNAME privilege 15 secret $PASSWORD
+<div class="codehilite"><pre><span></span><span class="n">conf</span> <span class="n">t</span>
+<span class="n">username</span> <span class="err">$</span><span class="n">USERNAME</span> <span class="n">privilege</span> <span class="mi">15</span> <span class="n">secret</span> <span class="err">$</span><span class="n">PASSWORD</span>
 </pre></div>
 
 
 <p>login = password and username of the vty itself.
 login local = Local username database</p>
-<div class="codehilite"><pre><span></span>conf t
-line con 0
-login local
-exec-timeout 0 0
-logging synchronous
+<div class="codehilite"><pre><span></span><span class="nv">conf</span> <span class="nv">t</span>
+<span class="nv">line</span> <span class="nv">con</span> <span class="mi">0</span>
+<span class="nv">login</span> <span class="nv">local</span>
+<span class="k">exec</span><span class="o">-</span><span class="nb">timeout</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="nv">logging</span> <span class="nv">synchronous</span>
 </pre></div>
 
 
 <p>Line VTY user are set to privilege 15 automatically.</p>
-<div class="codehilite"><pre><span></span>conf t
-line vty 0 15
-privilege level 15
+<div class="codehilite"><pre><span></span><span class="n">conf</span> <span class="n">t</span>
+<span class="n">line</span> <span class="n">vty</span> <span class="mi">0</span> <span class="mi">15</span>
+<span class="n">privilege</span> <span class="k">level</span> <span class="mi">15</span>
 </pre></div>
 
 
 <p>"Encrypt" passwords in the startup-config.</p>
-<div class="codehilite"><pre><span></span>service password-encryption
+<div class="codehilite"><pre><span></span><span class="n">service</span> <span class="n">password</span><span class="o">-</span><span class="n">encryption</span>
 </pre></div>
 
 
 <h3 id="port-security">Port-Security</h3>
 <p>Enabling port security on port
 Cannot be enabled on a trunk/dynamic/auto port. Must be an access port.</p>
-<div class="codehilite"><pre><span></span><span class="nx">conf</span> <span class="nx">t</span>
-<span class="kr">interface</span> <span class="nx">gigabitethernet0</span><span class="o">/</span><span class="mi">1</span>
-<span class="nx">switchport</span> <span class="nx">port</span><span class="o">-</span><span class="nx">security</span>
+<div class="codehilite"><pre><span></span><span class="n">conf</span> <span class="n">t</span>
+<span class="n">interface</span> <span class="n">gigabitethernet0</span><span class="o">/</span><span class="mi">1</span>
+<span class="n">switchport</span> <span class="n">port</span><span class="o">-</span><span class="k">security</span>
 </pre></div>
 
 
 <p>Keep MAC addresses when port-shutdown or switch reload.</p>
-<div class="codehilite"><pre><span></span><span class="nx">conf</span> <span class="nx">t</span>
-<span class="kr">interface</span> <span class="nx">gigabitethernet0</span><span class="o">/</span><span class="mi">1</span>
-<span class="nx">switchport</span> <span class="nx">port</span><span class="o">-</span><span class="nx">security</span>
-<span class="nx">switchport</span> <span class="nx">port</span><span class="o">-</span><span class="nx">security</span> <span class="nx">mac</span><span class="o">-</span><span class="nx">address</span> <span class="nx">sticky</span>
+<div class="codehilite"><pre><span></span><span class="n">conf</span> <span class="n">t</span>
+<span class="n">interface</span> <span class="n">gigabitethernet0</span><span class="o">/</span><span class="mi">1</span>
+<span class="n">switchport</span> <span class="n">port</span><span class="o">-</span><span class="k">security</span>
+<span class="n">switchport</span> <span class="n">port</span><span class="o">-</span><span class="k">security</span> <span class="n">mac</span><span class="o">-</span><span class="n">address</span> <span class="n">sticky</span>
 </pre></div>
 
 
@@ -1777,24 +1791,24 @@ A = 10 units of 16 (A=16) ---&gt; 160<br />
 <strong>restrict</strong> - Drops traffic, generate SNMP trap, generate SYSLOG.<br />
 <strong>shutdown</strong> - Default, increase violation counters, Port shutdown in error-disabled.  </p>
 <p>Show port-security commands</p>
-<div class="codehilite"><pre><span></span>show port-security interface fastethernet 0/1
+<div class="codehilite"><pre><span></span><span class="k">show</span> <span class="nv">port</span><span class="o">-</span><span class="nv">security</span> <span class="nv">interface</span> <span class="nv">fastethernet</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>show port-security address
+<div class="codehilite"><pre><span></span><span class="k">show</span> <span class="nv">port</span><span class="o">-</span><span class="nv">security</span> <span class="nv">address</span>
 </pre></div>
 
 
 <p>Error disabled recovery<br />
 Default recovery 300 seconds</p>
-<div class="codehilite"><pre><span></span>conf t
-errordisable recovery cause ?
-errordisable recovery cause psecure-violation
-errdisable recovery interval 30
+<div class="codehilite"><pre><span></span><span class="n">conf</span> <span class="n">t</span>
+<span class="n">errordisable</span> <span class="n">recovery</span> <span class="n">cause</span> <span class="o">?</span>
+<span class="n">errordisable</span> <span class="n">recovery</span> <span class="n">cause</span> <span class="n">psecure</span><span class="o">-</span><span class="n">violation</span>
+<span class="n">errdisable</span> <span class="n">recovery</span> <span class="nb">interval</span> <span class="mi">30</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>show errdisable recovery
+<div class="codehilite"><pre><span></span><span class="k">show</span> <span class="nv">errdisable</span> <span class="nv">recovery</span>
 </pre></div>
 
 
@@ -1812,8 +1826,8 @@ errdisable recovery interval 30
 <li>Symptoms --&gt; Slow Upload, irregular speed, packet loss, CRC/Runt frames errors on the interface</li>
 </ul>
 <h3 id="interface-range">Interface range</h3>
-<div class="codehilite"><pre><span></span><span class="kr">interface</span> <span class="nx">range</span> <span class="nx">fastethernet</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="mi">24</span>
-<span class="kr">interface</span> <span class="nx">range</span> <span class="nx">fastethernet</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="mi">24</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">26</span>
+<div class="codehilite"><pre><span></span><span class="n">interface</span> <span class="n">range</span> <span class="n">fastethernet</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="mi">24</span>
+<span class="n">interface</span> <span class="n">range</span> <span class="n">fastethernet</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">-</span><span class="mi">24</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">26</span>
 </pre></div>
 
 
@@ -1889,12 +1903,12 @@ errdisable recovery interval 30
 3. Request - Client sends request for the offered IP address.<br />
 4. Ack - DHCP server ack the client request and assigns the IP.  </p>
 <h3 id="routing-static-routes">Routing - Static Routes</h3>
-<div class="codehilite"><pre><span></span>ip route destination_subnet destination_mask [local-router-exit-interface | next-hop-ip-address]
+<div class="codehilite"><pre><span></span><span class="nv">ip</span> <span class="nv">route</span> <span class="nv">destination_subnet</span> <span class="nv">destination_mask</span> [<span class="nv">local</span><span class="o">-</span><span class="nv">router</span><span class="o">-</span><span class="k">exit</span><span class="o">-</span><span class="nv">interface</span> <span class="o">|</span> <span class="k">next</span><span class="o">-</span><span class="nv">hop</span><span class="o">-</span><span class="nv">ip</span><span class="o">-</span><span class="nv">address</span>]
 
-ip route 2.2.2.2 255.255.255.0 192.168.1.1
+<span class="nv">ip</span> <span class="nv">route</span> <span class="mi">2</span>.<span class="mi">2</span>.<span class="mi">2</span>.<span class="mi">2</span> <span class="mi">255</span>.<span class="mi">255</span>.<span class="mi">255</span>.<span class="mi">0</span> <span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">1</span>.<span class="mi">1</span>
 
-#Default Route
-ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
+#<span class="nv">Default</span> <span class="nv">Route</span>
+<span class="nv">ip</span> <span class="nv">route</span> <span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span> <span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span> [<span class="nv">local</span><span class="o">-</span><span class="nv">router</span><span class="o">-</span><span class="k">exit</span><span class="o">-</span><span class="nv">interface</span> <span class="o">|</span> <span class="k">next</span><span class="o">-</span><span class="nv">hop</span><span class="o">-</span><span class="nv">ip</span><span class="o">-</span><span class="nv">address</span>]
 </pre></div>
 
 
@@ -1932,74 +1946,74 @@ ip route 0.0.0.0 0.0.0.0 [local-router-exit-interface | next-hop-ip-address]
 <li>Does not care about interface speed - only hop count.</li>
 </ul>
 <h4 id="enabling-ripv2">Enabling RIPv2</h4>
-<div class="codehilite"><pre><span></span><span class="nx">conf</span> <span class="nx">t</span>
-<span class="nx">router</span> <span class="nx">rip</span>
+<div class="codehilite"><pre><span></span><span class="nv">conf</span> <span class="nv">t</span>
+<span class="nv">router</span> <span class="nv">rip</span>
 
-<span class="err">#</span><span class="nx">Show</span> <span class="nx">protocols</span> <span class="nx">active</span> <span class="nx">on</span> <span class="nx">router</span>
-<span class="nx">show</span> <span class="nx">ip</span> <span class="nx">protocols</span>
+#<span class="k">Show</span> <span class="nv">protocols</span> <span class="nv">active</span> <span class="nv">on</span> <span class="nv">router</span>
+<span class="k">show</span> <span class="nv">ip</span> <span class="nv">protocols</span>
 
-<span class="err">#</span><span class="nx">Enable</span> <span class="nx">specific</span> <span class="nx">version</span> <span class="nx">of</span> <span class="nx">RIPv2</span> <span class="nx">per</span> <span class="kr">interface</span> <span class="nx">or</span> <span class="nx">global</span><span class="p">.</span>
-<span class="kr">interface</span> <span class="nx">gig0</span><span class="o">/</span><span class="mi">1</span>
-<span class="nx">ip</span> <span class="nx">rip</span> <span class="nx">send</span> <span class="nx">version</span> <span class="mi">2</span>
+#<span class="nv">Enable</span> <span class="nv">specific</span> <span class="nv">version</span> <span class="nv">of</span> <span class="nv">RIPv2</span> <span class="nv">per</span> <span class="nv">interface</span> <span class="nv">or</span> <span class="nv">global</span>.
+<span class="nv">interface</span> <span class="nv">gig0</span><span class="o">/</span><span class="mi">1</span>
+<span class="nv">ip</span> <span class="nv">rip</span> <span class="k">send</span> <span class="nv">version</span> <span class="mi">2</span>
 
-<span class="nx">conf</span> <span class="nx">t</span>
-<span class="nx">router</span> <span class="nx">rip</span>
-<span class="nx">rip</span> <span class="nx">version</span> <span class="mi">2</span>
-<span class="nx">network</span> <span class="mf">10.10</span><span class="p">.</span><span class="mf">10.0</span>
-<span class="nx">network</span> <span class="mf">10.10</span><span class="p">.</span><span class="mf">11.0</span>
+<span class="nv">conf</span> <span class="nv">t</span>
+<span class="nv">router</span> <span class="nv">rip</span>
+<span class="nv">rip</span> <span class="nv">version</span> <span class="mi">2</span>
+<span class="nv">network</span> <span class="mi">10</span>.<span class="mi">10</span>.<span class="mi">10</span>.<span class="mi">0</span>
+<span class="nv">network</span> <span class="mi">10</span>.<span class="mi">10</span>.<span class="mi">11</span>.<span class="mi">0</span>
 
-<span class="err">#</span><span class="nx">Disable</span> <span class="nx">auto</span> <span class="nx">summary</span>
-<span class="nx">conf</span> <span class="nx">t</span>
-<span class="nx">router</span> <span class="nx">rip</span>
-<span class="nx">no</span> <span class="nx">auto</span><span class="o">-</span><span class="nx">summary</span>
+#<span class="nv">Disable</span> <span class="nv">auto</span> <span class="nv">summary</span>
+<span class="nv">conf</span> <span class="nv">t</span>
+<span class="nv">router</span> <span class="nv">rip</span>
+<span class="nv">no</span> <span class="nv">auto</span><span class="o">-</span><span class="nv">summary</span>
 
-<span class="err">#</span><span class="nx">Enable</span> <span class="nx">split</span> <span class="nx">Horizon</span>
-<span class="kr">interface</span> <span class="nx">serial0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
-<span class="nx">ip</span> <span class="nx">split</span><span class="o">-</span><span class="nx">horizon</span>
+#<span class="nv">Enable</span> <span class="nv">split</span> <span class="nv">Horizon</span>
+<span class="nv">interface</span> <span class="nv">serial0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="nv">ip</span> <span class="nv">split</span><span class="o">-</span><span class="nv">horizon</span>
 </pre></div>
 
 
 <p>Confirming that RIPV2 works.</p>
-<div class="codehilite"><pre><span></span>show ip protocols
-show ip rip database
+<div class="codehilite"><pre><span></span><span class="k">show</span> <span class="nv">ip</span> <span class="nv">protocols</span>
+<span class="k">show</span> <span class="nv">ip</span> <span class="nv">rip</span> <span class="nv">database</span>
 </pre></div>
 
 
 <p>Clear RIP routes.</p>
-<div class="codehilite"><pre><span></span>clear ip route *
+<div class="codehilite"><pre><span></span><span class="n">clear</span> <span class="n">ip</span> <span class="n">route</span> <span class="o">*</span>
 </pre></div>
 
 
 <h4 id="passive-interfaces">Passive interfaces</h4>
 <p>Prevents sending RIPv2 updates from interfaces where it's not necessary.</p>
-<div class="codehilite"><pre><span></span>conf t
-router rip
-passive-interface fastethernet0/1
-passive-interface fastethernet0/2
+<div class="codehilite"><pre><span></span><span class="n">conf</span> <span class="n">t</span>
+<span class="n">router</span> <span class="n">rip</span>
+<span class="n">passive</span><span class="o">-</span><span class="n">interface</span> <span class="n">fastethernet0</span><span class="o">/</span><span class="mi">1</span>
+<span class="n">passive</span><span class="o">-</span><span class="n">interface</span> <span class="n">fastethernet0</span><span class="o">/</span><span class="mi">2</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>conf t
-router rip
-passive-interface default
-no passive-interface fastethernet0/1
-no passive-interface fastethernet0/2
+<div class="codehilite"><pre><span></span><span class="n">conf</span> <span class="n">t</span>
+<span class="n">router</span> <span class="n">rip</span>
+<span class="n">passive</span><span class="o">-</span><span class="n">interface</span> <span class="k">default</span>
+<span class="k">no</span> <span class="n">passive</span><span class="o">-</span><span class="n">interface</span> <span class="n">fastethernet0</span><span class="o">/</span><span class="mi">1</span>
+<span class="k">no</span> <span class="n">passive</span><span class="o">-</span><span class="n">interface</span> <span class="n">fastethernet0</span><span class="o">/</span><span class="mi">2</span>
 </pre></div>
 
 
 <h4 id="rip-load-balancing">RIP Load Balancing</h4>
 <p>1) If a subnet is reachable through two paths with the same hope count --&gt; Load balance across the two links.</p>
 <p>Disabling equal cost load balancing</p>
-<div class="codehilite"><pre><span></span>conf t
-router rip
-maximum-path 1
+<div class="codehilite"><pre><span></span><span class="n">conf</span> <span class="n">t</span>
+<span class="n">router</span> <span class="n">rip</span>
+<span class="n">maximum</span><span class="o">-</span><span class="n">path</span> <span class="mi">1</span>
 </pre></div>
 
 
 <h4 id="default-route-in-rip">Default route in RIP</h4>
-<div class="codehilite"><pre><span></span>conf t
-router rip
-default-information originate
+<div class="codehilite"><pre><span></span><span class="n">conf</span> <span class="n">t</span>
+<span class="n">router</span> <span class="n">rip</span>
+<span class="k">default</span><span class="o">-</span><span class="n">information</span> <span class="n">originate</span>
 </pre></div>
 
 
@@ -2009,8 +2023,8 @@ default-information originate
 <p><img alt="ROUTING-AD" src="/images/admin-routing-dist.png" /></p>
 <h3 id="floating-static-routes">Floating static routes</h3>
 <p>If a route with a lower AD is removed from the routing table, the static route will be added and become active.</p>
-<div class="codehilite"><pre><span></span>conf t
-ip route 2.2.2.0 255.255.255.0 21.1.1.2 [static route metric here | higher than routing protocol 1-255 ]
+<div class="codehilite"><pre><span></span><span class="n">conf</span> <span class="n">t</span>
+<span class="n">ip</span> <span class="n">route</span> <span class="mi">2</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">0</span> <span class="mi">255</span><span class="p">.</span><span class="mi">255</span><span class="p">.</span><span class="mi">255</span><span class="p">.</span><span class="mi">0</span> <span class="mi">21</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">2</span> <span class="p">[</span><span class="k">static</span> <span class="n">route</span> <span class="n">metric</span> <span class="n">here</span> <span class="o">|</span> <span class="n">higher</span> <span class="k">than</span> <span class="n">routing</span> <span class="n">protocol</span> <span class="mi">1</span><span class="o">-</span><span class="mi">255</span> <span class="p">]</span>
 </pre></div>
 
 
@@ -2209,15 +2223,15 @@ ip route 2.2.2.0 255.255.255.0 21.1.1.2 [static route metric here | higher than 
 <li>Standard Access list number : 1 --&gt; 99</li>
 <li>Standard expanded access list number : 1300 --&gt; 1999</li>
 </ul>
-<div class="codehilite"><pre><span></span>&lt;1-99&gt;       Standard IP access-list number
-&lt;1300-1999&gt;  Standard IP access-list number (expanded range)
-WORD         Access-list name
+<div class="codehilite"><pre><span></span><span class="o">&lt;</span><span class="mi">1</span><span class="o">-</span><span class="mi">99</span><span class="o">&gt;</span>       <span class="n">Standard</span> <span class="n">IP</span> <span class="k">access</span><span class="o">-</span><span class="n">list</span> <span class="nb">number</span>
+<span class="o">&lt;</span><span class="mi">1300</span><span class="o">-</span><span class="mi">1999</span><span class="o">&gt;</span>  <span class="n">Standard</span> <span class="n">IP</span> <span class="k">access</span><span class="o">-</span><span class="n">list</span> <span class="nb">number</span> <span class="p">(</span><span class="n">expanded</span> <span class="n">range</span><span class="p">)</span>
+<span class="n">WORD</span>         <span class="k">Access</span><span class="o">-</span><span class="n">list</span> <span class="n">name</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="nx">ip</span> <span class="nx">access</span><span class="o">-</span><span class="nx">list</span> <span class="nx">standard</span> <span class="mi">5</span> <span class="nx">deny</span> <span class="mf">3.3</span><span class="p">.</span><span class="mf">3.0</span> <span class="mf">0.0</span><span class="p">.</span><span class="mf">0.255</span>
-<span class="kr">interface</span> <span class="nx">fastethernet0</span>
-<span class="nx">ip</span> <span class="nx">access</span><span class="o">-</span><span class="nx">group</span> <span class="mi">5</span> <span class="k">in</span>
+<div class="codehilite"><pre><span></span><span class="n">ip</span> <span class="k">access</span><span class="o">-</span><span class="n">list</span> <span class="n">standard</span> <span class="mi">5</span> <span class="n">deny</span> <span class="mi">3</span><span class="p">.</span><span class="mi">3</span><span class="p">.</span><span class="mi">3</span><span class="p">.</span><span class="mi">0</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">255</span>
+<span class="n">interface</span> <span class="n">fastethernet0</span>
+<span class="n">ip</span> <span class="k">access</span><span class="o">-</span><span class="k">group</span> <span class="mi">5</span> <span class="k">in</span>
 </pre></div>
 
 
@@ -2232,17 +2246,17 @@ WORD         Access-list name
 <li>Cannot have an Extended and Standard ACL with the same name.</li>
 <li>You need to use <code>ip access-list standard | extended</code> instead of <code>access-list</code></li>
 </ul>
-<div class="codehilite"><pre><span></span>conf t
-ip access-list extended BLOCK11
-deny ip 3.3.3.0 0.0.0.255 11.11.11.0 0.0.0.255
-permet ip any any
+<div class="codehilite"><pre><span></span><span class="n">conf</span> <span class="n">t</span>
+<span class="n">ip</span> <span class="k">access</span><span class="o">-</span><span class="n">list</span> <span class="n">extended</span> <span class="n">BLOCK11</span>
+<span class="n">deny</span> <span class="n">ip</span> <span class="mi">3</span><span class="p">.</span><span class="mi">3</span><span class="p">.</span><span class="mi">3</span><span class="p">.</span><span class="mi">0</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">255</span> <span class="mi">11</span><span class="p">.</span><span class="mi">11</span><span class="p">.</span><span class="mi">11</span><span class="p">.</span><span class="mi">0</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">255</span>
+<span class="n">permet</span> <span class="n">ip</span> <span class="k">any</span> <span class="k">any</span>
 </pre></div>
 
 
 <h4 id="acl-on-vty-lines">ACL on VTY lines</h4>
-<div class="codehilite"><pre><span></span>conf t
-line vty 0 14
-access-class MGMT-NETWORKS in
+<div class="codehilite"><pre><span></span><span class="n">conf</span> <span class="n">t</span>
+<span class="n">line</span> <span class="n">vty</span> <span class="mi">0</span> <span class="mi">14</span>
+<span class="k">access</span><span class="o">-</span><span class="k">class</span> <span class="n">MGMT</span><span class="o">-</span><span class="n">NETWORKS</span> <span class="k">in</span>
 </pre></div>
 
 
@@ -2252,9 +2266,9 @@ access-class MGMT-NETWORKS in
 <li>You cannot move or reassign a sequence number.</li>
 <li>You need to delete and recreate the line with the new sequence number.</li>
 </ul>
-<div class="codehilite"><pre><span></span>conf t
-ip access-list extended 101
-no $SEQUENCE_NUMVER
+<div class="codehilite"><pre><span></span><span class="n">conf</span> <span class="n">t</span>
+<span class="n">ip</span> <span class="k">access</span><span class="o">-</span><span class="n">list</span> <span class="n">extended</span> <span class="mi">101</span>
+<span class="k">no</span> <span class="err">$</span><span class="n">SEQUENCE_NUMVER</span>
 </pre></div>
 
 
@@ -2280,43 +2294,43 @@ no $SEQUENCE_NUMVER
 <li>Server : The client device will ask time from the server. Does not send time synchronize requests to the server.</li>
 <li>Broadcast Mode : Broadcast mode for NTP packets.</li>
 </ul>
-<div class="codehilite"><pre><span></span>!*** Set the device itself as the master NTP server.
-conf t
-ntp master
+<div class="codehilite"><pre><span></span><span class="o">!***</span> <span class="k">Set</span> <span class="n">the</span> <span class="n">device</span> <span class="n">itself</span> <span class="k">as</span> <span class="n">the</span> <span class="n">master</span> <span class="n">NTP</span> <span class="n">server</span><span class="p">.</span>
+<span class="n">conf</span> <span class="n">t</span>
+<span class="n">ntp</span> <span class="n">master</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>!*** Set the NTP server for the device.
-conf t
-ntp server ntp.nist.ca
+<div class="codehilite"><pre><span></span><span class="o">!***</span> <span class="nv">Set</span> <span class="nv">the</span> <span class="nv">NTP</span> <span class="nv">server</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">device</span>.
+<span class="nv">conf</span> <span class="nv">t</span>
+<span class="nv">ntp</span> <span class="nv">server</span> <span class="nv">ntp</span>.<span class="nv">nist</span>.<span class="nv">ca</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>conf t
-ntp peer ntp.potato.com
+<div class="codehilite"><pre><span></span><span class="n">conf</span> <span class="n">t</span>
+<span class="n">ntp</span> <span class="n">peer</span> <span class="n">ntp</span><span class="p">.</span><span class="n">potato</span><span class="p">.</span><span class="n">com</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>!*** Show all ntp services from which the device will sync it&#39;s clock. Also shows the preferred device.
-show ntp associations
+<div class="codehilite"><pre><span></span><span class="o">!***</span> <span class="k">Show</span> <span class="nv">all</span> <span class="nv">ntp</span> <span class="nv">services</span> <span class="nv">from</span> <span class="nv">which</span> <span class="nv">the</span> <span class="nv">device</span> <span class="nv">will</span> <span class="nv">sync</span> <span class="nv">it</span><span class="s1">&#39;</span><span class="s">s clock. Also shows the preferred device.</span>
+<span class="k">show</span> <span class="nv">ntp</span> <span class="nv">associations</span>
 
-show ntp status
+<span class="k">show</span> <span class="nv">ntp</span> <span class="nv">status</span>
 
-show clock
+<span class="k">show</span> <span class="nv">clock</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="o">!***</span> <span class="nx">Under</span> <span class="nx">device</span> <span class="kr">interface</span> <span class="nx">configuration</span><span class="p">.</span>
-<span class="o">!***</span> <span class="nx">Sets</span> <span class="nx">broadcast</span> <span class="nx">server</span> <span class="nx">mode</span> <span class="p">(</span><span class="nx">send</span> <span class="nx">updates</span><span class="p">)</span>
-<span class="nx">conf</span> <span class="nx">t</span>
-<span class="kr">interface</span> <span class="nx">serial</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
-<span class="nx">ntp</span> <span class="nx">broadcast</span>
+<div class="codehilite"><pre><span></span><span class="o">!***</span> <span class="nv">Under</span> <span class="nv">device</span> <span class="nv">interface</span> <span class="nv">configuration</span>.
+<span class="o">!***</span> <span class="nv">Sets</span> <span class="nv">broadcast</span> <span class="nv">server</span> <span class="nv">mode</span> <span class="ss">(</span><span class="k">send</span> <span class="nv">updates</span><span class="ss">)</span>
+<span class="nv">conf</span> <span class="nv">t</span>
+<span class="nv">interface</span> <span class="nv">serial</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="nv">ntp</span> <span class="nv">broadcast</span>
 
 
-<span class="o">!***</span> <span class="nx">Set</span> <span class="nx">client</span> <span class="nx">broadcast</span> <span class="nx">mode</span>
-<span class="nx">conf</span> <span class="nx">t</span>
-<span class="kr">interface</span> <span class="nx">serial</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
-<span class="nx">ntp</span> <span class="nx">broadcast</span> <span class="nx">client</span>
+<span class="o">!***</span> <span class="nv">Set</span> <span class="nv">client</span> <span class="nv">broadcast</span> <span class="nv">mode</span>
+<span class="nv">conf</span> <span class="nv">t</span>
+<span class="nv">interface</span> <span class="nv">serial</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="nv">ntp</span> <span class="nv">broadcast</span> <span class="nv">client</span>
 </pre></div>
 
 
@@ -2338,45 +2352,45 @@ show clock
 <li>One to one mapping of an Inside Local to a Inside Global.</li>
 <li>I.E : Map a public IP to the internal IP of a server.</li>
 </ul>
-<div class="codehilite"><pre><span></span>!*** Place on the interfaces closest to the hosts.
-ip nat inside
+<div class="codehilite"><pre><span></span><span class="o">!***</span> <span class="nv">Place</span> <span class="nv">on</span> <span class="nv">the</span> <span class="nv">interfaces</span> <span class="nv">closest</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">hosts</span>.
+<span class="nv">ip</span> <span class="nv">nat</span> <span class="nv">inside</span>
 
-!*** Place on the WAN interface.
-ip nat outside
+<span class="o">!***</span> <span class="nv">Place</span> <span class="nv">on</span> <span class="nv">the</span> <span class="nv">WAN</span> <span class="nv">interface</span>.
+<span class="nv">ip</span> <span class="nv">nat</span> <span class="nv">outside</span>
 
-!*** Setup Static NAT / One to one mapping
-ip nat inside source static 10.1.1.2 200.1.1.1
+<span class="o">!***</span> <span class="nv">Setup</span> <span class="nv">Static</span> <span class="nv">NAT</span> <span class="o">/</span> <span class="nv">One</span> <span class="nv">to</span> <span class="nv">one</span> <span class="nv">mapping</span>
+<span class="nv">ip</span> <span class="nv">nat</span> <span class="nv">inside</span> <span class="nv">source</span> <span class="nv">static</span> <span class="mi">10</span>.<span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">2</span> <span class="mi">200</span>.<span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span>
 
 
-!*** Show translations
-show ip nat translations
+<span class="o">!***</span> <span class="k">Show</span> <span class="nv">translations</span>
+<span class="k">show</span> <span class="nv">ip</span> <span class="nv">nat</span> <span class="nv">translations</span>
 
-!*** Show NAT statistics
-show ip nat statistics
+<span class="o">!***</span> <span class="k">Show</span> <span class="nv">NAT</span> <span class="nv">statistics</span>
+<span class="k">show</span> <span class="nv">ip</span> <span class="nv">nat</span> <span class="nv">statistics</span>
 
-!*** clear ip nat table to reset the NAT mappings
-clear ip nat translations *
+<span class="o">!***</span> <span class="nv">clear</span> <span class="nv">ip</span> <span class="nv">nat</span> <span class="nv">table</span> <span class="nv">to</span> <span class="nv">reset</span> <span class="nv">the</span> <span class="nv">NAT</span> <span class="nv">mappings</span>
+<span class="nv">clear</span> <span class="nv">ip</span> <span class="nv">nat</span> <span class="nv">translations</span> <span class="o">*</span>
 </pre></div>
 
 
 <h4 id="dynamic-nat">Dynamic NAT</h4>
 <p>Allow the NAT of a pool of internal address to a pool of outside addresses.</p>
-<div class="codehilite"><pre><span></span>!*** Create IP NAT Pool
-ip nat pool CCNA 200.1.1.1 200.1.1.5 prefix-length 24
+<div class="codehilite"><pre><span></span><span class="o">!***</span> <span class="nv">Create</span> <span class="nv">IP</span> <span class="nv">NAT</span> <span class="nv">Pool</span>
+<span class="nv">ip</span> <span class="nv">nat</span> <span class="nv">pool</span> <span class="nv">CCNA</span> <span class="mi">200</span>.<span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span> <span class="mi">200</span>.<span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">5</span> <span class="nv">prefix</span><span class="o">-</span><span class="nv">length</span> <span class="mi">24</span>
 
-!*** Create the access-list of internal host that will be NAT.
-access-list 2 permit host 10.1.1.2
-access-list 2 permit host 10.1.1.22
+<span class="o">!***</span> <span class="nv">Create</span> <span class="nv">the</span> <span class="nv">access</span><span class="o">-</span><span class="nv">list</span> <span class="nv">of</span> <span class="nv">internal</span> <span class="nv">host</span> <span class="nv">that</span> <span class="nv">will</span> <span class="nv">be</span> <span class="nv">NAT</span>.
+<span class="nv">access</span><span class="o">-</span><span class="nv">list</span> <span class="mi">2</span> <span class="nv">permit</span> <span class="nv">host</span> <span class="mi">10</span>.<span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">2</span>
+<span class="nv">access</span><span class="o">-</span><span class="nv">list</span> <span class="mi">2</span> <span class="nv">permit</span> <span class="nv">host</span> <span class="mi">10</span>.<span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">22</span>
 
-!*** Create the NAT function for the access-list 2 and the pool CCNA  
-ip nat inside source list 2 pool CCNA
+<span class="o">!***</span> <span class="nv">Create</span> <span class="nv">the</span> <span class="nv">NAT</span> <span class="nv">function</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">access</span><span class="o">-</span><span class="nv">list</span> <span class="mi">2</span> <span class="nv">and</span> <span class="nv">the</span> <span class="nv">pool</span> <span class="nv">CCNA</span>  
+<span class="nv">ip</span> <span class="nv">nat</span> <span class="nv">inside</span> <span class="nv">source</span> <span class="nv">list</span> <span class="mi">2</span> <span class="nv">pool</span> <span class="nv">CCNA</span>
 </pre></div>
 
 
 <h4 id="port-address-translation-nat-overload">Port address translation - NAT Overload</h4>
 <p>Allows the mapping of multiple inside addresses to a single outside address using a combination of the IP address / Port Number in ordre to uniquely identify each flow of data.</p>
-<div class="codehilite"><pre><span></span>!*** Overload of the inside addresses to the outside address
-ip nat inside source list 2 interface serial0/1/0 overload
+<div class="codehilite"><pre><span></span><span class="o">!***</span> <span class="n">Overload</span> <span class="k">of</span> <span class="n">the</span> <span class="n">inside</span> <span class="n">addresses</span> <span class="k">to</span> <span class="n">the</span> <span class="n">outside</span> <span class="n">address</span>
+<span class="n">ip</span> <span class="n">nat</span> <span class="n">inside</span> <span class="k">source</span> <span class="n">list</span> <span class="mi">2</span> <span class="n">interface</span> <span class="n">serial0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span> <span class="n">overload</span>
 </pre></div>
 
 
@@ -2397,12 +2411,12 @@ ip nat inside source list 2 interface serial0/1/0 overload
 <li>Remove leading 0 in blocks.</li>
 </ul>
 <h4 id="assigning-ipv6-addresses-to-interfaces">Assigning IPv6 addresses to interfaces</h4>
-<div class="codehilite"><pre><span></span><span class="o">!</span><span class="err">###</span> <span class="nx">Enable</span> <span class="nx">IPv6</span> <span class="nx">Routing</span> <span class="k">for</span> <span class="nx">the</span> <span class="nx">router</span><span class="p">.</span>
-<span class="nx">ipv6</span> <span class="nx">unicast</span><span class="o">-</span><span class="nx">routing</span>
+<div class="codehilite"><pre><span></span><span class="o">!</span>### <span class="nv">Enable</span> <span class="nv">IPv6</span> <span class="nv">Routing</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">router</span>.
+<span class="nv">ipv6</span> <span class="nv">unicast</span><span class="o">-</span><span class="nv">routing</span>
 
-<span class="o">!</span><span class="err">###</span> <span class="nx">Assign</span> <span class="nx">an</span> <span class="nx">IPv6</span> <span class="nx">address</span> <span class="nx">to</span> <span class="nx">an</span> <span class="kr">interface</span>
-<span class="kr">interface</span> <span class="nx">fastethernet0</span><span class="o">/</span><span class="mi">1</span>
-<span class="nx">ipv6</span> <span class="nx">address</span> <span class="nx">2001</span>:<span class="kt">1111</span><span class="o">:</span><span class="nx">2222</span>:<span class="kt">1</span><span class="o">::</span><span class="mi">1</span><span class="o">/</span><span class="mi">64</span>
+<span class="o">!</span>### <span class="nv">Assign</span> <span class="nv">an</span> <span class="nv">IPv6</span> <span class="nv">address</span> <span class="nv">to</span> <span class="nv">an</span> <span class="nv">interface</span>
+<span class="nv">interface</span> <span class="nv">fastethernet0</span><span class="o">/</span><span class="mi">1</span>
+<span class="nv">ipv6</span> <span class="nv">address</span> <span class="mi">2001</span>:<span class="mi">1111</span>:<span class="mi">2222</span>:<span class="mi">1</span>::<span class="mi">1</span><span class="o">/</span><span class="mi">64</span>
 </pre></div>
 
 
@@ -2435,7 +2449,7 @@ ip nat inside source list 2 interface serial0/1/0 overload
 <li>1122:33FF:FEAA:BBCC --&gt; 1322:33FF:FEAA:BBCC</li>
 </ol>
 <h4 id="use-eui-64-process-for-global-unicast-address">Use EUI-64 process for global unicast address.</h4>
-<div class="codehilite"><pre><span></span>ipv6 address 2001:1111:2222:1::/64 eui-64
+<div class="codehilite"><pre><span></span><span class="n">ipv6</span> <span class="n">address</span> <span class="mi">2001</span><span class="p">:</span><span class="mi">1111</span><span class="p">:</span><span class="mi">2222</span><span class="p">:</span><span class="mi">1</span><span class="p">::</span><span class="o">/</span><span class="mi">64</span> <span class="n">eui</span><span class="o">-</span><span class="mi">64</span>
 </pre></div>
 
 
@@ -2498,40 +2512,40 @@ ip nat inside source list 2 interface serial0/1/0 overload
 </ul>
 <h3 id="logging-and-timestamps">Logging and Timestamps</h3>
 <p>Change the aspect and format of timestamps for SYSLOG and DEBUG message.</p>
-<div class="codehilite"><pre><span></span>service timestamps log datetime
+<div class="codehilite"><pre><span></span><span class="nv">service</span> <span class="nv">timestamps</span> <span class="nv">log</span> <span class="nv">datetime</span>
 
-!### Add year to log timestamps.
-service timestamps log datetime year
+<span class="o">!</span>### <span class="nv">Add</span> <span class="nv">year</span> <span class="nv">to</span> <span class="nv">log</span> <span class="nv">timestamps</span>.
+<span class="nv">service</span> <span class="nv">timestamps</span> <span class="nv">log</span> <span class="nv">datetime</span> <span class="nv">year</span>
 
-!### Add millisecond to log timestamps.
-service timestamps log datetime msec
+<span class="o">!</span>### <span class="nv">Add</span> <span class="nv">millisecond</span> <span class="nv">to</span> <span class="nv">log</span> <span class="nv">timestamps</span>.
+<span class="nv">service</span> <span class="nv">timestamps</span> <span class="nv">log</span> <span class="nv">datetime</span> <span class="nv">msec</span>
 
-service timestamps log datetime year msec show-timezone
+<span class="nv">service</span> <span class="nv">timestamps</span> <span class="nv">log</span> <span class="nv">datetime</span> <span class="nv">year</span> <span class="nv">msec</span> <span class="k">show</span><span class="o">-</span><span class="nv">timezone</span>
 </pre></div>
 
 
 <h4 id="logging-to-remote-server">Logging to remote server</h4>
 <p><img alt="SYSLOG-SEV-LEVELS" src="/images/syslog-sev-levels.png" /></p>
 <p>Enable logging to the console.</p>
-<div class="codehilite"><pre><span></span>logging console
+<div class="codehilite"><pre><span></span><span class="n">logging</span> <span class="n">console</span>
 </pre></div>
 
 
 <p>Enable buffered logging. Local buffer on the server.</p>
-<div class="codehilite"><pre><span></span>logging buffer
+<div class="codehilite"><pre><span></span><span class="n">logging</span> <span class="n">buffer</span>
 </pre></div>
 
 
 <p>Enable logging to a remote server.</p>
-<div class="codehilite"><pre><span></span>logging host $SYSLOG_SERVER_IPADDRESS
+<div class="codehilite"><pre><span></span><span class="n">logging</span> <span class="k">host</span> <span class="err">$</span><span class="n">SYSLOG_SERVER_IPADDRESS</span>
 </pre></div>
 
 
 <p>Enable console logging on SSH/Telnet session</p>
-<div class="codehilite"><pre><span></span>conf t
-logging monitor
-exit
-terminal monitor
+<div class="codehilite"><pre><span></span><span class="nv">conf</span> <span class="nv">t</span>
+<span class="nv">logging</span> <span class="nv">monitor</span>
+<span class="k">exit</span>
+<span class="nv">terminal</span> <span class="nv">monitor</span>
 </pre></div>
 
 
@@ -2548,33 +2562,33 @@ terminal monitor
 <li>Hold Timer - 180 seconds - After 180 seconds, the entry is removed.</li>
 <li>Advertisement timer - 60 seconds.</li>
 </ul>
-<div class="codehilite"><pre><span></span><span class="nx">show</span> <span class="nx">cdp</span> <span class="nx">neighbors</span>
-<span class="nx">show</span> <span class="nx">cdp</span> <span class="nx">neighbors</span> <span class="nx">details</span>
-<span class="nx">show</span> <span class="nx">cdp</span> <span class="nx">entry</span> <span class="nx">$REMOTE_DEVICE_HOSTNAME</span>
+<div class="codehilite"><pre><span></span><span class="k">show</span> <span class="nv">cdp</span> <span class="nv">neighbors</span>
+<span class="k">show</span> <span class="nv">cdp</span> <span class="nv">neighbors</span> <span class="nv">details</span>
+<span class="k">show</span> <span class="nv">cdp</span> <span class="nv">entry</span> $<span class="nv">REMOTE_DEVICE_HOSTNAME</span>
 
-<span class="o">!***</span> <span class="nx">Enable</span> <span class="nx">CDP</span> <span class="nx">globally</span><span class="p">.</span>
-<span class="nx">cdp</span> <span class="nx">run</span>
-<span class="nx">no</span> <span class="nx">cdp</span> <span class="nx">run</span>
+<span class="o">!***</span> <span class="nv">Enable</span> <span class="nv">CDP</span> <span class="nv">globally</span>.
+<span class="nv">cdp</span> <span class="nv">run</span>
+<span class="nv">no</span> <span class="nv">cdp</span> <span class="nv">run</span>
 
-<span class="o">!***</span> <span class="nx">Enable</span> <span class="nx">CDP</span> <span class="nx">on</span> <span class="nx">an</span> <span class="kr">interface</span>
-<span class="kr">interface</span> <span class="nx">fastethernet0</span><span class="o">/</span><span class="mi">0</span>
-<span class="nx">cdp</span> <span class="nx">enable</span>
-<span class="nx">no</span> <span class="nx">cdp</span> <span class="nx">enable</span>
+<span class="o">!***</span> <span class="nv">Enable</span> <span class="nv">CDP</span> <span class="nv">on</span> <span class="nv">an</span> <span class="nv">interface</span>
+<span class="nv">interface</span> <span class="nv">fastethernet0</span><span class="o">/</span><span class="mi">0</span>
+<span class="nv">cdp</span> <span class="nv">enable</span>
+<span class="nv">no</span> <span class="nv">cdp</span> <span class="nv">enable</span>
 
-<span class="o">!***</span> <span class="nx">Show</span> <span class="nx">CDP</span> <span class="nx">information</span>
-<span class="nx">show</span> <span class="nx">cdp</span> <span class="nx">information</span>
-<span class="nx">show</span> <span class="nx">cdp</span> <span class="kr">interface</span> <span class="nx">fastethernet</span> <span class="mi">0</span><span class="o">/</span><span class="mi">0</span>
+<span class="o">!***</span> <span class="k">Show</span> <span class="nv">CDP</span> <span class="nv">information</span>
+<span class="k">show</span> <span class="nv">cdp</span> <span class="nv">information</span>
+<span class="k">show</span> <span class="nv">cdp</span> <span class="nv">interface</span> <span class="nv">fastethernet</span> <span class="mi">0</span><span class="o">/</span><span class="mi">0</span>
 </pre></div>
 
 
 <h3 id="lldp-link-layer-discovery-protocols">LLDP - Link Layer Discovery Protocols</h3>
 <p>You can disable the received and transmit of LLDP packets per interface. That is not possible for CDP.</p>
-<div class="codehilite"><pre><span></span>show lldp
+<div class="codehilite"><pre><span></span><span class="k">show</span> <span class="nv">lldp</span>
 
-conf t
-lldp run
+<span class="nv">conf</span> <span class="nv">t</span>
+<span class="nv">lldp</span> <span class="nv">run</span>
 
-show lldp neighbor detail
+<span class="k">show</span> <span class="nv">lldp</span> <span class="nv">neighbor</span> <span class="nv">detail</span>
 </pre></div>
 
 
@@ -2583,8 +2597,8 @@ show lldp neighbor detail
 <ul>
 <li>RONMON mode --&gt; Allow to boot IOS without reading the NVRAM router config.</li>
 </ul>
-<div class="codehilite"><pre><span></span>show version | include register
-config-register 0x2142
+<div class="codehilite"><pre><span></span><span class="k">show</span> <span class="nv">version</span> <span class="o">|</span> <span class="k">include</span> <span class="nv">register</span>
+<span class="nv">config</span><span class="o">-</span><span class="nv">register</span> <span class="mi">0</span><span class="nv">x2142</span>
 </pre></div>
                 
                   
@@ -2653,7 +2667,6 @@ config-register 0x2142
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
@@ -2663,14 +2676,13 @@ config-register 0x2142
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.39abc4af.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

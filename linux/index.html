@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../images/tarsier_hi_elbows.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
     
     
       
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.750b69bd.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -55,7 +55,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -69,8 +69,30 @@
     
     
       
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51757315-3"></script>
-<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-51757315-3")</script>
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-51757315-3", "cheat.northernsysadmin.com")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
@@ -130,22 +152,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Laurent Dumont - Internet notepad.
-              </span>
-              <span class="md-header-nav__topic">
-                Generic Linux
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Laurent Dumont - Internet notepad.
+            </span>
+            <span class="md-header-nav__topic">
+              Generic Linux
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -168,7 +187,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -179,20 +197,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
           </div>
         </div>
       
@@ -228,20 +244,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -348,6 +362,27 @@
         <li class="md-nav__item">
   <a href="#fix-br-and-vmbr-linux-bridges-filtering-lldp-packets" title="Fix BR and VMBR Linux bridges filtering LLDP packets" class="md-nav__link">
     Fix BR and VMBR Linux bridges filtering LLDP packets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-fish-as-the-default-shell-for-ubuntudebian" title="Add fish as the default shell for Ubuntu/Debian." class="md-nav__link">
+    Add fish as the default shell for Ubuntu/Debian.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-history-file-for-multiple-prompts" title="One history file for multiple prompts." class="md-nav__link">
+    One history file for multiple prompts.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-terminus-powerline-on-ubuntu-font-name-is-terminess" title="Enable Terminus Powerline on Ubuntu (font name is Terminess)" class="md-nav__link">
+    Enable Terminus Powerline on Ubuntu (font name is Terminess)
   </a>
   
 </li>
@@ -615,6 +650,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#add-fish-as-the-default-shell-for-ubuntudebian" title="Add fish as the default shell for Ubuntu/Debian." class="md-nav__link">
+    Add fish as the default shell for Ubuntu/Debian.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-history-file-for-multiple-prompts" title="One history file for multiple prompts." class="md-nav__link">
+    One history file for multiple prompts.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-terminus-powerline-on-ubuntu-font-name-is-terminess" title="Enable Terminus Powerline on Ubuntu (font name is Terminess)" class="md-nav__link">
+    Enable Terminus Powerline on Ubuntu (font name is Terminess)
+  </a>
+  
+</li>
+      
       
       
       
@@ -642,139 +698,173 @@
 
 
 <p><strong>Rancid - Only show the device name to pipe into ssh-keygen</strong></p>
-<div class="codehilite"><pre><span></span>sort var/logs/VPN.20180109.070410  | grep -i key | uniq | grep -Eo &#39;^[^ ]+&#39;
+<div class="codehilite"><pre><span></span><span class="n">sort</span> <span class="n">var</span><span class="o">/</span><span class="n">logs</span><span class="o">/</span><span class="n">VPN</span><span class="p">.</span><span class="mi">20180109</span><span class="p">.</span><span class="mi">070410</span>  <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="k">key</span> <span class="o">|</span> <span class="n">uniq</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">Eo</span> <span class="s1">&#39;^[^ ]+&#39;</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>sort /opt/rancid/var/logs/VPN.20180111.064300  | grep -i key | uniq | grep -Eo &#39;^[^ ]+&#39;
+<div class="codehilite"><pre><span></span><span class="n">sort</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">rancid</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">logs</span><span class="o">/</span><span class="n">VPN</span><span class="p">.</span><span class="mi">20180111</span><span class="p">.</span><span class="mi">064300</span>  <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="k">key</span> <span class="o">|</span> <span class="n">uniq</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">Eo</span> <span class="s1">&#39;^[^ ]+&#39;</span>
 </pre></div>
 
 
 <p><strong>SSH - Remove the public keys</strong></p>
-<div class="codehilite"><pre><span></span>ssh-keygen -f &quot;/opt/rancid/.ssh/known_hosts&quot; -R ###REMOTE_IP_OF_DEVICE###
+<div class="codehilite"><pre><span></span><span class="n">ssh</span><span class="o">-</span><span class="n">keygen</span> <span class="o">-</span><span class="n">f</span> <span class="ss">&quot;/opt/rancid/.ssh/known_hosts&quot;</span> <span class="o">-</span><span class="n">R</span> <span class="o">###</span><span class="n">REMOTE_IP_OF_DEVICE</span><span class="o">###</span>
 </pre></div>
 
 
 <p><strong>BIND DNS - Check the master zones (not ARPA or random files ) we are hosting</strong></p>
-<div class="codehilite"><pre><span></span>ls -alh --ignore=*.arpa* | wc -
+<div class="codehilite"><pre><span></span><span class="n">ls</span> <span class="o">-</span><span class="n">alh</span> <span class="c1">--ignore=*.arpa* | wc -</span>
 </pre></div>
 
 
 <p><strong>SMART HD Data - Get useful smartctl data</strong></p>
-<div class="codehilite"><pre><span></span>sudo smartctl -a /dev/sdb | egrep &quot;Spin_Up_Time|Reallocated_Sector_Ct|Temperature|Current_Pending_Sector|Offline_Uncorrectable|Power_On_Hours&quot;
+<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">smartctl</span> <span class="o">-</span><span class="n">a</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb</span> <span class="o">|</span> <span class="n">egrep</span> <span class="ss">&quot;Spin_Up_Time|Reallocated_Sector_Ct|Temperature|Current_Pending_Sector|Offline_Uncorrectable|Power_On_Hours&quot;</span>
 </pre></div>
 
 
 <p><strong>Network - Create TAP Interface</strong></p>
-<div class="codehilite"><pre><span></span>tunctl -t tap0
-ifconfig tap0 10.1.1.100 netmask 255.255.255.0 up
+<div class="codehilite"><pre><span></span><span class="n">tunctl</span> <span class="o">-</span><span class="n">t</span> <span class="n">tap0</span>
+<span class="n">ifconfig</span> <span class="n">tap0</span> <span class="mi">10</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">100</span> <span class="n">netmask</span> <span class="mi">255</span><span class="p">.</span><span class="mi">255</span><span class="p">.</span><span class="mi">255</span><span class="p">.</span><span class="mi">0</span> <span class="n">up</span>
 </pre></div>
 
 
 <p><strong>Start Linux stress test</strong></p>
-<div class="codehilite"><pre><span></span>screen -S stress-test -d -m stress --cpu 100 --io 100 --vm 20 --vm-bytes 1G --hdd 5 --timeout 24h
+<div class="codehilite"><pre><span></span><span class="n">screen</span> <span class="o">-</span><span class="n">S</span> <span class="n">stress</span><span class="o">-</span><span class="n">test</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">m</span> <span class="n">stress</span> <span class="c1">--cpu 100 --io 100 --vm 20 --vm-bytes 1G --hdd 5 --timeout 24h</span>
 </pre></div>
 
 
 <p><strong>Install markdown-pdf</strong></p>
-<div class="codehilite"><pre><span></span>sudo npm install -g phantomjs --unsafe-perm
-sudo npm install -g markdown-pdf --unsafe-perm
+<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="k">g</span> <span class="n">phantomjs</span> <span class="c1">--unsafe-perm</span>
+<span class="n">sudo</span> <span class="n">npm</span> <span class="n">install</span> <span class="o">-</span><span class="k">g</span> <span class="n">markdown</span><span class="o">-</span><span class="n">pdf</span> <span class="c1">--unsafe-perm</span>
 </pre></div>
 
 
 <p>Debug Radius, FreeIPA, LDAP</p>
-<div class="codehilite"><pre><span></span>radiusd -X 2&gt;&amp;1 | tee debugfile
+<div class="codehilite"><pre><span></span><span class="n">radiusd</span> <span class="o">-</span><span class="n">X</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">tee</span> <span class="n">debugfile</span>
 
-tail -f /var/log/dirsrv/slapd-EVENT-DHMTL-CA/access
+<span class="n">tail</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">dirsrv</span><span class="o">/</span><span class="n">slapd</span><span class="o">-</span><span class="n">EVENT</span><span class="o">-</span><span class="n">DHMTL</span><span class="o">-</span><span class="n">CA</span><span class="o">/</span><span class="k">access</span>
 
-radtest ldumont user_ldap_password 10.0.99.22 1812 shared_radius_secret
+<span class="n">radtest</span> <span class="n">ldumont</span> <span class="n">user_ldap_password</span> <span class="mi">10</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">99</span><span class="p">.</span><span class="mi">22</span> <span class="mi">1812</span> <span class="n">shared_radius_secret</span>
 
-ldapwhoami -vvv -h 10.0.99.22 -p 389 -D uid=ldumont,cn=users,cn=accounts,dc=event,dc=dhmtl,dc=ca -x -w user_ldap_password
+<span class="n">ldapwhoami</span> <span class="o">-</span><span class="n">vvv</span> <span class="o">-</span><span class="n">h</span> <span class="mi">10</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">99</span><span class="p">.</span><span class="mi">22</span> <span class="o">-</span><span class="n">p</span> <span class="mi">389</span> <span class="o">-</span><span class="n">D</span> <span class="n">uid</span><span class="o">=</span><span class="n">ldumont</span><span class="p">,</span><span class="n">cn</span><span class="o">=</span><span class="n">users</span><span class="p">,</span><span class="n">cn</span><span class="o">=</span><span class="n">accounts</span><span class="p">,</span><span class="n">dc</span><span class="o">=</span><span class="n">event</span><span class="p">,</span><span class="n">dc</span><span class="o">=</span><span class="n">dhmtl</span><span class="p">,</span><span class="n">dc</span><span class="o">=</span><span class="n">ca</span> <span class="o">-</span><span class="n">x</span> <span class="o">-</span><span class="n">w</span> <span class="n">user_ldap_password</span>
 </pre></div>
 
 
 <h3 id="when-windows-10-creator-upgrade-breaks-linux-grub">When Windows 10 Creator upgrade breaks Linux Grub</h3>
-<div class="codehilite"><pre><span></span>set root=(hd0,msdos5)
-set prefix=(hd0,msdos5)/boot/grub
-insmod normal
-normal
+<div class="codehilite"><pre><span></span><span class="k">set</span> <span class="n">root</span><span class="o">=</span><span class="p">(</span><span class="n">hd0</span><span class="p">,</span><span class="n">msdos5</span><span class="p">)</span>
+<span class="k">set</span> <span class="k">prefix</span><span class="o">=</span><span class="p">(</span><span class="n">hd0</span><span class="p">,</span><span class="n">msdos5</span><span class="p">)</span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">grub</span>
+<span class="n">insmod</span> <span class="n">normal</span>
+<span class="n">normal</span>
 </pre></div>
 
 
 <p>When in the OS - to make the changes permanent.</p>
-<div class="codehilite"><pre><span></span>sudo update-grub
-sudo grub-install disk
+<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="k">update</span><span class="o">-</span><span class="n">grub</span>
+<span class="n">sudo</span> <span class="n">grub</span><span class="o">-</span><span class="n">install</span> <span class="n">disk</span>
 </pre></div>
 
 
 <h3 id="upgrading-to-debian-testing-breaks-apt-when-trying-to-downgrade">Upgrading to Debian testing breaks APT when trying to downgrade.</h3>
 <p>Replace "Ubuntu" with "Debian" if you are running Debian
 /etc/apt/preferences.d/allow-downgrade</p>
-<div class="codehilite"><pre><span></span>Package: *
-Pin: release a=stable
-Pin-Priority: 1001
+<div class="codehilite"><pre><span></span><span class="n">Package</span><span class="p">:</span> <span class="o">*</span>
+<span class="n">Pin</span><span class="p">:</span> <span class="n">release</span> <span class="n">a</span><span class="o">=</span><span class="k">stable</span>
+<span class="n">Pin</span><span class="o">-</span><span class="n">Priority</span><span class="p">:</span> <span class="mi">1001</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>apt-get update
-apt-get upgrade
+<div class="codehilite"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="k">update</span>
+<span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">upgrade</span>
 </pre></div>
 
 
 <p>Remove the file after and</p>
-<div class="codehilite"><pre><span></span>apt-get update
+<div class="codehilite"><pre><span></span><span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="k">update</span>
 </pre></div>
 
 
 <p>If you are missing gnome and the display doesn't work</p>
-<div class="codehilite"><pre><span></span>sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get dist-upgrade
-sudo apt-get install nvidia-driver
-sudo shutdown -r now
+<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="k">update</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">upgrade</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">dist</span><span class="o">-</span><span class="n">upgrade</span>
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">nvidia</span><span class="o">-</span><span class="n">driver</span>
+<span class="n">sudo</span> <span class="n">shutdown</span> <span class="o">-</span><span class="n">r</span> <span class="n">now</span>
 </pre></div>
 
 
 <p>Should be good to go!</p>
 <h3 id="unbalanced-audio-with-pulse-audio">Unbalanced audio with Pulse audio</h3>
-<div class="codehilite"><pre><span></span>killall pulseaudio; rm -r ~/.config/pulse/* ; rm -r ~/.pulse*
-pulseaudio -k 
+<div class="codehilite"><pre><span></span><span class="n">killall</span> <span class="n">pulseaudio</span><span class="p">;</span> <span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="o">~/</span><span class="p">.</span><span class="n">config</span><span class="o">/</span><span class="n">pulse</span><span class="cm">/* ; rm -r ~/.pulse*</span>
+<span class="cm">pulseaudio -k </span>
 </pre></div>
 
 
 <p>Reboot!</p>
 <h3 id="create-gpg-key-and-export-the-key-format-for-signing-github-commits">Create GPG key and export the key format for signing Github commits</h3>
-<div class="codehilite"><pre><span></span>#Create the key
-gpg --gen-key
+<div class="codehilite"><pre><span></span>#<span class="nv">Create</span> <span class="nv">the</span> <span class="nv">key</span>
+<span class="nv">gpg</span> <span class="o">--</span><span class="nv">gen</span><span class="o">-</span><span class="nv">key</span>
 
-#Show the key ID
-gpg --list-keys
+#<span class="k">Show</span> <span class="nv">the</span> <span class="nv">key</span> <span class="nv">ID</span>
+<span class="nv">gpg</span> <span class="o">--</span><span class="nv">list</span><span class="o">-</span><span class="nv">keys</span>
 
-#Set the global Git sign key
-git config --global user.signingkey $KEY_ID_HERE
+#<span class="nv">Set</span> <span class="nv">the</span> <span class="nv">global</span> <span class="nv">Git</span> <span class="nv">sign</span> <span class="nv">key</span>
+<span class="nv">git</span> <span class="nv">config</span> <span class="o">--</span><span class="nv">global</span> <span class="nv">user</span>.<span class="nv">signingkey</span> $<span class="nv">KEY_ID_HERE</span>
 
-#Set the GPG sign flag to true for all repos.
-git config --global commit.gpgsign true
+#<span class="nv">Set</span> <span class="nv">the</span> <span class="nv">GPG</span> <span class="nv">sign</span> <span class="nv">flag</span> <span class="nv">to</span> <span class="nv">true</span> <span class="k">for</span> <span class="nv">all</span> <span class="nv">repos</span>.
+<span class="nv">git</span> <span class="nv">config</span> <span class="o">--</span><span class="nv">global</span> <span class="nv">commit</span>.<span class="nv">gpgsign</span> <span class="nv">true</span>
 
-#Export the key with &quot;-----BEGIN PGP PUBLIC KEY BLOCK-----&quot;
-gpg --armor --export laurentfdumont@gmail.com &gt; mykey.asc
+#<span class="nv">Export</span> <span class="nv">the</span> <span class="nv">key</span> <span class="nv">with</span> <span class="s2">&quot;</span><span class="s">-----BEGIN PGP PUBLIC KEY BLOCK-----</span><span class="s2">&quot;</span>
+<span class="nv">gpg</span> <span class="o">--</span><span class="nv">armor</span> <span class="o">--</span><span class="nv">export</span> <span class="nv">laurentfdumont</span>@<span class="nv">gmail</span>.<span class="nv">com</span> <span class="o">&gt;</span> <span class="nv">mykey</span>.<span class="nv">asc</span>
 </pre></div>
 
 
 <h3 id="using-the-ip-tool-to-change-connecticity">Using the "ip" tool to change connecticity"</h3>
-<div class="codehilite"><pre><span></span>ip link set $DEV_NAME down
-ip link set $DEV_NAME up
+<div class="codehilite"><pre><span></span><span class="n">ip</span> <span class="n">link</span> <span class="k">set</span> <span class="err">$</span><span class="n">DEV_NAME</span> <span class="n">down</span>
+<span class="n">ip</span> <span class="n">link</span> <span class="k">set</span> <span class="err">$</span><span class="n">DEV_NAME</span> <span class="n">up</span>
 
-ip route add default via $DEF_GW_IP dev $DEV_NAME
-ip addr add $IP_ADDR_CIDR dev $DEV_NAME
-ip addr delete $IP_ADDR_CIDR dev $DEV_NAME
+<span class="n">ip</span> <span class="n">route</span> <span class="k">add</span> <span class="k">default</span> <span class="n">via</span> <span class="err">$</span><span class="n">DEF_GW_IP</span> <span class="n">dev</span> <span class="err">$</span><span class="n">DEV_NAME</span>
+<span class="n">ip</span> <span class="n">addr</span> <span class="k">add</span> <span class="err">$</span><span class="n">IP_ADDR_CIDR</span> <span class="n">dev</span> <span class="err">$</span><span class="n">DEV_NAME</span>
+<span class="n">ip</span> <span class="n">addr</span> <span class="k">delete</span> <span class="err">$</span><span class="n">IP_ADDR_CIDR</span> <span class="n">dev</span> <span class="err">$</span><span class="n">DEV_NAME</span>
 </pre></div>
 
 
 <h3 id="fix-br-and-vmbr-linux-bridges-filtering-lldp-packets">Fix BR and VMBR Linux bridges filtering LLDP packets</h3>
-<div class="codehilite"><pre><span></span>https://interestingtraffic.nl/2017/11/21/an-oddly-specific-post-about-group_fwd_mask/
+<div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">interestingtraffic</span><span class="p">.</span><span class="n">nl</span><span class="o">/</span><span class="mi">2017</span><span class="o">/</span><span class="mi">11</span><span class="o">/</span><span class="mi">21</span><span class="o">/</span><span class="n">an</span><span class="o">-</span><span class="n">oddly</span><span class="o">-</span><span class="k">specific</span><span class="o">-</span><span class="n">post</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">group_fwd_mask</span><span class="o">/</span>
 
-echo 16384 &gt; /sys/class/net/$VMBR_INTERFACE/bridge/group_fwd_mask
+<span class="n">echo</span> <span class="mi">16384</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="k">class</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="err">$</span><span class="n">VMBR_INTERFACE</span><span class="o">/</span><span class="n">bridge</span><span class="o">/</span><span class="n">group_fwd_mask</span>
+</pre></div>
+
+
+<h3 id="add-fish-as-the-default-shell-for-ubuntudebian">Add fish as the default shell for Ubuntu/Debian.</h3>
+<div class="codehilite"><pre><span></span><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="k">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">fish</span><span class="w"></span>
+
+<span class="n">coldadmin</span><span class="nv">@big</span><span class="o">-</span><span class="n">potato</span><span class="w"> </span><span class="o">~&gt;</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">shells</span><span class="w"> </span>
+<span class="err">#</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="nl">shells</span><span class="p">:</span><span class="w"> </span><span class="n">valid</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="n">shells</span><span class="w"></span>
+<span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">sh</span><span class="w"></span>
+<span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span><span class="w"></span>
+<span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">rbash</span><span class="w"></span>
+<span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">dash</span><span class="w"></span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">tmux</span><span class="w"></span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">fish</span><span class="w"></span>
+
+<span class="n">chsh</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">fish</span><span class="w"></span>
+</pre></div>
+
+
+<h3 id="one-history-file-for-multiple-prompts">One history file for multiple prompts.</h3>
+<div class="codehilite"><pre><span></span><span class="n">vim</span> <span class="o">~/</span><span class="p">.</span><span class="n">bashrc</span>
+<span class="n">export</span> <span class="n">PROMPT_COMMAND</span><span class="o">=</span><span class="s1">&#39;history -a&#39;</span>
+</pre></div>
+
+
+<h3 id="enable-terminus-powerline-on-ubuntu-font-name-is-terminess">Enable Terminus Powerline on Ubuntu (font name is Terminess)</h3>
+<div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">powerline</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">issues</span><span class="o">/</span><span class="mi">210</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">superuser</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">questions</span><span class="o">/</span><span class="mi">886023</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="n">mint</span><span class="o">-</span><span class="n">installing</span><span class="o">-</span><span class="n">bdf</span><span class="o">-</span><span class="n">fonts</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">console</span><span class="o">-</span><span class="n">fc</span><span class="o">-</span><span class="k">cache</span><span class="o">-</span><span class="n">fc</span><span class="o">-</span><span class="n">list</span>
+
+<span class="n">cd</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span>
+<span class="n">sudo</span> <span class="n">rm</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="mi">10</span><span class="o">*</span>  
+<span class="n">sudo</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="mi">70</span><span class="o">-</span><span class="k">no</span><span class="o">-</span><span class="n">bitmaps</span><span class="p">.</span><span class="n">conf</span> 
+<span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="p">..</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">avail</span><span class="o">/</span><span class="mi">70</span><span class="o">-</span><span class="n">yes</span><span class="o">-</span><span class="n">bitmaps</span><span class="p">.</span><span class="n">conf</span> <span class="p">.</span>
+<span class="n">sudo</span> <span class="n">dpkg</span><span class="o">-</span><span class="n">reconfigure</span> <span class="n">fontconfig</span>
 </pre></div>
                 
                   
@@ -843,7 +933,6 @@ echo 16384 &gt; /sys/class/net/$VMBR_INTERFACE/bridge/group_fwd_mask
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
@@ -853,14 +942,13 @@ echo 16384 &gt; /sys/class/net/$VMBR_INTERFACE/bridge/group_fwd_mask
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.39abc4af.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

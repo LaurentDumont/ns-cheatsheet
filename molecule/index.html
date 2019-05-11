@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../images/tarsier_hi_elbows.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
     
     
       
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.750b69bd.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -55,7 +55,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -69,8 +69,30 @@
     
     
       
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51757315-3"></script>
-<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-51757315-3")</script>
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-51757315-3", "cheat.northernsysadmin.com")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
@@ -130,22 +152,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Laurent Dumont - Internet notepad.
-              </span>
-              <span class="md-header-nav__topic">
-                Molecule
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Laurent Dumont - Internet notepad.
+            </span>
+            <span class="md-header-nav__topic">
+              Molecule
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -168,7 +187,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -179,20 +197,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
           </div>
         </div>
       
@@ -228,20 +244,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -622,19 +636,19 @@
                 
                 <h2 id="testing-framework-for-ansible">Testing framework for Ansible.</h2>
 <h3 id="installation-ubuntu-1804-lts">Installation Ubuntu 18.04 LTS</h3>
-<div class="codehilite"><pre><span></span>sudo apt-get install -y python-pip libssl-dev
-pip install --user molecule
+<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="o">-</span><span class="n">y</span> <span class="n">python</span><span class="o">-</span><span class="n">pip</span> <span class="n">libssl</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="c1">--user molecule</span>
 </pre></div>
 
 
 <h3 id="create-a-test-setup-in-an-existing-role">Create a test setup in an existing role</h3>
-<div class="codehilite"><pre><span></span>#From within the role folder
-molecule init scenario -r my-role-name
+<div class="codehilite"><pre><span></span><span class="o">#</span><span class="k">From</span> <span class="n">within</span> <span class="n">the</span> <span class="k">role</span> <span class="n">folder</span>
+<span class="n">molecule</span> <span class="n">init</span> <span class="n">scenario</span> <span class="o">-</span><span class="n">r</span> <span class="n">my</span><span class="o">-</span><span class="k">role</span><span class="o">-</span><span class="n">name</span>
 </pre></div>
 
 
 <h3 id="start-a-full-testing-run">Start a full testing run</h3>
-<div class="codehilite"><pre><span></span>sudo molecule test
+<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">molecule</span> <span class="n">test</span>
 </pre></div>
                 
                   
@@ -703,7 +717,6 @@ molecule init scenario -r my-role-name
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
@@ -713,14 +726,13 @@ molecule init scenario -r my-role-name
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.39abc4af.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../images/tarsier_hi_elbows.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
     
     
       
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.750b69bd.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -55,7 +55,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -69,8 +69,30 @@
     
     
       
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51757315-3"></script>
-<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-51757315-3")</script>
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-51757315-3", "cheat.northernsysadmin.com")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
@@ -130,22 +152,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Laurent Dumont - Internet notepad.
-              </span>
-              <span class="md-header-nav__topic">
-                Openstack
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Laurent Dumont - Internet notepad.
+            </span>
+            <span class="md-header-nav__topic">
+              Openstack
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -168,7 +187,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -179,20 +197,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
           </div>
         </div>
       
@@ -228,20 +244,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -567,200 +581,200 @@
                   <h1>Openstack</h1>
                 
                 <h3 id="compute-node-requirements">Compute node requirements</h3>
-<div class="codehilite"><pre><span></span>https://docs.openstack.org/nova/rocky/install/compute-install-rdo.html
-https://docs.openstack.org/neutron/rocky/install/compute-install-rdo.html
-https://docs.openstack.org/neutron/rocky/install/compute-install-option1-rdo.html
+<div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="p">.</span><span class="n">openstack</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">nova</span><span class="o">/</span><span class="n">rocky</span><span class="o">/</span><span class="n">install</span><span class="o">/</span><span class="n">compute</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">rdo</span><span class="p">.</span><span class="n">html</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="p">.</span><span class="n">openstack</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">neutron</span><span class="o">/</span><span class="n">rocky</span><span class="o">/</span><span class="n">install</span><span class="o">/</span><span class="n">compute</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">rdo</span><span class="p">.</span><span class="n">html</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="p">.</span><span class="n">openstack</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">neutron</span><span class="o">/</span><span class="n">rocky</span><span class="o">/</span><span class="n">install</span><span class="o">/</span><span class="n">compute</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">option1</span><span class="o">-</span><span class="n">rdo</span><span class="p">.</span><span class="n">html</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>/etc/hosts
+<div class="codehilite"><pre><span></span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">hosts</span>
 
-10.12.0.2     controller01
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">2</span>     <span class="n">controller01</span>
 
-10.12.0.3       compute01
-10.12.0.4       compute02
-10.12.0.5       compute03
-
-
-################################
-
-10.12.0.3       compute01
-
-10.12.0.2       controller01
-10.12.0.4       compute02
-10.12.0.5       compute03
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span>       <span class="n">compute01</span>
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">4</span>       <span class="n">compute02</span>
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span>       <span class="n">compute03</span>
 
 
-################################
+<span class="o">################################</span>
 
-10.12.0.4       compute02
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span>       <span class="n">compute01</span>
 
-10.12.0.2       controller01
-10.12.0.3       compute01
-10.12.0.5       compute03
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">2</span>       <span class="n">controller01</span>
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">4</span>       <span class="n">compute02</span>
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span>       <span class="n">compute03</span>
 
-################################
 
-10.12.0.5       compute03
+<span class="o">################################</span>
 
-10.12.0.2       controller01
-10.12.0.3       compute01
-10.12.0.4       compute02
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">4</span>       <span class="n">compute02</span>
+
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">2</span>       <span class="n">controller01</span>
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span>       <span class="n">compute01</span>
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span>       <span class="n">compute03</span>
+
+<span class="o">################################</span>
+
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">5</span>       <span class="n">compute03</span>
+
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">2</span>       <span class="n">controller01</span>
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">3</span>       <span class="n">compute01</span>
+<span class="mi">10</span><span class="p">.</span><span class="mi">12</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">4</span>       <span class="n">compute02</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>Placeholder password : openstack2019
+<div class="codehilite"><pre><span></span><span class="n">Placeholder</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">openstack2019</span><span class="w"></span>
 
-RABBIT_PASS : openstack2019
-rabbitmqctl add_user openstack openstack2019
+<span class="n">RABBIT_PASS</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">openstack2019</span><span class="w"></span>
+<span class="n">rabbitmqctl</span><span class="w"> </span><span class="n">add_user</span><span class="w"> </span><span class="n">openstack</span><span class="w"> </span><span class="n">openstack2019</span><span class="w"></span>
 
-GRANT ALL PRIVILEGES ON keystone.* TO &#39;keystone&#39;@&#39;localhost&#39; \
-IDENTIFIED BY &#39;openstack2019&#39;;
-GRANT ALL PRIVILEGES ON keystone.* TO &#39;keystone&#39;@&#39;%&#39; \
-IDENTIFIED BY &#39;openstack2019&#39;;
-
-
-connection = mysql+pymysql://keystone:openstack2019@controller01/keystone
+<span class="k">GRANT</span><span class="w"> </span><span class="ow">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">keystone</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;keystone&#39;</span><span class="err">@</span><span class="s1">&#39;localhost&#39;</span><span class="w"> </span><span class="err">\</span><span class="w"></span>
+<span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;openstack2019&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">GRANT</span><span class="w"> </span><span class="ow">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">keystone</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;keystone&#39;</span><span class="err">@</span><span class="s1">&#39;%&#39;</span><span class="w"> </span><span class="err">\</span><span class="w"></span>
+<span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;openstack2019&#39;</span><span class="p">;</span><span class="w"></span>
 
 
-keystone-manage bootstrap --bootstrap-password openstack2019 \
-  --bootstrap-admin-url http://controller01:5000/v3/ \
-  --bootstrap-internal-url http://controller01:5000/v3/ \
-  --bootstrap-public-url http://controller01:5000/v3/ \
-  --bootstrap-region-id RegionOne
+<span class="k">connection</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">mysql</span><span class="o">+</span><span class="nl">pymysql</span><span class="p">:</span><span class="o">//</span><span class="nl">keystone</span><span class="p">:</span><span class="n">openstack2019</span><span class="nv">@controller01</span><span class="o">/</span><span class="n">keystone</span><span class="w"></span>
 
 
-export OS_USERNAME=admin
-export OS_PASSWORD=openstack2019
-export OS_PROJECT_NAME=admin
-export OS_USER_DOMAIN_NAME=Default
-export OS_PROJECT_DOMAIN_NAME=Default
-export OS_AUTH_URL=http://controller01:5000/v3
-export OS_IDENTITY_API_VERSION=3
+<span class="n">keystone</span><span class="o">-</span><span class="n">manage</span><span class="w"> </span><span class="n">bootstrap</span><span class="w"> </span><span class="c1">--bootstrap-password openstack2019 \</span>
+<span class="w">  </span><span class="c1">--bootstrap-admin-url http://controller01:5000/v3/ \</span>
+<span class="w">  </span><span class="c1">--bootstrap-internal-url http://controller01:5000/v3/ \</span>
+<span class="w">  </span><span class="c1">--bootstrap-public-url http://controller01:5000/v3/ \</span>
+<span class="w">  </span><span class="c1">--bootstrap-region-id RegionOne</span>
 
 
-
-openstack domain create --description &quot;Test Domain&quot; example
-
-openstack project create --domain default \
-  --description &quot;Service Project&quot; service
-
-
-GRANT ALL PRIVILEGES ON glance.* TO &#39;glance&#39;@&#39;localhost&#39; \
-  IDENTIFIED BY &#39;openstack2019&#39;;
-
-GRANT ALL PRIVILEGES ON glance.* TO &#39;glance&#39;@&#39;%&#39; \
-  IDENTIFIED BY &#39;openstack2019&#39;;
-
-
-www_authenticate_uri  = http://controller01:5000
-auth_url = http://controller01:5000
-memcached_servers = controller01:11211
-auth_type = password
-project_domain_name = Default
-user_domain_name = Default
-project_name = service
-username = glance
-password = openstack2019
+<span class="n">export</span><span class="w"> </span><span class="n">OS_USERNAME</span><span class="o">=</span><span class="k">admin</span><span class="w"></span>
+<span class="n">export</span><span class="w"> </span><span class="n">OS_PASSWORD</span><span class="o">=</span><span class="n">openstack2019</span><span class="w"></span>
+<span class="n">export</span><span class="w"> </span><span class="n">OS_PROJECT_NAME</span><span class="o">=</span><span class="k">admin</span><span class="w"></span>
+<span class="n">export</span><span class="w"> </span><span class="n">OS_USER_DOMAIN_NAME</span><span class="o">=</span><span class="k">Default</span><span class="w"></span>
+<span class="n">export</span><span class="w"> </span><span class="n">OS_PROJECT_DOMAIN_NAME</span><span class="o">=</span><span class="k">Default</span><span class="w"></span>
+<span class="n">export</span><span class="w"> </span><span class="n">OS_AUTH_URL</span><span class="o">=</span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="nl">controller01</span><span class="p">:</span><span class="mi">5000</span><span class="o">/</span><span class="n">v3</span><span class="w"></span>
+<span class="n">export</span><span class="w"> </span><span class="n">OS_IDENTITY_API_VERSION</span><span class="o">=</span><span class="mi">3</span><span class="w"></span>
 
 
 
-### Deploy Compute NOVA service on Controller node.
+<span class="n">openstack</span><span class="w"> </span><span class="k">domain</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="c1">--description &quot;Test Domain&quot; example</span>
+
+<span class="n">openstack</span><span class="w"> </span><span class="n">project</span><span class="w"> </span><span class="k">create</span><span class="w"> </span><span class="c1">--domain default \</span>
+<span class="w">  </span><span class="c1">--description &quot;Service Project&quot; service</span>
+
+
+<span class="k">GRANT</span><span class="w"> </span><span class="ow">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">glance</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;glance&#39;</span><span class="err">@</span><span class="s1">&#39;localhost&#39;</span><span class="w"> </span><span class="err">\</span><span class="w"></span>
+<span class="w">  </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;openstack2019&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="k">GRANT</span><span class="w"> </span><span class="ow">ALL</span><span class="w"> </span><span class="k">PRIVILEGES</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">glance</span><span class="p">.</span><span class="o">*</span><span class="w"> </span><span class="k">TO</span><span class="w"> </span><span class="s1">&#39;glance&#39;</span><span class="err">@</span><span class="s1">&#39;%&#39;</span><span class="w"> </span><span class="err">\</span><span class="w"></span>
+<span class="w">  </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="s1">&#39;openstack2019&#39;</span><span class="p">;</span><span class="w"></span>
+
+
+<span class="n">www_authenticate_uri</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="nl">controller01</span><span class="p">:</span><span class="mi">5000</span><span class="w"></span>
+<span class="n">auth_url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nl">http</span><span class="p">:</span><span class="o">//</span><span class="nl">controller01</span><span class="p">:</span><span class="mi">5000</span><span class="w"></span>
+<span class="n">memcached_servers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nl">controller01</span><span class="p">:</span><span class="mi">11211</span><span class="w"></span>
+<span class="n">auth_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">password</span><span class="w"></span>
+<span class="n">project_domain_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Default</span><span class="w"></span>
+<span class="n">user_domain_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">Default</span><span class="w"></span>
+<span class="n">project_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">service</span><span class="w"></span>
+<span class="n">username</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glance</span><span class="w"></span>
+<span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">openstack2019</span><span class="w"></span>
+
+
+
+<span class="err">###</span><span class="w"> </span><span class="n">Deploy</span><span class="w"> </span><span class="k">Compute</span><span class="w"> </span><span class="n">NOVA</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="k">on</span><span class="w"> </span><span class="n">Controller</span><span class="w"> </span><span class="n">node</span><span class="p">.</span><span class="w"></span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>CREATE DATABASE nova_api;
-CREATE DATABASE nova;
-CREATE DATABASE nova_cell0;
-CREATE DATABASE placement;
+<div class="codehilite"><pre><span></span><span class="nv">CREATE</span> <span class="nv">DATABASE</span> <span class="nv">nova_api</span><span class="c1">;</span>
+<span class="nv">CREATE</span> <span class="nv">DATABASE</span> <span class="nv">nova</span><span class="c1">;</span>
+<span class="nv">CREATE</span> <span class="nv">DATABASE</span> <span class="nv">nova_cell0</span><span class="c1">;</span>
+<span class="nv">CREATE</span> <span class="nv">DATABASE</span> <span class="nv">placement</span><span class="c1">;</span>
 
 
-GRANT ALL PRIVILEGES ON nova_api.* TO &#39;nova&#39;@&#39;localhost&#39; \
-  IDENTIFIED BY &#39;openstack2019&#39;;
-GRANT ALL PRIVILEGES ON nova_api.* TO &#39;nova&#39;@&#39;%&#39; \
-  IDENTIFIED BY &#39;openstack2019&#39;;
+<span class="nv">GRANT</span> <span class="nv">ALL</span> <span class="nv">PRIVILEGES</span> <span class="nv">ON</span> <span class="nv">nova_api</span>.<span class="o">*</span> <span class="nv">TO</span> <span class="s1">&#39;</span><span class="s">nova</span><span class="s1">&#39;</span>@<span class="s1">&#39;</span><span class="s">localhost</span><span class="s1">&#39;</span> \
+  <span class="nv">IDENTIFIED</span> <span class="nv">BY</span> <span class="s1">&#39;</span><span class="s">openstack2019</span><span class="s1">&#39;</span><span class="c1">;</span>
+<span class="nv">GRANT</span> <span class="nv">ALL</span> <span class="nv">PRIVILEGES</span> <span class="nv">ON</span> <span class="nv">nova_api</span>.<span class="o">*</span> <span class="nv">TO</span> <span class="s1">&#39;</span><span class="s">nova</span><span class="s1">&#39;</span>@<span class="s1">&#39;</span><span class="s">%</span><span class="s1">&#39;</span> \
+  <span class="nv">IDENTIFIED</span> <span class="nv">BY</span> <span class="s1">&#39;</span><span class="s">openstack2019</span><span class="s1">&#39;</span><span class="c1">;</span>
 
-GRANT ALL PRIVILEGES ON nova.* TO &#39;nova&#39;@&#39;localhost&#39; \
-  IDENTIFIED BY &#39;openstack2019&#39;;
-GRANT ALL PRIVILEGES ON nova.* TO &#39;nova&#39;@&#39;%&#39; \
-  IDENTIFIED BY &#39;openstack2019&#39;;
+<span class="nv">GRANT</span> <span class="nv">ALL</span> <span class="nv">PRIVILEGES</span> <span class="nv">ON</span> <span class="nv">nova</span>.<span class="o">*</span> <span class="nv">TO</span> <span class="s1">&#39;</span><span class="s">nova</span><span class="s1">&#39;</span>@<span class="s1">&#39;</span><span class="s">localhost</span><span class="s1">&#39;</span> \
+  <span class="nv">IDENTIFIED</span> <span class="nv">BY</span> <span class="s1">&#39;</span><span class="s">openstack2019</span><span class="s1">&#39;</span><span class="c1">;</span>
+<span class="nv">GRANT</span> <span class="nv">ALL</span> <span class="nv">PRIVILEGES</span> <span class="nv">ON</span> <span class="nv">nova</span>.<span class="o">*</span> <span class="nv">TO</span> <span class="s1">&#39;</span><span class="s">nova</span><span class="s1">&#39;</span>@<span class="s1">&#39;</span><span class="s">%</span><span class="s1">&#39;</span> \
+  <span class="nv">IDENTIFIED</span> <span class="nv">BY</span> <span class="s1">&#39;</span><span class="s">openstack2019</span><span class="s1">&#39;</span><span class="c1">;</span>
 
-GRANT ALL PRIVILEGES ON nova_cell0.* TO &#39;nova&#39;@&#39;localhost&#39; \
-  IDENTIFIED BY &#39;openstack2019&#39;;
-GRANT ALL PRIVILEGES ON nova_cell0.* TO &#39;nova&#39;@&#39;%&#39; \
-  IDENTIFIED BY &#39;openstack2019&#39;;
+<span class="nv">GRANT</span> <span class="nv">ALL</span> <span class="nv">PRIVILEGES</span> <span class="nv">ON</span> <span class="nv">nova_cell0</span>.<span class="o">*</span> <span class="nv">TO</span> <span class="s1">&#39;</span><span class="s">nova</span><span class="s1">&#39;</span>@<span class="s1">&#39;</span><span class="s">localhost</span><span class="s1">&#39;</span> \
+  <span class="nv">IDENTIFIED</span> <span class="nv">BY</span> <span class="s1">&#39;</span><span class="s">openstack2019</span><span class="s1">&#39;</span><span class="c1">;</span>
+<span class="nv">GRANT</span> <span class="nv">ALL</span> <span class="nv">PRIVILEGES</span> <span class="nv">ON</span> <span class="nv">nova_cell0</span>.<span class="o">*</span> <span class="nv">TO</span> <span class="s1">&#39;</span><span class="s">nova</span><span class="s1">&#39;</span>@<span class="s1">&#39;</span><span class="s">%</span><span class="s1">&#39;</span> \
+  <span class="nv">IDENTIFIED</span> <span class="nv">BY</span> <span class="s1">&#39;</span><span class="s">openstack2019</span><span class="s1">&#39;</span><span class="c1">;</span>
 
-GRANT ALL PRIVILEGES ON placement.* TO &#39;placement&#39;@&#39;localhost&#39; \
-  IDENTIFIED BY &#39;openstack2019&#39;;
-GRANT ALL PRIVILEGES ON placement.* TO &#39;placement&#39;@&#39;%&#39; \
-  IDENTIFIED BY &#39;openstack2019&#39;;
-
-
-openstack user create --domain default --password-prompt nova
-
-openstack role add --project service --user nova admin
+<span class="nv">GRANT</span> <span class="nv">ALL</span> <span class="nv">PRIVILEGES</span> <span class="nv">ON</span> <span class="nv">placement</span>.<span class="o">*</span> <span class="nv">TO</span> <span class="s1">&#39;</span><span class="s">placement</span><span class="s1">&#39;</span>@<span class="s1">&#39;</span><span class="s">localhost</span><span class="s1">&#39;</span> \
+  <span class="nv">IDENTIFIED</span> <span class="nv">BY</span> <span class="s1">&#39;</span><span class="s">openstack2019</span><span class="s1">&#39;</span><span class="c1">;</span>
+<span class="nv">GRANT</span> <span class="nv">ALL</span> <span class="nv">PRIVILEGES</span> <span class="nv">ON</span> <span class="nv">placement</span>.<span class="o">*</span> <span class="nv">TO</span> <span class="s1">&#39;</span><span class="s">placement</span><span class="s1">&#39;</span>@<span class="s1">&#39;</span><span class="s">%</span><span class="s1">&#39;</span> \
+  <span class="nv">IDENTIFIED</span> <span class="nv">BY</span> <span class="s1">&#39;</span><span class="s">openstack2019</span><span class="s1">&#39;</span><span class="c1">;</span>
 
 
-openstack service create --name nova \
-  --description &quot;OpenStack Compute&quot; compute
+<span class="nv">openstack</span> <span class="nv">user</span> <span class="nv">create</span> <span class="o">--</span><span class="nv">domain</span> <span class="nv">default</span> <span class="o">--</span><span class="nv">password</span><span class="o">-</span><span class="nv">prompt</span> <span class="nv">nova</span>
 
-openstack endpoint create --region RegionOne \
-  compute public http://controller01:8774/v2.1
-
-openstack endpoint create --region RegionOne \
-  compute internal http://controller01:8774/v2.1
-
-openstack endpoint create --region RegionOne \
-  compute admin http://controller01:8774/v2.1
-
-openstack endpoint create --region RegionOne \
-  placement public http://controller01:8778
-
-openstack endpoint create --region RegionOne \
-  placement internal http://controller01:8778
+<span class="nv">openstack</span> <span class="nv">role</span> <span class="nv">add</span> <span class="o">--</span><span class="nv">project</span> <span class="nv">service</span> <span class="o">--</span><span class="nv">user</span> <span class="nv">nova</span> <span class="nv">admin</span>
 
 
-openstack endpoint create --region RegionOne \
-  placement admin http://controller01:8778
+<span class="nv">openstack</span> <span class="nv">service</span> <span class="nv">create</span> <span class="o">--</span><span class="nv">name</span> <span class="nv">nova</span> \
+  <span class="o">--</span><span class="nv">description</span> <span class="s2">&quot;</span><span class="s">OpenStack Compute</span><span class="s2">&quot;</span> <span class="nv">compute</span>
+
+<span class="nv">openstack</span> <span class="nv">endpoint</span> <span class="nv">create</span> <span class="o">--</span><span class="nv">region</span> <span class="nv">RegionOne</span> \
+  <span class="nv">compute</span> <span class="nv">public</span> <span class="nv">http</span>:<span class="o">//</span><span class="nv">controller01</span>:<span class="mi">8774</span><span class="o">/</span><span class="nv">v2</span>.<span class="mi">1</span>
+
+<span class="nv">openstack</span> <span class="nv">endpoint</span> <span class="nv">create</span> <span class="o">--</span><span class="nv">region</span> <span class="nv">RegionOne</span> \
+  <span class="nv">compute</span> <span class="nv">internal</span> <span class="nv">http</span>:<span class="o">//</span><span class="nv">controller01</span>:<span class="mi">8774</span><span class="o">/</span><span class="nv">v2</span>.<span class="mi">1</span>
+
+<span class="nv">openstack</span> <span class="nv">endpoint</span> <span class="nv">create</span> <span class="o">--</span><span class="nv">region</span> <span class="nv">RegionOne</span> \
+  <span class="nv">compute</span> <span class="nv">admin</span> <span class="nv">http</span>:<span class="o">//</span><span class="nv">controller01</span>:<span class="mi">8774</span><span class="o">/</span><span class="nv">v2</span>.<span class="mi">1</span>
+
+<span class="nv">openstack</span> <span class="nv">endpoint</span> <span class="nv">create</span> <span class="o">--</span><span class="nv">region</span> <span class="nv">RegionOne</span> \
+  <span class="nv">placement</span> <span class="nv">public</span> <span class="nv">http</span>:<span class="o">//</span><span class="nv">controller01</span>:<span class="mi">8778</span>
+
+<span class="nv">openstack</span> <span class="nv">endpoint</span> <span class="nv">create</span> <span class="o">--</span><span class="nv">region</span> <span class="nv">RegionOne</span> \
+  <span class="nv">placement</span> <span class="nv">internal</span> <span class="nv">http</span>:<span class="o">//</span><span class="nv">controller01</span>:<span class="mi">8778</span>
 
 
-modprobe br_netfilter
-echo &quot;$(sysctl -w net.bridge.bridge-nf-call-iptables=1)&quot; &gt;&gt; /etc/sysctl.conf
-echo &quot;$(sysctl -w net.bridge.bridge-nf-call-ip6tables=1)&quot; &gt;&gt; /etc/sysctl.conf
-sysctl -p /etc/sysctl.conf
+<span class="nv">openstack</span> <span class="nv">endpoint</span> <span class="nv">create</span> <span class="o">--</span><span class="nv">region</span> <span class="nv">RegionOne</span> \
+  <span class="nv">placement</span> <span class="nv">admin</span> <span class="nv">http</span>:<span class="o">//</span><span class="nv">controller01</span>:<span class="mi">8778</span>
 
 
-
-GRANT ALL PRIVILEGES ON neutron.* TO &#39;neutron&#39;@&#39;localhost&#39; \
-  IDENTIFIED BY &#39;openstack2019&#39;;
-
-GRANT ALL PRIVILEGES ON neutron.* TO &#39;neutron&#39;@&#39;%&#39; \
-  IDENTIFIED BY &#39;openstack2019&#39;;
-
-openstack endpoint create --region RegionOne \
-  network public http://controller01:9696
-
-openstack endpoint create --region RegionOne \
-  network internal http://controller01:9696
-
-openstack endpoint create --region RegionOne \
-  network admin http://controller01:9696
-
-
-openstack subnet create --network provider \
-  --allocation-pool start=10.13.0.100,end=10.13.0.200 \
-  --dns-nameserver 10.13.0.1 --gateway 10.13.0.1 \
-  --subnet-range 10.13.0.0/24 provider
+<span class="nv">modprobe</span> <span class="nv">br_netfilter</span>
+<span class="nv">echo</span> <span class="s2">&quot;</span><span class="s">$(sysctl -w net.bridge.bridge-nf-call-iptables=1)</span><span class="s2">&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">sysctl</span>.<span class="nv">conf</span>
+<span class="nv">echo</span> <span class="s2">&quot;</span><span class="s">$(sysctl -w net.bridge.bridge-nf-call-ip6tables=1)</span><span class="s2">&quot;</span> <span class="o">&gt;&gt;</span> <span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">sysctl</span>.<span class="nv">conf</span>
+<span class="nv">sysctl</span> <span class="o">-</span><span class="nv">p</span> <span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">sysctl</span>.<span class="nv">conf</span>
 
 
 
-openstack server create --flavor m1.nano --image cirros \
-  --nic net-id=dee9dde7-0edb-4311-a06e-5ffb98144527 --security-group default \
-  provider-instance
+<span class="nv">GRANT</span> <span class="nv">ALL</span> <span class="nv">PRIVILEGES</span> <span class="nv">ON</span> <span class="nv">neutron</span>.<span class="o">*</span> <span class="nv">TO</span> <span class="s1">&#39;</span><span class="s">neutron</span><span class="s1">&#39;</span>@<span class="s1">&#39;</span><span class="s">localhost</span><span class="s1">&#39;</span> \
+  <span class="nv">IDENTIFIED</span> <span class="nv">BY</span> <span class="s1">&#39;</span><span class="s">openstack2019</span><span class="s1">&#39;</span><span class="c1">;</span>
+
+<span class="nv">GRANT</span> <span class="nv">ALL</span> <span class="nv">PRIVILEGES</span> <span class="nv">ON</span> <span class="nv">neutron</span>.<span class="o">*</span> <span class="nv">TO</span> <span class="s1">&#39;</span><span class="s">neutron</span><span class="s1">&#39;</span>@<span class="s1">&#39;</span><span class="s">%</span><span class="s1">&#39;</span> \
+  <span class="nv">IDENTIFIED</span> <span class="nv">BY</span> <span class="s1">&#39;</span><span class="s">openstack2019</span><span class="s1">&#39;</span><span class="c1">;</span>
+
+<span class="nv">openstack</span> <span class="nv">endpoint</span> <span class="nv">create</span> <span class="o">--</span><span class="nv">region</span> <span class="nv">RegionOne</span> \
+  <span class="nv">network</span> <span class="nv">public</span> <span class="nv">http</span>:<span class="o">//</span><span class="nv">controller01</span>:<span class="mi">9696</span>
+
+<span class="nv">openstack</span> <span class="nv">endpoint</span> <span class="nv">create</span> <span class="o">--</span><span class="nv">region</span> <span class="nv">RegionOne</span> \
+  <span class="nv">network</span> <span class="nv">internal</span> <span class="nv">http</span>:<span class="o">//</span><span class="nv">controller01</span>:<span class="mi">9696</span>
+
+<span class="nv">openstack</span> <span class="nv">endpoint</span> <span class="nv">create</span> <span class="o">--</span><span class="nv">region</span> <span class="nv">RegionOne</span> \
+  <span class="nv">network</span> <span class="nv">admin</span> <span class="nv">http</span>:<span class="o">//</span><span class="nv">controller01</span>:<span class="mi">9696</span>
 
 
-nova-manage cell_v2 map_cell0
-nova-manage db sync
+<span class="nv">openstack</span> <span class="nv">subnet</span> <span class="nv">create</span> <span class="o">--</span><span class="nv">network</span> <span class="nv">provider</span> \
+  <span class="o">--</span><span class="nv">allocation</span><span class="o">-</span><span class="nv">pool</span> <span class="nv">start</span><span class="o">=</span><span class="mi">10</span>.<span class="mi">13</span>.<span class="mi">0</span>.<span class="mi">100</span>,<span class="k">end</span><span class="o">=</span><span class="mi">10</span>.<span class="mi">13</span>.<span class="mi">0</span>.<span class="mi">200</span> \
+  <span class="o">--</span><span class="nv">dns</span><span class="o">-</span><span class="nv">nameserver</span> <span class="mi">10</span>.<span class="mi">13</span>.<span class="mi">0</span>.<span class="mi">1</span> <span class="o">--</span><span class="nv">gateway</span> <span class="mi">10</span>.<span class="mi">13</span>.<span class="mi">0</span>.<span class="mi">1</span> \
+  <span class="o">--</span><span class="nv">subnet</span><span class="o">-</span><span class="nv">range</span> <span class="mi">10</span>.<span class="mi">13</span>.<span class="mi">0</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">24</span> <span class="nv">provider</span>
+
+
+
+<span class="nv">openstack</span> <span class="nv">server</span> <span class="nv">create</span> <span class="o">--</span><span class="nv">flavor</span> <span class="nv">m1</span>.<span class="nv">nano</span> <span class="o">--</span><span class="nv">image</span> <span class="nv">cirros</span> \
+  <span class="o">--</span><span class="nv">nic</span> <span class="nv">net</span><span class="o">-</span><span class="nv">id</span><span class="o">=</span><span class="nv">dee9dde7</span><span class="o">-</span><span class="mi">0</span><span class="nv">edb</span><span class="o">-</span><span class="mi">4311</span><span class="o">-</span><span class="nv">a06e</span><span class="o">-</span><span class="mi">5</span><span class="nv">ffb98144527</span> <span class="o">--</span><span class="nv">security</span><span class="o">-</span><span class="nv">group</span> <span class="nv">default</span> \
+  <span class="nv">provider</span><span class="o">-</span><span class="nv">instance</span>
+
+
+<span class="nv">nova</span><span class="o">-</span><span class="nv">manage</span> <span class="nv">cell_v2</span> <span class="nv">map_cell0</span>
+<span class="nv">nova</span><span class="o">-</span><span class="nv">manage</span> <span class="nv">db</span> <span class="nv">sync</span>
 </pre></div>
                 
                   
@@ -829,7 +843,6 @@ nova-manage db sync
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
@@ -839,14 +852,13 @@ nova-manage db sync
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.39abc4af.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
