@@ -166,7 +166,7 @@ vim ~/.bashrc
 export PROMPT_COMMAND='history -a'
 ```
 
-### Enable Terminus Powerline on Ubuntu.
+### Enable Terminus Powerline on Ubuntu (font name is Terminess)
 ```
 https://github.com/powerline/fonts/issues/210
 https://superuser.com/questions/886023/linux-mint-installing-bdf-fonts-with-console-fc-cache-fc-list
