@@ -144,3 +144,26 @@ https://interestingtraffic.nl/2017/11/21/an-oddly-specific-post-about-group_fwd_
 echo 16384 > /sys/class/net/$VMBR_INTERFACE/bridge/group_fwd_mask
 ```
 
+### Add fish as the default shell for Ubuntu/Debian.
+```
+
+sudo apt-get install fish
+
+coldadmin@big-potato ~> cat /etc/shells 
+# /etc/shells: valid login shells
+/bin/sh
+/bin/bash
+/bin/rbash
+/bin/dash
+/usr/bin/tmux
+/usr/bin/fish
+
+chsh -s /usr/bin/fish
+
+```
+
+### One history file for multiple prompts.
+```
+vim ~/.bashrc
+export PROMPT_COMMAND='history -a'
+```
