@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../images/tarsier_hi_elbows.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
     
     
       
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.750b69bd.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -55,7 +55,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -69,8 +69,30 @@
     
     
       
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51757315-3"></script>
-<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-51757315-3")</script>
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-51757315-3", "cheat.northernsysadmin.com")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
@@ -130,22 +152,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Laurent Dumont - Internet notepad.
-              </span>
-              <span class="md-header-nav__topic">
-                Chef
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Laurent Dumont - Internet notepad.
+            </span>
+            <span class="md-header-nav__topic">
+              Chef
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -168,7 +187,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -179,20 +197,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
           </div>
         </div>
       
@@ -228,20 +244,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -595,28 +609,28 @@
                   <h1>Chef</h1>
                 
                 <h3 id="chef-server-setup">Chef server setup</h3>
-<div class="codehilite"><pre><span></span>sudo dpkg -i /tmp/chef-server-core-&lt;version&gt;.deb
-chef-server-ctl reconfigure
-chef-server-ctl user-create USER_NAME FIRST_NAME LAST_NAME EMAIL &#39;PASSWORD&#39; --filename FILE_NAME
-chef-server-ctl org-create northernsysadmin &#39;Northern Sysadmin Inc&#39; --association_user sysadmin --filename /var/chef_ssh/northernsysadmin-validator.pem
+<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">dpkg</span> <span class="o">-</span><span class="n">i</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">chef</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">core</span><span class="o">-&lt;</span><span class="k">version</span><span class="o">&gt;</span><span class="p">.</span><span class="n">deb</span>
+<span class="n">chef</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">ctl</span> <span class="n">reconfigure</span>
+<span class="n">chef</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">ctl</span> <span class="k">user</span><span class="o">-</span><span class="k">create</span> <span class="n">USER_NAME</span> <span class="n">FIRST_NAME</span> <span class="n">LAST_NAME</span> <span class="n">EMAIL</span> <span class="s1">&#39;PASSWORD&#39;</span> <span class="c1">--filename FILE_NAME</span>
+<span class="n">chef</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">ctl</span> <span class="n">org</span><span class="o">-</span><span class="k">create</span> <span class="n">northernsysadmin</span> <span class="s1">&#39;Northern Sysadmin Inc&#39;</span> <span class="c1">--association_user sysadmin --filename /var/chef_ssh/northernsysadmin-validator.pem</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>knife ssl check
-knife ssl fetch
+<div class="codehilite"><pre><span></span><span class="n">knife</span> <span class="n">ssl</span> <span class="k">check</span>
+<span class="n">knife</span> <span class="n">ssl</span> <span class="k">fetch</span>
 
-knife cookbook upload $COOKBOOK_NAME_HERE
-knife client list
-knife cookbook list
+<span class="n">knife</span> <span class="n">cookbook</span> <span class="n">upload</span> <span class="err">$</span><span class="n">COOKBOOK_NAME_HERE</span>
+<span class="n">knife</span> <span class="n">client</span> <span class="n">list</span>
+<span class="n">knife</span> <span class="n">cookbook</span> <span class="n">list</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>knife bootstrap 10.255.255.8 --ssh-user sysadmin --ssh-password &#39;PASSWORD_HERE&#39; --sudo --use-sudo-password --node-name puppet-minion1 --run-list &#39;recipe[learn_chef_apache2]&#39;
+<div class="codehilite"><pre><span></span><span class="n">knife</span><span class="w"> </span><span class="n">bootstrap</span><span class="w"> </span><span class="mf">10.255.255.8</span><span class="w"> </span><span class="c1">--ssh-user sysadmin --ssh-password &#39;PASSWORD_HERE&#39; --sudo --use-sudo-password --node-name puppet-minion1 --run-list &#39;recipe[learn_chef_apache2]&#39;</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span>knife node list
-knife node show $NODE_NAME
+<div class="codehilite"><pre><span></span><span class="nv">knife</span> <span class="nv">node</span> <span class="nv">list</span>
+<span class="nv">knife</span> <span class="nv">node</span> <span class="k">show</span> $<span class="nv">NODE_NAME</span>
 </pre></div>
 
 
@@ -732,7 +746,6 @@ knife node show $NODE_NAME
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
@@ -742,14 +755,13 @@ knife node show $NODE_NAME
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.39abc4af.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

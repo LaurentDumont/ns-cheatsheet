@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../images/tarsier_hi_elbows.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
     
     
       
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.750b69bd.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -55,7 +55,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -69,8 +69,30 @@
     
     
       
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51757315-3"></script>
-<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-51757315-3")</script>
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-51757315-3", "cheat.northernsysadmin.com")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
@@ -130,22 +152,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Laurent Dumont - Internet notepad.
-              </span>
-              <span class="md-header-nav__topic">
-                MAAS
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Laurent Dumont - Internet notepad.
+            </span>
+            <span class="md-header-nav__topic">
+              MAAS
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -168,7 +187,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -179,20 +197,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
           </div>
         </div>
       
@@ -228,20 +244,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -664,7 +678,7 @@
                 
                 <h2 id="adding-a-custom-power-provider-for-maas">Adding a custom power provider for MAAS.</h2>
 <h3 id="install-proxmoxer-for-python3">Install proxmoxer for Python3</h3>
-<div class="codehilite"><pre><span></span>pip3 install proxmoxer
+<div class="codehilite"><pre><span></span><span class="n">pip3</span> <span class="n">install</span> <span class="n">proxmoxer</span>
 </pre></div>
 
 
@@ -796,8 +810,8 @@
 
 
 <h3 id="location-of-the-power-scripts-for-maas">Location of the power scripts for MAAS.</h3>
-<div class="codehilite"><pre><span></span>/usr/lib/python3/dist-packages/provisioningserver/drivers/power/proxmox.py
-/usr/lib/python3/dist-packages/provisioningserver/drivers/power/registry.py
+<div class="codehilite"><pre><span></span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">provisioningserver</span><span class="o">/</span><span class="n">drivers</span><span class="o">/</span><span class="n">power</span><span class="o">/</span><span class="n">proxmox</span><span class="p">.</span><span class="n">py</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="o">/</span><span class="n">dist</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">provisioningserver</span><span class="o">/</span><span class="n">drivers</span><span class="o">/</span><span class="n">power</span><span class="o">/</span><span class="n">registry</span><span class="p">.</span><span class="n">py</span>
 </pre></div>
 
 
@@ -807,36 +821,36 @@
 
 
 <h3 id="add-the-following-line-to-the-bottom-of-the-power_drivers-array">Add the following line to the bottom of the power_drivers array.</h3>
-<div class="codehilite"><pre><span></span>ProxmoxPowerDriver(),
+<div class="codehilite"><pre><span></span><span class="n">ProxmoxPowerDriver</span><span class="p">(),</span>
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span># Register all the power drivers.
-power_drivers = [
-    AMTPowerDriver(),
-    APCPowerDriver(),
-    DLIPowerDriver(),
-    FenceCDUPowerDriver(),
-    HMCPowerDriver(),
-    IPMIPowerDriver(),
-    ManualPowerDriver(),
-    MoonshotIPMIPowerDriver(),
-    MSCMPowerDriver(),
-    MicrosoftOCSPowerDriver(),
-    NovaPowerDriver(),
-    RECSPowerDriver(),
-    SeaMicroPowerDriver(),
-    UCSMPowerDriver(),
-    VirshPowerDriver(),
-    VMwarePowerDriver(),
-    WedgePowerDriver(),
-    ProxmoxPowerDriver(),
-]
+<div class="codehilite"><pre><span></span><span class="o">#</span> <span class="n">Register</span> <span class="k">all</span> <span class="n">the</span> <span class="n">power</span> <span class="n">drivers</span><span class="p">.</span>
+<span class="n">power_drivers</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">AMTPowerDriver</span><span class="p">(),</span>
+    <span class="n">APCPowerDriver</span><span class="p">(),</span>
+    <span class="n">DLIPowerDriver</span><span class="p">(),</span>
+    <span class="n">FenceCDUPowerDriver</span><span class="p">(),</span>
+    <span class="n">HMCPowerDriver</span><span class="p">(),</span>
+    <span class="n">IPMIPowerDriver</span><span class="p">(),</span>
+    <span class="n">ManualPowerDriver</span><span class="p">(),</span>
+    <span class="n">MoonshotIPMIPowerDriver</span><span class="p">(),</span>
+    <span class="n">MSCMPowerDriver</span><span class="p">(),</span>
+    <span class="n">MicrosoftOCSPowerDriver</span><span class="p">(),</span>
+    <span class="n">NovaPowerDriver</span><span class="p">(),</span>
+    <span class="n">RECSPowerDriver</span><span class="p">(),</span>
+    <span class="n">SeaMicroPowerDriver</span><span class="p">(),</span>
+    <span class="n">UCSMPowerDriver</span><span class="p">(),</span>
+    <span class="n">VirshPowerDriver</span><span class="p">(),</span>
+    <span class="n">VMwarePowerDriver</span><span class="p">(),</span>
+    <span class="n">WedgePowerDriver</span><span class="p">(),</span>
+    <span class="n">ProxmoxPowerDriver</span><span class="p">(),</span>
+<span class="p">]</span>
 </pre></div>
 
 
 <h3 id="restart-the-rack-controller">Restart the rack controller.</h3>
-<div class="codehilite"><pre><span></span>systemctl restart maas-rackd
+<div class="codehilite"><pre><span></span><span class="n">systemctl</span> <span class="k">restart</span> <span class="n">maas</span><span class="o">-</span><span class="n">rackd</span>
 </pre></div>
                 
                   
@@ -905,7 +919,6 @@ power_drivers = [
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
@@ -915,14 +928,13 @@ power_drivers = [
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.39abc4af.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
