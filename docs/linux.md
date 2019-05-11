@@ -165,3 +165,15 @@ chsh -s /usr/bin/fish
 vim ~/.bashrc
 export PROMPT_COMMAND='history -a'
 ```
+
+### Enable Terminus Powerline on Ubuntu.
+```
+https://github.com/powerline/fonts/issues/210
+https://superuser.com/questions/886023/linux-mint-installing-bdf-fonts-with-console-fc-cache-fc-list
+
+cd /etc/fonts/conf.d/
+sudo rm /etc/fonts/conf.d/10*  
+sudo rm -rf 70-no-bitmaps.conf 
+sudo ln -s ../conf.avail/70-yes-bitmaps.conf .
+sudo dpkg-reconfigure fontconfig
+```
