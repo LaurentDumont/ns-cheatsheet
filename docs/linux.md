@@ -146,7 +146,6 @@ echo 16384 > /sys/class/net/$VMBR_INTERFACE/bridge/group_fwd_mask
 
 ### Add fish as the default shell for Ubuntu/Debian.
 ```
-
 sudo apt-get install fish
 
 coldadmin@big-potato ~> cat /etc/shells 
@@ -159,7 +158,6 @@ coldadmin@big-potato ~> cat /etc/shells
 /usr/bin/fish
 
 chsh -s /usr/bin/fish
-
 ```
 
 ### One history file for multiple prompts.
