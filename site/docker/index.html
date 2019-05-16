@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../images/tarsier_hi_elbows.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
     
     
       
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.750b69bd.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -55,7 +55,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -69,8 +69,30 @@
     
     
       
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51757315-3"></script>
-<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-51757315-3")</script>
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-51757315-3", "cheat.northernsysadmin.com")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
@@ -130,22 +152,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Laurent Dumont - Internet notepad.
-              </span>
-              <span class="md-header-nav__topic">
-                Docker
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Laurent Dumont - Internet notepad.
+            </span>
+            <span class="md-header-nav__topic">
+              Docker
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -168,7 +187,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -179,20 +197,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
           </div>
         </div>
       
@@ -228,20 +244,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -623,75 +637,75 @@
                   <h1>Docker</h1>
                 
                 <h3 id="docker-install-bash-script">Docker install bash script.</h3>
-<div class="codehilite"><pre><span></span>#Install docker
-#!/bin/bash
+<div class="codehilite"><pre><span></span><span class="o">#</span><span class="n">Install</span> <span class="n">docker</span>
+<span class="o">#!/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
 
-sudo apt-get install \
-     apt-transport-https \
-     ca-certificates \
-     curl \
-     gnupg2 \
-     software-properties-common
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="err">\</span>
+     <span class="n">apt</span><span class="o">-</span><span class="n">transport</span><span class="o">-</span><span class="n">https</span> <span class="err">\</span>
+     <span class="n">ca</span><span class="o">-</span><span class="n">certificates</span> <span class="err">\</span>
+     <span class="n">curl</span> <span class="err">\</span>
+     <span class="n">gnupg2</span> <span class="err">\</span>
+     <span class="n">software</span><span class="o">-</span><span class="n">properties</span><span class="o">-</span><span class="n">common</span>
 
-curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
+<span class="n">curl</span> <span class="o">-</span><span class="n">fsSL</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="p">.</span><span class="n">docker</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span><span class="n">debian</span><span class="o">/</span><span class="n">gpg</span> <span class="o">|</span> <span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">key</span> <span class="k">add</span> <span class="o">-</span>
 
-sudo add-apt-repository \
-   &quot;deb [arch=amd64] https://download.docker.com/linux/debian \
-   $(lsb_release -cs) \
-   stable&quot;
+<span class="n">sudo</span> <span class="k">add</span><span class="o">-</span><span class="n">apt</span><span class="o">-</span><span class="n">repository</span> <span class="err">\</span>
+   <span class="ss">&quot;deb [arch=amd64] https://download.docker.com/linux/debian \</span>
+<span class="ss">   $(lsb_release -cs) \</span>
+<span class="ss">   stable&quot;</span>
 
-sudo apt-get update &amp;&amp; apt-get install docker-ce
+<span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="k">update</span> <span class="o">&amp;&amp;</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">docker</span><span class="o">-</span><span class="n">ce</span>
 </pre></div>
 
 
 <h3 id="idrac-docker-vnc-image">IDRAC Docker VNC image</h3>
 <p>https://github.com/DomiStyle/docker-idrac6</p>
-<div class="codehilite"><pre><span></span>docker run -d -p 5800:5800 -p 5900:5900 -e IDRAC_HOST=IP_HERE -e IDRAC_USER=root -e IDRAC_PASSWORD=calvin domistyle/idrac6
+<div class="codehilite"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">p</span> <span class="mi">5800</span><span class="p">:</span><span class="mi">5800</span> <span class="o">-</span><span class="n">p</span> <span class="mi">5900</span><span class="p">:</span><span class="mi">5900</span> <span class="o">-</span><span class="n">e</span> <span class="n">IDRAC_HOST</span><span class="o">=</span><span class="n">IP_HERE</span> <span class="o">-</span><span class="n">e</span> <span class="n">IDRAC_USER</span><span class="o">=</span><span class="n">root</span> <span class="o">-</span><span class="n">e</span> <span class="n">IDRAC_PASSWORD</span><span class="o">=</span><span class="n">calvin</span> <span class="n">domistyle</span><span class="o">/</span><span class="n">idrac6</span>
 </pre></div>
 
 
 <h3 id="radarr-docker">Radarr Docker</h3>
-<div class="codehilite"><pre><span></span>docker volume create radarr-config
+<div class="codehilite"><pre><span></span><span class="n">docker</span> <span class="n">volume</span> <span class="k">create</span> <span class="n">radarr</span><span class="o">-</span><span class="n">config</span>
 
-sudo docker run \
-  -d \
-  --name=radarr \
-  -e PUID=109 \
-  -e PGID=113 \
-  -e TZ=America/Toronto \
-  -p 7878:7878 \
-  -v radarr-config:/config \
-  -v /storage/media-gluster/movies/:/movies \
-  -v /storage/media-gluster/downloads:/downloads \
-  --restart unless-stopped \
-  linuxserver/radarr
+<span class="n">sudo</span> <span class="n">docker</span> <span class="n">run</span> <span class="err">\</span>
+  <span class="o">-</span><span class="n">d</span> <span class="err">\</span>
+  <span class="c1">--name=radarr \</span>
+  <span class="o">-</span><span class="n">e</span> <span class="n">PUID</span><span class="o">=</span><span class="mi">109</span> <span class="err">\</span>
+  <span class="o">-</span><span class="n">e</span> <span class="n">PGID</span><span class="o">=</span><span class="mi">113</span> <span class="err">\</span>
+  <span class="o">-</span><span class="n">e</span> <span class="n">TZ</span><span class="o">=</span><span class="n">America</span><span class="o">/</span><span class="n">Toronto</span> <span class="err">\</span>
+  <span class="o">-</span><span class="n">p</span> <span class="mi">7878</span><span class="p">:</span><span class="mi">7878</span> <span class="err">\</span>
+  <span class="o">-</span><span class="n">v</span> <span class="n">radarr</span><span class="o">-</span><span class="n">config</span><span class="p">:</span><span class="o">/</span><span class="n">config</span> <span class="err">\</span>
+  <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="k">storage</span><span class="o">/</span><span class="n">media</span><span class="o">-</span><span class="n">gluster</span><span class="o">/</span><span class="n">movies</span><span class="o">/</span><span class="p">:</span><span class="o">/</span><span class="n">movies</span> <span class="err">\</span>
+  <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="k">storage</span><span class="o">/</span><span class="n">media</span><span class="o">-</span><span class="n">gluster</span><span class="o">/</span><span class="n">downloads</span><span class="p">:</span><span class="o">/</span><span class="n">downloads</span> <span class="err">\</span>
+  <span class="c1">--restart unless-stopped \</span>
+  <span class="n">linuxserver</span><span class="o">/</span><span class="n">radarr</span>
 </pre></div>
 
 
 <h3 id="grafana-docker">Grafana Docker</h3>
-<div class="codehilite"><pre><span></span>sudo docker volume create grafana-storage
-docker run \
-  -d \
-  -p 3000:3000 \
-  --name=grafana \
-  -v grafana-storage:/var/lib/grafana \
-  grafana/grafana
+<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">docker</span> <span class="n">volume</span> <span class="k">create</span> <span class="n">grafana</span><span class="o">-</span><span class="k">storage</span>
+<span class="n">docker</span> <span class="n">run</span> <span class="err">\</span>
+  <span class="o">-</span><span class="n">d</span> <span class="err">\</span>
+  <span class="o">-</span><span class="n">p</span> <span class="mi">3000</span><span class="p">:</span><span class="mi">3000</span> <span class="err">\</span>
+  <span class="c1">--name=grafana \</span>
+  <span class="o">-</span><span class="n">v</span> <span class="n">grafana</span><span class="o">-</span><span class="k">storage</span><span class="p">:</span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">grafana</span> <span class="err">\</span>
+  <span class="n">grafana</span><span class="o">/</span><span class="n">grafana</span>
 </pre></div>
 
 
 <h3 id="couchpotato-docker">Couchpotato Docker.</h3>
-<div class="codehilite"><pre><span></span>docker volume create couchpotato-config
+<div class="codehilite"><pre><span></span><span class="n">docker</span> <span class="n">volume</span> <span class="k">create</span> <span class="n">couchpotato</span><span class="o">-</span><span class="n">config</span>
 
-docker run \
-    --name=couchpotato \
-    -v couchpotato-config:/config \
-    -v /storage/torrents_download:/downloads \
-    -v /storage/media/movies:/movies \
-    -e TZ=America/Toronto \
-    -e PGID=113 -e PUID=109  \
-    -p 5050:5050 \
-    -d \
-    linuxserver/couchpotato
+<span class="n">docker</span> <span class="n">run</span> <span class="err">\</span>
+    <span class="c1">--name=couchpotato \</span>
+    <span class="o">-</span><span class="n">v</span> <span class="n">couchpotato</span><span class="o">-</span><span class="n">config</span><span class="p">:</span><span class="o">/</span><span class="n">config</span> <span class="err">\</span>
+    <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="k">storage</span><span class="o">/</span><span class="n">torrents_download</span><span class="p">:</span><span class="o">/</span><span class="n">downloads</span> <span class="err">\</span>
+    <span class="o">-</span><span class="n">v</span> <span class="o">/</span><span class="k">storage</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="n">movies</span><span class="p">:</span><span class="o">/</span><span class="n">movies</span> <span class="err">\</span>
+    <span class="o">-</span><span class="n">e</span> <span class="n">TZ</span><span class="o">=</span><span class="n">America</span><span class="o">/</span><span class="n">Toronto</span> <span class="err">\</span>
+    <span class="o">-</span><span class="n">e</span> <span class="n">PGID</span><span class="o">=</span><span class="mi">113</span> <span class="o">-</span><span class="n">e</span> <span class="n">PUID</span><span class="o">=</span><span class="mi">109</span>  <span class="err">\</span>
+    <span class="o">-</span><span class="n">p</span> <span class="mi">5050</span><span class="p">:</span><span class="mi">5050</span> <span class="err">\</span>
+    <span class="o">-</span><span class="n">d</span> <span class="err">\</span>
+    <span class="n">linuxserver</span><span class="o">/</span><span class="n">couchpotato</span>
 </pre></div>
                 
                   
@@ -760,7 +774,6 @@ docker run \
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
@@ -770,14 +783,13 @@ docker run \
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.39abc4af.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       

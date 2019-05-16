@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../images/tarsier_hi_elbows.ico">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-3.3.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
     
     
       
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.572ca0f0.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.750b69bd.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
       
       
         
@@ -55,7 +55,7 @@
       
     
     
-      <script src="../assets/javascripts/modernizr.962652e9.js"></script>
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
@@ -69,8 +69,30 @@
     
     
       
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-51757315-3"></script>
-<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-51757315-3")</script>
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-51757315-3", "cheat.northernsysadmin.com")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
       
     
     
@@ -126,22 +148,19 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           
-            
-              <span class="md-header-nav__topic">
-                Laurent Dumont - Internet notepad.
-              </span>
-              <span class="md-header-nav__topic">
-                LVM
-              </span>
-            
+            <span class="md-header-nav__topic">
+              Laurent Dumont - Internet notepad.
+            </span>
+            <span class="md-header-nav__topic">
+              LVM
+            </span>
           
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
         
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
           
-            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
-            
 <div class="md-search" data-md-component="search" role="dialog">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
@@ -164,7 +183,6 @@
     </div>
   </div>
 </div>
-          
         
       </div>
       
@@ -175,20 +193,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
           </div>
         </div>
       
@@ -224,20 +240,18 @@
 
   
 
-
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
-    
-      <div class="md-source__icon">
-        <svg viewBox="0 0 24 24" width="24" height="24">
-          <use xlink:href="#__github" width="24" height="24"></use>
-        </svg>
-      </div>
-    
-    <div class="md-source__repository">
-      ns-cheatsheet
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
     </div>
-  </a>
-
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
     </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -507,49 +521,49 @@
                   <h1>LVM</h1>
                 
                 <h3 id="_1"></h3>
-<div class="codehilite"><pre><span></span>7  echo &quot;deb http://download.proxmox.com/debian/pve stretch pve-no-subscription&quot; &gt; /etc/apt/sources.list.d/pve-install-repo.list
-    8  wget http://download.proxmox.com/debian/proxmox-ve-release-5.x.gpg -O /etc/apt/trusted.gpg.d/proxmox-ve-release-5.x.gpg
-    9  apt update &amp;&amp; apt dist-upgrade
-   10  apt install proxmox-ve postfix open-iscsi
-   11  clear
-   12  shutdown -r now
-   13  mount /dev/sdb1 /storage
-   14  mkdir /storage
-   15  mount /dev/sdb1 /storage
-   16  mount /dev/sdb /storage
-   17  mount -t ext4 /dev/sdb /storage
-   18  dmesg | tail
-   19  fdisk -l
-   20  lvdisplay 
-   21  vgdisplay 
-   22  vgscan 
-   23  fdisk -l
-   24  clear
-   25  vgdisplay 
-   26  lvmdiskscan 
-   27  vgcreate 
-   28  vgcreate /dev/sdb1
-   29  pvs
-   30  vgcreate vg-storage /dev/sdb1
-   31  vgdisplay 
-   32  man lvcreate 
-   33  lvcreate -n storage -l 100%FREE vg-storage
-   34  lvdisplay 
-   35  clear
-   36  mkfs.ext4 /dev/vg-storage/storage
-   37  lvdisplay 
-   38  man mount
-   39  man mount
-   40  man mount
-   41  mount -t ext4 /dev/vg-storage/storage /storage
-   42  cd /storage
-   43  mkdir tata
-   44  ls
-   45  rm tata
-   46  rm -rf tata
-   47  clear
-   48  exit
-   49  history
+<div class="codehilite"><pre><span></span><span class="mi">7</span>  <span class="nv">echo</span> <span class="s2">&quot;</span><span class="s">deb http://download.proxmox.com/debian/pve stretch pve-no-subscription</span><span class="s2">&quot;</span> <span class="o">&gt;</span> <span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">apt</span><span class="o">/</span><span class="nv">sources</span>.<span class="nv">list</span>.<span class="nv">d</span><span class="o">/</span><span class="nv">pve</span><span class="o">-</span><span class="nv">install</span><span class="o">-</span><span class="nv">repo</span>.<span class="nv">list</span>
+    <span class="mi">8</span>  <span class="nv">wget</span> <span class="nv">http</span>:<span class="o">//</span><span class="nv">download</span>.<span class="nv">proxmox</span>.<span class="nv">com</span><span class="o">/</span><span class="nv">debian</span><span class="o">/</span><span class="nv">proxmox</span><span class="o">-</span><span class="nv">ve</span><span class="o">-</span><span class="nv">release</span><span class="o">-</span><span class="mi">5</span>.<span class="nv">x</span>.<span class="nv">gpg</span> <span class="o">-</span><span class="nv">O</span> <span class="o">/</span><span class="nv">etc</span><span class="o">/</span><span class="nv">apt</span><span class="o">/</span><span class="nv">trusted</span>.<span class="nv">gpg</span>.<span class="nv">d</span><span class="o">/</span><span class="nv">proxmox</span><span class="o">-</span><span class="nv">ve</span><span class="o">-</span><span class="nv">release</span><span class="o">-</span><span class="mi">5</span>.<span class="nv">x</span>.<span class="nv">gpg</span>
+    <span class="mi">9</span>  <span class="nv">apt</span> <span class="nv">update</span> <span class="o">&amp;&amp;</span> <span class="nv">apt</span> <span class="nv">dist</span><span class="o">-</span><span class="nv">upgrade</span>
+   <span class="mi">10</span>  <span class="nv">apt</span> <span class="nv">install</span> <span class="nv">proxmox</span><span class="o">-</span><span class="nv">ve</span> <span class="nv">postfix</span> <span class="nv">open</span><span class="o">-</span><span class="nv">iscsi</span>
+   <span class="mi">11</span>  <span class="nv">clear</span>
+   <span class="mi">12</span>  <span class="nv">shutdown</span> <span class="o">-</span><span class="nv">r</span> <span class="nv">now</span>
+   <span class="mi">13</span>  <span class="nv">mount</span> <span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">sdb1</span> <span class="o">/</span><span class="nv">storage</span>
+   <span class="mi">14</span>  <span class="nv">mkdir</span> <span class="o">/</span><span class="nv">storage</span>
+   <span class="mi">15</span>  <span class="nv">mount</span> <span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">sdb1</span> <span class="o">/</span><span class="nv">storage</span>
+   <span class="mi">16</span>  <span class="nv">mount</span> <span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">sdb</span> <span class="o">/</span><span class="nv">storage</span>
+   <span class="mi">17</span>  <span class="nv">mount</span> <span class="o">-</span><span class="nv">t</span> <span class="nv">ext4</span> <span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">sdb</span> <span class="o">/</span><span class="nv">storage</span>
+   <span class="mi">18</span>  <span class="nv">dmesg</span> <span class="o">|</span> <span class="nv">tail</span>
+   <span class="mi">19</span>  <span class="nv">fdisk</span> <span class="o">-</span><span class="nv">l</span>
+   <span class="mi">20</span>  <span class="nv">lvdisplay</span> 
+   <span class="mi">21</span>  <span class="nv">vgdisplay</span> 
+   <span class="mi">22</span>  <span class="nv">vgscan</span> 
+   <span class="mi">23</span>  <span class="nv">fdisk</span> <span class="o">-</span><span class="nv">l</span>
+   <span class="mi">24</span>  <span class="nv">clear</span>
+   <span class="mi">25</span>  <span class="nv">vgdisplay</span> 
+   <span class="mi">26</span>  <span class="nv">lvmdiskscan</span> 
+   <span class="mi">27</span>  <span class="nv">vgcreate</span> 
+   <span class="mi">28</span>  <span class="nv">vgcreate</span> <span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">sdb1</span>
+   <span class="mi">29</span>  <span class="nv">pvs</span>
+   <span class="mi">30</span>  <span class="nv">vgcreate</span> <span class="nv">vg</span><span class="o">-</span><span class="nv">storage</span> <span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">sdb1</span>
+   <span class="mi">31</span>  <span class="nv">vgdisplay</span> 
+   <span class="mi">32</span>  <span class="nv">man</span> <span class="nv">lvcreate</span> 
+   <span class="mi">33</span>  <span class="nv">lvcreate</span> <span class="o">-</span><span class="nv">n</span> <span class="nv">storage</span> <span class="o">-</span><span class="nv">l</span> <span class="mi">100</span><span class="o">%</span><span class="nv">FREE</span> <span class="nv">vg</span><span class="o">-</span><span class="nv">storage</span>
+   <span class="mi">34</span>  <span class="nv">lvdisplay</span> 
+   <span class="mi">35</span>  <span class="nv">clear</span>
+   <span class="mi">36</span>  <span class="nv">mkfs</span>.<span class="nv">ext4</span> <span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">vg</span><span class="o">-</span><span class="nv">storage</span><span class="o">/</span><span class="nv">storage</span>
+   <span class="mi">37</span>  <span class="nv">lvdisplay</span> 
+   <span class="mi">38</span>  <span class="nv">man</span> <span class="nv">mount</span>
+   <span class="mi">39</span>  <span class="nv">man</span> <span class="nv">mount</span>
+   <span class="mi">40</span>  <span class="nv">man</span> <span class="nv">mount</span>
+   <span class="mi">41</span>  <span class="nv">mount</span> <span class="o">-</span><span class="nv">t</span> <span class="nv">ext4</span> <span class="o">/</span><span class="nv">dev</span><span class="o">/</span><span class="nv">vg</span><span class="o">-</span><span class="nv">storage</span><span class="o">/</span><span class="nv">storage</span> <span class="o">/</span><span class="nv">storage</span>
+   <span class="mi">42</span>  <span class="nv">cd</span> <span class="o">/</span><span class="nv">storage</span>
+   <span class="mi">43</span>  <span class="nv">mkdir</span> <span class="nv">tata</span>
+   <span class="mi">44</span>  <span class="nv">ls</span>
+   <span class="mi">45</span>  <span class="nv">rm</span> <span class="nv">tata</span>
+   <span class="mi">46</span>  <span class="nv">rm</span> <span class="o">-</span><span class="nv">rf</span> <span class="nv">tata</span>
+   <span class="mi">47</span>  <span class="nv">clear</span>
+   <span class="mi">48</span>  <span class="k">exit</span>
+   <span class="mi">49</span>  <span class="nv">history</span>
 </pre></div>
                 
                   
@@ -618,7 +632,6 @@
           Material for MkDocs</a>
       </div>
       
-        
   <div class="md-footer-social">
     <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
     
@@ -628,14 +641,13 @@
     
   </div>
 
-      
     </div>
   </div>
 </footer>
       
     </div>
     
-      <script src="../assets/javascripts/application.a353778b.js"></script>
+      <script src="../assets/javascripts/application.39abc4af.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
