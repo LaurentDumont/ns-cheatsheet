@@ -177,3 +177,11 @@ sudo rm -rf 70-no-bitmaps.conf
 sudo ln -s ../conf.avail/70-yes-bitmaps.conf .
 sudo dpkg-reconfigure fontconfig
 ```
+
+### Ubuntu 19.04 - Disable Ubuntu dock completely.
+
+https://askubuntu.com/questions/1030138/how-can-i-get-rid-of-the-dock-in-ubuntu-18
+```
+cd /usr/share/gnome-shell/extensions/
+sudo mv ubuntu-dock@ubuntu.com{,.bak}
+```
