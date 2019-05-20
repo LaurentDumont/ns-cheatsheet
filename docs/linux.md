@@ -190,16 +190,14 @@ cd /usr/share/gnome-shell/extensions/
 sudo mv ubuntu-dock@ubuntu.com{,.bak}
 
 ```
-### Change fan speed of a R710 through IPMI.
 
+### Change fan speed of a R710 through IPMI.
 
 IPMI needs to be enabled in ILO!
 You need valid credentials!
 This disables the auto-adjust of the fan speed, be careful of the R710 heating. I am not responsible for fires :)
 
-
 ```
-
 #Get the ENV data from the IPMI
 ipmitool  -I lanplus -H 10.200.10.113 -U root -P $PASSWORD sensor reading "Ambient Temp" "FAN 1 RPM" "FAN 2 RPM" "FAN 3 RPM"
 
@@ -208,6 +206,4 @@ ipmitool  -I lanplus -H 10.200.10.113 -U root -P $PASSWORD raw 0x30 0x30 0x01 0x
 
 #"Activating manual fan speeds! (2160 RPM)"
 ipmitool  -I lanplus -H 10.200.10.113 -U root -P $PASSWORD raw 0x30 0x30 0x02 0xff 0x09
-
-
 ```
