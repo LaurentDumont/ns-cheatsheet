@@ -192,9 +192,11 @@ sudo mv ubuntu-dock@ubuntu.com{,.bak}
 ```
 ### Change fan speed of a R710 through IPMI.
 
+
 IPMI needs to be enabled in ILO!
 You need valid credentials!
 This disables the auto-adjust of the fan speed, be careful of the R710 heating. I am not responsible for fires :)
+
 
 ```
 
