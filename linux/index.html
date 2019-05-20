@@ -388,6 +388,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ubuntu-1904-disable-ubuntu-dock-completely" title="Ubuntu 19.04 - Disable Ubuntu dock completely." class="md-nav__link">
+    Ubuntu 19.04 - Disable Ubuntu dock completely.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#change-fan-speed-of-a-r710-through-ipmi" title="Change fan speed of a R710 through IPMI." class="md-nav__link">
     Change fan speed of a R710 through IPMI.
   </a>
@@ -679,6 +686,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#ubuntu-1904-disable-ubuntu-dock-completely" title="Ubuntu 19.04 - Disable Ubuntu dock completely." class="md-nav__link">
+    Ubuntu 19.04 - Disable Ubuntu dock completely.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#change-fan-speed-of-a-r710-through-ipmi" title="Change fan speed of a R710 through IPMI." class="md-nav__link">
     Change fan speed of a R710 through IPMI.
   </a>
@@ -883,6 +897,13 @@
 <span class="n">sudo</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="mi">70</span><span class="o">-</span><span class="k">no</span><span class="o">-</span><span class="n">bitmaps</span><span class="p">.</span><span class="n">conf</span> 
 <span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="p">..</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">avail</span><span class="o">/</span><span class="mi">70</span><span class="o">-</span><span class="n">yes</span><span class="o">-</span><span class="n">bitmaps</span><span class="p">.</span><span class="n">conf</span> <span class="p">.</span>
 <span class="n">sudo</span> <span class="n">dpkg</span><span class="o">-</span><span class="n">reconfigure</span> <span class="n">fontconfig</span>
+</pre></div>
+
+
+<h3 id="ubuntu-1904-disable-ubuntu-dock-completely">Ubuntu 19.04 - Disable Ubuntu dock completely.</h3>
+<p>https://askubuntu.com/questions/1030138/how-can-i-get-rid-of-the-dock-in-ubuntu-18</p>
+<div class="codehilite"><pre><span></span><span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">gnome</span><span class="o">-</span><span class="n">shell</span><span class="o">/</span><span class="n">extensions</span><span class="o">/</span><span class="w"></span>
+<span class="n">sudo</span><span class="w"> </span><span class="n">mv</span><span class="w"> </span><span class="n">ubuntu</span><span class="o">-</span><span class="n">dock</span><span class="nv">@ubuntu</span><span class="p">.</span><span class="n">com</span><span class="err">{</span><span class="p">,.</span><span class="n">bak</span><span class="err">}</span><span class="w"></span>
 </pre></div>
 
 
