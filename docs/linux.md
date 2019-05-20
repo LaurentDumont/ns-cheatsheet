@@ -171,6 +171,10 @@ export PROMPT_COMMAND='history -a'
 https://github.com/powerline/fonts/issues/210
 https://superuser.com/questions/886023/linux-mint-installing-bdf-fonts-with-console-fc-cache-fc-list
 
+git clone https://github.com/powerline/fonts
+cd fonts
+./install.sh
+
 cd /etc/fonts/conf.d/
 sudo rm /etc/fonts/conf.d/10*  
 sudo rm -rf 70-no-bitmaps.conf 
@@ -184,4 +188,24 @@ https://askubuntu.com/questions/1030138/how-can-i-get-rid-of-the-dock-in-ubuntu-
 ```
 cd /usr/share/gnome-shell/extensions/
 sudo mv ubuntu-dock@ubuntu.com{,.bak}
+
+```
+### Change fan speed of a R710 through IPMI.
+
+IPMI needs to be enabled in ILO!
+You need valid credentials!
+This disables the auto-adjust of the fan speed, be careful of the R710 heating. I am not responsible for fires :)
+
+```
+
+#Get the ENV data from the IPMI
+ipmitool  -I lanplus -H 10.200.10.113 -U root -P $PASSWORD sensor reading "Ambient Temp" "FAN 1 RPM" "FAN 2 RPM" "FAN 3 RPM"
+
+#Enable manual fan control.
+ipmitool  -I lanplus -H 10.200.10.113 -U root -P $PASSWORD raw 0x30 0x30 0x01 0x00
+
+#"Activating manual fan speeds! (2160 RPM)"
+ipmitool  -I lanplus -H 10.200.10.113 -U root -P $PASSWORD raw 0x30 0x30 0x02 0xff 0x09
+
+
 ```

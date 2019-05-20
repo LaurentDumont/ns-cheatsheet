@@ -387,6 +387,16 @@
   
 </li>
       
+<<<<<<< HEAD
+=======
+        <li class="md-nav__item">
+  <a href="#change-fan-speed-of-a-r710-through-ipmi" title="Change fan speed of a R710 through IPMI." class="md-nav__link">
+    Change fan speed of a R710 through IPMI.
+  </a>
+  
+</li>
+      
+>>>>>>> f2067d7a3c1b23d97bdd5b305d3afc2017eb3ecc
       
       
       
@@ -671,6 +681,16 @@
   
 </li>
       
+<<<<<<< HEAD
+=======
+        <li class="md-nav__item">
+  <a href="#change-fan-speed-of-a-r710-through-ipmi" title="Change fan speed of a R710 through IPMI." class="md-nav__link">
+    Change fan speed of a R710 through IPMI.
+  </a>
+  
+</li>
+      
+>>>>>>> f2067d7a3c1b23d97bdd5b305d3afc2017eb3ecc
       
       
       
@@ -829,6 +849,7 @@
 
 <h3 id="fix-br-and-vmbr-linux-bridges-filtering-lldp-packets">Fix BR and VMBR Linux bridges filtering LLDP packets</h3>
 <div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">interestingtraffic</span><span class="p">.</span><span class="n">nl</span><span class="o">/</span><span class="mi">2017</span><span class="o">/</span><span class="mi">11</span><span class="o">/</span><span class="mi">21</span><span class="o">/</span><span class="n">an</span><span class="o">-</span><span class="n">oddly</span><span class="o">-</span><span class="k">specific</span><span class="o">-</span><span class="n">post</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">group_fwd_mask</span><span class="o">/</span>
+<<<<<<< HEAD
 
 <span class="n">echo</span> <span class="mi">16384</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="k">class</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="err">$</span><span class="n">VMBR_INTERFACE</span><span class="o">/</span><span class="n">bridge</span><span class="o">/</span><span class="n">group_fwd_mask</span>
 </pre></div>
@@ -846,6 +867,25 @@
 <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">tmux</span><span class="w"></span>
 <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">fish</span><span class="w"></span>
 
+=======
+
+<span class="n">echo</span> <span class="mi">16384</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="k">class</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="err">$</span><span class="n">VMBR_INTERFACE</span><span class="o">/</span><span class="n">bridge</span><span class="o">/</span><span class="n">group_fwd_mask</span>
+</pre></div>
+
+
+<h3 id="add-fish-as-the-default-shell-for-ubuntudebian">Add fish as the default shell for Ubuntu/Debian.</h3>
+<div class="codehilite"><pre><span></span><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="k">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">fish</span><span class="w"></span>
+
+<span class="n">coldadmin</span><span class="nv">@big</span><span class="o">-</span><span class="n">potato</span><span class="w"> </span><span class="o">~&gt;</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">shells</span><span class="w"> </span>
+<span class="err">#</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="nl">shells</span><span class="p">:</span><span class="w"> </span><span class="n">valid</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="n">shells</span><span class="w"></span>
+<span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">sh</span><span class="w"></span>
+<span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span><span class="w"></span>
+<span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">rbash</span><span class="w"></span>
+<span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">dash</span><span class="w"></span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">tmux</span><span class="w"></span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">fish</span><span class="w"></span>
+
+>>>>>>> f2067d7a3c1b23d97bdd5b305d3afc2017eb3ecc
 <span class="n">chsh</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">fish</span><span class="w"></span>
 </pre></div>
 
@@ -860,11 +900,36 @@
 <div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">powerline</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">issues</span><span class="o">/</span><span class="mi">210</span>
 <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">superuser</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">questions</span><span class="o">/</span><span class="mi">886023</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="n">mint</span><span class="o">-</span><span class="n">installing</span><span class="o">-</span><span class="n">bdf</span><span class="o">-</span><span class="n">fonts</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">console</span><span class="o">-</span><span class="n">fc</span><span class="o">-</span><span class="k">cache</span><span class="o">-</span><span class="n">fc</span><span class="o">-</span><span class="n">list</span>
 
+<<<<<<< HEAD
+=======
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">powerline</span><span class="o">/</span><span class="n">fonts</span>
+<span class="n">cd</span> <span class="n">fonts</span>
+<span class="p">.</span><span class="o">/</span><span class="n">install</span><span class="p">.</span><span class="n">sh</span>
+
+>>>>>>> f2067d7a3c1b23d97bdd5b305d3afc2017eb3ecc
 <span class="n">cd</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span>
 <span class="n">sudo</span> <span class="n">rm</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="mi">10</span><span class="o">*</span>  
 <span class="n">sudo</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="mi">70</span><span class="o">-</span><span class="k">no</span><span class="o">-</span><span class="n">bitmaps</span><span class="p">.</span><span class="n">conf</span> 
 <span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="p">..</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">avail</span><span class="o">/</span><span class="mi">70</span><span class="o">-</span><span class="n">yes</span><span class="o">-</span><span class="n">bitmaps</span><span class="p">.</span><span class="n">conf</span> <span class="p">.</span>
 <span class="n">sudo</span> <span class="n">dpkg</span><span class="o">-</span><span class="n">reconfigure</span> <span class="n">fontconfig</span>
+<<<<<<< HEAD
+=======
+</pre></div>
+
+
+<h3 id="change-fan-speed-of-a-r710-through-ipmi">Change fan speed of a R710 through IPMI.</h3>
+<p>IPMI needs to be enabled in ILO!
+You need valid credentials!
+This disables the auto-adjust of the fan speed, be careful of the R710 heating. I am not responsible for fires :)</p>
+<div class="codehilite"><pre><span></span><span class="o">#</span><span class="k">Get</span> <span class="n">the</span> <span class="n">ENV</span> <span class="k">data</span> <span class="k">from</span> <span class="n">the</span> <span class="n">IPMI</span>
+<span class="n">ipmitool</span>  <span class="o">-</span><span class="n">I</span> <span class="n">lanplus</span> <span class="o">-</span><span class="n">H</span> <span class="mi">10</span><span class="p">.</span><span class="mi">200</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">113</span> <span class="o">-</span><span class="n">U</span> <span class="n">root</span> <span class="o">-</span><span class="n">P</span> <span class="err">$</span><span class="n">PASSWORD</span> <span class="n">sensor</span> <span class="n">reading</span> <span class="ss">&quot;Ambient Temp&quot;</span> <span class="ss">&quot;FAN 1 RPM&quot;</span> <span class="ss">&quot;FAN 2 RPM&quot;</span> <span class="ss">&quot;FAN 3 RPM&quot;</span>
+
+<span class="o">#</span><span class="n">Enable</span> <span class="n">manual</span> <span class="n">fan</span> <span class="n">control</span><span class="p">.</span>
+<span class="n">ipmitool</span>  <span class="o">-</span><span class="n">I</span> <span class="n">lanplus</span> <span class="o">-</span><span class="n">H</span> <span class="mi">10</span><span class="p">.</span><span class="mi">200</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">113</span> <span class="o">-</span><span class="n">U</span> <span class="n">root</span> <span class="o">-</span><span class="n">P</span> <span class="err">$</span><span class="n">PASSWORD</span> <span class="n">raw</span> <span class="mi">0</span><span class="n">x30</span> <span class="mi">0</span><span class="n">x30</span> <span class="mi">0</span><span class="n">x01</span> <span class="mi">0</span><span class="n">x00</span>
+
+<span class="o">#</span><span class="ss">&quot;Activating manual fan speeds! (2160 RPM)&quot;</span>
+<span class="n">ipmitool</span>  <span class="o">-</span><span class="n">I</span> <span class="n">lanplus</span> <span class="o">-</span><span class="n">H</span> <span class="mi">10</span><span class="p">.</span><span class="mi">200</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">113</span> <span class="o">-</span><span class="n">U</span> <span class="n">root</span> <span class="o">-</span><span class="n">P</span> <span class="err">$</span><span class="n">PASSWORD</span> <span class="n">raw</span> <span class="mi">0</span><span class="n">x30</span> <span class="mi">0</span><span class="n">x30</span> <span class="mi">0</span><span class="n">x02</span> <span class="mi">0</span><span class="n">xff</span> <span class="mi">0</span><span class="n">x09</span>
+>>>>>>> f2067d7a3c1b23d97bdd5b305d3afc2017eb3ecc
 </pre></div>
                 
                   
