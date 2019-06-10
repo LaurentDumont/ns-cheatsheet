@@ -427,6 +427,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#create-a-external-network-with-a-subnet-attached-to-that-network" title="Create a external network with a subnet attached to that network." class="md-nav__link">
+    Create a external network with a subnet attached to that network.
+  </a>
+  
+</li>
+      
       
       
       
@@ -559,6 +566,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#create-a-external-network-with-a-subnet-attached-to-that-network" title="Create a external network with a subnet attached to that network." class="md-nav__link">
+    Create a external network with a subnet attached to that network.
+  </a>
+  
+</li>
+      
       
       
       
@@ -584,6 +598,12 @@
 <div class="codehilite"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="p">.</span><span class="n">openstack</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">nova</span><span class="o">/</span><span class="n">rocky</span><span class="o">/</span><span class="n">install</span><span class="o">/</span><span class="n">compute</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">rdo</span><span class="p">.</span><span class="n">html</span>
 <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="p">.</span><span class="n">openstack</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">neutron</span><span class="o">/</span><span class="n">rocky</span><span class="o">/</span><span class="n">install</span><span class="o">/</span><span class="n">compute</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">rdo</span><span class="p">.</span><span class="n">html</span>
 <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">docs</span><span class="p">.</span><span class="n">openstack</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">neutron</span><span class="o">/</span><span class="n">rocky</span><span class="o">/</span><span class="n">install</span><span class="o">/</span><span class="n">compute</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">option1</span><span class="o">-</span><span class="n">rdo</span><span class="p">.</span><span class="n">html</span>
+</pre></div>
+
+
+<h3 id="create-a-external-network-with-a-subnet-attached-to-that-network">Create a external network with a subnet attached to that network.</h3>
+<div class="codehilite"><pre><span></span><span class="nv">neutron</span> <span class="nv">net</span><span class="o">-</span><span class="nv">create</span> <span class="nv">EXT_NET</span> <span class="o">--</span><span class="nv">router</span>:<span class="nv">external</span> <span class="nv">True</span> <span class="o">--</span><span class="nv">provider</span>:<span class="nv">physical_network</span> <span class="nv">physnet1</span> <span class="o">--</span><span class="nv">provider</span>:<span class="nv">network_type</span> <span class="nv">vlan</span> <span class="o">--</span><span class="nv">provider</span>:<span class="nv">segmentation_id</span> <span class="mi">70</span>
+<span class="nv">neutron</span> <span class="nv">subnet</span><span class="o">-</span><span class="nv">create</span> <span class="nv">EXT_NET</span> <span class="o">--</span><span class="nv">name</span> <span class="nv">EXT_SUB</span> <span class="o">--</span><span class="nv">allocation</span><span class="o">-</span><span class="nv">pool</span> <span class="nv">start</span><span class="o">=</span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">70</span>.<span class="mi">10</span>,<span class="k">end</span><span class="o">=</span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">70</span>.<span class="mi">100</span> <span class="o">--</span><span class="nv">disable</span><span class="o">-</span><span class="nv">dhcp</span> <span class="o">--</span><span class="nv">gateway</span> <span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">70</span>.<span class="mi">1</span> <span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">70</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">24</span>
 </pre></div>
 
 
