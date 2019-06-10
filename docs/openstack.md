@@ -6,6 +6,12 @@ https://docs.openstack.org/neutron/rocky/install/compute-install-option1-rdo.htm
 
 ```
 
+### Create a external network with a subnet attached to that network.
+```
+neutron net-create EXT_NET --router:external True --provider:physical_network physnet1 --provider:network_type vlan --provider:segmentation_id 70
+neutron subnet-create EXT_NET --name EXT_SUB --allocation-pool start=192.168.70.10,end=192.168.70.100 --disable-dhcp --gateway 192.168.70.1 192.168.70.0/24
+```
+
 
 ```
 /etc/hosts
