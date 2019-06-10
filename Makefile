@@ -9,7 +9,8 @@ deploy-gh-pages:
 	#markdown-pdf docs/ccna.md --out pdf/ccna.pdf
 	#Source VENV with fish suffix for Fish shell
 	#source venv/bin/activate
-	source venv/bin/activate.fish #Doesn't seem to work in the fish 
+	#Doesn't seem to work in the fish shell
+	source venv/bin/activate.fish  
 	git add .
 	git commit -m "More Stuff"
 	git push origin master
