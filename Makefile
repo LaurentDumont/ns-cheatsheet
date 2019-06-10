@@ -10,7 +10,7 @@ deploy-gh-pages:
 	#Source VENV with fish suffix for Fish shell
 	#source venv/bin/activate
 	#Doesn't seem to work in the fish shell
-	#source venv/bin/activate.fish  
+	source venv/bin/activate.fish  
 	git add .
 	git commit -m "More Stuff"
 	git push origin master
