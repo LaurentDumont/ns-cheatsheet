@@ -1,6 +1,6 @@
 #Change default shell to bas.
 #https://stackoverflow.com/questions/7507810/how-to-source-a-script-in-a-makefile
-#test2
+#test3
 
 #SHELL := /bin/bash
 SHELL := /usr/bin/fish
