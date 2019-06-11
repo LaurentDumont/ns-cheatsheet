@@ -1,6 +1,6 @@
 #!/usr/bin/fish
 #test1
-source venv/bin/activate.fish  
+#source venv/bin/activate.fish  
 git add .
 git commit -m "More Stuff"
 git push origin master
