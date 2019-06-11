@@ -17,3 +17,9 @@ else
 	echo "This is NOT a git repo"
 fi
 ```
+
+### Credentials
+```
+git config --global credential.helper store
+git config --global credential.helper 'cache --timeout=3600' 
+```
