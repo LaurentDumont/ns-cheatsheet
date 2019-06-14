@@ -434,6 +434,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#random-commands" title="Random commands" class="md-nav__link">
+    Random commands
+  </a>
+  
+</li>
+      
       
       
       
@@ -573,6 +580,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#random-commands" title="Random commands" class="md-nav__link">
+    Random commands
+  </a>
+  
+</li>
+      
       
       
       
@@ -604,6 +618,22 @@
 <h3 id="create-a-external-network-with-a-subnet-attached-to-that-network">Create a external network with a subnet attached to that network.</h3>
 <div class="codehilite"><pre><span></span><span class="nv">neutron</span> <span class="nv">net</span><span class="o">-</span><span class="nv">create</span> <span class="nv">EXT_NET</span> <span class="o">--</span><span class="nv">router</span>:<span class="nv">external</span> <span class="nv">True</span> <span class="o">--</span><span class="nv">provider</span>:<span class="nv">physical_network</span> <span class="nv">physnet1</span> <span class="o">--</span><span class="nv">provider</span>:<span class="nv">network_type</span> <span class="nv">vlan</span> <span class="o">--</span><span class="nv">provider</span>:<span class="nv">segmentation_id</span> <span class="mi">70</span>
 <span class="nv">neutron</span> <span class="nv">subnet</span><span class="o">-</span><span class="nv">create</span> <span class="nv">EXT_NET</span> <span class="o">--</span><span class="nv">name</span> <span class="nv">EXT_SUB</span> <span class="o">--</span><span class="nv">allocation</span><span class="o">-</span><span class="nv">pool</span> <span class="nv">start</span><span class="o">=</span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">70</span>.<span class="mi">10</span>,<span class="k">end</span><span class="o">=</span><span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">70</span>.<span class="mi">100</span> <span class="o">--</span><span class="nv">disable</span><span class="o">-</span><span class="nv">dhcp</span> <span class="o">--</span><span class="nv">gateway</span> <span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">70</span>.<span class="mi">1</span> <span class="mi">192</span>.<span class="mi">168</span>.<span class="mi">70</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">24</span>
+</pre></div>
+
+
+<h3 id="random-commands">Random commands</h3>
+<div class="codehilite"><pre><span></span><span class="o">#</span><span class="k">Create</span> <span class="n">image</span>
+<span class="n">openstack</span> <span class="n">image</span> <span class="k">create</span> <span class="c1">--disk-format qcow2 --container-format bare --public --file ./cirros-0.4.0-x86_64-disk.img cirros-0.4.0</span>
+
+<span class="o">#</span><span class="k">Create</span> <span class="n">flavor</span>
+<span class="n">openstack</span> <span class="n">flavor</span> <span class="k">create</span> <span class="c1">--ram 1024 --disk 10 --vcpus 1 --public small-flavor</span>
+
+<span class="o">#</span><span class="k">Create</span> <span class="n">network</span>
+<span class="n">openstack</span> <span class="n">network</span> <span class="k">create</span> <span class="n">network</span><span class="o">-</span><span class="n">floating</span><span class="o">-</span><span class="n">ip1</span>
+<span class="n">openstack</span> <span class="n">floating</span> <span class="n">ip</span> <span class="k">create</span> <span class="c1">--subnet floating-ip-1</span>
+
+<span class="o">#</span><span class="k">Create</span> <span class="n">provider</span> <span class="n">network</span> <span class="k">with</span> <span class="n">vlan</span>
+<span class="n">openstack</span> <span class="n">network</span> <span class="k">create</span> <span class="c1">--share --provider-physical-network provider --provider-network-type vlan provider1</span>
 </pre></div>
 
 
