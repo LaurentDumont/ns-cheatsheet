@@ -19,7 +19,6 @@ mkswap /dev/superbacon-vg/swap_1
 # Re-enable swap partition
 swapon -a
 
-
 ----------------- Mount partition from existing VG/LV -----------------
 # Create an ext4 partition.
 mkfs.ext4 /dev/vg-storage/lv-storage
