@@ -12,6 +12,21 @@ neutron net-create EXT_NET --router:external True --provider:physical_network ph
 neutron subnet-create EXT_NET --name EXT_SUB --allocation-pool start=192.168.70.10,end=192.168.70.100 --disable-dhcp --gateway 192.168.70.1 192.168.70.0/24
 ```
 
+### Random commands
+```
+#Create image
+openstack image create --disk-format qcow2 --container-format bare --public --file ./cirros-0.4.0-x86_64-disk.img cirros-0.4.0
+
+#Create flavor
+openstack flavor create --ram 1024 --disk 10 --vcpus 1 --public small-flavor
+
+#Create network
+openstack network create network-floating-ip1
+openstack floating ip create --subnet floating-ip-1
+
+#Create provider network with vlan
+openstack network create --share --provider-physical-network provider --provider-network-type vlan provider1
+```
 
 ```
 /etc/hosts
