@@ -1,4 +1,37 @@
-###
+### Reduce swap and extend other LVM module
+
+```bash
+# Disable swap temporarly.
+swapoff -a
+
+# Reduce swap paritition.
+lvreduce /dev/superbacon-vg/swap_1 -L -67G
+
+# Extend LVM root paritition.
+lvextend /dev/superbacon-vg/root -L +67G
+
+# Extend actual partition size.
+resize2fs /dev/superbacon-vg/root
+
+# Recreate swap partition
+mkswap /dev/superbacon-vg/swap_1
+
+# Re-enable swap partition
+swapon -a
+
+
+----------------- Mount partition from existing VG/LV -----------------
+# Create an ext4 partition.
+mkfs.ext4 /dev/vg-storage/lv-storage
+
+# Mount the partition to test.
+mount -t ext4 /dev/vg-storage/lv-storage /mnt
+
+# Mount in /etc/fstab
+/dev/mapper/vg--storage-lv--storage /storage    ext4    defaults,nofail        0    1
+```
+
+
 ```
 7  echo "deb http://download.proxmox.com/debian/pve stretch pve-no-subscription" > /etc/apt/sources.list.d/pve-install-repo.list
     8  wget http://download.proxmox.com/debian/proxmox-ve-release-5.x.gpg -O /etc/apt/trusted.gpg.d/proxmox-ve-release-5.x.gpg
