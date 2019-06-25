@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 source venv/bin/activate 
 git add .
 git commit -m "More Stuff"
