@@ -207,3 +207,14 @@ ipmitool  -I lanplus -H 10.200.10.113 -U root -P $PASSWORD raw 0x30 0x30 0x01 0x
 #"Activating manual fan speeds! (2160 RPM)"
 ipmitool  -I lanplus -H 10.200.10.113 -U root -P $PASSWORD raw 0x30 0x30 0x02 0xff 0x09
 ```
+
+### Remove resolvctl (issues with OpenVPN DNS being removed)
+```bash
+sudo systemctl disable systemd-resolved.service
+sudo systemctl stop systemd-resolved.service
+
+dns=default in [main] section of "sudo vi /etc/NetworkManager/NetworkManager.conf"
+
+sudo rm /etc/resolv.conf
+sudo service network-manager restart
+```
