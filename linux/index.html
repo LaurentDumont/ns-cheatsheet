@@ -401,6 +401,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#remove-resolvctl-issues-with-openvpn-dns-being-removed" title="Remove resolvctl (issues with OpenVPN DNS being removed)" class="md-nav__link">
+    Remove resolvctl (issues with OpenVPN DNS being removed)
+  </a>
+  
+</li>
+      
       
       
       
@@ -699,6 +706,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#remove-resolvctl-issues-with-openvpn-dns-being-removed" title="Remove resolvctl (issues with OpenVPN DNS being removed)" class="md-nav__link">
+    Remove resolvctl (issues with OpenVPN DNS being removed)
+  </a>
+  
+</li>
+      
       
       
       
@@ -919,6 +933,17 @@ This disables the auto-adjust of the fan speed, be careful of the R710 heating. 
 
 <span class="o">#</span><span class="ss">&quot;Activating manual fan speeds! (2160 RPM)&quot;</span>
 <span class="n">ipmitool</span>  <span class="o">-</span><span class="n">I</span> <span class="n">lanplus</span> <span class="o">-</span><span class="n">H</span> <span class="mi">10</span><span class="p">.</span><span class="mi">200</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">113</span> <span class="o">-</span><span class="n">U</span> <span class="n">root</span> <span class="o">-</span><span class="n">P</span> <span class="err">$</span><span class="n">PASSWORD</span> <span class="n">raw</span> <span class="mi">0</span><span class="n">x30</span> <span class="mi">0</span><span class="n">x30</span> <span class="mi">0</span><span class="n">x02</span> <span class="mi">0</span><span class="n">xff</span> <span class="mi">0</span><span class="n">x09</span>
+</pre></div>
+
+
+<h3 id="remove-resolvctl-issues-with-openvpn-dns-being-removed">Remove resolvctl (issues with OpenVPN DNS being removed)</h3>
+<div class="codehilite"><pre><span></span>sudo systemctl disable systemd-resolved.service
+sudo systemctl stop systemd-resolved.service
+
+<span class="nv">dns</span><span class="o">=</span>default in <span class="o">[</span>main<span class="o">]</span> section of <span class="s2">&quot;sudo vi /etc/NetworkManager/NetworkManager.conf&quot;</span>
+
+sudo rm /etc/resolv.conf
+sudo service network-manager restart
 </pre></div>
                 
                   
