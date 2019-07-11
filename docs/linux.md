@@ -218,3 +218,15 @@ dns=default in [main] section of "sudo vi /etc/NetworkManager/NetworkManager.con
 sudo rm /etc/resolv.conf
 sudo service network-manager restart
 ```
+
+### Troubleshoot APT install errors.
+```
+# Find the correct file from :
+cd /var/lib/dpkg/info/
+# In this case, it was the Foreman postinst script
+cat foreman.postinst
+# Increase verbosity
+EXPORT DEBUG=1
+# Run the failing configure package
+dpkg --configure foreman
+```
