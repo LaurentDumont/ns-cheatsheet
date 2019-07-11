@@ -408,6 +408,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#troubleshoot-apt-install-errors" title="Troubleshoot APT install errors." class="md-nav__link">
+    Troubleshoot APT install errors.
+  </a>
+  
+</li>
+      
       
       
       
@@ -611,6 +618,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../foreman/" title="Foreman" class="md-nav__link">
+      Foreman
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -709,6 +728,13 @@
         <li class="md-nav__item">
   <a href="#remove-resolvctl-issues-with-openvpn-dns-being-removed" title="Remove resolvctl (issues with OpenVPN DNS being removed)" class="md-nav__link">
     Remove resolvctl (issues with OpenVPN DNS being removed)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshoot-apt-install-errors" title="Troubleshoot APT install errors." class="md-nav__link">
+    Troubleshoot APT install errors.
   </a>
   
 </li>
@@ -944,6 +970,18 @@ sudo systemctl stop systemd-resolved.service
 
 sudo rm /etc/resolv.conf
 sudo service network-manager restart
+</pre></div>
+
+
+<h3 id="troubleshoot-apt-install-errors">Troubleshoot APT install errors.</h3>
+<div class="codehilite"><pre><span></span><span class="o">#</span> <span class="n">Find</span> <span class="n">the</span> <span class="n">correct</span> <span class="n">file</span> <span class="k">from</span> <span class="p">:</span>
+<span class="n">cd</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">dpkg</span><span class="o">/</span><span class="n">info</span><span class="o">/</span>
+<span class="o">#</span> <span class="k">In</span> <span class="n">this</span> <span class="k">case</span><span class="p">,</span> <span class="n">it</span> <span class="n">was</span> <span class="n">the</span> <span class="n">Foreman</span> <span class="n">postinst</span> <span class="n">script</span>
+<span class="n">cat</span> <span class="n">foreman</span><span class="p">.</span><span class="n">postinst</span>
+<span class="o">#</span> <span class="n">Increase</span> <span class="n">verbosity</span>
+<span class="n">EXPORT</span> <span class="n">DEBUG</span><span class="o">=</span><span class="mi">1</span>
+<span class="o">#</span> <span class="n">Run</span> <span class="n">the</span> <span class="n">failing</span> <span class="n">configure</span> <span class="n">package</span>
+<span class="n">dpkg</span> <span class="c1">--configure foreman</span>
 </pre></div>
                 
                   
