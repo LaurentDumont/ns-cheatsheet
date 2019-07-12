@@ -1,5 +1,3 @@
-### Foreman
-
 #### Fix failing GEM packages.
 ```bash
 # As root
