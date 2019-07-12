@@ -543,6 +543,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#remove-plugin" title="Remove plugin" class="md-nav__link">
+    Remove plugin
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -592,6 +599,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#remove-plugin" title="Remove plugin" class="md-nav__link">
+    Remove plugin
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -627,6 +641,19 @@
 <span class="n">mv</span> <span class="n">Gemfile</span><span class="p">.</span><span class="k">lock</span> <span class="n">Gemfile</span><span class="p">.</span><span class="k">lock</span><span class="p">.</span><span class="n">backup</span>
 <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">foreman</span><span class="o">-</span><span class="n">ruby</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">bundle</span> <span class="k">update</span>
 <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">foreman</span><span class="o">-</span><span class="n">ruby</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">bundle</span> <span class="n">install</span>
+</pre></div>
+
+
+<h4 id="remove-plugin">Remove plugin</h4>
+<div class="codehilite"><pre><span></span># <span class="nv">Remove</span> <span class="nv">the</span> <span class="nv">gem</span> <span class="nv">file</span> <span class="k">for</span> <span class="nv">your</span> <span class="nv">plugin</span>.
+# <span class="nv">rm</span> <span class="o">~</span><span class="nv">foreman</span><span class="o">/</span><span class="nv">bundler</span>.<span class="nv">d</span><span class="o">/</span><span class="nv">Gemfile</span>.<span class="nv">local</span>.<span class="nv">rb</span>
+# <span class="o">~</span><span class="nv">Gemfile</span>.<span class="nv">local</span>.<span class="nv">rb</span>
+
+# <span class="nv">Reinstall</span> <span class="nv">all</span> <span class="nv">gems</span> <span class="nv">without</span> <span class="nv">the</span> <span class="nv">old</span> <span class="nv">one</span>
+<span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">bin</span><span class="o">/</span><span class="nv">foreman</span><span class="o">-</span><span class="nv">ruby</span> <span class="o">/</span><span class="nv">usr</span><span class="o">/</span><span class="nv">bin</span><span class="o">/</span><span class="nv">bundle</span> <span class="nv">install</span>
+
+# <span class="nv">Restart</span> <span class="nv">Foreman</span>
+<span class="nv">touch</span> <span class="o">~</span><span class="nv">foreman</span><span class="o">/</span><span class="nv">tmp</span><span class="o">/</span><span class="nv">restart</span>.<span class="nv">txt</span>
 </pre></div>
                 
                   
