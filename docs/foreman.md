@@ -1,7 +1,7 @@
 ### Foreman
 
 #### Fix failing GEM packages.
-```
+```bash
 # As root
 su foreman
 # cd to home
@@ -12,7 +12,7 @@ mv Gemfile.lock Gemfile.lock.backup
 ```
 
 #### Remove plugin
-```
+```bash
 # Remove the gem file for your plugin.
 # rm ~foreman/bundler.d/Gemfile.local.rb
 # ~Gemfile.local.rb
