@@ -131,7 +131,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#fix-failing-gem-packages" tabindex="1" class="md-skip">
+      <a href="#update-foreman" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -529,16 +529,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#update-foreman" title="Update Foreman" class="md-nav__link">
+    Update Foreman
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#fix-failing-gem-packages" title="Fix failing GEM packages." class="md-nav__link">
     Fix failing GEM packages.
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#remove-plugin" title="Remove plugin" class="md-nav__link">
     Remove plugin
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -572,16 +585,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#update-foreman" title="Update Foreman" class="md-nav__link">
+    Update Foreman
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#fix-failing-gem-packages" title="Fix failing GEM packages." class="md-nav__link">
     Fix failing GEM packages.
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#remove-plugin" title="Remove plugin" class="md-nav__link">
     Remove plugin
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -606,7 +632,28 @@
                 
                   <h1>Foreman</h1>
                 
-                <h4 id="fix-failing-gem-packages">Fix failing GEM packages.</h4>
+                <h3 id="update-foreman">Update Foreman</h3>
+<div class="codehilite"><pre><span></span><span class="o">#</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">theforeman</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">manuals</span><span class="o">/</span><span class="mi">1</span><span class="p">.</span><span class="mi">22</span><span class="o">/</span><span class="k">index</span><span class="p">.</span><span class="n">html</span><span class="o">#</span><span class="mi">3</span><span class="p">.</span><span class="mi">6</span><span class="n">Upgrade</span>
+
+<span class="n">systemctl</span> <span class="n">apache2</span> <span class="n">stop</span>
+<span class="o">#</span> <span class="n">Upgrade</span> <span class="p">.</span><span class="n">list</span> <span class="n">file</span> <span class="k">from</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="p">.</span><span class="n">list</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="n">foreman</span><span class="p">.</span><span class="n">list</span>
+<span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="k">update</span>
+<span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="c1">--only-upgrade install ruby\* foreman\*</span>
+<span class="n">foreman</span><span class="o">-</span><span class="n">rake</span> <span class="n">db</span><span class="p">:</span><span class="n">migrate</span>
+<span class="n">foreman</span><span class="o">-</span><span class="n">rake</span> <span class="n">db</span><span class="p">:</span><span class="n">seed</span>
+<span class="n">foreman</span><span class="o">-</span><span class="n">rake</span> <span class="n">tmp</span><span class="p">:</span><span class="k">cache</span><span class="p">:</span><span class="n">clear</span>
+<span class="n">foreman</span><span class="o">-</span><span class="n">rake</span> <span class="n">db</span><span class="p">:</span><span class="n">sessions</span><span class="p">:</span><span class="n">clear</span>
+
+<span class="o">#</span> <span class="n">Test</span> <span class="n">Foreman</span> <span class="n">upgrade</span>
+<span class="n">foreman</span><span class="o">-</span><span class="n">installer</span> <span class="c1">--noop --dont-save-answers --verbose</span>
+<span class="o">#</span> <span class="k">Start</span> <span class="n">Foreman</span> <span class="n">installer</span> <span class="n">upgrade</span><span class="p">.</span>
+<span class="n">foreman</span><span class="o">-</span><span class="n">installer</span>
+<span class="n">r</span>
+<span class="n">service</span> <span class="n">apache2</span> <span class="k">restart</span>
+</pre></div>
+
+
+<h4 id="fix-failing-gem-packages">Fix failing GEM packages.</h4>
 <div class="codehilite"><pre><span></span><span class="c1"># As root</span>
 su foreman
 <span class="c1"># cd to home</span>
