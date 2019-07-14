@@ -15,7 +15,6 @@ foreman-rake db:sessions:clear
 foreman-installer --noop --dont-save-answers --verbose
 # Start Foreman installer upgrade.
 foreman-installer
-r
 service apache2 restart
 ```
 
