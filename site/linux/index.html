@@ -401,6 +401,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#check-bonding-status" title="Check bonding status" class="md-nav__link">
+    Check bonding status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-low-level-interface-stats" title="Get low-level interface stats" class="md-nav__link">
+    Get low-level interface stats
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-without-using-all-identity-files-automatically" title="SSH without using all identity files automatically" class="md-nav__link">
+    SSH without using all identity files automatically
+  </a>
+  
+</li>
+      
       
       
       
@@ -699,6 +720,27 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#check-bonding-status" title="Check bonding status" class="md-nav__link">
+    Check bonding status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-low-level-interface-stats" title="Get low-level interface stats" class="md-nav__link">
+    Get low-level interface stats
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-without-using-all-identity-files-automatically" title="SSH without using all identity files automatically" class="md-nav__link">
+    SSH without using all identity files automatically
+  </a>
+  
+</li>
+      
       
       
       
@@ -919,6 +961,23 @@ This disables the auto-adjust of the fan speed, be careful of the R710 heating. 
 
 <span class="o">#</span><span class="ss">&quot;Activating manual fan speeds! (2160 RPM)&quot;</span>
 <span class="n">ipmitool</span>  <span class="o">-</span><span class="n">I</span> <span class="n">lanplus</span> <span class="o">-</span><span class="n">H</span> <span class="mi">10</span><span class="p">.</span><span class="mi">200</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">113</span> <span class="o">-</span><span class="n">U</span> <span class="n">root</span> <span class="o">-</span><span class="n">P</span> <span class="err">$</span><span class="n">PASSWORD</span> <span class="n">raw</span> <span class="mi">0</span><span class="n">x30</span> <span class="mi">0</span><span class="n">x30</span> <span class="mi">0</span><span class="n">x02</span> <span class="mi">0</span><span class="n">xff</span> <span class="mi">0</span><span class="n">x09</span>
+</pre></div>
+
+
+<h3 id="check-bonding-status">Check bonding status</h3>
+<div class="codehilite"><pre><span></span><span class="n">cat</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">bonding</span><span class="o">/</span><span class="n">mgmt</span>
+<span class="n">cat</span> <span class="o">/</span><span class="n">proc</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="n">bonding</span><span class="o">/</span><span class="err">$</span><span class="n">INTERFACE_NAME_HERE</span>
+</pre></div>
+
+
+<h3 id="get-low-level-interface-stats">Get low-level interface stats</h3>
+<div class="codehilite"><pre><span></span><span class="n">ethtool</span> <span class="o">-</span><span class="n">S</span> <span class="err">$</span><span class="n">INTERFACE_NAME_HERE</span>
+<span class="n">ethtool</span> <span class="o">-</span><span class="n">S</span> <span class="n">mgmt</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+
+
+<h3 id="ssh-without-using-all-identity-files-automatically">SSH without using all identity files automatically</h3>
+<div class="codehilite"><pre><span></span><span class="n">ssh</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="ss">&quot;IdentitiesOnly true&quot;</span><span class="w"> </span><span class="o">-</span><span class="n">v</span><span class="w"> </span><span class="o">-</span><span class="n">A</span><span class="w"> </span><span class="k">user</span><span class="nv">@host</span><span class="w"></span>
 </pre></div>
                 
                   
