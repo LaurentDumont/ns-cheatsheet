@@ -26,6 +26,7 @@ nav:
       - MySQL/MariaDB: mysql.md
       - LVM: lvm.md
       - Security: security.md
+      - Foreman: foreman.md
 
     
 #Theme customization

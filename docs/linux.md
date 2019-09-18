@@ -227,3 +227,25 @@ ethtool -S mgmt-1
 ```
 ssh -o "IdentitiesOnly true" -v -A user@host
 ```
+### Remove resolvctl (issues with OpenVPN DNS being removed)
+```bash
+sudo systemctl disable systemd-resolved.service
+sudo systemctl stop systemd-resolved.service
+
+dns=default in [main] section of "sudo vi /etc/NetworkManager/NetworkManager.conf"
+
+sudo rm /etc/resolv.conf
+sudo service network-manager restart
+```
+
+### Troubleshoot APT install errors.
+```
+# Find the correct file from :
+cd /var/lib/dpkg/info/
+# In this case, it was the Foreman postinst script
+cat foreman.postinst
+# Increase verbosity
+EXPORT DEBUG=1
+# Run the failing configure package
+dpkg --configure foreman
+```
