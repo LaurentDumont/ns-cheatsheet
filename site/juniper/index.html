@@ -1,0 +1,1050 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="My own little space">
+      
+      
+      
+        <meta name="author" content="Laurent Dumont">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../images/tarsier_hi_elbows.ico">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.2.0">
+    
+    
+      
+        <title>Juniper - Laurent Dumont - Internet notepad.</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.750b69bd.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#757575">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-51757315-3", "cheat.northernsysadmin.com")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="grey" data-md-color-accent="">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#useful-commands" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href=".." title="Laurent Dumont - Internet notepad." class="md-header-nav__button md-logo">
+          
+            <i class="md-icon">cloud circle</i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Laurent Dumont - Internet notepad.
+            </span>
+            <span class="md-header-nav__topic">
+              Juniper
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href=".." title="Laurent Dumont - Internet notepad." class="md-nav__button md-logo">
+      
+        <i class="md-icon">cloud circle</i>
+      
+    </a>
+    Laurent Dumont - Internet notepad.
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cisco/" title="Cisco" class="md-nav__link">
+      Cisco
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ccna/" title="Cisco-CCNA" class="md-nav__link">
+      Cisco-CCNA
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../linux/" title="Generic Linux" class="md-nav__link">
+      Generic Linux
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../gluster/" title="Gluster" class="md-nav__link">
+      Gluster
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../prometheus/" title="Prometheus" class="md-nav__link">
+      Prometheus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../iperf/" title="iPerf" class="md-nav__link">
+      iPerf
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Juniper
+      </label>
+    
+    <a href="./" title="Juniper" class="md-nav__link md-nav__link--active">
+      Juniper
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands" title="Useful commands." class="md-nav__link">
+    Useful commands.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syslog-configuration" title="Syslog configuration." class="md-nav__link">
+    Syslog configuration.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radius-configuration" title="Radius configuration." class="md-nav__link">
+    Radius configuration.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-vlan" title="Create a vlan" class="md-nav__link">
+    Create a vlan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-l3-vlan-interface" title="Create a L3 VLAN interface." class="md-nav__link">
+    Create a L3 VLAN interface.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-ssh-with-root-login" title="Enable SSH with root login." class="md-nav__link">
+    Enable SSH with root login.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-default-route" title="Create a default route." class="md-nav__link">
+    Create a default route.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-nameserver-for-dns-resolution" title="Add a nameserver for DNS resolution." class="md-nav__link">
+    Add a nameserver for DNS resolution.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-the-junos-image" title="Upgrade the JunOS image." class="md-nav__link">
+    Upgrade the JunOS image.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repair-a-junos-partition-that-rebooted-from-the-backup-partition" title="Repair a JunOS partition that rebooted from the backup partition." class="md-nav__link">
+    Repair a JunOS partition that rebooted from the backup partition.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-admin-user" title="Create an admin user." class="md-nav__link">
+    Create an admin user.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-ssh-key-to-a-local-user-for-password-less-auth" title="Add a SSH key to a local user for password-less auth." class="md-nav__link">
+    Add a SSH key to a local user for password-less auth.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password-recovery" title="Password recovery." class="md-nav__link">
+    Password recovery.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-snmp-with-contact-and-location-strings" title="Configure SNMP with contact and location strings." class="md-nav__link">
+    Configure SNMP with contact and location strings.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregated-interfaces-ae" title="Aggregated interfaces (AE)" class="md-nav__link">
+    Aggregated interfaces (AE)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../netbox/" title="Netbox" class="md-nav__link">
+      Netbox
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../splunk/" title="Splunk" class="md-nav__link">
+      Splunk
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chef/" title="Chef" class="md-nav__link">
+      Chef
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../openstack/" title="Openstack" class="md-nav__link">
+      Openstack
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../molecule/" title="Molecule" class="md-nav__link">
+      Molecule
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../git/" title="Git" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../maas/" title="MAAS" class="md-nav__link">
+      MAAS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../postgres/" title="Postgres" class="md-nav__link">
+      Postgres
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../mysql/" title="MySQL/MariaDB" class="md-nav__link">
+      MySQL/MariaDB
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../lvm/" title="LVM" class="md-nav__link">
+      LVM
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../foreman/" title="Foreman" class="md-nav__link">
+      Foreman
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands" title="Useful commands." class="md-nav__link">
+    Useful commands.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syslog-configuration" title="Syslog configuration." class="md-nav__link">
+    Syslog configuration.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#radius-configuration" title="Radius configuration." class="md-nav__link">
+    Radius configuration.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-vlan" title="Create a vlan" class="md-nav__link">
+    Create a vlan
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-l3-vlan-interface" title="Create a L3 VLAN interface." class="md-nav__link">
+    Create a L3 VLAN interface.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-ssh-with-root-login" title="Enable SSH with root login." class="md-nav__link">
+    Enable SSH with root login.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-a-default-route" title="Create a default route." class="md-nav__link">
+    Create a default route.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-nameserver-for-dns-resolution" title="Add a nameserver for DNS resolution." class="md-nav__link">
+    Add a nameserver for DNS resolution.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-the-junos-image" title="Upgrade the JunOS image." class="md-nav__link">
+    Upgrade the JunOS image.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#repair-a-junos-partition-that-rebooted-from-the-backup-partition" title="Repair a JunOS partition that rebooted from the backup partition." class="md-nav__link">
+    Repair a JunOS partition that rebooted from the backup partition.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-an-admin-user" title="Create an admin user." class="md-nav__link">
+    Create an admin user.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-a-ssh-key-to-a-local-user-for-password-less-auth" title="Add a SSH key to a local user for password-less auth." class="md-nav__link">
+    Add a SSH key to a local user for password-less auth.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#password-recovery" title="Password recovery." class="md-nav__link">
+    Password recovery.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configure-snmp-with-contact-and-location-strings" title="Configure SNMP with contact and location strings." class="md-nav__link">
+    Configure SNMP with contact and location strings.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregated-interfaces-ae" title="Aggregated interfaces (AE)" class="md-nav__link">
+    Aggregated interfaces (AE)
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/juniper.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Juniper</h1>
+                
+                <h3 id="useful-commands">Useful commands.</h3>
+<div class="codehilite"><pre><span></span># <span class="k">Show</span> <span class="nv">the</span> <span class="nv">current</span> <span class="nv">configuration</span>.
+<span class="k">show</span> <span class="nv">configuration</span>
+
+#<span class="k">Show</span> <span class="nv">the</span> <span class="nv">logs</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">device</span>.
+<span class="k">show</span> <span class="nv">log</span> <span class="nv">messsage</span>
+
+#<span class="k">Show</span> <span class="nv">but</span> <span class="nv">compare</span>
+<span class="k">show</span> <span class="o">|</span> <span class="nv">compare</span>
+
+#<span class="k">Show</span> <span class="nv">but</span> <span class="nv">display</span> <span class="nv">as</span> <span class="nv">a</span> <span class="nv">line</span> <span class="nv">configuration</span> <span class="nv">and</span> <span class="nv">not</span> <span class="nv">XML</span>.
+<span class="k">show</span> <span class="o">|</span> <span class="nv">display</span> <span class="nv">set</span>
+
+#<span class="k">Show</span> <span class="nv">interface</span> <span class="nv">list</span> <span class="nv">and</span> <span class="nv">status</span>
+<span class="k">show</span> <span class="nv">interfaces</span> <span class="nv">terse</span>
+
+#<span class="k">Show</span> <span class="nv">current</span> <span class="nv">hardware</span>
+<span class="k">show</span> <span class="nv">chassis</span> <span class="nv">hardware</span>
+
+#<span class="k">Show</span> <span class="nv">global</span> <span class="nv">routing</span> <span class="nv">table</span>
+<span class="k">show</span> <span class="nv">route</span>
+
+<span class="k">show</span> <span class="nv">interface</span> <span class="o">|</span> <span class="nv">incl</span> <span class="ss">(</span><span class="nv">proto</span><span class="o">|</span><span class="nv">Desc</span><span class="ss">)</span>
+
+#<span class="k">Show</span> <span class="nv">processus</span> <span class="nv">using</span> <span class="nv">memory</span> <span class="nv">and</span> <span class="nv">general</span> <span class="nv">system</span> <span class="nv">performance</span> <span class="nv">stats</span>
+<span class="k">show</span> <span class="nv">system</span> <span class="nv">processes</span> <span class="nv">summary</span>
+</pre></div>
+
+
+<h3 id="syslog-configuration">Syslog configuration.</h3>
+<div class="codehilite"><pre><span></span><span class="k">set</span> <span class="k">system</span> <span class="n">syslog</span> <span class="k">user</span> <span class="o">*</span> <span class="k">any</span> <span class="n">emergency</span>
+<span class="k">set</span> <span class="k">system</span> <span class="n">syslog</span> <span class="k">host</span> <span class="mi">10</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">99</span><span class="p">.</span><span class="mi">28</span> <span class="k">any</span> <span class="k">any</span>
+<span class="k">set</span> <span class="k">system</span> <span class="n">syslog</span> <span class="k">host</span> <span class="mi">10</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">99</span><span class="p">.</span><span class="mi">28</span> <span class="n">port</span> <span class="mi">1514</span>
+<span class="k">set</span> <span class="k">system</span> <span class="n">syslog</span> <span class="n">file</span> <span class="n">messages</span> <span class="k">any</span> <span class="n">notice</span>
+<span class="k">set</span> <span class="k">system</span> <span class="n">syslog</span> <span class="n">file</span> <span class="n">messages</span> <span class="k">authorization</span> <span class="n">info</span>
+<span class="k">set</span> <span class="k">system</span> <span class="n">syslog</span> <span class="n">file</span> <span class="n">interactive</span><span class="o">-</span><span class="n">commands</span> <span class="n">interactive</span><span class="o">-</span><span class="n">commands</span> <span class="k">any</span>
+</pre></div>
+
+
+<h3 id="radius-configuration">Radius configuration.</h3>
+<div class="codehilite"><pre><span></span><span class="n">edit</span>
+<span class="n">set</span> <span class="n">system</span> <span class="n">radius</span><span class="o">-</span><span class="n">server</span> <span class="err">$</span><span class="n">RADIUS_SERVER_IP_HERE</span> <span class="n">source</span><span class="o">-</span><span class="n">address</span> <span class="err">$</span><span class="n">SWITCH_IP_HERE</span>
+<span class="n">set</span> <span class="n">system</span> <span class="n">radius</span><span class="o">-</span><span class="n">server</span> <span class="err">$</span><span class="n">RADIUS_SERVER_IP_HERE</span> <span class="n">secret</span> <span class="err">$</span><span class="n">PASSWORD_HERE</span>
+
+<span class="n">set</span> <span class="n">system</span> <span class="n">authentication</span><span class="o">-</span><span class="n">order</span> <span class="p">[</span> <span class="n">radius</span> <span class="n">password</span> <span class="p">]</span>
+
+<span class="cp">#Create user profiles based on FreeIPA group.</span>
+
+<span class="n">edit</span> <span class="n">system</span> <span class="n">login</span>
+<span class="n">set</span> <span class="n">user</span> <span class="n">HELPDESK</span> <span class="k">class</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span>
+<span class="n">set</span> <span class="n">user</span> <span class="n">OPERATOR</span> <span class="k">class</span> <span class="nb">super</span><span class="o">-</span><span class="n">user</span>
+<span class="n">set</span> <span class="n">user</span> <span class="n">remote</span> <span class="n">full</span><span class="o">-</span><span class="n">name</span> <span class="s">&quot;default remote access user template&quot;</span>
+<span class="n">set</span> <span class="n">user</span> <span class="n">remote</span> <span class="k">class</span> <span class="n">read</span><span class="o">-</span><span class="n">only</span>
+</pre></div>
+
+
+<h3 id="create-a-vlan">Create a vlan</h3>
+<div class="codehilite"><pre><span></span><span class="k">set</span> <span class="n">vlans</span> <span class="n">OSTACK</span><span class="o">-</span><span class="n">TEST</span><span class="o">-</span><span class="mi">1</span> <span class="n">vlan</span><span class="o">-</span><span class="n">id</span> <span class="mi">70</span>
+</pre></div>
+
+
+<h3 id="create-a-l3-vlan-interface">Create a L3 VLAN interface.</h3>
+<div class="codehilite"><pre><span></span><span class="k">set</span> <span class="n">vlans</span> <span class="n">MGMT</span> <span class="n">vlan</span><span class="o">-</span><span class="n">id</span> <span class="mi">69</span>
+<span class="k">set</span> <span class="n">interfaces</span> <span class="n">ge</span><span class="o">-</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">23</span> <span class="n">unit</span> <span class="mi">0</span> <span class="n">family</span> <span class="n">ethernet</span><span class="o">-</span><span class="n">switching</span> <span class="n">port</span><span class="o">-</span><span class="k">mode</span> <span class="n">trunk</span> <span class="mi">666</span> <span class="n">vlan</span> <span class="n">members</span> <span class="mi">69</span>
+<span class="k">set</span> <span class="n">interfaces</span> <span class="n">vlan</span> <span class="n">unit</span> <span class="mi">69</span> <span class="n">family</span> <span class="n">inet</span> <span class="n">address</span> <span class="mi">10</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">69</span><span class="p">.</span><span class="mi">14</span><span class="o">/</span><span class="mi">24</span>
+<span class="k">set</span> <span class="n">vlans</span> <span class="n">MGMT</span> <span class="n">l3</span><span class="o">-</span><span class="n">interface</span> <span class="n">vlan</span><span class="p">.</span><span class="mi">69</span>
+</pre></div>
+
+
+<h3 id="enable-ssh-with-root-login">Enable SSH with root login.</h3>
+<div class="codehilite"><pre><span></span><span class="k">set</span> <span class="k">system</span> <span class="n">services</span> <span class="n">ssh</span> <span class="n">root</span><span class="o">-</span><span class="n">login</span> <span class="n">allow</span>
+</pre></div>
+
+
+<h3 id="create-a-default-route">Create a default route.</h3>
+<div class="codehilite"><pre><span></span><span class="nv">set</span> <span class="nv">routing</span><span class="o">-</span><span class="nv">options</span> <span class="nv">static</span> <span class="nv">route</span> <span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span>.<span class="mi">0</span><span class="o">/</span><span class="mi">0</span> <span class="k">next</span><span class="o">-</span><span class="nv">hop</span> <span class="mi">10</span>.<span class="mi">10</span>.<span class="mi">69</span>.<span class="mi">1</span>
+</pre></div>
+
+
+<h3 id="add-a-nameserver-for-dns-resolution">Add a nameserver for DNS resolution.</h3>
+<div class="codehilite"><pre><span></span><span class="n">edit</span> <span class="k">system</span> <span class="n">name</span><span class="o">-</span><span class="n">server</span> <span class="mi">8</span><span class="p">.</span><span class="mi">8</span><span class="p">.</span><span class="mi">8</span><span class="p">.</span><span class="mi">8</span> 
+</pre></div>
+
+
+<h3 id="upgrade-the-junos-image">Upgrade the JunOS image.</h3>
+<div class="codehilite"><pre><span></span><span class="n">request</span> <span class="k">system</span> <span class="n">software</span> <span class="k">add</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">web</span><span class="p">.</span><span class="n">weba</span><span class="p">.</span><span class="n">ru</span><span class="o">/</span><span class="n">pub</span><span class="o">/</span><span class="mi">500</span><span class="n">G_3</span><span class="o">/</span><span class="n">Firmware</span><span class="o">/</span><span class="n">Juniper</span><span class="o">/</span><span class="mi">12</span><span class="p">.</span><span class="mi">3</span><span class="o">/</span><span class="n">domestic</span><span class="o">/</span><span class="n">jinstall</span><span class="o">-</span><span class="n">ex</span><span class="o">-</span><span class="mi">2200</span><span class="o">-</span><span class="mi">12</span><span class="p">.</span><span class="mi">3</span><span class="n">R5</span><span class="p">.</span><span class="mi">7</span><span class="o">-</span><span class="n">domestic</span><span class="o">-</span><span class="n">signed</span><span class="p">.</span><span class="n">tgz</span>
+
+<span class="n">file</span> <span class="k">copy</span> <span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">web</span><span class="p">.</span><span class="n">weba</span><span class="p">.</span><span class="n">ru</span><span class="o">/</span><span class="n">pub</span><span class="o">/</span><span class="mi">500</span><span class="n">G_3</span><span class="o">/</span><span class="n">Firmware</span><span class="o">/</span><span class="n">Juniper</span><span class="o">/</span><span class="mi">12</span><span class="p">.</span><span class="mi">3</span><span class="o">/</span><span class="n">domestic</span><span class="o">/</span><span class="n">jinstall</span><span class="o">-</span><span class="n">ex</span><span class="o">-</span><span class="mi">2200</span><span class="o">-</span><span class="mi">12</span><span class="p">.</span><span class="mi">3</span><span class="n">R5</span><span class="p">.</span><span class="mi">7</span><span class="o">-</span><span class="n">domestic</span><span class="o">-</span><span class="n">signed</span><span class="p">.</span><span class="n">tgz</span>  <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span>
+
+<span class="n">request</span> <span class="k">system</span> <span class="n">software</span> <span class="k">add</span> <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">jinstall</span><span class="o">-</span><span class="n">ex</span><span class="o">-</span><span class="mi">2200</span><span class="o">-</span><span class="mi">12</span><span class="p">.</span><span class="mi">3</span><span class="n">R5</span><span class="p">.</span><span class="mi">7</span><span class="o">-</span><span class="n">domestic</span><span class="o">-</span><span class="n">signed</span><span class="p">.</span><span class="n">tgz</span> <span class="n">reboot</span>
+</pre></div>
+
+
+<h3 id="repair-a-junos-partition-that-rebooted-from-the-backup-partition">Repair a JunOS partition that rebooted from the backup partition.</h3>
+<div class="codehilite"><pre><span></span><span class="o">***********************************************************************</span>
+<span class="o">**</span>                                                                   <span class="o">**</span>
+<span class="o">**</span>  <span class="nv">WARNING</span>: <span class="nv">THIS</span> <span class="nv">DEVICE</span> <span class="nv">HAS</span> <span class="nv">BOOTED</span> <span class="nv">FROM</span> <span class="nv">THE</span> <span class="nv">BACKUP</span> <span class="nv">JUNOS</span> <span class="nv">IMAGE</span>      <span class="o">**</span>
+<span class="o">**</span>                                                                   <span class="o">**</span>
+<span class="o">**</span>  <span class="nv">It</span> <span class="nv">is</span> <span class="nv">possible</span> <span class="nv">that</span> <span class="nv">the</span> <span class="nv">primary</span> <span class="nv">copy</span> <span class="nv">of</span> <span class="nv">JUNOS</span> <span class="nv">failed</span> <span class="nv">to</span> <span class="nv">boot</span> <span class="nv">up</span>  <span class="o">**</span>
+<span class="o">**</span>  <span class="nv">properly</span>, <span class="nv">and</span> <span class="nv">so</span> <span class="nv">this</span> <span class="nv">device</span> <span class="nv">has</span> <span class="nv">booted</span> <span class="nv">from</span> <span class="nv">the</span> <span class="nv">backup</span> <span class="nv">copy</span>.    <span class="o">**</span>
+<span class="o">**</span>                                                                   <span class="o">**</span>
+<span class="o">**</span>  <span class="nv">Please</span> <span class="nv">re</span><span class="o">-</span><span class="nv">install</span> <span class="nv">JUNOS</span> <span class="nv">to</span> <span class="nv">recover</span> <span class="nv">the</span> <span class="nv">primary</span> <span class="nv">copy</span> <span class="nv">in</span> <span class="nv">case</span>      <span class="o">**</span>
+<span class="o">**</span>  <span class="nv">it</span> <span class="nv">has</span> <span class="nv">been</span> <span class="nv">corrupted</span> <span class="nv">and</span> <span class="k">if</span> <span class="nv">auto</span><span class="o">-</span><span class="nv">snapshot</span> <span class="nv">feature</span> <span class="nv">is</span> <span class="nv">not</span>        <span class="o">**</span>
+<span class="o">**</span>  <span class="nv">enabled</span>.                                                         <span class="o">**</span>
+<span class="o">**</span>                                                                   <span class="o">**</span>
+<span class="o">***********************************************************************</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="k">show</span> <span class="nv">chassis</span> <span class="nv">alarms</span>
+<span class="k">show</span> <span class="nv">system</span> <span class="nv">storage</span> <span class="nv">partitions</span>
+<span class="nv">request</span> <span class="nv">system</span> <span class="nv">snapshot</span> <span class="nv">media</span> <span class="nv">internal</span> <span class="nv">slice</span> <span class="nv">alternate</span>
+<span class="k">show</span> <span class="nv">system</span> <span class="nv">snapshot</span> <span class="nv">media</span> <span class="nv">internal</span>
+<span class="nv">request</span> <span class="nv">system</span> <span class="nv">reboot</span> <span class="nv">slice</span> <span class="nv">alternate</span> <span class="nv">media</span> <span class="nv">internal</span>
+</pre></div>
+
+
+<h3 id="create-an-admin-user">Create an admin user.</h3>
+<div class="codehilite"><pre><span></span><span class="k">set</span> <span class="k">system</span> <span class="n">login</span> <span class="k">user</span> <span class="n">cmaker</span> <span class="n">authentication</span> <span class="n">plain</span><span class="o">-</span><span class="nb">text</span><span class="o">-</span><span class="n">password</span>
+<span class="k">set</span> <span class="k">system</span> <span class="n">login</span> <span class="k">user</span> <span class="n">cmaker</span> <span class="k">class</span> <span class="n">super</span><span class="o">-</span><span class="k">user</span>
+</pre></div>
+
+
+<h3 id="add-a-ssh-key-to-a-local-user-for-password-less-auth">Add a SSH key to a local user for password-less auth.</h3>
+<div class="codehilite"><pre><span></span><span class="k">set</span> <span class="k">system</span> <span class="n">login</span> <span class="k">user</span> <span class="n">prox</span><span class="o">-</span><span class="n">exporter</span><span class="o">-</span><span class="n">juniper</span> <span class="n">authentication</span> <span class="n">ssh</span><span class="o">-</span><span class="n">rsa</span> <span class="ss">&quot;ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJZTRPs8WXsD1yNmWd69/zHNDf4ApvTXDjfk0rxEjgiDsOgWvID0Q8ZH0tFzSV9L0W7a/9jG0POuJyiGYF6M4X2QdEPSZ2CgxRm7GL4A1SJ4xbnCYny2k4L8C7UrDrvqThv6/FyyJopHCPp7S3j0iAI6c+Gtv59sbUvdilWC4Y5LX0ho+yocMaGvTOk+l5aQRU9eWmZsD0/3D0V99iBnm70rlEeEIr1Oe+M+y/Q/0vmBVdC75COCxu84PnLvqPH2yOf3j581wgIVncKbApB0b9ApTbCE94jNljtwM4uGM9qICOf0BwbrDfFT1L1n5ZQx7BZnD9410wv2jTYXTPUJV1&quot;</span>
+<span class="k">set</span> <span class="k">system</span> <span class="n">login</span> <span class="k">user</span> <span class="n">prox</span><span class="o">-</span><span class="n">exporter</span><span class="o">-</span><span class="n">juniper</span> <span class="k">class</span> <span class="n">super</span><span class="o">-</span><span class="k">user</span>
+</pre></div>
+
+
+<h3 id="password-recovery">Password recovery.</h3>
+<div class="codehilite"><pre><span></span><span class="nv">Boot</span> <span class="nv">normally</span>.
+
+<span class="nv">Prompt</span> : <span class="nv">Hit</span> [<span class="nv">Enter</span>] <span class="nv">to</span> <span class="nv">boot</span> <span class="nv">immediately</span>, <span class="nv">or</span> <span class="nv">space</span> <span class="nv">bar</span> <span class="k">for</span> <span class="nv">command</span> <span class="nv">prompt</span>.
+
+<span class="nv">press</span> <span class="nv">space</span> <span class="nv">during</span> <span class="nv">the</span> <span class="nv">boot</span> <span class="nv">process</span>
+
+<span class="nv">Type</span> :
+<span class="nv">loader</span><span class="o">&gt;</span> <span class="nv">boot</span> <span class="o">-</span><span class="nv">s</span>
+
+<span class="nv">Type</span> : 
+<span class="nv">Enter</span> <span class="nv">full</span> <span class="nv">pathname</span> <span class="nv">of</span> <span class="nv">shell</span> <span class="nv">or</span> <span class="s1">&#39;</span><span class="s">recovery</span><span class="s1">&#39;</span> <span class="k">for</span> <span class="nv">root</span> <span class="nv">password</span> <span class="nv">recovery</span> <span class="nv">or</span> <span class="k">RETURN</span> <span class="k">for</span> <span class="o">/</span><span class="nv">bin</span><span class="o">/</span><span class="nv">sh</span>: <span class="nv">recovery</span>
+</pre></div>
+
+
+<h3 id="configure-snmp-with-contact-and-location-strings">Configure SNMP with contact and location strings.</h3>
+<div class="codehilite"><pre><span></span><span class="k">set</span><span class="w"> </span><span class="n">snmp</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="err">“</span><span class="n">cmaker</span><span class="o">-</span><span class="n">ex2200</span><span class="err">”</span><span class="w"> </span><span class="n">description</span><span class="w"> </span><span class="err">“</span><span class="n">cmaker</span><span class="o">-</span><span class="n">ex2200</span><span class="err">”</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span><span class="n">snmp</span><span class="w"> </span><span class="n">location</span><span class="w"> </span><span class="err">“</span><span class="mi">9880</span><span class="w"> </span><span class="n">Clark</span><span class="err">”</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span><span class="n">snmp</span><span class="w"> </span><span class="n">contact</span><span class="w"> </span><span class="ss">&quot;laurentfdumont@gmail.com&quot;</span><span class="w"></span>
+<span class="k">set</span><span class="w"> </span><span class="n">snmp</span><span class="w"> </span><span class="n">community</span><span class="w"> </span><span class="n">cmaker</span><span class="w"> </span><span class="k">authorization</span><span class="w"> </span><span class="k">read</span><span class="o">-</span><span class="k">only</span><span class="w"></span>
+</pre></div>
+
+
+<h3 id="aggregated-interfaces-ae">Aggregated interfaces (AE)</h3>
+<div class="codehilite"><pre><span></span>#<span class="nv">Increase</span> <span class="nv">the</span> <span class="nv">number</span> <span class="nv">of</span> <span class="nv">AE</span> <span class="nv">interfaces</span>.
+<span class="nv">set</span> <span class="nv">chassis</span> <span class="nv">aggregated</span><span class="o">-</span><span class="nv">devicesethernetdevice</span><span class="o">-</span><span class="nv">count4</span> 
+
+
+#<span class="nv">Create</span> <span class="nv">the</span> <span class="nv">AE</span> <span class="nv">interface</span> <span class="nv">and</span> <span class="nv">the</span> <span class="nv">switching</span> <span class="nv">options</span>.
+<span class="nv">set</span> <span class="nv">interfaces</span> <span class="nv">ae3</span> <span class="nv">description</span> <span class="nv">AE</span><span class="o">-</span><span class="nv">LACP</span><span class="o">-</span><span class="nv">ULTRABACON</span><span class="o">-</span><span class="nv">PROXMOX</span>
+<span class="nv">set</span> <span class="nv">interfaces</span> <span class="nv">ae3</span> <span class="nv">aggregated</span><span class="o">-</span><span class="nv">ether</span><span class="o">-</span><span class="nv">options</span> <span class="nv">lacp</span> <span class="nv">active</span>
+<span class="nv">set</span> <span class="nv">interfaces</span> <span class="nv">ae3</span> <span class="nv">unit</span> <span class="mi">0</span> <span class="nv">family</span> <span class="nv">ethernet</span><span class="o">-</span><span class="nv">switching</span> <span class="nv">port</span><span class="o">-</span><span class="nv">mode</span> <span class="nv">trunk</span>
+<span class="nv">set</span> <span class="nv">interfaces</span> <span class="nv">ae3</span> <span class="nv">unit</span> <span class="mi">0</span> <span class="nv">family</span> <span class="nv">ethernet</span><span class="o">-</span><span class="nv">switching</span> <span class="nv">vlan</span> <span class="nv">members</span> <span class="mi">69</span>
+<span class="nv">set</span> <span class="nv">interfaces</span> <span class="nv">ae3</span> <span class="nv">unit</span> <span class="mi">0</span> <span class="nv">family</span> <span class="nv">ethernet</span><span class="o">-</span><span class="nv">switching</span> <span class="nv">vlan</span> <span class="nv">members</span> <span class="mi">99</span><span class="o">-</span><span class="mi">100</span>
+<span class="nv">set</span> <span class="nv">interfaces</span> <span class="nv">ae3</span> <span class="nv">unit</span> <span class="mi">0</span> <span class="nv">family</span> <span class="nv">ethernet</span><span class="o">-</span><span class="nv">switching</span> <span class="nv">vlan</span> <span class="nv">members</span> <span class="mi">210</span>
+<span class="nv">set</span> <span class="nv">interfaces</span> <span class="nv">ae3</span> <span class="nv">unit</span> <span class="mi">0</span> <span class="nv">family</span> <span class="nv">ethernet</span><span class="o">-</span><span class="nv">switching</span> <span class="nv">vlan</span> <span class="nv">members</span> <span class="mi">2001</span>
+<span class="nv">set</span> <span class="nv">interfaces</span> <span class="nv">ae3</span> <span class="nv">unit</span> <span class="mi">0</span> <span class="nv">family</span> <span class="nv">ethernet</span><span class="o">-</span><span class="nv">switching</span> <span class="nv">native</span><span class="o">-</span><span class="nv">vlan</span><span class="o">-</span><span class="nv">id</span> <span class="mi">666</span>
+
+<span class="nv">cmaker</span>@<span class="nv">ex2200</span><span class="o">-</span><span class="nv">cmaker</span><span class="o">&gt;</span> <span class="k">show</span> <span class="nv">configuration</span> <span class="nv">interfaces</span> <span class="nv">ge</span><span class="o">-</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">17</span> <span class="o">|</span> <span class="nv">display</span> <span class="nv">set</span> 
+<span class="nv">set</span> <span class="nv">interfaces</span> <span class="nv">ge</span><span class="o">-</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">17</span> <span class="nv">description</span> <span class="nv">LACP</span><span class="o">-</span><span class="nv">ULTRABACON</span><span class="o">-</span><span class="nv">PROXMOX</span>
+<span class="nv">set</span> <span class="nv">interfaces</span> <span class="nv">ge</span><span class="o">-</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">17</span> <span class="nv">ether</span><span class="o">-</span><span class="nv">options</span> <span class="mi">802</span>.<span class="mi">3</span><span class="nv">ad</span> <span class="nv">ae3</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../iperf/" title="iPerf" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                iPerf
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../netbox/" title="Netbox" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Netbox
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Potato Tomato - Send me bitcoins - Laurent Dumont
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/laurentdumont" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://www.linkedin.com/in/laurentfdumont/" class="md-footer-social__link fa fa-linkedin"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.39abc4af.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+    
+  </body>
+</html>
