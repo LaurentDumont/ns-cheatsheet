@@ -1,3 +1,9 @@
+### Random useful commands
+```
+openstack server list --all -c ID -c Name --host $NOVA_COMPUTE_NAME_HERE -f value
+```
+
+
 ### Compute node requirements
 ```
 https://docs.openstack.org/nova/rocky/install/compute-install-rdo.html

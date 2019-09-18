@@ -207,3 +207,23 @@ ipmitool  -I lanplus -H 10.200.10.113 -U root -P $PASSWORD raw 0x30 0x30 0x01 0x
 #"Activating manual fan speeds! (2160 RPM)"
 ipmitool  -I lanplus -H 10.200.10.113 -U root -P $PASSWORD raw 0x30 0x30 0x02 0xff 0x09
 ```
+
+### Check bonding status
+
+```
+cat /proc/net/bonding/mgmt
+cat /proc/net/bonding/$INTERFACE_NAME_HERE
+```
+
+### Get low-level interface stats
+
+```
+ethtool -S $INTERFACE_NAME_HERE
+ethtool -S mgmt-1
+```
+
+### SSH without using all identity files automatically
+
+```
+ssh -o "IdentitiesOnly true" -v -A user@host
+```
