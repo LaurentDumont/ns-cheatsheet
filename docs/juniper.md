@@ -25,7 +25,14 @@ show interface | incl (proto|Desc)
 
 #Show processus using memory and general system performance stats
 show system processes summary
+
+#Check CPU usage
+show chassis routing-engine
+show system process extensive | no-more
 ```
+
+
+
 
 ### Syslog configuration.
 ```
