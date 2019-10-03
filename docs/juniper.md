@@ -31,9 +31,6 @@ show chassis routing-engine
 show system process extensive | no-more
 ```
 
-
-
-
 ### Syslog configuration.
 ```
 set system syslog user * any emergency
