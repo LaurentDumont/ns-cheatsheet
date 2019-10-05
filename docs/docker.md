@@ -77,3 +77,8 @@ docker run \
     -d \
     linuxserver/couchpotato
 ```
+
+###
+```
+watch 'docker stats --no-stream --format "table {{.Container}}\t{{.Name}}\t{{.CPUPerc}}\t{{.MemUsage}}"'
+```
