@@ -40,7 +40,7 @@
     
     
       
-        <title>Git - Laurent Dumont - Internet notepad.</title>
+        <title>OVS - Laurent Dumont - Internet notepad.</title>
       
     
     
@@ -131,7 +131,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#git-stuff" tabindex="1" class="md-skip">
+      <a href="#useful-commands" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -156,7 +156,7 @@
               Laurent Dumont - Internet notepad.
             </span>
             <span class="md-header-nav__topic">
-              Git
+              OVS
             </span>
           
         </div>
@@ -432,65 +432,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Git
-      </label>
-    
-    <a href="./" title="Git" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../git/" title="Git" class="md-nav__link">
       Git
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#git-stuff" title="Git Stuff" class="md-nav__link">
-    Git Stuff
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#easy-gitsh" title="easy-git.sh" class="md-nav__link">
-    easy-git.sh
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#credentials" title="Credentials" class="md-nav__link">
-    Credentials
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -570,11 +516,45 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../ovs/" title="OVS" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        OVS
+      </label>
+    
+    <a href="./" title="OVS" class="md-nav__link md-nav__link--active">
       OVS
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#useful-commands" title="Useful commands" class="md-nav__link">
+    Useful commands
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -597,29 +577,9 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#git-stuff" title="Git Stuff" class="md-nav__link">
-    Git Stuff
+  <a href="#useful-commands" title="Useful commands" class="md-nav__link">
+    Useful commands
   </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#easy-gitsh" title="easy-git.sh" class="md-nav__link">
-    easy-git.sh
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#credentials" title="Credentials" class="md-nav__link">
-    Credentials
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -639,46 +599,16 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/git.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/ovs.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Git</h1>
+                  <h1>OVS</h1>
                 
-                <h2 id="git-stuff">Git Stuff</h2>
-<h3 id="easy-gitsh">easy-git.sh</h3>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="nv">DIRECTORY</span><span class="o">=</span>.git
-<span class="k">if</span> <span class="o">[</span> -z <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">echo</span> <span class="s2">&quot;You savage, you need a comment for a commit!&quot;</span>
-    <span class="nb">exit</span>
-<span class="k">fi</span>
-
-<span class="k">if</span> <span class="o">[</span> -d <span class="s2">&quot;</span><span class="nv">$DIRECTORY</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
-    git add .
-    git commit -S -m <span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-    git push origin master
-<span class="k">else</span>
-    <span class="nb">echo</span> <span class="s2">&quot;This is NOT a git repo&quot;</span>
-<span class="k">fi</span>
-</pre></div>
-</td></tr></table>
-
-<h3 id="credentials">Credentials</h3>
-<div class="codehilite"><pre><span></span><span class="n">git</span> <span class="n">config</span> <span class="c1">--global credential.helper store</span>
-<span class="n">git</span> <span class="n">config</span> <span class="c1">--global credential.helper &#39;cache --timeout=3600&#39; </span>
+                <h3 id="useful-commands">Useful commands</h3>
+<div class="codehilite"><pre><span></span><span class="nv">ovs</span><span class="o">-</span><span class="nv">vsctl</span> <span class="nv">list</span> <span class="nv">interface</span>
+<span class="nv">ovs</span><span class="o">-</span><span class="nv">vsctl</span> <span class="nv">list</span> <span class="nv">port</span>
+<span class="nv">ovs</span><span class="o">-</span><span class="nv">vsctl</span> <span class="k">show</span>
+<span class="nv">ovs</span><span class="o">-</span><span class="nv">appctl</span> <span class="nv">fdb</span><span class="o">/</span><span class="k">show</span> <span class="nv">mybridge</span>
 </pre></div>
                 
                   
@@ -700,7 +630,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../molecule/" title="Molecule" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../foreman/" title="Foreman" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -709,25 +639,11 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Molecule
+                Foreman
               </span>
             </div>
           </a>
         
-        
-          <a href="../maas/" title="MAAS" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                MAAS
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
