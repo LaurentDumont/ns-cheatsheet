@@ -27,6 +27,7 @@ nav:
       - LVM: lvm.md
       - Security: security.md
       - Foreman: foreman.md
+      - OVS: ovs.md
 
     
 #Theme customization
