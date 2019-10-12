@@ -3,6 +3,22 @@
 openstack server list --all -c ID -c Name --host $NOVA_COMPUTE_NAME_HERE -f value
 ```
 
+### Upload custom image
+```
+openstack image create --disk-format qcow2 --container-format bare --public --file ./cirros-0.4.0-x86_64-disk.img cirros-0.4.0
+```
+
+### Create flavor
+```
+openstack flavor create --ram 1024 --disk 10 --vcpus 1 --public small-flavor
+```
+
+### Create VM
+```
+openstack server create --image e090519f-91f6-4c21-baf5-08642d0bd28b --flavor f60498da-a9a9-4772-a05c-75b4aaa6389a --network e23f7863-6e84-4395-bbbb-45877e950f2a cumulus-1
+openstack server create --image e090519f-91f6-4c21-baf5-08642d0bd28b --flavor f60498da-a9a9-4772-a05c-75b4aaa6389a --network e23f7863-6e84-4395-bbbb-45877e950f2a cumulus-2
+
+```
 
 ### Compute node requirements
 ```
