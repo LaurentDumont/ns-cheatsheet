@@ -428,6 +428,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#upload-custom-image" title="Upload custom image" class="md-nav__link">
+    Upload custom image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-flavor" title="Create flavor" class="md-nav__link">
+    Create flavor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-vm" title="Create VM" class="md-nav__link">
+    Create VM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#compute-node-requirements" title="Compute node requirements" class="md-nav__link">
     Compute node requirements
   </a>
@@ -605,6 +626,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#upload-custom-image" title="Upload custom image" class="md-nav__link">
+    Upload custom image
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-flavor" title="Create flavor" class="md-nav__link">
+    Create flavor
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-vm" title="Create VM" class="md-nav__link">
+    Create VM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#compute-node-requirements" title="Compute node requirements" class="md-nav__link">
     Compute node requirements
   </a>
@@ -648,6 +690,22 @@
                 
                 <h3 id="random-useful-commands">Random useful commands</h3>
 <div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">server</span> <span class="n">list</span> <span class="c1">--all -c ID -c Name --host $NOVA_COMPUTE_NAME_HERE -f value</span>
+</pre></div>
+
+
+<h3 id="upload-custom-image">Upload custom image</h3>
+<div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">image</span> <span class="k">create</span> <span class="c1">--disk-format qcow2 --container-format bare --public --file ./cirros-0.4.0-x86_64-disk.img cirros-0.4.0</span>
+</pre></div>
+
+
+<h3 id="create-flavor">Create flavor</h3>
+<div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">flavor</span> <span class="k">create</span> <span class="c1">--ram 1024 --disk 10 --vcpus 1 --public small-flavor</span>
+</pre></div>
+
+
+<h3 id="create-vm">Create VM</h3>
+<div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">server</span> <span class="k">create</span> <span class="c1">--image e090519f-91f6-4c21-baf5-08642d0bd28b --flavor f60498da-a9a9-4772-a05c-75b4aaa6389a --network e23f7863-6e84-4395-bbbb-45877e950f2a cumulus-1</span>
+<span class="n">openstack</span> <span class="n">server</span> <span class="k">create</span> <span class="c1">--image e090519f-91f6-4c21-baf5-08642d0bd28b --flavor f60498da-a9a9-4772-a05c-75b4aaa6389a --network e23f7863-6e84-4395-bbbb-45877e950f2a cumulus-2</span>
 </pre></div>
 
 
