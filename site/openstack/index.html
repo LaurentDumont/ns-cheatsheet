@@ -600,6 +600,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../terraform/" title="Terraform" class="md-nav__link">
+      Terraform
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -688,7 +700,36 @@
                 
                   <h1>Openstack</h1>
                 
-                <h3 id="random-useful-commands">Random useful commands</h3>
+                <div class="codehilite"><pre><span></span>07d76f4e-c920-49ea-af06-bd3c322f16cf
+
+
+openstack router <span class="nb">set</span> --external-gateway EXT_NET --enable-snat --fixed-ip <span class="nv">subnet</span><span class="o">=</span>EXT_SUB,ip-address<span class="o">=</span><span class="m">192</span>.168.70.2
+
+neutron net-create PROV_NET --shared --router:external True --provider:physical_network physnet1 --provider:network_type vlan --provider:segmentation_id <span class="m">71</span>
+neutron subnet-create PROV_NET --name PROV_SUB --disable-dhcp --gateway <span class="m">192</span>.168.71.1 <span class="m">192</span>.168.71.0/24
+
+neutron net-create EXT_NET --router:external True --provider:physical_network physnet1 --provider:network_type vlan --provider:segmentation_id <span class="m">70</span>
+neutron subnet-create EXT_NET --name EXT_SUB --allocation-pool <span class="nv">start</span><span class="o">=</span><span class="m">192</span>.168.70.10,end<span class="o">=</span><span class="m">192</span>.168.70.100 --disable-dhcp --gateway <span class="m">192</span>.168.70.1 <span class="m">192</span>.168.70.0/24
+
+
+
+network : e23f7863-6e84-4395-bbbb-45877e950f2a
+subnet : 5bee0941-8d7f-4869-896d-e34e1f2e8b3d
+
+9ce38b2c-b13b-4e65-8e68-32b146115a62 : openstack port create --fixed-ip <span class="nv">subnet</span><span class="o">=</span>5bee0941-8d7f-4869-896d-e34e1f2e8b3d,ip-address<span class="o">=</span><span class="m">10</span>.100.100.10 --network e23f7863-6e84-4395-bbbb-45877e950f2a cumulus_1
+
+eefa2140-fd69-4daf-8b0d-0eafcf3e24b9 : openstack port create --fixed-ip <span class="nv">subnet</span><span class="o">=</span>5bee0941-8d7f-4869-896d-e34e1f2e8b3d,ip-address<span class="o">=</span><span class="m">10</span>.100.100.11 --network e23f7863-6e84-4395-bbbb-45877e950f2a cumulus_2
+
+
+
+  <span class="m">815</span>  neutron net-create PROV_NET --router:external True --provider:physical_network physnet1 --provider:network_type vlan --provider:segmentation_id <span class="m">71</span>
+  <span class="m">816</span>  neutron subnet-create PROV_NET --name PROV_SUB --allocation-pool <span class="nv">start</span><span class="o">=</span><span class="m">192</span>.168.71.10,end<span class="o">=</span><span class="m">192</span>.168.71.100 --disable-dhcp --gateway <span class="m">192</span>.168.71.1 <span class="m">192</span>.168.71.0/24
+  <span class="m">822</span>  neutron net-create PROV_NET --shared --router:external True --provider:physical_network physnet1 --provider:network_type vlan --provider:segmentation_id <span class="m">71</span>
+  <span class="m">823</span>  neutron subnet-create PROV_NET --name PROV_SUB --disable-dhcp --gateway <span class="m">192</span>.168.71.1 <span class="m">192</span>.168.71.0/24
+</pre></div>
+
+
+<h3 id="random-useful-commands">Random useful commands</h3>
 <div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">server</span> <span class="n">list</span> <span class="c1">--all -c ID -c Name --host $NOVA_COMPUTE_NAME_HERE -f value</span>
 </pre></div>
 
