@@ -40,7 +40,7 @@
     
     
       
-        <title>MySQL/MariaDB - Laurent Dumont - Internet notepad.</title>
+        <title>Terraform - Laurent Dumont - Internet notepad.</title>
       
     
     
@@ -131,7 +131,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#create-database-and-user" tabindex="1" class="md-skip">
+      <a href="#deployment-flow" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -156,7 +156,7 @@
               Laurent Dumont - Internet notepad.
             </span>
             <span class="md-header-nav__topic">
-              MySQL/MariaDB
+              Terraform
             </span>
           
         </div>
@@ -468,45 +468,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        MySQL/MariaDB
-      </label>
-    
-    <a href="./" title="MySQL/MariaDB" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../mysql/" title="MySQL/MariaDB" class="md-nav__link">
       MySQL/MariaDB
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-database-and-user" title="Create Database and user." class="md-nav__link">
-    Create Database and user.
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -562,11 +528,52 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../terraform/" title="Terraform" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Terraform
+      </label>
+    
+    <a href="./" title="Terraform" class="md-nav__link md-nav__link--active">
       Terraform
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-flow" title="Deployment flow" class="md-nav__link">
+    Deployment flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terraform-debug" title="Terraform debug" class="md-nav__link">
+    Terraform debug
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -589,8 +596,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-database-and-user" title="Create Database and user." class="md-nav__link">
-    Create Database and user.
+  <a href="#deployment-flow" title="Deployment flow" class="md-nav__link">
+    Deployment flow
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terraform-debug" title="Terraform debug" class="md-nav__link">
+    Terraform debug
   </a>
   
 </li>
@@ -611,20 +625,19 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/mysql.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/terraform.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>MySQL/MariaDB</h1>
+                  <h1>Terraform</h1>
                 
-                <h3 id="create-database-and-user">Create Database and user.</h3>
-<div class="codehilite"><pre><span></span><span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="ss">`racktables`</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="n">USER</span> <span class="s1">&#39;racktables_user&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;test&#39;</span><span class="p">;</span>
-<span class="k">GRANT</span> <span class="k">ALL</span> <span class="n">privileges</span> <span class="k">ON</span> <span class="ss">`racktables`</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;racktables_user&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="p">;</span>
+                <h3 id="deployment-flow">Deployment flow</h3>
+<div class="codehilite"><pre><span></span><span class="n">terraform</span> <span class="n">init</span>
+<span class="n">terraform</span> <span class="n">apply</span>
+</pre></div>
 
 
-<span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="ss">`netbox`</span><span class="p">;</span>
-<span class="k">CREATE</span> <span class="n">USER</span> <span class="s1">&#39;netbox_user&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;test&#39;</span><span class="p">;</span>
-<span class="k">GRANT</span> <span class="k">ALL</span> <span class="n">privileges</span> <span class="k">ON</span> <span class="ss">`netbox`</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;netbox_user&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="p">;</span>
+<h3 id="terraform-debug">Terraform debug</h3>
+<div class="codehilite"><pre><span></span><span class="n">TF_LOG</span><span class="o">=</span><span class="n">DEBUG</span> <span class="n">OS_DEBUG</span><span class="o">=</span><span class="mi">1</span> <span class="n">terraform</span> <span class="n">apply</span>
 </pre></div>
                 
                   
@@ -646,7 +659,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../postgres/" title="Postgres" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../ovs/" title="OVS" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -655,25 +668,11 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Postgres
+                OVS
               </span>
             </div>
           </a>
         
-        
-          <a href="../lvm/" title="LVM" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                LVM
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
