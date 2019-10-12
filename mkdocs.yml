@@ -28,6 +28,7 @@ nav:
       - Security: security.md
       - Foreman: foreman.md
       - OVS: ovs.md
+      - Terraform: terraform.md
 
     
 #Theme customization
