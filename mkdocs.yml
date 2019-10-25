@@ -29,6 +29,7 @@ nav:
       - Foreman: foreman.md
       - OVS: ovs.md
       - Terraform: terraform.md
+      - Kolla: kolla.md
 
     
 #Theme customization
