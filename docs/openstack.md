@@ -1,3 +1,9 @@
+### Openstack create image with different id.
+Use the `--id` flag
+```
+openstack image create --id cirros-0.4.0 --disk-format qcow2 --container-format bare --public --file ./cirros-0.4.0-x86_64-disk.img cirros-0.4.0
+```
+
 ```bash
 07d76f4e-c920-49ea-af06-bd3c322f16cf
 
@@ -46,7 +52,6 @@ openstack flavor create --ram 1024 --disk 10 --vcpus 1 --public small-flavor
 ```
 openstack server create --image e090519f-91f6-4c21-baf5-08642d0bd28b --flavor f60498da-a9a9-4772-a05c-75b4aaa6389a --network e23f7863-6e84-4395-bbbb-45877e950f2a cumulus-1
 openstack server create --image e090519f-91f6-4c21-baf5-08642d0bd28b --flavor f60498da-a9a9-4772-a05c-75b4aaa6389a --network e23f7863-6e84-4395-bbbb-45877e950f2a cumulus-2
-
 ```
 
 ### Compute node requirements
@@ -54,7 +59,6 @@ openstack server create --image e090519f-91f6-4c21-baf5-08642d0bd28b --flavor f6
 https://docs.openstack.org/nova/rocky/install/compute-install-rdo.html
 https://docs.openstack.org/neutron/rocky/install/compute-install-rdo.html
 https://docs.openstack.org/neutron/rocky/install/compute-install-option1-rdo.html
-
 ```
 
 ### Create a external network with a subnet attached to that network.

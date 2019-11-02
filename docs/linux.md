@@ -249,3 +249,13 @@ EXPORT DEBUG=1
 # Run the failing configure package
 dpkg --configure foreman
 ```
+
+### Docker Hugo
+```
+docker run --rm -it -v /srv/hugo:/src -u hugo laurentfdumont/laurent-hugo hugo new site mysite
+docker run --rm -it -v /srv/hugo/mysite:/src -u hugo laurentfdumont/laurent-hugo hugo new posts/my-first-post.md
+docker run --rm -it -v /srv/hugo/mysite/:/src -u hugo laurentfdumont/laurent-hugo hugo
+docker run --rm -it -v /srv/hugo/mysite:/src -p 1313:1313 -u hugo laurentfdumont/laurent-hugo hugo server -b http://linode2.coldnorthadmin.com -w --bind=0.0.0.0
+docker run --rm -it -v /srv/hugo/mysite:/src -u hugo laurentfdumont/laurent-hugo hugo new posts/my-first-post.md
+docker run --rm -it -v /srv/hugo:/src -u hugo jguyomard/hugo-builder hugo new site mysite 
+```
