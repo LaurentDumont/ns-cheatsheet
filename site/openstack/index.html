@@ -131,7 +131,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#random-useful-commands" tabindex="1" class="md-skip">
+      <a href="#openstack-create-image-with-different-id" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -421,6 +421,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#openstack-create-image-with-different-id" title="Openstack create image with different id." class="md-nav__link">
+    Openstack create image with different id.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#random-useful-commands" title="Random useful commands" class="md-nav__link">
     Random useful commands
   </a>
@@ -643,6 +650,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#openstack-create-image-with-different-id" title="Openstack create image with different id." class="md-nav__link">
+    Openstack create image with different id.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#random-useful-commands" title="Random useful commands" class="md-nav__link">
     Random useful commands
   </a>
@@ -712,7 +726,13 @@
                 
                   <h1>Openstack</h1>
                 
-                <div class="codehilite"><pre><span></span>07d76f4e-c920-49ea-af06-bd3c322f16cf
+                <h3 id="openstack-create-image-with-different-id">Openstack create image with different id.</h3>
+<p>Use the <code>--id</code> flag</p>
+<div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">image</span> <span class="k">create</span> <span class="c1">--id cirros-0.4.0 --disk-format qcow2 --container-format bare --public --file ./cirros-0.4.0-x86_64-disk.img cirros-0.4.0</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span>07d76f4e-c920-49ea-af06-bd3c322f16cf
 
 
 openstack router <span class="nb">set</span> --external-gateway EXT_NET --enable-snat --fixed-ip <span class="nv">subnet</span><span class="o">=</span>EXT_SUB,ip-address<span class="o">=</span><span class="m">192</span>.168.70.2
