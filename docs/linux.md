@@ -259,3 +259,38 @@ docker run --rm -it -v /srv/hugo/mysite:/src -p 1313:1313 -u hugo laurentfdumont
 docker run --rm -it -v /srv/hugo/mysite:/src -u hugo laurentfdumont/laurent-hugo hugo new posts/my-first-post.md
 docker run --rm -it -v /srv/hugo:/src -u hugo jguyomard/hugo-builder hugo new site mysite 
 ```
+
+### Check and clean for FSTRIM
+
+Only support for SCSI disk - proxmox.
+
+```
+#Check TRIM support status
+lsblk -D
+
+### BAD NO support
+root@kolla-controller003:~# lsblk -D
+NAME              DISC-ALN DISC-GRAN DISC-MAX DISC-ZERO
+vda                      0        0B       0B         0
+|-vda1                   0        0B       0B         0
+|-vda2                   0        0B       0B         0
+`-vda5                   0        0B       0B         0
+  |-system-root          0        0B       0B         0
+  `-system-swap_1        0        0B       0B         0
+
+### OK support
+root@kolla-compute004:~# lsblk -D
+NAME              DISC-ALN DISC-GRAN DISC-MAX DISC-ZERO
+sda                      0        4K       1G         0
+|-sda1                   0        4K       1G         0
+|-sda2                1024        4K       1G         0
+`-sda5                   0        4K       1G         0
+  |-system-root          0        4K       1G         0
+  `-system-swap_1        0        4K       1G         0
+
+### Start TRIM PROCESS
+fstrim -av
+root@kolla-compute004:~# fstrim -av
+/boot: 755.4 MiB (792125440 bytes) trimmed
+/: 49 GiB (52552167424 bytes) trimmed
+```
