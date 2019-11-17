@@ -499,6 +499,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#check-galera-status" title="Check Galera status" class="md-nav__link">
+    Check Galera status
+  </a>
+  
+</li>
+      
       
       
       
@@ -607,6 +614,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#check-galera-status" title="Check Galera status" class="md-nav__link">
+    Check Galera status
+  </a>
+  
+</li>
+      
       
       
       
@@ -637,6 +651,11 @@
 <span class="k">CREATE</span> <span class="k">DATABASE</span> <span class="ss">`netbox`</span><span class="p">;</span>
 <span class="k">CREATE</span> <span class="n">USER</span> <span class="s1">&#39;netbox_user&#39;</span> <span class="n">IDENTIFIED</span> <span class="k">BY</span> <span class="s1">&#39;test&#39;</span><span class="p">;</span>
 <span class="k">GRANT</span> <span class="k">ALL</span> <span class="n">privileges</span> <span class="k">ON</span> <span class="ss">`netbox`</span><span class="p">.</span><span class="o">*</span> <span class="k">TO</span> <span class="s1">&#39;netbox_user&#39;</span><span class="o">@</span><span class="s1">&#39;%&#39;</span><span class="p">;</span>
+</pre></div>
+
+
+<h3 id="check-galera-status">Check Galera status</h3>
+<div class="codehilite"><pre><span></span><span class="nv">MariaDB</span> [<span class="ss">(</span><span class="nv">none</span><span class="ss">)</span>]<span class="o">&gt;</span> <span class="k">SHOW</span> <span class="nv">GLOBAL</span> <span class="nv">STATUS</span> <span class="nv">LIKE</span> <span class="s1">&#39;</span><span class="s">wsrep_%</span><span class="s1">&#39;</span><span class="c1">;</span>
 </pre></div>
                 
                   
