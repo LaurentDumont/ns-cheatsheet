@@ -18,7 +18,6 @@ openstack image create --id cirros-0.4.0 --disk-format qcow2 --container-format 
 ```bash
 07d76f4e-c920-49ea-af06-bd3c322f16cf
 
-
 openstack router set --external-gateway EXT_NET --enable-snat --fixed-ip subnet=EXT_SUB,ip-address=192.168.70.2
 
 neutron net-create PROV_NET --shared --router:external True --provider:physical_network physnet1 --provider:network_type vlan --provider:segmentation_id 71
@@ -27,16 +26,12 @@ neutron subnet-create PROV_NET --name PROV_SUB --disable-dhcp --gateway 192.168.
 neutron net-create EXT_NET --router:external True --provider:physical_network physnet1 --provider:network_type vlan --provider:segmentation_id 70
 neutron subnet-create EXT_NET --name EXT_SUB --allocation-pool start=192.168.70.10,end=192.168.70.100 --disable-dhcp --gateway 192.168.70.1 192.168.70.0/24
 
-
-
 network : e23f7863-6e84-4395-bbbb-45877e950f2a
 subnet : 5bee0941-8d7f-4869-896d-e34e1f2e8b3d
 
 9ce38b2c-b13b-4e65-8e68-32b146115a62 : openstack port create --fixed-ip subnet=5bee0941-8d7f-4869-896d-e34e1f2e8b3d,ip-address=10.100.100.10 --network e23f7863-6e84-4395-bbbb-45877e950f2a cumulus_1
 
 eefa2140-fd69-4daf-8b0d-0eafcf3e24b9 : openstack port create --fixed-ip subnet=5bee0941-8d7f-4869-896d-e34e1f2e8b3d,ip-address=10.100.100.11 --network e23f7863-6e84-4395-bbbb-45877e950f2a cumulus_2
-
-
 
   815  neutron net-create PROV_NET --router:external True --provider:physical_network physnet1 --provider:network_type vlan --provider:segmentation_id 71
   816  neutron subnet-create PROV_NET --name PROV_SUB --allocation-pool start=192.168.71.10,end=192.168.71.100 --disable-dhcp --gateway 192.168.71.1 192.168.71.0/24
