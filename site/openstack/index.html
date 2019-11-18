@@ -131,7 +131,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#openstack-create-image-with-different-id" tabindex="1" class="md-skip">
+      <a href="#migrate-to-specific-compute" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -421,6 +421,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#migrate-to-specific-compute" title="Migrate to specific compute" class="md-nav__link">
+    Migrate to specific compute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migrate-single-server-from-compute" title="Migrate single server from compute" class="md-nav__link">
+    Migrate single server from compute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#openstack-create-image-with-different-id" title="Openstack create image with different id." class="md-nav__link">
     Openstack create image with different id.
   </a>
@@ -650,6 +664,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#migrate-to-specific-compute" title="Migrate to specific compute" class="md-nav__link">
+    Migrate to specific compute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#migrate-single-server-from-compute" title="Migrate single server from compute" class="md-nav__link">
+    Migrate single server from compute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#openstack-create-image-with-different-id" title="Openstack create image with different id." class="md-nav__link">
     Openstack create image with different id.
   </a>
@@ -726,7 +754,18 @@
                 
                   <h1>Openstack</h1>
                 
-                <h3 id="openstack-create-image-with-different-id">Openstack create image with different id.</h3>
+                <h3 id="migrate-to-specific-compute">Migrate to specific compute</h3>
+<div class="codehilite"><pre><span></span><span class="n">nova</span> <span class="k">host</span><span class="o">-</span><span class="n">evacuate</span> <span class="c1">--target_host kolla-compute003 kolla-compute004.cmaker.studio</span>
+<span class="n">watch</span> <span class="n">nova</span> <span class="n">migration</span><span class="o">-</span><span class="n">list</span>
+</pre></div>
+
+
+<h3 id="migrate-single-server-from-compute">Migrate single server from compute</h3>
+<div class="codehilite"><pre><span></span><span class="n">nova</span> <span class="n">evacuate</span> <span class="mi">1</span><span class="n">d6a436b</span><span class="o">-</span><span class="n">e18e</span><span class="o">-</span><span class="mi">45</span><span class="n">ce</span><span class="o">-</span><span class="mi">8</span><span class="n">b01</span><span class="o">-</span><span class="n">bee4a7126f81</span>
+</pre></div>
+
+
+<h3 id="openstack-create-image-with-different-id">Openstack create image with different id.</h3>
 <p>Use the <code>--id</code> flag</p>
 <div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">image</span> <span class="k">create</span> <span class="c1">--id cirros-0.4.0 --disk-format qcow2 --container-format bare --public --file ./cirros-0.4.0-x86_64-disk.img cirros-0.4.0</span>
 </pre></div>
