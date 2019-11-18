@@ -1,3 +1,14 @@
+### Migrate to specific compute
+```
+nova host-evacuate --target_host kolla-compute003 kolla-compute004.cmaker.studio
+watch nova migration-list
+```
+
+### Migrate single server from compute
+```
+nova evacuate 1d6a436b-e18e-45ce-8b01-bee4a7126f81
+```
+
 ### Openstack create image with different id.
 Use the `--id` flag
 ```
