@@ -131,7 +131,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#migrate-to-specific-compute" tabindex="1" class="md-skip">
+      <a href="#general-troubleshoot-shamelessly-stolen-from" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -421,6 +421,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#general-troubleshoot-shamelessly-stolen-from" title="General troubleshoot - Shamelessly stolen from :" class="md-nav__link">
+    General troubleshoot - Shamelessly stolen from :
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#migrate-to-specific-compute" title="Migrate to specific compute" class="md-nav__link">
     Migrate to specific compute
   </a>
@@ -664,6 +671,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#general-troubleshoot-shamelessly-stolen-from" title="General troubleshoot - Shamelessly stolen from :" class="md-nav__link">
+    General troubleshoot - Shamelessly stolen from :
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#migrate-to-specific-compute" title="Migrate to specific compute" class="md-nav__link">
     Migrate to specific compute
   </a>
@@ -754,7 +768,40 @@
                 
                   <h1>Openstack</h1>
                 
-                <h3 id="migrate-to-specific-compute">Migrate to specific compute</h3>
+                <h3 id="general-troubleshoot-shamelessly-stolen-from">General troubleshoot - Shamelessly stolen from :</h3>
+<div class="codehilite"><pre><span></span><span class="c1"># list VMs on all hypervisor</span>
+openstack server list --all --long  -c Name -c Host
+
+<span class="c1"># list VMs on specific hypervisor</span>
+openstack server list --all -c Name -f value --host <span class="si">${</span><span class="nv">COMPUTE_NODE</span><span class="si">}</span>
+
+<span class="c1"># get VM count by hypervisor</span>
+openstack server list --all --long  -c Host -f value <span class="p">|</span> sort <span class="p">|</span> uniq -c
+
+<span class="c1"># list compute nodes</span>
+openstack compute service list
+
+<span class="c1"># list compute service</span>
+openstack compute service list --host <span class="si">${</span><span class="nv">OS_NODE</span><span class="si">}</span>
+
+<span class="c1"># disable compute service</span>
+<span class="k">for</span> OS_SERVICE in <span class="k">$(</span>openstack compute service list --host <span class="si">${</span><span class="nv">OS_NODE</span><span class="si">}</span> -c Binary -f value<span class="k">)</span><span class="p">;</span> <span class="k">do</span>
+    openstack compute service <span class="nb">set</span> --disable --disable-reason <span class="s2">&quot;Maintenance&quot;</span> <span class="si">${</span><span class="nv">OS_NODE</span><span class="si">}</span> <span class="si">${</span><span class="nv">OS_SERVICE</span><span class="si">}</span>
+<span class="k">done</span>
+
+<span class="c1"># Search for server witch status error</span>
+openstack server list --all --status ERROR
+
+<span class="c1"># Search for server with status resizing</span>
+openstack server list --all --status<span class="o">=</span>VERIFY_RESIZE
+
+<span class="c1"># List instances / VMs</span>
+openstack server list
+openstack server list -c ID -c Name -c Status -c Networks -c Host --long
+</pre></div>
+
+
+<h3 id="migrate-to-specific-compute">Migrate to specific compute</h3>
 <div class="codehilite"><pre><span></span><span class="n">nova</span> <span class="k">host</span><span class="o">-</span><span class="n">evacuate</span> <span class="c1">--target_host kolla-compute003 kolla-compute004.cmaker.studio</span>
 <span class="n">watch</span> <span class="n">nova</span> <span class="n">migration</span><span class="o">-</span><span class="n">list</span>
 </pre></div>
