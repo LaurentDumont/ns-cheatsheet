@@ -1,3 +1,36 @@
+### General troubleshoot - Shamelessly stolen from : 
+```bash
+# list VMs on all hypervisor
+openstack server list --all --long  -c Name -c Host
+ 
+# list VMs on specific hypervisor
+openstack server list --all -c Name -f value --host ${COMPUTE_NODE}
+ 
+# get VM count by hypervisor
+openstack server list --all --long  -c Host -f value | sort | uniq -c
+ 
+# list compute nodes
+openstack compute service list
+ 
+# list compute service
+openstack compute service list --host ${OS_NODE}
+ 
+# disable compute service
+for OS_SERVICE in $(openstack compute service list --host ${OS_NODE} -c Binary -f value); do
+    openstack compute service set --disable --disable-reason "Maintenance" ${OS_NODE} ${OS_SERVICE}
+done
+ 
+# Search for server witch status error
+openstack server list --all --status ERROR
+ 
+# Search for server with status resizing
+openstack server list --all --status=VERIFY_RESIZE
+ 
+# List instances / VMs
+openstack server list
+openstack server list -c ID -c Name -c Status -c Networks -c Host --long
+```
+
 ### Migrate to specific compute
 ```
 nova host-evacuate --target_host kolla-compute003 kolla-compute004.cmaker.studio
