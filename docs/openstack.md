@@ -66,10 +66,10 @@ subnet : 5bee0941-8d7f-4869-896d-e34e1f2e8b3d
 
 eefa2140-fd69-4daf-8b0d-0eafcf3e24b9 : openstack port create --fixed-ip subnet=5bee0941-8d7f-4869-896d-e34e1f2e8b3d,ip-address=10.100.100.11 --network e23f7863-6e84-4395-bbbb-45877e950f2a cumulus_2
 
-  815  neutron net-create PROV_NET --router:external True --provider:physical_network physnet1 --provider:network_type vlan --provider:segmentation_id 71
-  816  neutron subnet-create PROV_NET --name PROV_SUB --allocation-pool start=192.168.71.10,end=192.168.71.100 --disable-dhcp --gateway 192.168.71.1 192.168.71.0/24
-  822  neutron net-create PROV_NET --shared --router:external True --provider:physical_network physnet1 --provider:network_type vlan --provider:segmentation_id 71
-  823  neutron subnet-create PROV_NET --name PROV_SUB --disable-dhcp --gateway 192.168.71.1 192.168.71.0/24
+neutron net-create PROV_NET --router:external True --provider:physical_network physnet1 --provider:network_type vlan --provider:segmentation_id 71
+neutron subnet-create PROV_NET --name PROV_SUB --allocation-pool start=192.168.71.10,end=192.168.71.100 --disable-dhcp --gateway 192.168.71.1 192.168.71.0/24
+neutron net-create PROV_NET --shared --router:external True --provider:physical_network physnet1 --provider:network_type vlan --provider:segmentation_id 71
+neutron subnet-create PROV_NET --name PROV_SUB --disable-dhcp --gateway 192.168.71.1 192.168.71.0/24
 ```
 
 ### Random useful commands
