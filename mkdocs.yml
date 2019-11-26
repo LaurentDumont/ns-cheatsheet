@@ -2,7 +2,7 @@
 site_name: Laurent Dumont - Internet notepad.
 site_description: 'My own little space'
 site_author: 'Laurent Dumont'
-google_analytics: ['UA-51757315-3', 'cheat.northernsysadmin.com']
+google_analytics: ['UA-51757315-3']
 
 #Page list
 nav:
