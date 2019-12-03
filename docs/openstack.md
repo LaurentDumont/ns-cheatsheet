@@ -85,6 +85,21 @@ openstack image create --disk-format qcow2 --container-format bare --public --fi
 ### Create flavor
 ```
 openstack flavor create --ram 1024 --disk 10 --vcpus 1 --public small-flavor
+
+openstack flavor create --ram 16384 --disk 21 --vcpus 8 \
+--private \
+--project $PROJECT_ID_HERE \
+--property aggregate_instance_extra_specs:$HOST_AGG_NAME_HERE='true' \
+--property hw:cpu_policy='dedicated' \
+--property hw:cpu_thread_policy='prefer' \
+--property hw:mem_page_size='1GB' \
+--property hw:numa_cpus.0='1-7' \
+--property hw:numa_cpus.1='0' \
+--property hw:numa_mem.0='8192' \
+--property hw:numa_mem.1='8192' \
+--property hw:numa_mempolicy='strict' \
+--property hw:numa_nodes='2' \
+TEST
 ```
 
 ### Create VM

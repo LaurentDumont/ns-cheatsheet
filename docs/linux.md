@@ -294,3 +294,36 @@ root@kolla-compute004:~# fstrim -av
 /boot: 755.4 MiB (792125440 bytes) trimmed
 /: 49 GiB (52552167424 bytes) trimmed
 ```
+
+### Reduce swap size and increase root FS size
+```
+# Disable swap temporarly.
+swapoff -a
+
+# Reduce swap paritition.
+lvreduce /dev/superbacon-vg/swap_1 -L -67G
+
+# Extend LVM root paritition.
+lvextend /dev/superbacon-vg/root -L +67G
+
+# Extend actual partition size.
+resize2fs /dev/superbacon-vg/root
+
+# Recreate swap partition
+mkswap /dev/superbacon-vg/swap_1
+
+# Re-enable swap partition
+swapon -a
+```
+
+### Mount disk to linux
+```
+# Create an ext4 partition.
+mkfs.ext4 /dev/vg-storage/lv-storage
+
+# Mount the partition to test.
+mount -t ext4 /dev/vg-storage/lv-storage /mnt
+
+# Mount in /etc/fstab
+/dev/mapper/vg--storage-lv--storage /storage    ext4    defaults,nofail        0    1
+```

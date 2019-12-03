@@ -9,6 +9,7 @@ nav:
       - Home: index.md
       - Cisco: cisco.md
       - Cisco-CCNA: ccna.md
+      - Elasticsearch: elasticsearch.md
       - Generic Linux: linux.md
       - Gluster: gluster.md
       - Prometheus: prometheus.md
