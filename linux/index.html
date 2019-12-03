@@ -300,6 +300,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../elasticsearch/" title="Elasticsearch" class="md-nav__link">
+      Elasticsearch
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -446,6 +458,20 @@
         <li class="md-nav__item">
   <a href="#check-and-clean-for-fstrim" title="Check and clean for FSTRIM" class="md-nav__link">
     Check and clean for FSTRIM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reduce-swap-size-and-increase-root-fs-size" title="Reduce swap size and increase root FS size" class="md-nav__link">
+    Reduce swap size and increase root FS size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mount-disk-to-linux" title="Mount disk to linux" class="md-nav__link">
+    Mount disk to linux
   </a>
   
 </li>
@@ -845,6 +871,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#reduce-swap-size-and-increase-root-fs-size" title="Reduce swap size and increase root FS size" class="md-nav__link">
+    Reduce swap size and increase root FS size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mount-disk-to-linux" title="Mount disk to linux" class="md-nav__link">
+    Mount disk to linux
+  </a>
+  
+</li>
+      
       
       
       
@@ -1149,6 +1189,39 @@ sudo service network-manager restart
 <span class="o">/</span><span class="nl">boot</span><span class="p">:</span><span class="w"> </span><span class="mf">755.4</span><span class="w"> </span><span class="n">MiB</span><span class="w"> </span><span class="p">(</span><span class="mi">792125440</span><span class="w"> </span><span class="n">bytes</span><span class="p">)</span><span class="w"> </span><span class="n">trimmed</span><span class="w"></span>
 <span class="o">/</span><span class="err">:</span><span class="w"> </span><span class="mi">49</span><span class="w"> </span><span class="n">GiB</span><span class="w"> </span><span class="p">(</span><span class="mi">52552167424</span><span class="w"> </span><span class="n">bytes</span><span class="p">)</span><span class="w"> </span><span class="n">trimmed</span><span class="w"></span>
 </pre></div>
+
+
+<h3 id="reduce-swap-size-and-increase-root-fs-size">Reduce swap size and increase root FS size</h3>
+<div class="codehilite"><pre><span></span><span class="o">#</span> <span class="n">Disable</span> <span class="n">swap</span> <span class="n">temporarly</span><span class="p">.</span>
+<span class="n">swapoff</span> <span class="o">-</span><span class="n">a</span>
+
+<span class="o">#</span> <span class="n">Reduce</span> <span class="n">swap</span> <span class="n">paritition</span><span class="p">.</span>
+<span class="n">lvreduce</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">superbacon</span><span class="o">-</span><span class="n">vg</span><span class="o">/</span><span class="n">swap_1</span> <span class="o">-</span><span class="n">L</span> <span class="o">-</span><span class="mi">67</span><span class="k">G</span>
+
+<span class="o">#</span> <span class="n">Extend</span> <span class="n">LVM</span> <span class="n">root</span> <span class="n">paritition</span><span class="p">.</span>
+<span class="n">lvextend</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">superbacon</span><span class="o">-</span><span class="n">vg</span><span class="o">/</span><span class="n">root</span> <span class="o">-</span><span class="n">L</span> <span class="o">+</span><span class="mi">67</span><span class="k">G</span>
+
+<span class="o">#</span> <span class="n">Extend</span> <span class="n">actual</span> <span class="n">partition</span> <span class="k">size</span><span class="p">.</span>
+<span class="n">resize2fs</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">superbacon</span><span class="o">-</span><span class="n">vg</span><span class="o">/</span><span class="n">root</span>
+
+<span class="o">#</span> <span class="n">Recreate</span> <span class="n">swap</span> <span class="n">partition</span>
+<span class="n">mkswap</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">superbacon</span><span class="o">-</span><span class="n">vg</span><span class="o">/</span><span class="n">swap_1</span>
+
+<span class="o">#</span> <span class="n">Re</span><span class="o">-</span><span class="n">enable</span> <span class="n">swap</span> <span class="n">partition</span>
+<span class="n">swapon</span> <span class="o">-</span><span class="n">a</span>
+</pre></div>
+
+
+<h3 id="mount-disk-to-linux">Mount disk to linux</h3>
+<div class="codehilite"><pre><span></span><span class="o">#</span> <span class="k">Create</span> <span class="n">an</span> <span class="n">ext4</span> <span class="n">partition</span><span class="p">.</span>
+<span class="n">mkfs</span><span class="p">.</span><span class="n">ext4</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">vg</span><span class="o">-</span><span class="k">storage</span><span class="o">/</span><span class="n">lv</span><span class="o">-</span><span class="k">storage</span>
+
+<span class="o">#</span> <span class="n">Mount</span> <span class="n">the</span> <span class="n">partition</span> <span class="k">to</span> <span class="n">test</span><span class="p">.</span>
+<span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">ext4</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">vg</span><span class="o">-</span><span class="k">storage</span><span class="o">/</span><span class="n">lv</span><span class="o">-</span><span class="k">storage</span> <span class="o">/</span><span class="n">mnt</span>
+
+<span class="o">#</span> <span class="n">Mount</span> <span class="k">in</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fstab</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">mapper</span><span class="o">/</span><span class="n">vg</span><span class="c1">--storage-lv--storage /storage    ext4    defaults,nofail        0    1</span>
+</pre></div>
                 
                   
                 
@@ -1169,7 +1242,7 @@ sudo service network-manager restart
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ccna/" title="Cisco-CCNA" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../elasticsearch/" title="Elasticsearch" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1178,7 +1251,7 @@ sudo service network-manager restart
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Cisco-CCNA
+                Elasticsearch
               </span>
             </div>
           </a>

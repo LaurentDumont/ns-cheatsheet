@@ -302,6 +302,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../elasticsearch/" title="Elasticsearch" class="md-nav__link">
+      Elasticsearch
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../linux/" title="Generic Linux" class="md-nav__link">
       Generic Linux
     </a>
@@ -854,6 +866,21 @@ neutron subnet-create PROV_NET --name PROV_SUB --disable-dhcp --gateway <span cl
 
 <h3 id="create-flavor">Create flavor</h3>
 <div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">flavor</span> <span class="k">create</span> <span class="c1">--ram 1024 --disk 10 --vcpus 1 --public small-flavor</span>
+
+<span class="n">openstack</span> <span class="n">flavor</span> <span class="k">create</span> <span class="c1">--ram 16384 --disk 21 --vcpus 8 \</span>
+<span class="c1">--private \</span>
+<span class="c1">--project $PROJECT_ID_HERE \</span>
+<span class="c1">--property aggregate_instance_extra_specs:$HOST_AGG_NAME_HERE=&#39;true&#39; \</span>
+<span class="c1">--property hw:cpu_policy=&#39;dedicated&#39; \</span>
+<span class="c1">--property hw:cpu_thread_policy=&#39;prefer&#39; \</span>
+<span class="c1">--property hw:mem_page_size=&#39;1GB&#39; \</span>
+<span class="c1">--property hw:numa_cpus.0=&#39;1-7&#39; \</span>
+<span class="c1">--property hw:numa_cpus.1=&#39;0&#39; \</span>
+<span class="c1">--property hw:numa_mem.0=&#39;8192&#39; \</span>
+<span class="c1">--property hw:numa_mem.1=&#39;8192&#39; \</span>
+<span class="c1">--property hw:numa_mempolicy=&#39;strict&#39; \</span>
+<span class="c1">--property hw:numa_nodes=&#39;2&#39; \</span>
+<span class="n">TEST</span>
 </pre></div>
 
 
