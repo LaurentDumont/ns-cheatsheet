@@ -131,7 +131,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#docker-install-bash-script" tabindex="1" class="md-skip">
+      <a href="#stop-all-docker-containers-matching-pattern" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -445,6 +445,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#stop-all-docker-containers-matching-pattern" title="Stop all Docker containers matching pattern" class="md-nav__link">
+    Stop all Docker containers matching pattern
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker-install-bash-script" title="Docker install bash script." class="md-nav__link">
     Docker install bash script.
   </a>
@@ -629,6 +636,18 @@
   </li>
 
     
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../opnfv/" title="OPNFV" class="md-nav__link">
+      OPNFV
+    </a>
+  </li>
+
+    
   </ul>
 </nav>
                   </div>
@@ -646,6 +665,13 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stop-all-docker-containers-matching-pattern" title="Stop all Docker containers matching pattern" class="md-nav__link">
+    Stop all Docker containers matching pattern
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#docker-install-bash-script" title="Docker install bash script." class="md-nav__link">
@@ -710,7 +736,12 @@
                 
                   <h1>Docker</h1>
                 
-                <h3 id="docker-install-bash-script">Docker install bash script.</h3>
+                <h3 id="stop-all-docker-containers-matching-pattern">Stop all Docker containers matching pattern</h3>
+<div class="codehilite"><pre><span></span>sudo docker ps <span class="p">|</span> awk <span class="s1">&#39;/swift_/ {print $NF}&#39;</span> <span class="p">|</span> xargs -I <span class="o">{}</span> sudo docker stop <span class="o">{}</span>
+</pre></div>
+
+
+<h3 id="docker-install-bash-script">Docker install bash script.</h3>
 <div class="codehilite"><pre><span></span><span class="o">#</span><span class="n">Install</span> <span class="n">docker</span>
 <span class="o">#!/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span>
 
