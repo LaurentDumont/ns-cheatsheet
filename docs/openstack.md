@@ -1,4 +1,4 @@
-### General troubleshoot - Shamelessly stolen from : 
+### General troubleshoot - Shamelessly stolen from : http://www.panticz.de/index.php/openstack
 ```bash
 # list VMs on all hypervisor
 openstack server list --all --long  -c Name -c Host

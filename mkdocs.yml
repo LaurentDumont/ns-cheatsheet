@@ -31,6 +31,7 @@ nav:
       - OVS: ovs.md
       - Terraform: terraform.md
       - Kolla: kolla.md
+      - OPNFV: opnfv.md
 
     
 #Theme customization

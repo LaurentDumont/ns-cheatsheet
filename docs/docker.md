@@ -1,3 +1,9 @@
+### Stop all Docker containers matching pattern
+```shell
+sudo docker ps | awk '/swift_/ {print $NF}' | xargs -I {} sudo docker stop {}
+```
+
+
 ### Docker install bash script.
 
 ```
