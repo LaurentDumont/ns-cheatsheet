@@ -1,5 +1,34 @@
-z### General Troubleshooting
+### General Troubleshooting
 **IOS-XR**
+
+```
+#IPV4
+show arp vrf $VRF_NAME  Te0/0/0/6.200
+
+#IPV6
+show ipv6 neighbors vrf $VRF_NAME Te0/0/0/6.198
+```
+
+```
+show bgp vrf BMCE ipv6 unicast summary
+show bgp vrf BMCE ipv4 unicast summary
+```
+```
+show bfd ipv6 session
+show bfd ipv4 session
+```
+
+```
+show running-config  | utility egrep -C5 bfd
+show isis neighbors
+show bgp ipv4 all summary
+```
+
+### Show control plane policing
+
+```
+show running-config control-plane
+```
 
 **!Check Policy-Map drops/number of packet matching the policy.**
 
@@ -128,6 +157,20 @@ Show IOS-XE Memory usage (not IOS)
 show platform software status control-processor brief
 ```
 
+### Cisco barebones IOSXR BGP config
+```
+router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253
+router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 remote-as 65505
+router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 bfd fast-detect
+router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 bfd multiplier 3
+router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 bfd minimum-interval 100
+router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 address-family ipv4 unicast
+router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 address-family ipv4 unicast route-policy pass-all in
+router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 address-family ipv4 unicast route-policy pass-all out
+router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 address-family ipv4 unicast as-override
+router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 address-family ipv4 unicast soft-reconfiguration inbound always
+```
+
 ### Cisco Radius
 
 ```
@@ -144,4 +187,10 @@ aaa authentication login default group DHMTL-RADIUS local
 aaa authorization exec default group DHMTL-RADIUS local
 aaa accounting commands 15 default start-stop group DHMTL-TACACS
 aaa accounting commands 3 default start-stop group DHMTL-TACACS
+```
+
+### Activate Telnet on IOS-XR
+```
+telnet vrf management ipv4 server max-servers 10
+telnet vrf $VRF_NAME ipv6 server max-servers $MAX_CONCURRENT_TELNET_CONNECTIONS
 ```

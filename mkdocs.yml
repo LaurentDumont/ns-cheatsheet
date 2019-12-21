@@ -6,32 +6,32 @@ google_analytics: ['UA-51757315-3', 'auto']
 
 #Page list
 nav:
-      - Home: index.md
-      - Cisco: cisco.md
+      - Chef: chef.md
       - Cisco-CCNA: ccna.md
+      - Cisco: cisco.md
+      - Docker: docker.md
       - Elasticsearch: elasticsearch.md
+      - Foreman: foreman.md
       - Generic Linux: linux.md
+      - Git: git.md
       - Gluster: gluster.md
-      - Prometheus: prometheus.md
+      - Home: index.md
       - iPerf: iperf.md
       - Juniper: juniper.md
-      - Netbox: netbox.md
-      - Splunk: splunk.md
-      - Chef: chef.md
-      - Openstack: openstack.md
-      - Docker: docker.md
-      - Molecule: molecule.md
-      - Git: git.md
-      - MAAS: maas.md
-      - Postgres: postgres.md
-      - MySQL/MariaDB: mysql.md
-      - LVM: lvm.md
-      - Security: security.md
-      - Foreman: foreman.md
-      - OVS: ovs.md
-      - Terraform: terraform.md
       - Kolla: kolla.md
+      - LVM: lvm.md
+      - MAAS: maas.md
+      - Molecule: molecule.md
+      - MySQL/MariaDB: mysql.md
+      - Netbox: netbox.md
+      - Openstack: openstack.md
       - OPNFV: opnfv.md
+      - OVS: ovs.md
+      - Postgres: postgres.md
+      - Prometheus: prometheus.md
+      - Security: security.md
+      - Splunk: splunk.md
+      - Terraform: terraform.md
 
     
 #Theme customization

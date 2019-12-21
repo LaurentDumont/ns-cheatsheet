@@ -327,3 +327,8 @@ mount -t ext4 /dev/vg-storage/lv-storage /mnt
 # Mount in /etc/fstab
 /dev/mapper/vg--storage-lv--storage /storage    ext4    defaults,nofail        0    1
 ```
+
+### Check ISCSI disks
+```
+sudo lsblk -S
+```

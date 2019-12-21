@@ -3,6 +3,14 @@
 sudo docker ps | awk '/swift_/ {print $NF}' | xargs -I {} sudo docker stop {}
 ```
 
+### Enter Namespace of the container
+```bash
+sudo docker inspect -f '{{.State.Pid}}' 744d1fc3fdff
+57752
+
+# Enter the Network namespace.
+sudo nsenter -t 57752 --net bash     
+```
 
 ### Docker install bash script.
 
