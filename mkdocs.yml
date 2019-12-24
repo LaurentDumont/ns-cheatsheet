@@ -19,6 +19,7 @@ nav:
       - iPerf: iperf.md
       - Juniper: juniper.md
       - Kolla: kolla.md
+      - KVM: kvm.md
       - LVM: lvm.md
       - MAAS: maas.md
       - Molecule: molecule.md

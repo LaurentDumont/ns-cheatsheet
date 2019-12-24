@@ -332,3 +332,10 @@ mount -t ext4 /dev/vg-storage/lv-storage /mnt
 ```
 sudo lsblk -S
 ```
+
+### Boot logs
+```
+/var/log/boot.log  ---  System boot log
+
+/var/log/dmesg     ---  print or control the kernel ring buffer
+```
