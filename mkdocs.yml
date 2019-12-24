@@ -32,6 +32,7 @@ nav:
       - Prometheus: prometheus.md
       - Security: security.md
       - Splunk: splunk.md
+      - Tripleo: tripleo.md
       - Terraform: terraform.md
 
     
