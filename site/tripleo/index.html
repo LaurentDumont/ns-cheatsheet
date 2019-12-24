@@ -40,7 +40,7 @@
     
     
       
-        <title>Security - Laurent Dumont - Internet notepad.</title>
+        <title>Tripleo - Laurent Dumont - Internet notepad.</title>
       
     
     
@@ -131,7 +131,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#disable-rpcbind" tabindex="1" class="md-skip">
+      <a href="#undercloud-deployment" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -156,7 +156,7 @@
               Laurent Dumont - Internet notepad.
             </span>
             <span class="md-header-nav__topic">
-              Security
+              Tripleo
             </span>
           
         </div>
@@ -552,45 +552,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Security
-      </label>
-    
-    <a href="./" title="Security" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../security/" title="Security" class="md-nav__link">
       Security
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#disable-rpcbind" title="Disable RPCBind." class="md-nav__link">
-    Disable RPCBind.
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -637,8 +603,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#disable-rpcbind" title="Disable RPCBind." class="md-nav__link">
-    Disable RPCBind.
+  <a href="#undercloud-deployment" title="Undercloud deployment" class="md-nav__link">
+    Undercloud deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-packages-for-centos" title="Get the packages for Centos" class="md-nav__link">
+    Get the packages for Centos
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-the-train-repository" title="Install the Train repository" class="md-nav__link">
+    Install the Train repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-the-tripleo-cli-client-lots-of-stuff-to-install" title="Get the TripleO CLI client (lots of stuff to install)" class="md-nav__link">
+    Get the TripleO CLI client (lots of stuff to install)
   </a>
   
 </li>
@@ -659,17 +646,34 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/security.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/tripleo.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Security</h1>
+                  <h1>Tripleo</h1>
                 
-                <h3 id="disable-rpcbind">Disable RPCBind.</h3>
-<div class="codehilite"><pre><span></span><span class="n">systemctl</span> <span class="n">stop</span> <span class="n">rpcbind</span><span class="p">.</span><span class="n">socket</span>
-<span class="n">systemctl</span> <span class="n">disable</span> <span class="n">rpcbind</span><span class="p">.</span><span class="n">socket</span>
-<span class="n">systemctl</span> <span class="n">stop</span> <span class="n">rpcbind</span>
-<span class="n">systemctl</span> <span class="n">disable</span> <span class="n">rpcbind</span>
-<span class="n">netstat</span> <span class="o">-</span><span class="n">punta</span> <span class="o">|</span> <span class="n">grep</span> <span class="mi">111</span>
+                <h3 id="undercloud-deployment">Undercloud deployment</h3>
+<div class="codehilite"><pre><span></span>sudo useradd stack
+sudo passwd stack  <span class="c1"># specify a password</span>
+
+<span class="nb">echo</span> <span class="s2">&quot;stack ALL=(root) NOPASSWD:ALL&quot;</span> <span class="p">|</span> sudo tee -a /etc/sudoers.d/stack
+sudo chmod <span class="m">0440</span> /etc/sudoers.d/stack
+
+su - stack
+</pre></div>
+
+
+<h3 id="get-the-packages-for-centos">Get the packages for Centos</h3>
+<div class="codehilite"><pre><span></span>sudo yum install -y https://trunk.rdoproject.org/centos7/current/python2-tripleo-repos-0.0.1-0.20191108012952.2655019.el7.noarch.rpm
+</pre></div>
+
+
+<h3 id="install-the-train-repository">Install the Train repository</h3>
+<div class="codehilite"><pre><span></span>sudo -E tripleo-repos -b rocky current
+</pre></div>
+
+
+<h3 id="get-the-tripleo-cli-client-lots-of-stuff-to-install">Get the TripleO CLI client (lots of stuff to install)</h3>
+<div class="codehilite"><pre><span></span>sudo yum install -y python-tripleoclient
 </pre></div>
                 
                   
@@ -687,41 +691,6 @@
       
         
 <footer class="md-footer">
-  
-    <div class="md-footer-nav">
-      <nav class="md-footer-nav__inner md-grid">
-        
-          <a href="../prometheus/" title="Prometheus" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
-            </div>
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Previous
-                </span>
-                Prometheus
-              </span>
-            </div>
-          </a>
-        
-        
-          <a href="../splunk/" title="Splunk" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Splunk
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
-        
-      </nav>
-    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
