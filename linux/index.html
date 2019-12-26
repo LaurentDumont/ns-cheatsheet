@@ -266,6 +266,18 @@
 
 
   <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../chef/" title="Chef" class="md-nav__link">
       Chef
     </a>
@@ -514,6 +526,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#upgrade-kernel-on-centos7" title="Upgrade Kernel on Centos7" class="md-nav__link">
+    Upgrade Kernel on Centos7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ps-a-process-list-for-process-accounting" title="PS a process list for process accounting" class="md-nav__link">
+    PS a process list for process accounting
+  </a>
+  
+</li>
+      
       
       
       
@@ -545,18 +571,6 @@
   <li class="md-nav__item">
     <a href="../gluster/" title="Gluster" class="md-nav__link">
       Gluster
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
-      Home
     </a>
   </li>
 
@@ -949,6 +963,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#upgrade-kernel-on-centos7" title="Upgrade Kernel on Centos7" class="md-nav__link">
+    Upgrade Kernel on Centos7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ps-a-process-list-for-process-accounting" title="PS a process list for process accounting" class="md-nav__link">
+    PS a process list for process accounting
+  </a>
+  
+</li>
+      
       
       
       
@@ -1297,6 +1325,61 @@ sudo service network-manager restart
 <div class="codehilite"><pre><span></span><span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">boot</span><span class="p">.</span><span class="n">log</span>  <span class="c1">---  System boot log</span>
 
 <span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">log</span><span class="o">/</span><span class="n">dmesg</span>     <span class="c1">---  print or control the kernel ring buffer</span>
+</pre></div>
+
+
+<h3 id="upgrade-kernel-on-centos7">Upgrade Kernel on Centos7</h3>
+<div class="codehilite"><pre><span></span><span class="p">[</span><span class="n">root</span><span class="nd">@ooo</span><span class="o">-</span><span class="n">director</span> <span class="o">~</span><span class="p">]</span><span class="c1"># rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@ooo</span><span class="o">-</span><span class="n">director</span> <span class="o">~</span><span class="p">]</span><span class="c1"># yum install https://www.elrepo.org/elrepo-release-7.0-4.el7.elrepo.noarch.rpm</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">root@ooo-director ~</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">yum</span><span class="w"> </span><span class="n">repolist</span><span class="w"></span>
+<span class="n">Loaded</span><span class="w"> </span><span class="nl">plugins</span><span class="p">:</span><span class="w"> </span><span class="n">fastestmirror</span><span class="p">,</span><span class="w"> </span><span class="n">priorities</span><span class="w"></span>
+<span class="n">Loading</span><span class="w"> </span><span class="n">mirror</span><span class="w"> </span><span class="n">speeds</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">cached</span><span class="w"> </span><span class="n">hostfile</span><span class="w"></span>
+<span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nl">base</span><span class="p">:</span><span class="w"> </span><span class="n">mirror</span><span class="p">.</span><span class="n">calgah</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
+<span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nl">elrepo</span><span class="p">:</span><span class="w"> </span><span class="n">iad</span><span class="p">.</span><span class="n">mirror</span><span class="p">.</span><span class="n">rackspace</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
+<span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nl">extras</span><span class="p">:</span><span class="w"> </span><span class="n">mirror</span><span class="p">.</span><span class="n">calgah</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
+<span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nl">updates</span><span class="p">:</span><span class="w"> </span><span class="n">mirror</span><span class="p">.</span><span class="n">calgah</span><span class="p">.</span><span class="n">com</span><span class="w"></span>
+<span class="n">repo</span><span class="w"> </span><span class="n">id</span><span class="w">                                                </span><span class="n">repo</span><span class="w"> </span><span class="n">name</span><span class="w">                                                                                       </span><span class="n">status</span><span class="w"></span>
+<span class="n">base</span><span class="o">/</span><span class="mi">7</span><span class="o">/</span><span class="n">x86_64</span><span class="w">                                          </span><span class="n">CentOS</span><span class="o">-</span><span class="mi">7</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Base</span><span class="w">                                                                                  </span><span class="mi">10</span><span class="p">,</span><span class="mi">097</span><span class="w"></span>
+<span class="n">delorean</span><span class="o">-</span><span class="n">train</span><span class="w">                                         </span><span class="n">delorean</span><span class="o">-</span><span class="n">openstack</span><span class="o">-</span><span class="n">trove</span><span class="o">-</span><span class="mi">7680</span><span class="n">b5ef0e3608b2c45f057f65337c4af3d5659d</span><span class="w">                               </span><span class="mi">801</span><span class="o">+</span><span class="mi">348</span><span class="w"></span>
+<span class="n">delorean</span><span class="o">-</span><span class="n">train</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="n">deps</span><span class="w">                              </span><span class="n">dlrn</span><span class="o">-</span><span class="n">train</span><span class="o">-</span><span class="n">build</span><span class="o">-</span><span class="n">deps</span><span class="w">                                                                            </span><span class="mi">139</span><span class="o">+</span><span class="mi">78</span><span class="w"></span>
+<span class="n">delorean</span><span class="o">-</span><span class="n">train</span><span class="o">-</span><span class="n">testing</span><span class="w">                                 </span><span class="n">dlrn</span><span class="o">-</span><span class="n">train</span><span class="o">-</span><span class="n">testing</span><span class="w">                                                                              </span><span class="mi">875</span><span class="o">+</span><span class="mi">823</span><span class="w"></span>
+<span class="n">elrepo</span><span class="w">                                                 </span><span class="n">ELRepo</span><span class="p">.</span><span class="n">org</span><span class="w"> </span><span class="n">Community</span><span class="w"> </span><span class="n">Enterprise</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="n">Repository</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">el7</span><span class="w">                                              </span><span class="mi">139</span><span class="w"></span>
+<span class="n">extras</span><span class="o">/</span><span class="mi">7</span><span class="o">/</span><span class="n">x86_64</span><span class="w">                                        </span><span class="n">CentOS</span><span class="o">-</span><span class="mi">7</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Extras</span><span class="w">                                                                                   </span><span class="mi">307</span><span class="w"></span>
+<span class="n">rdo</span><span class="o">-</span><span class="n">qemu</span><span class="o">-</span><span class="n">ev</span><span class="o">/</span><span class="n">x86_64</span><span class="w">                                     </span><span class="n">RDO</span><span class="w"> </span><span class="n">CentOS</span><span class="o">-</span><span class="mi">7</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">QEMU</span><span class="w"> </span><span class="n">EV</span><span class="w">                                                                               </span><span class="mi">87</span><span class="w"></span>
+<span class="n">updates</span><span class="o">/</span><span class="mi">7</span><span class="o">/</span><span class="n">x86_64</span><span class="w">                                       </span><span class="n">CentOS</span><span class="o">-</span><span class="mi">7</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">Updates</span><span class="w">                                                                                </span><span class="mi">1</span><span class="p">,</span><span class="mi">010</span><span class="w"></span>
+<span class="nl">repolist</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span><span class="mi">455</span><span class="w"></span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">yum</span> <span class="c1">--enablerepo=elrepo-kernel install kernel-ml</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">root@ooo-director ~</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">awk</span><span class="w"> </span><span class="o">-</span><span class="n">F</span><span class="err">\</span><span class="s1">&#39; &#39;</span><span class="err">$</span><span class="mi">1</span><span class="o">==</span><span class="ss">&quot;menuentry &quot;</span><span class="w"> </span><span class="err">{</span><span class="k">print</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="ss">&quot; : &quot;</span><span class="w"> </span><span class="err">$</span><span class="mi">2</span><span class="err">}&#39;</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">grub2</span><span class="p">.</span><span class="n">cfg</span><span class="w"></span>
+<span class="mi">0</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">CentOS</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="p">(</span><span class="mf">5.4.6</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="p">.</span><span class="n">elrepo</span><span class="p">.</span><span class="n">x86_64</span><span class="p">)</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">(</span><span class="n">Core</span><span class="p">)</span><span class="w"></span>
+<span class="mi">1</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">CentOS</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="p">(</span><span class="mf">3.10.0</span><span class="o">-</span><span class="mf">1062.9.1</span><span class="p">.</span><span class="n">el7</span><span class="p">.</span><span class="n">x86_64</span><span class="p">)</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">(</span><span class="n">Core</span><span class="p">)</span><span class="w"></span>
+<span class="mi">2</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">CentOS</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="p">(</span><span class="mf">3.10.0</span><span class="o">-</span><span class="mf">1062.</span><span class="n">el7</span><span class="p">.</span><span class="n">x86_64</span><span class="p">)</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">(</span><span class="n">Core</span><span class="p">)</span><span class="w"></span>
+<span class="mi">3</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">CentOS</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="n">rescue</span><span class="o">-</span><span class="mi">4</span><span class="n">fb19b5248cd40d9b9a1ec7361f4f1fa</span><span class="p">)</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">(</span><span class="n">Core</span><span class="p">)</span><span class="w"></span>
+<span class="o">[</span><span class="n">root@ooo-director ~</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">grub2</span><span class="o">-</span><span class="k">set</span><span class="o">-</span><span class="k">default</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="o">[</span><span class="n">root@ooo-director ~</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">grub2</span><span class="o">-</span><span class="n">mkconfig</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">grub2</span><span class="o">/</span><span class="n">grub</span><span class="p">.</span><span class="n">cfg</span><span class="w"></span>
+<span class="n">Generating</span><span class="w"> </span><span class="n">grub</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">linux</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">vmlinuz</span><span class="o">-</span><span class="mf">5.4.6</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="p">.</span><span class="n">elrepo</span><span class="p">.</span><span class="n">x86_64</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">initrd</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">initramfs</span><span class="o">-</span><span class="mf">5.4.6</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="p">.</span><span class="n">elrepo</span><span class="p">.</span><span class="n">x86_64</span><span class="p">.</span><span class="n">img</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">linux</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">vmlinuz</span><span class="o">-</span><span class="mf">3.10.0</span><span class="o">-</span><span class="mf">1062.9.1</span><span class="p">.</span><span class="n">el7</span><span class="p">.</span><span class="n">x86_64</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">initrd</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">initramfs</span><span class="o">-</span><span class="mf">3.10.0</span><span class="o">-</span><span class="mf">1062.9.1</span><span class="p">.</span><span class="n">el7</span><span class="p">.</span><span class="n">x86_64</span><span class="p">.</span><span class="n">img</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">linux</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">vmlinuz</span><span class="o">-</span><span class="mf">3.10.0</span><span class="o">-</span><span class="mf">1062.</span><span class="n">el7</span><span class="p">.</span><span class="n">x86_64</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">initrd</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">initramfs</span><span class="o">-</span><span class="mf">3.10.0</span><span class="o">-</span><span class="mf">1062.</span><span class="n">el7</span><span class="p">.</span><span class="n">x86_64</span><span class="p">.</span><span class="n">img</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">linux</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">vmlinuz</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="n">rescue</span><span class="o">-</span><span class="mi">4</span><span class="n">fb19b5248cd40d9b9a1ec7361f4f1fa</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">initrd</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">initramfs</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="n">rescue</span><span class="o">-</span><span class="mi">4</span><span class="n">fb19b5248cd40d9b9a1ec7361f4f1fa</span><span class="p">.</span><span class="n">img</span><span class="w"></span>
+<span class="n">done</span><span class="w"></span>
+</pre></div>
+
+
+<h3 id="ps-a-process-list-for-process-accounting">PS a process list for process accounting</h3>
+<div class="codehilite"><pre><span></span><span class="n">ps</span> <span class="o">-</span><span class="n">eo</span> <span class="n">cmd</span> 
 </pre></div>
                 
                   
