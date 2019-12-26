@@ -266,6 +266,18 @@
 
 
   <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../chef/" title="Chef" class="md-nav__link">
       Chef
     </a>
@@ -364,18 +376,6 @@
   <li class="md-nav__item">
     <a href="../gluster/" title="Gluster" class="md-nav__link">
       Gluster
-    </a>
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href=".." title="Home" class="md-nav__link">
-      Home
     </a>
   </li>
 
@@ -628,6 +628,83 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#register-the-nodes" title="Register the nodes" class="md-nav__link">
+    Register the nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-nodes-within-ironic-openstack" title="Create the nodes within Ironic Openstack" class="md-nav__link">
+    Create the nodes within Ironic Openstack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ironic-paths" title="Ironic paths" class="md-nav__link">
+    Ironic paths
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-nodes" title="List nodes" class="md-nav__link">
+    List nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-introspection" title="Start introspection" class="md-nav__link">
+    Start introspection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-introspection-works-make-nodes-available" title="If introspection works, make nodes available" class="md-nav__link">
+    If introspection works, make nodes available
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-overcloud" title="Deploy Overcloud" class="md-nav__link">
+    Deploy Overcloud
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-extra-hardware-specs-from-ironic" title="Get extra-hardware-specs from Ironic." class="md-nav__link">
+    Get extra-hardware-specs from Ironic.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-deployed-overcloud" title="Delete deployed Overcloud" class="md-nav__link">
+    Delete deployed Overcloud
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-overcloud-nodes-profiles" title="List Overcloud nodes profiles" class="md-nav__link">
+    List Overcloud nodes profiles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-computecontroller-profile" title="Set compute/controller profile" class="md-nav__link">
+    Set compute/controller profile
+  </a>
+  
+</li>
+      
       
       
       
@@ -697,6 +774,83 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#register-the-nodes" title="Register the nodes" class="md-nav__link">
+    Register the nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-the-nodes-within-ironic-openstack" title="Create the nodes within Ironic Openstack" class="md-nav__link">
+    Create the nodes within Ironic Openstack
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ironic-paths" title="Ironic paths" class="md-nav__link">
+    Ironic paths
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-nodes" title="List nodes" class="md-nav__link">
+    List nodes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-introspection" title="Start introspection" class="md-nav__link">
+    Start introspection
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#if-introspection-works-make-nodes-available" title="If introspection works, make nodes available" class="md-nav__link">
+    If introspection works, make nodes available
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-overcloud" title="Deploy Overcloud" class="md-nav__link">
+    Deploy Overcloud
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-extra-hardware-specs-from-ironic" title="Get extra-hardware-specs from Ironic." class="md-nav__link">
+    Get extra-hardware-specs from Ironic.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#delete-deployed-overcloud" title="Delete deployed Overcloud" class="md-nav__link">
+    Delete deployed Overcloud
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-overcloud-nodes-profiles" title="List Overcloud nodes profiles" class="md-nav__link">
+    List Overcloud nodes profiles
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-computecontroller-profile" title="Set compute/controller profile" class="md-nav__link">
+    Set compute/controller profile
+  </a>
+  
+</li>
+      
       
       
       
@@ -741,6 +895,116 @@ su - stack
 
 <h3 id="get-the-tripleo-cli-client-lots-of-stuff-to-install">Get the TripleO CLI client (lots of stuff to install)</h3>
 <div class="codehilite"><pre><span></span>sudo yum install -y python-tripleoclient
+</pre></div>
+
+
+<h3 id="register-the-nodes">Register the nodes</h3>
+<p>The <code>instackenv.json</code> file.</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;nodes&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;mac&quot;</span><span class="p">:[</span>
+                <span class="s2">&quot;52:54:00:25:ca:d3&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ooo-controller001&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pm_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ipmi&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;cpu&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;memory&quot;</span><span class="p">:</span> <span class="s2">&quot;9216&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;disk&quot;</span><span class="p">:</span> <span class="s2">&quot;50&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;arch&quot;</span><span class="p">:</span> <span class="s2">&quot;x86_64&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pm_user&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pm_password&quot;</span><span class="p">:</span> <span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pm_addr&quot;</span><span class="p">:</span> <span class="s2">&quot;10.10.99.62&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pm_port&quot;</span><span class="p">:</span> <span class="s2">&quot;16001&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;mac&quot;</span><span class="p">:[</span>
+                <span class="s2">&quot;52:54:00:1a:cc:2a&quot;</span>
+            <span class="p">],</span> 
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ooo-controller002&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pm_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ipmi&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;cpu&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;memory&quot;</span><span class="p">:</span> <span class="s2">&quot;9216&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;disk&quot;</span><span class="p">:</span> <span class="s2">&quot;50&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;arch&quot;</span><span class="p">:</span> <span class="s2">&quot;x86_64&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pm_user&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pm_password&quot;</span><span class="p">:</span> <span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pm_addr&quot;</span><span class="p">:</span> <span class="s2">&quot;10.10.99.62&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pm_port&quot;</span><span class="p">:</span> <span class="s2">&quot;16002&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;mac&quot;</span><span class="p">:[</span>
+                <span class="s2">&quot;52:54:00:1c:0c:94&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;ooo-controller003&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pm_type&quot;</span><span class="p">:</span> <span class="s2">&quot;ipmi&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;cpu&quot;</span><span class="p">:</span> <span class="s2">&quot;4&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;memory&quot;</span><span class="p">:</span> <span class="s2">&quot;9216&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;disk&quot;</span><span class="p">:</span> <span class="s2">&quot;50&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;arch&quot;</span><span class="p">:</span> <span class="s2">&quot;x86_64&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pm_user&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pm_password&quot;</span><span class="p">:</span> <span class="s2">&quot;secret&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pm_addr&quot;</span><span class="p">:</span> <span class="s2">&quot;10.10.99.62&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;pm_port&quot;</span><span class="p">:</span> <span class="s2">&quot;16003&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h3 id="create-the-nodes-within-ironic-openstack">Create the nodes within Ironic Openstack</h3>
+<div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">overcloud</span> <span class="n">node</span> <span class="kn">import</span> <span class="nn">instackenv.json</span>
+</pre></div>
+
+
+<h3 id="ironic-paths">Ironic paths</h3>
+<div class="codehilite"><pre><span></span><span class="c1">#DNSMASQ</span>
+/var/lib/ironic-inspector/dhcp-hostsdir
+<span class="c1">#Ironic PXE</span>
+/var/lib/ironic/httpboot/
+</pre></div>
+
+
+<h3 id="list-nodes">List nodes</h3>
+<div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">baremetal</span> <span class="n">node</span> <span class="n">list</span>
+</pre></div>
+
+
+<h3 id="start-introspection">Start introspection</h3>
+<div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">overcloud</span> <span class="n">node</span> <span class="n">introspect</span> <span class="c1">--all-manageable</span>
+
+<span class="o">#</span> <span class="n">One</span> <span class="n">node</span>
+<span class="n">openstack</span> <span class="n">overcloud</span> <span class="n">node</span> <span class="n">introspect</span> <span class="mi">32124951</span><span class="o">-</span><span class="mi">3</span><span class="n">fcc</span><span class="o">-</span><span class="mi">4</span><span class="n">da4</span><span class="o">-</span><span class="n">ba16</span><span class="o">-</span><span class="n">d05a3c66bb22</span>
+</pre></div>
+
+
+<h3 id="if-introspection-works-make-nodes-available">If introspection works, make nodes available</h3>
+<div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">overcloud</span> <span class="n">node</span> <span class="n">provide</span> <span class="c1">--all-manageable</span>
+</pre></div>
+
+
+<h3 id="deploy-overcloud">Deploy Overcloud</h3>
+<div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">overcloud</span> <span class="n">deploy</span> <span class="c1">--templates</span>
+</pre></div>
+
+
+<h3 id="get-extra-hardware-specs-from-ironic">Get extra-hardware-specs from Ironic.</h3>
+<div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">baremetal</span> <span class="n">introspection</span> <span class="k">data</span> <span class="n">save</span> <span class="mi">32124951</span><span class="o">-</span><span class="mi">3</span><span class="n">fcc</span><span class="o">-</span><span class="mi">4</span><span class="n">da4</span><span class="o">-</span><span class="n">ba16</span><span class="o">-</span><span class="n">d05a3c66bb22</span>
+</pre></div>
+
+
+<h3 id="delete-deployed-overcloud">Delete deployed Overcloud</h3>
+<div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">overcloud</span> <span class="n">plan</span> <span class="k">delete</span> <span class="n">overcloud</span>
+</pre></div>
+
+
+<h3 id="list-overcloud-nodes-profiles">List Overcloud nodes profiles</h3>
+<div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">overcloud</span> <span class="n">profiles</span> <span class="n">list</span>
+</pre></div>
+
+
+<h3 id="set-computecontroller-profile">Set compute/controller profile</h3>
+<div class="codehilite"><pre><span></span><span class="n">openstack</span> <span class="n">baremetal</span> <span class="n">node</span> <span class="k">set</span> <span class="c1">--property capabilities=&#39;profile:compute,boot_option:local&#39; $NODE_ID</span>
 </pre></div>
                 
                   
