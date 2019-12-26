@@ -6,6 +6,7 @@ google_analytics: ['UA-51757315-3', 'auto']
 
 #Page list
 nav:
+      - Home: index.md
       - Chef: chef.md
       - Cisco-CCNA: ccna.md
       - Cisco: cisco.md
@@ -15,7 +16,6 @@ nav:
       - Generic Linux: linux.md
       - Git: git.md
       - Gluster: gluster.md
-      - Home: index.md
       - iPerf: iperf.md
       - Juniper: juniper.md
       - Kolla: kolla.md

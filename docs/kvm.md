@@ -17,7 +17,7 @@ centos7.0            | CentOS 7.0                                         | 7.0 
 
 ### Create PXE only virsh domain
 
-```shell
+```bash
 sudo virt-install --name test-ubuntu \
 --ram 4096 --vcpus 2 \
 --disk path=/var/lib/libvirt/images/test-ubuntu,bus=virtio,size=50 \
@@ -79,7 +79,7 @@ brctl addbr br1
 brctl addbr br2
 ```
 
-```shell
+```bash
 # In /etc/network/interfaces
 # Use old eth0 config for br0, plus bridge stuff
 
@@ -140,13 +140,13 @@ sudo /opt/vbmc/bin/vbmc add ooo-compute001 --port 16004 --username test --passwo
 ```
 
 ### Enable serial connection over virsh
-```shell
+```bash
 #FROM THE GUEST VM
 sudo systemctl enable serial-getty@ttyS0.service
 sudo systemctl start serial-getty@ttyS0.service
 ```
 
-```shell
+```bash
 #FROM THE KVM HOST
 sudo virsh console $DOMAIN_NAME
 #OR GET THE DOMAIN ID from `virsh list`

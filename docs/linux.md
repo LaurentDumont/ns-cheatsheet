@@ -339,3 +339,58 @@ sudo lsblk -S
 
 /var/log/dmesg     ---  print or control the kernel ring buffer
 ```
+
+### Upgrade Kernel on Centos7
+``` 
+[root@ooo-director ~]# rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+[root@ooo-director ~]# yum install https://www.elrepo.org/elrepo-release-7.0-4.el7.elrepo.noarch.rpm
+```
+
+```
+[root@ooo-director ~]# yum repolist
+Loaded plugins: fastestmirror, priorities
+Loading mirror speeds from cached hostfile
+ * base: mirror.calgah.com
+ * elrepo: iad.mirror.rackspace.com
+ * extras: mirror.calgah.com
+ * updates: mirror.calgah.com
+repo id                                                repo name                                                                                       status
+base/7/x86_64                                          CentOS-7 - Base                                                                                  10,097
+delorean-train                                         delorean-openstack-trove-7680b5ef0e3608b2c45f057f65337c4af3d5659d                               801+348
+delorean-train-build-deps                              dlrn-train-build-deps                                                                            139+78
+delorean-train-testing                                 dlrn-train-testing                                                                              875+823
+elrepo                                                 ELRepo.org Community Enterprise Linux Repository - el7                                              139
+extras/7/x86_64                                        CentOS-7 - Extras                                                                                   307
+rdo-qemu-ev/x86_64                                     RDO CentOS-7 - QEMU EV                                                                               87
+updates/7/x86_64                                       CentOS-7 - Updates                                                                                1,010
+repolist: 13,455
+```
+
+```
+yum --enablerepo=elrepo-kernel install kernel-ml
+```
+
+```
+[root@ooo-director ~]# sudo awk -F\' '$1=="menuentry " {print i++ " : " $2}' /etc/grub2.cfg
+0 : CentOS Linux (5.4.6-1.el7.elrepo.x86_64) 7 (Core)
+1 : CentOS Linux (3.10.0-1062.9.1.el7.x86_64) 7 (Core)
+2 : CentOS Linux (3.10.0-1062.el7.x86_64) 7 (Core)
+3 : CentOS Linux (0-rescue-4fb19b5248cd40d9b9a1ec7361f4f1fa) 7 (Core)
+[root@ooo-director ~]# sudo grub2-set-default 0
+[root@ooo-director ~]# sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-5.4.6-1.el7.elrepo.x86_64
+Found initrd image: /boot/initramfs-5.4.6-1.el7.elrepo.x86_64.img
+Found linux image: /boot/vmlinuz-3.10.0-1062.9.1.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-1062.9.1.el7.x86_64.img
+Found linux image: /boot/vmlinuz-3.10.0-1062.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-1062.el7.x86_64.img
+Found linux image: /boot/vmlinuz-0-rescue-4fb19b5248cd40d9b9a1ec7361f4f1fa
+Found initrd image: /boot/initramfs-0-rescue-4fb19b5248cd40d9b9a1ec7361f4f1fa.img
+done
+```
+
+### PS a process list for process accounting
+```
+ps -eo cmd 
+```
