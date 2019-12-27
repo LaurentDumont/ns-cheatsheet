@@ -747,19 +747,20 @@
                   <h1>KVM</h1>
                 
                 <h3 id="get-list-of-os-variants-valid-for-kvm">Get list of <code>os-variants</code> valid for KVM</h3>
-<div class="codehilite"><pre><span></span>ldumont@kvm01:~$ osinfo-query os <span class="p">|</span> grep -i centos
-centos6.0            <span class="p">|</span> CentOS <span class="m">6</span>.0                                         <span class="p">|</span> <span class="m">6</span>.0      <span class="p">|</span> http://centos.org/centos/6.0            
-centos6.1            <span class="p">|</span> CentOS <span class="m">6</span>.1                                         <span class="p">|</span> <span class="m">6</span>.1      <span class="p">|</span> http://centos.org/centos/6.1            
-centos6.10           <span class="p">|</span> CentOS <span class="m">6</span>.10                                        <span class="p">|</span> <span class="m">6</span>.10     <span class="p">|</span> http://centos.org/centos/6.10           
-centos6.2            <span class="p">|</span> CentOS <span class="m">6</span>.2                                         <span class="p">|</span> <span class="m">6</span>.2      <span class="p">|</span> http://centos.org/centos/6.2            
-centos6.3            <span class="p">|</span> CentOS <span class="m">6</span>.3                                         <span class="p">|</span> <span class="m">6</span>.3      <span class="p">|</span> http://centos.org/centos/6.3            
-centos6.4            <span class="p">|</span> CentOS <span class="m">6</span>.4                                         <span class="p">|</span> <span class="m">6</span>.4      <span class="p">|</span> http://centos.org/centos/6.4            
-centos6.5            <span class="p">|</span> CentOS <span class="m">6</span>.5                                         <span class="p">|</span> <span class="m">6</span>.5      <span class="p">|</span> http://centos.org/centos/6.5            
-centos6.6            <span class="p">|</span> CentOS <span class="m">6</span>.6                                         <span class="p">|</span> <span class="m">6</span>.6      <span class="p">|</span> http://centos.org/centos/6.6            
-centos6.7            <span class="p">|</span> CentOS <span class="m">6</span>.7                                         <span class="p">|</span> <span class="m">6</span>.7      <span class="p">|</span> http://centos.org/centos/6.7            
-centos6.8            <span class="p">|</span> CentOS <span class="m">6</span>.8                                         <span class="p">|</span> <span class="m">6</span>.8      <span class="p">|</span> http://centos.org/centos/6.8            
-centos6.9            <span class="p">|</span> CentOS <span class="m">6</span>.9                                         <span class="p">|</span> <span class="m">6</span>.9      <span class="p">|</span> http://centos.org/centos/6.9            
-centos7.0            <span class="p">|</span> CentOS <span class="m">7</span>.0                                         <span class="p">|</span> <span class="m">7</span>.0      <span class="p">|</span> http://centos.org/centos/7.0          
+<div class="codehilite"><pre><span></span><span class="gp">#</span>asd
+<span class="gp">ldumont@kvm01:~$</span> osinfo-query os <span class="p">|</span> grep -i centos
+<span class="go">centos6.0            | CentOS 6.0                                         | 6.0      | http://centos.org/centos/6.0            </span>
+<span class="go">centos6.1            | CentOS 6.1                                         | 6.1      | http://centos.org/centos/6.1            </span>
+<span class="go">centos6.10           | CentOS 6.10                                        | 6.10     | http://centos.org/centos/6.10           </span>
+<span class="go">centos6.2            | CentOS 6.2                                         | 6.2      | http://centos.org/centos/6.2            </span>
+<span class="go">centos6.3            | CentOS 6.3                                         | 6.3      | http://centos.org/centos/6.3            </span>
+<span class="go">centos6.4            | CentOS 6.4                                         | 6.4      | http://centos.org/centos/6.4            </span>
+<span class="go">centos6.5            | CentOS 6.5                                         | 6.5      | http://centos.org/centos/6.5            </span>
+<span class="go">centos6.6            | CentOS 6.6                                         | 6.6      | http://centos.org/centos/6.6            </span>
+<span class="go">centos6.7            | CentOS 6.7                                         | 6.7      | http://centos.org/centos/6.7            </span>
+<span class="go">centos6.8            | CentOS 6.8                                         | 6.8      | http://centos.org/centos/6.8            </span>
+<span class="go">centos6.9            | CentOS 6.9                                         | 6.9      | http://centos.org/centos/6.9            </span>
+<span class="go">centos7.0            | CentOS 7.0                                         | 7.0      | http://centos.org/centos/7.0          </span>
 </pre></div>
 
 
@@ -800,7 +801,7 @@ sudo virt-install --name ooo-controller002 <span class="se">\</span>
 
 sudo virt-install --name ooo-controller003 <span class="se">\</span>
 --ram <span class="m">9216</span> --vcpus <span class="m">4</span> <span class="se">\</span>
---disk <span class="nv">path</span><span class="o">=</span>/var/lib/libvirt/images/ooo-controller003.qcow2,bus<span class="o">=</span>virtio,size<span class="o">=</span><span class="m">50</span> <span class="se">\</span>
+--disk <span class="nv">path</span><span class="o">=</span>/var/lib/libvirt/images/ooo-controller003.qcow2,bus<span class="o">=</span>virtio,size<span class="o">=</span><span class="m">50</span> <span class="se">\ </span> 
 --pxe --noautoconsole --graphics vnc <span class="se">\</span>
 --network bridge:br1 <span class="se">\</span>
 --network bridge:br0 <span class="se">\</span>
