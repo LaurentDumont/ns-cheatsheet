@@ -1,5 +1,6 @@
 ### Get list of `os-variants` valid for KVM
-```bash
+```console
+#asd
 ldumont@kvm01:~$ osinfo-query os | grep -i centos
 centos6.0            | CentOS 6.0                                         | 6.0      | http://centos.org/centos/6.0            
 centos6.1            | CentOS 6.1                                         | 6.1      | http://centos.org/centos/6.1            
@@ -54,7 +55,7 @@ sudo virt-install --name ooo-controller002 \
 
 sudo virt-install --name ooo-controller003 \
 --ram 9216 --vcpus 4 \
---disk path=/var/lib/libvirt/images/ooo-controller003.qcow2,bus=virtio,size=50 \
+--disk path=/var/lib/libvirt/images/ooo-controller003.qcow2,bus=virtio,size=50 \  
 --pxe --noautoconsole --graphics vnc \
 --network bridge:br1 \
 --network bridge:br0 \
