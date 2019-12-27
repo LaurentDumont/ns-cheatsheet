@@ -28,44 +28,44 @@ sudo virt-install --name test-ubuntu \
 --os-variant ubuntu18.04
 
 sudo virt-install --name ooo-director \
---ram 18432 --vcpus 4 \
+--ram 18432 --vcpus 8 \
 --disk path=/var/lib/libvirt/images/ooo-director,bus=virtio,size=50 \
 --noautoconsole --graphics vnc \
 --cdrom=/var/lib/libvirt/boot/CentOS-7-x86_64-Minimal-1908.iso \
---network bridge:br0 \
 --network bridge:br1 \
+--network bridge:br0 \
 --os-variant centos7.0
 
 sudo virt-install --name ooo-controller001 \
---ram 18432 --vcpus 4 \
+--ram 9216 --vcpus 4 \
 --disk path=/var/lib/libvirt/images/ooo-controller001.qcow2,bus=virtio,size=50 \
---pxe --noautoconsole --graphics vnc --hvm \
---network bridge:br0 \
+--pxe --noautoconsole --graphics vnc \
 --network bridge:br1 \
+--network bridge:br0 \
 --os-variant centos7.0
 
 sudo virt-install --name ooo-controller002 \
---ram 18432 --vcpus 4 \
+--ram 9216 --vcpus 4 \
 --disk path=/var/lib/libvirt/images/ooo-controller002.qcow2,bus=virtio,size=50 \
---pxe --noautoconsole --graphics vnc --hvm \
---network bridge:br0 \
+--pxe --noautoconsole --graphics vnc \
 --network bridge:br1 \
+--network bridge:br0 \
 --os-variant centos7.0
 
 sudo virt-install --name ooo-controller003 \
---ram 18432 --vcpus 4 \
---disk path=/var/lib/libvirt/images/ooo-controller003,bus=virtio,size=50 \  
---pxe --noautoconsole --graphics vnc --hvm \
---network bridge:br0 \
+--ram 9216 --vcpus 4 \
+--disk path=/var/lib/libvirt/images/ooo-controller003.qcow2,bus=virtio,size=50 \
+--pxe --noautoconsole --graphics vnc \
 --network bridge:br1 \
+--network bridge:br0 \
 --os-variant centos7.0
 
 sudo virt-install --name ooo-compute001 \
---ram 18432 --vcpus 4 \
+--ram 9216 --vcpus 4 \
 --disk path=/var/lib/libvirt/images/ooo-compute001,bus=virtio,size=50 \
---pxe --noautoconsole --graphics vnc --hvm \
---network bridge:br0 \
+--pxe --noautoconsole --graphics vnc \
 --network bridge:br1 \
+--network bridge:br0 \
 --os-variant centos7.0
 ```
 

@@ -1,3 +1,12 @@
+### Update all the system packages first
+```
+yum update
+```
+
+- Make sure hostname of the director resolves to 127.0.0.1
+- Make sure hostname is a FQDN.
+
+
 ### Undercloud deployment
 ```bash
 sudo useradd stack
@@ -14,15 +23,26 @@ su - stack
 sudo yum install -y https://trunk.rdoproject.org/centos7/current/python2-tripleo-repos-0.0.1-0.20191108012952.2655019.el7.noarch.rpm
 ```
 
-### Install the Train repository
+### Install the Rocky repository
 ```bash
-sudo -E tripleo-repos -b rocky current
+sudo -E tripleo-repos -b stein current
 ```
 
 ### Get the TripleO CLI client (lots of stuff to install)
 ```bash
 sudo yum install -y python-tripleoclient
+``` 
+
+### Copy the default deployment template
 ```
+cp /usr/share/python-tripleoclient/undercloud.conf.sample ~/undercloud.conf
+```
+
+### Deploy the Undercloud
+```
+openstack undercloud install
+```
+
 
 ### Register the nodes
 The `instackenv.json` file.
@@ -119,7 +139,19 @@ openstack baremetal introspection data save 32124951-3fcc-4da4-ba16-d05a3c66bb22
 ```
 
 ### Delete deployed Overcloud
-```
+```shell
+(undercloud) [stack@ooo-director ~]$ openstack stack list
++--------------------------------------+------------+----------------------------------+--------------------+----------------------+--------------+
+| ID                                   | Stack Name | Project                          | Stack Status       | Creation Time        | Updated Time |
++--------------------------------------+------------+----------------------------------+--------------------+----------------------+--------------+
+| a078f570-c4fa-46bc-87d5-ebb2c99684e4 | overcloud  | 8a6fa7c4e66a422281bd800007c65e4d | CREATE_IN_PROGRESS | 2019-12-26T04:00:21Z | None         |
++--------------------------------------+------------+----------------------------------+--------------------+----------------------+--------------+
+
+#Might need to do 2-3 times... (not sure why)
+(undercloud) [stack@ooo-director ~]$ openstack stack delete a078f570-c4fa-46bc-87d5-ebb2c99684e4
+Are you sure you want to delete this stack(s) [y/N]? y
+
+
 openstack overcloud plan delete overcloud
 ```
 
@@ -130,7 +162,6 @@ openstack overcloud profiles list
 
 ### Set compute/controller profile
 ```
-openstack baremetal node set --property capabilities='profile:compute,boot_option:local' $NODE_ID
+openstack baremetal node set --property capabilities='profile:compute,boot_option:local' 
 ```
-
 

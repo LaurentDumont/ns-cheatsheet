@@ -371,13 +371,15 @@ yum --enablerepo=elrepo-kernel install kernel-ml
 ```
 
 ```
-[root@ooo-director ~]# sudo awk -F\' '$1=="menuentry " {print i++ " : " $2}' /etc/grub2.cfg
+[root@ooo-director ~]# awk -F\' '$1=="menuentry " {print i++ " : " $2}' /etc/grub2.cfg
 0 : CentOS Linux (5.4.6-1.el7.elrepo.x86_64) 7 (Core)
 1 : CentOS Linux (3.10.0-1062.9.1.el7.x86_64) 7 (Core)
 2 : CentOS Linux (3.10.0-1062.el7.x86_64) 7 (Core)
 3 : CentOS Linux (0-rescue-4fb19b5248cd40d9b9a1ec7361f4f1fa) 7 (Core)
-[root@ooo-director ~]# sudo grub2-set-default 0
-[root@ooo-director ~]# sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+
+[root@ooo-director ~]# grub2-set-default 0
+
+[root@ooo-director ~]# grub2-mkconfig -o /boot/grub2/grub.cfg
 Generating grub configuration file ...
 Found linux image: /boot/vmlinuz-5.4.6-1.el7.elrepo.x86_64
 Found initrd image: /boot/initramfs-5.4.6-1.el7.elrepo.x86_64.img
@@ -393,4 +395,22 @@ done
 ### PS a process list for process accounting
 ```
 ps -eo cmd 
+```
+
+### Send a sysrq though KVM
+Types of event
+`Dec 26 20:04:49 director kernel: SysRq : HELP : loglevel(0-9) reboot(b) crash(c) terminate-all-tasks(e) memory-full-oom-kill(f) kill-all-tasks(i) thaw-filesystems(j) sak(k) show-backtrace-all-active-cpus(l) show-memory-usage(m) nice-all-RT-tasks(n) poweroff(o) show-registers(p) show-all-timers(q) unraw(r) sync(s) show-task-states(t) unmount(u) force-fb(V) show-blocked-tasks(w) dump-ftrace-buffer(z)`
+
+
+```shell
+#In the guest VM
+echo 1 > /proc/sys/kernel/sysrq
+
+#To make it permanent
+[root@director ~]# cat /etc/sysctl.d/sysrq.conf 
+kernel.sysrq = 1
+
+#From the Hypervisor
+#KEY_B replace what is after the _ for the correct action. This will reboot the target host.
+root@kvm01:/tmp# virsh send-key ooo-director KEY_LEFTALT KEY_SYSRQ KEY_B
 ```
