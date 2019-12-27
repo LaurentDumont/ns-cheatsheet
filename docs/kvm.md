@@ -1,6 +1,5 @@
 ### Get list of `os-variants` valid for KVM
-```console
-#asd
+```
 ldumont@kvm01:~$ osinfo-query os | grep -i centos
 centos6.0            | CentOS 6.0                                         | 6.0      | http://centos.org/centos/6.0            
 centos6.1            | CentOS 6.1                                         | 6.1      | http://centos.org/centos/6.1            
