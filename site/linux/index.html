@@ -540,6 +540,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#send-a-sysrq-though-kvm" title="Send a sysrq though KVM" class="md-nav__link">
+    Send a sysrq though KVM
+  </a>
+  
+</li>
+      
       
       
       
@@ -977,6 +984,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#send-a-sysrq-though-kvm" title="Send a sysrq though KVM" class="md-nav__link">
+    Send a sysrq though KVM
+  </a>
+  
+</li>
+      
       
       
       
@@ -1358,13 +1372,15 @@ sudo service network-manager restart
 </pre></div>
 
 
-<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">root@ooo-director ~</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">awk</span><span class="w"> </span><span class="o">-</span><span class="n">F</span><span class="err">\</span><span class="s1">&#39; &#39;</span><span class="err">$</span><span class="mi">1</span><span class="o">==</span><span class="ss">&quot;menuentry &quot;</span><span class="w"> </span><span class="err">{</span><span class="k">print</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="ss">&quot; : &quot;</span><span class="w"> </span><span class="err">$</span><span class="mi">2</span><span class="err">}&#39;</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">grub2</span><span class="p">.</span><span class="n">cfg</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">root@ooo-director ~</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">awk</span><span class="w"> </span><span class="o">-</span><span class="n">F</span><span class="err">\</span><span class="s1">&#39; &#39;</span><span class="err">$</span><span class="mi">1</span><span class="o">==</span><span class="ss">&quot;menuentry &quot;</span><span class="w"> </span><span class="err">{</span><span class="k">print</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="ss">&quot; : &quot;</span><span class="w"> </span><span class="err">$</span><span class="mi">2</span><span class="err">}&#39;</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">grub2</span><span class="p">.</span><span class="n">cfg</span><span class="w"></span>
 <span class="mi">0</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">CentOS</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="p">(</span><span class="mf">5.4.6</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="p">.</span><span class="n">elrepo</span><span class="p">.</span><span class="n">x86_64</span><span class="p">)</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">(</span><span class="n">Core</span><span class="p">)</span><span class="w"></span>
 <span class="mi">1</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">CentOS</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="p">(</span><span class="mf">3.10.0</span><span class="o">-</span><span class="mf">1062.9.1</span><span class="p">.</span><span class="n">el7</span><span class="p">.</span><span class="n">x86_64</span><span class="p">)</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">(</span><span class="n">Core</span><span class="p">)</span><span class="w"></span>
 <span class="mi">2</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">CentOS</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="p">(</span><span class="mf">3.10.0</span><span class="o">-</span><span class="mf">1062.</span><span class="n">el7</span><span class="p">.</span><span class="n">x86_64</span><span class="p">)</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">(</span><span class="n">Core</span><span class="p">)</span><span class="w"></span>
 <span class="mi">3</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">CentOS</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="n">rescue</span><span class="o">-</span><span class="mi">4</span><span class="n">fb19b5248cd40d9b9a1ec7361f4f1fa</span><span class="p">)</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">(</span><span class="n">Core</span><span class="p">)</span><span class="w"></span>
-<span class="o">[</span><span class="n">root@ooo-director ~</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">grub2</span><span class="o">-</span><span class="k">set</span><span class="o">-</span><span class="k">default</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
-<span class="o">[</span><span class="n">root@ooo-director ~</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">grub2</span><span class="o">-</span><span class="n">mkconfig</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">grub2</span><span class="o">/</span><span class="n">grub</span><span class="p">.</span><span class="n">cfg</span><span class="w"></span>
+
+<span class="o">[</span><span class="n">root@ooo-director ~</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">grub2</span><span class="o">-</span><span class="k">set</span><span class="o">-</span><span class="k">default</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="o">[</span><span class="n">root@ooo-director ~</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">grub2</span><span class="o">-</span><span class="n">mkconfig</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">grub2</span><span class="o">/</span><span class="n">grub</span><span class="p">.</span><span class="n">cfg</span><span class="w"></span>
 <span class="n">Generating</span><span class="w"> </span><span class="n">grub</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
 <span class="k">Found</span><span class="w"> </span><span class="n">linux</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">vmlinuz</span><span class="o">-</span><span class="mf">5.4.6</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="p">.</span><span class="n">elrepo</span><span class="p">.</span><span class="n">x86_64</span><span class="w"></span>
 <span class="k">Found</span><span class="w"> </span><span class="n">initrd</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">initramfs</span><span class="o">-</span><span class="mf">5.4.6</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="p">.</span><span class="n">elrepo</span><span class="p">.</span><span class="n">x86_64</span><span class="p">.</span><span class="n">img</span><span class="w"></span>
@@ -1380,6 +1396,22 @@ sudo service network-manager restart
 
 <h3 id="ps-a-process-list-for-process-accounting">PS a process list for process accounting</h3>
 <div class="codehilite"><pre><span></span><span class="n">ps</span> <span class="o">-</span><span class="n">eo</span> <span class="n">cmd</span> 
+</pre></div>
+
+
+<h3 id="send-a-sysrq-though-kvm">Send a sysrq though KVM</h3>
+<p>Types of event
+<code>Dec 26 20:04:49 director kernel: SysRq : HELP : loglevel(0-9) reboot(b) crash(c) terminate-all-tasks(e) memory-full-oom-kill(f) kill-all-tasks(i) thaw-filesystems(j) sak(k) show-backtrace-all-active-cpus(l) show-memory-usage(m) nice-all-RT-tasks(n) poweroff(o) show-registers(p) show-all-timers(q) unraw(r) sync(s) show-task-states(t) unmount(u) force-fb(V) show-blocked-tasks(w) dump-ftrace-buffer(z)</code></p>
+<div class="codehilite"><pre><span></span><span class="c1">#In the guest VM</span>
+<span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/kernel/sysrq
+
+<span class="c1">#To make it permanent</span>
+<span class="o">[</span>root@director ~<span class="o">]</span><span class="c1"># cat /etc/sysctl.d/sysrq.conf </span>
+kernel.sysrq <span class="o">=</span> <span class="m">1</span>
+
+<span class="c1">#From the Hypervisor</span>
+<span class="c1">#KEY_B replace what is after the _ for the correct action. This will reboot the target host.</span>
+root@kvm01:/tmp# virsh send-key ooo-director KEY_LEFTALT KEY_SYSRQ KEY_B
 </pre></div>
                 
                   
