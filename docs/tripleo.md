@@ -43,6 +43,28 @@ cp /usr/share/python-tripleoclient/undercloud.conf.sample ~/undercloud.conf
 openstack undercloud install
 ```
 
+### Overcloud Deployment
+```
+export DIB_YUM_REPO_CONF="/etc/yum.repos.d/delorean*"
+
+#Build the images for the Overcloud
+openstack overcloud image build
+
+# Upload the images
+openstack overcloud image upload
+```
+
+### Add DNS to Overcloud
+```
+(undercloud) [stack@director ~]$ openstack subnet list
++--------------------------------------+-----------------+--------------------------------------+-----------------+
+| ID                                   | Name            | Network                              | Subnet          |
++--------------------------------------+-----------------+--------------------------------------+-----------------+
+| 08a306ed-a5e8-47cd-ac66-a67722d03a42 | ctlplane-subnet | fcda1208-3d2c-4b9c-a241-c4bcd0479b9f | 192.168.24.0/24 |
++--------------------------------------+-----------------+--------------------------------------+-----------------+
+
+openstack subnet set 08a306ed-a5e8-47cd-ac66-a67722d03a42 --dns-nameserver 8.8.8.8
+```
 
 ### Register the nodes
 The `instackenv.json` file.

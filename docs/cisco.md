@@ -24,6 +24,11 @@ show isis neighbors
 show bgp ipv4 all summary
 ```
 
+### Show detailed information about interface
+```
+show controllers TenGigE0/0/0/18
+```
+
 ### Show control plane policing
 
 ```
