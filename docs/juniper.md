@@ -31,6 +31,14 @@ show chassis routing-engine
 show system process extensive | no-more
 ```
 
+### Delete interface config
+```
+delete interface ge-0/0/4
+delete interface ge-0/0/5
+delete interface ge-0/0/7
+delete interface ae6
+```
+
 ### Syslog configuration.
 ```
 set system syslog user * any emergency
@@ -175,6 +183,4 @@ set interfaces ae3 unit 0 family ethernet-switching native-vlan-id 666
 cmaker@ex2200-cmaker> show configuration interfaces ge-0/0/17 | display set 
 set interfaces ge-0/0/17 description LACP-ULTRABACON-PROXMOX
 set interfaces ge-0/0/17 ether-options 802.3ad ae3
-
-
 ```

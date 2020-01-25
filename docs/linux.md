@@ -414,3 +414,55 @@ kernel.sysrq = 1
 #KEY_B replace what is after the _ for the correct action. This will reboot the target host.
 root@kvm01:/tmp# virsh send-key ooo-director KEY_LEFTALT KEY_SYSRQ KEY_B
 ```
+
+### Install pgcli - postgres cmd line CLI - Ubuntu 19.04
+```
+sudo apt-get install libpq-dev python-dev
+pip3 install pgcli
+pgcli --host 127.0.0.1 --port 5432 --user ara_user --dbname ara --password
+```
+
+### Redhat / Centos bonding LACP - VLAN
+```
+modprobe bonding
+
+#vi /etc/sysconfig/network-scripts/ifcfg-bond0
+DEVICE=bond0
+Type=Bond
+NAME=bond0
+BONDING_MASTER=yes
+BOOTPROTO=none
+ONBOOT=yes
+NM_CONTROLLED=no
+BONDING_OPTS="mode=4 miimon=100 lacp_rate=1"
+
+#vi /etc/sysconfig/network-scripts/ifcfg-em1
+DEVICE=em1
+TYPE=Ethernet
+BOOTPROTO=none
+ONBOOT=yes
+NM_CONTROLLED=no
+IPV6INIT=no
+MASTER=bond0
+SLAVE=yes
+
+#vi /etc/sysconfig/network-scripts/ifcfg-em2
+DEVICE=em2
+TYPE=Ethernet
+BOOTPROTO=none
+ONBOOT=yes
+NM_CONTROLLED=no
+IPV6INIT=no
+MASTER=bond0
+SLAVE=yes
+
+#vi /etc/sysconfig/network-scripts/ifcfg-em3
+DEVICE=em3
+TYPE=Ethernet
+BOOTPROTO=none
+ONBOOT=yes
+NM_CONTROLLED=no
+IPV6INIT=no
+MASTER=bond0
+SLAVE=yes
+```
