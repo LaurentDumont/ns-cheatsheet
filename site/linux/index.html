@@ -547,6 +547,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#install-pgcli-postgres-cmd-line-cli-ubuntu-1904" title="Install pgcli - postgres cmd line CLI - Ubuntu 19.04" class="md-nav__link">
+    Install pgcli - postgres cmd line CLI - Ubuntu 19.04
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redhat-centos-bonding-lacp-vlan" title="Redhat / Centos bonding LACP - VLAN" class="md-nav__link">
+    Redhat / Centos bonding LACP - VLAN
+  </a>
+  
+</li>
+      
       
       
       
@@ -991,6 +1005,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#install-pgcli-postgres-cmd-line-cli-ubuntu-1904" title="Install pgcli - postgres cmd line CLI - Ubuntu 19.04" class="md-nav__link">
+    Install pgcli - postgres cmd line CLI - Ubuntu 19.04
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redhat-centos-bonding-lacp-vlan" title="Redhat / Centos bonding LACP - VLAN" class="md-nav__link">
+    Redhat / Centos bonding LACP - VLAN
+  </a>
+  
+</li>
+      
       
       
       
@@ -1412,6 +1440,58 @@ kernel.sysrq <span class="o">=</span> <span class="m">1</span>
 <span class="c1">#From the Hypervisor</span>
 <span class="c1">#KEY_B replace what is after the _ for the correct action. This will reboot the target host.</span>
 root@kvm01:/tmp# virsh send-key ooo-director KEY_LEFTALT KEY_SYSRQ KEY_B
+</pre></div>
+
+
+<h3 id="install-pgcli-postgres-cmd-line-cli-ubuntu-1904">Install pgcli - postgres cmd line CLI - Ubuntu 19.04</h3>
+<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">libpq</span><span class="o">-</span><span class="n">dev</span> <span class="n">python</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">pip3</span> <span class="n">install</span> <span class="n">pgcli</span>
+<span class="n">pgcli</span> <span class="c1">--host 127.0.0.1 --port 5432 --user ara_user --dbname ara --password</span>
+</pre></div>
+
+
+<h3 id="redhat-centos-bonding-lacp-vlan">Redhat / Centos bonding LACP - VLAN</h3>
+<div class="codehilite"><pre><span></span><span class="n">modprobe</span> <span class="n">bonding</span>
+
+<span class="o">#</span><span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysconfig</span><span class="o">/</span><span class="n">network</span><span class="o">-</span><span class="n">scripts</span><span class="o">/</span><span class="n">ifcfg</span><span class="o">-</span><span class="n">bond0</span>
+<span class="n">DEVICE</span><span class="o">=</span><span class="n">bond0</span>
+<span class="k">Type</span><span class="o">=</span><span class="n">Bond</span>
+<span class="n">NAME</span><span class="o">=</span><span class="n">bond0</span>
+<span class="n">BONDING_MASTER</span><span class="o">=</span><span class="n">yes</span>
+<span class="n">BOOTPROTO</span><span class="o">=</span><span class="k">none</span>
+<span class="n">ONBOOT</span><span class="o">=</span><span class="n">yes</span>
+<span class="n">NM_CONTROLLED</span><span class="o">=</span><span class="k">no</span>
+<span class="n">BONDING_OPTS</span><span class="o">=</span><span class="ss">&quot;mode=4 miimon=100 lacp_rate=1&quot;</span>
+
+<span class="o">#</span><span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysconfig</span><span class="o">/</span><span class="n">network</span><span class="o">-</span><span class="n">scripts</span><span class="o">/</span><span class="n">ifcfg</span><span class="o">-</span><span class="n">em1</span>
+<span class="n">DEVICE</span><span class="o">=</span><span class="n">em1</span>
+<span class="k">TYPE</span><span class="o">=</span><span class="n">Ethernet</span>
+<span class="n">BOOTPROTO</span><span class="o">=</span><span class="k">none</span>
+<span class="n">ONBOOT</span><span class="o">=</span><span class="n">yes</span>
+<span class="n">NM_CONTROLLED</span><span class="o">=</span><span class="k">no</span>
+<span class="n">IPV6INIT</span><span class="o">=</span><span class="k">no</span>
+<span class="n">MASTER</span><span class="o">=</span><span class="n">bond0</span>
+<span class="n">SLAVE</span><span class="o">=</span><span class="n">yes</span>
+
+<span class="o">#</span><span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysconfig</span><span class="o">/</span><span class="n">network</span><span class="o">-</span><span class="n">scripts</span><span class="o">/</span><span class="n">ifcfg</span><span class="o">-</span><span class="n">em2</span>
+<span class="n">DEVICE</span><span class="o">=</span><span class="n">em2</span>
+<span class="k">TYPE</span><span class="o">=</span><span class="n">Ethernet</span>
+<span class="n">BOOTPROTO</span><span class="o">=</span><span class="k">none</span>
+<span class="n">ONBOOT</span><span class="o">=</span><span class="n">yes</span>
+<span class="n">NM_CONTROLLED</span><span class="o">=</span><span class="k">no</span>
+<span class="n">IPV6INIT</span><span class="o">=</span><span class="k">no</span>
+<span class="n">MASTER</span><span class="o">=</span><span class="n">bond0</span>
+<span class="n">SLAVE</span><span class="o">=</span><span class="n">yes</span>
+
+<span class="o">#</span><span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysconfig</span><span class="o">/</span><span class="n">network</span><span class="o">-</span><span class="n">scripts</span><span class="o">/</span><span class="n">ifcfg</span><span class="o">-</span><span class="n">em3</span>
+<span class="n">DEVICE</span><span class="o">=</span><span class="n">em3</span>
+<span class="k">TYPE</span><span class="o">=</span><span class="n">Ethernet</span>
+<span class="n">BOOTPROTO</span><span class="o">=</span><span class="k">none</span>
+<span class="n">ONBOOT</span><span class="o">=</span><span class="n">yes</span>
+<span class="n">NM_CONTROLLED</span><span class="o">=</span><span class="k">no</span>
+<span class="n">IPV6INIT</span><span class="o">=</span><span class="k">no</span>
+<span class="n">MASTER</span><span class="o">=</span><span class="n">bond0</span>
+<span class="n">SLAVE</span><span class="o">=</span><span class="n">yes</span>
 </pre></div>
                 
                   
