@@ -127,6 +127,12 @@ tcp        0      0 0.0.0.0:5901            0.0.0.0:*               LISTEN      
 ```
 
 ### VBMC
+
+#### Installation
+```
+yum install gcc python-devel
+pip install --upgrade setuptools
+pip install virtualbmc
 ```
 /opt/vbmc/bin/vbmc add ooo-controller001 --port 16001 --username test --password secret
 /opt/vbmc/bin/vbmc add ooo-controller002 --port 16002 --username test --password secret

@@ -43,17 +43,6 @@ cp /usr/share/python-tripleoclient/undercloud.conf.sample ~/undercloud.conf
 openstack undercloud install
 ```
 
-### Overcloud Deployment
-```
-export DIB_YUM_REPO_CONF="/etc/yum.repos.d/delorean*"
-
-#Build the images for the Overcloud
-openstack overcloud image build
-
-# Upload the images
-openstack overcloud image upload
-```
-
 ### Add DNS to Overcloud
 ```
 (undercloud) [stack@director ~]$ openstack subnet list
@@ -64,6 +53,17 @@ openstack overcloud image upload
 +--------------------------------------+-----------------+--------------------------------------+-----------------+
 
 openstack subnet set 08a306ed-a5e8-47cd-ac66-a67722d03a42 --dns-nameserver 8.8.8.8
+```
+
+### Overcloud Deployment
+```
+export DIB_YUM_REPO_CONF="/etc/yum.repos.d/delorean*"
+
+#Build the images for the Overcloud
+openstack overcloud image build
+
+# Upload the images
+openstack overcloud image upload
 ```
 
 ### Register the nodes

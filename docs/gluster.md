@@ -1,3 +1,8 @@
+### Troubleshooting
+```
+gluster volume info
+```
+
 ```
 sudo gluster peer probe kube2
 ```
@@ -23,4 +28,11 @@ mount -t glusterfs $GLUSTER_SERVER_IP:$SHARE_NAME $LOCAL_PATH
 
 ```
 sudo gluster volume start gluster-vol-1
+```
+
+### Enable nfs on a gluster (non-ganesha) volume
+```
+gluster volume set media nfs
+gluster volume set media nfs.disable off
+gluster volume set openstack-storage nfs.disable off
 ```

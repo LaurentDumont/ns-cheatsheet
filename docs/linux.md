@@ -466,3 +466,8 @@ IPV6INIT=no
 MASTER=bond0
 SLAVE=yes
 ```
+
+### Write speed test
+``` https://www.thomas-krenn.com/en/wiki/Linux_I/O_Performance_Tests_using_dd
+dd if=/dev/zero of=/root/testfile bs=1G count=1 oflag=dsync
+```
