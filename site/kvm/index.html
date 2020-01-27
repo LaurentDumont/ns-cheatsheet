@@ -420,6 +420,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../kubernetes/" title="Kubernetes" class="md-nav__link">
+      Kubernetes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -477,12 +489,18 @@
     VBMC
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enable-serial-connection-over-virsh" title="Enable serial connection over virsh" class="md-nav__link">
-    Enable serial connection over virsh
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -716,12 +734,18 @@
     VBMC
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#enable-serial-connection-over-virsh" title="Enable serial connection over virsh" class="md-nav__link">
-    Enable serial connection over virsh
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#installation" title="Installation" class="md-nav__link">
+    Installation
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -873,22 +897,26 @@ iface br1 inet manual
 
 
 <h3 id="vbmc">VBMC</h3>
-<div class="codehilite"><pre><span></span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">vbmc</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">vbmc</span> <span class="k">add</span> <span class="n">ooo</span><span class="o">-</span><span class="n">controller001</span> <span class="c1">--port 16001 --username test --password secret</span>
-<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">vbmc</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">vbmc</span> <span class="k">add</span> <span class="n">ooo</span><span class="o">-</span><span class="n">controller002</span> <span class="c1">--port 16002 --username test --password secret</span>
-<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">vbmc</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">vbmc</span> <span class="k">add</span> <span class="n">ooo</span><span class="o">-</span><span class="n">controller003</span> <span class="c1">--port 16003 --username test --password secret</span>
-<span class="n">sudo</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">vbmc</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">vbmc</span> <span class="k">add</span> <span class="n">ooo</span><span class="o">-</span><span class="n">compute001</span> <span class="c1">--port 16004 --username test --password secret</span>
-
-<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">vbmc</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">vbmc</span> <span class="k">start</span> <span class="n">ooo</span><span class="o">-</span><span class="n">controller001</span>
-<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">vbmc</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">vbmc</span> <span class="k">start</span> <span class="n">ooo</span><span class="o">-</span><span class="n">controller002</span>
-<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">vbmc</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">vbmc</span> <span class="k">start</span> <span class="n">ooo</span><span class="o">-</span><span class="n">controller003</span>
-<span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">vbmc</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">vbmc</span> <span class="k">start</span> <span class="n">ooo</span><span class="o">-</span><span class="n">compute001</span>
+<h4 id="installation">Installation</h4>
+<div class="codehilite"><pre><span></span><span class="n">yum</span> <span class="n">install</span> <span class="n">gcc</span> <span class="n">python</span><span class="o">-</span><span class="n">devel</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="c1">--upgrade setuptools</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">virtualbmc</span>
 </pre></div>
 
 
-<h3 id="enable-serial-connection-over-virsh">Enable serial connection over virsh</h3>
-<div class="codehilite"><pre><span></span><span class="c1">#FROM THE GUEST VM</span>
-sudo systemctl <span class="nb">enable</span> serial-getty@ttyS0.service
-sudo systemctl start serial-getty@ttyS0.service
+<p>/opt/vbmc/bin/vbmc add ooo-controller001 --port 16001 --username test --password secret
+/opt/vbmc/bin/vbmc add ooo-controller002 --port 16002 --username test --password secret
+/opt/vbmc/bin/vbmc add ooo-controller003 --port 16003 --username test --password secret
+sudo /opt/vbmc/bin/vbmc add ooo-compute001 --port 16004 --username test --password secret</p>
+<p>/opt/vbmc/bin/vbmc start ooo-controller001
+/opt/vbmc/bin/vbmc start ooo-controller002
+/opt/vbmc/bin/vbmc start ooo-controller003
+/opt/vbmc/bin/vbmc start ooo-compute001</p>
+<div class="codehilite"><pre><span></span><span class="err">###</span><span class="w"> </span><span class="n">Enable</span><span class="w"> </span><span class="n">serial</span><span class="w"> </span><span class="k">connection</span><span class="w"> </span><span class="k">over</span><span class="w"> </span><span class="n">virsh</span><span class="w"></span>
+<span class="err">```</span><span class="n">bash</span><span class="w"></span>
+<span class="n">#FROM</span><span class="w"> </span><span class="n">THE</span><span class="w"> </span><span class="n">GUEST</span><span class="w"> </span><span class="n">VM</span><span class="w"></span>
+<span class="n">sudo</span><span class="w"> </span><span class="n">systemctl</span><span class="w"> </span><span class="n">enable</span><span class="w"> </span><span class="n">serial</span><span class="o">-</span><span class="n">getty</span><span class="nv">@ttyS0</span><span class="p">.</span><span class="n">service</span><span class="w"></span>
+<span class="n">sudo</span><span class="w"> </span><span class="n">systemctl</span><span class="w"> </span><span class="k">start</span><span class="w"> </span><span class="n">serial</span><span class="o">-</span><span class="n">getty</span><span class="nv">@ttyS0</span><span class="p">.</span><span class="n">service</span><span class="w"></span>
 </pre></div>
 
 
@@ -917,7 +945,7 @@ sudo virsh console <span class="nv">$KVM_DOMAIN_ID</span>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../kolla/" title="Kolla" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../kubernetes/" title="Kubernetes" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -926,7 +954,7 @@ sudo virsh console <span class="nv">$KVM_DOMAIN_ID</span>
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Kolla
+                Kubernetes
               </span>
             </div>
           </a>

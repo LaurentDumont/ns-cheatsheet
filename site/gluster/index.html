@@ -131,7 +131,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#no-replicate-single-server" tabindex="1" class="md-skip">
+      <a href="#troubleshooting" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -397,6 +397,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#no-replicate-single-server" title="No replicate - single server." class="md-nav__link">
     No replicate - single server.
   </a>
@@ -406,6 +413,13 @@
         <li class="md-nav__item">
   <a href="#mount-a-gluster-share" title="Mount a gluster share." class="md-nav__link">
     Mount a gluster share.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-nfs-on-a-gluster-non-ganesha-volume" title="Enable nfs on a gluster (non-ganesha) volume" class="md-nav__link">
+    Enable nfs on a gluster (non-ganesha) volume
   </a>
   
 </li>
@@ -453,6 +467,18 @@
   <li class="md-nav__item">
     <a href="../kolla/" title="Kolla" class="md-nav__link">
       Kolla
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes/" title="Kubernetes" class="md-nav__link">
+      Kubernetes
     </a>
   </li>
 
@@ -656,6 +682,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#troubleshooting" title="Troubleshooting" class="md-nav__link">
+    Troubleshooting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#no-replicate-single-server" title="No replicate - single server." class="md-nav__link">
     No replicate - single server.
   </a>
@@ -665,6 +698,13 @@
         <li class="md-nav__item">
   <a href="#mount-a-gluster-share" title="Mount a gluster share." class="md-nav__link">
     Mount a gluster share.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-nfs-on-a-gluster-non-ganesha-volume" title="Enable nfs on a gluster (non-ganesha) volume" class="md-nav__link">
+    Enable nfs on a gluster (non-ganesha) volume
   </a>
   
 </li>
@@ -690,7 +730,12 @@
                 
                   <h1>Gluster</h1>
                 
-                <div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">gluster</span> <span class="n">peer</span> <span class="n">probe</span> <span class="n">kube2</span>
+                <h3 id="troubleshooting">Troubleshooting</h3>
+<div class="codehilite"><pre><span></span><span class="n">gluster</span> <span class="n">volume</span> <span class="n">info</span>
+</pre></div>
+
+
+<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">gluster</span> <span class="n">peer</span> <span class="n">probe</span> <span class="n">kube2</span>
 </pre></div>
 
 
@@ -714,6 +759,13 @@
 
 
 <div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">gluster</span> <span class="n">volume</span> <span class="k">start</span> <span class="n">gluster</span><span class="o">-</span><span class="n">vol</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+
+
+<h3 id="enable-nfs-on-a-gluster-non-ganesha-volume">Enable nfs on a gluster (non-ganesha) volume</h3>
+<div class="codehilite"><pre><span></span><span class="n">gluster</span> <span class="n">volume</span> <span class="k">set</span> <span class="n">media</span> <span class="n">nfs</span>
+<span class="n">gluster</span> <span class="n">volume</span> <span class="k">set</span> <span class="n">media</span> <span class="n">nfs</span><span class="p">.</span><span class="n">disable</span> <span class="k">off</span>
+<span class="n">gluster</span> <span class="n">volume</span> <span class="k">set</span> <span class="n">openstack</span><span class="o">-</span><span class="k">storage</span> <span class="n">nfs</span><span class="p">.</span><span class="n">disable</span> <span class="k">off</span>
 </pre></div>
                 
                   

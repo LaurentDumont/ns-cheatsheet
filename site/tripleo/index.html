@@ -422,6 +422,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../kubernetes/" title="Kubernetes" class="md-nav__link">
+      Kubernetes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
     <a href="../kvm/" title="KVM" class="md-nav__link">
       KVM
     </a>
@@ -650,15 +662,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#overcloud-deployment" title="Overcloud Deployment" class="md-nav__link">
-    Overcloud Deployment
+  <a href="#add-dns-to-overcloud" title="Add DNS to Overcloud" class="md-nav__link">
+    Add DNS to Overcloud
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-dns-to-overcloud" title="Add DNS to Overcloud" class="md-nav__link">
-    Add DNS to Overcloud
+  <a href="#overcloud-deployment" title="Overcloud Deployment" class="md-nav__link">
+    Overcloud Deployment
   </a>
   
 </li>
@@ -831,15 +843,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#overcloud-deployment" title="Overcloud Deployment" class="md-nav__link">
-    Overcloud Deployment
+  <a href="#add-dns-to-overcloud" title="Add DNS to Overcloud" class="md-nav__link">
+    Add DNS to Overcloud
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-dns-to-overcloud" title="Add DNS to Overcloud" class="md-nav__link">
-    Add DNS to Overcloud
+  <a href="#overcloud-deployment" title="Overcloud Deployment" class="md-nav__link">
+    Overcloud Deployment
   </a>
   
 </li>
@@ -987,17 +999,6 @@ su - stack
 </pre></div>
 
 
-<h3 id="overcloud-deployment">Overcloud Deployment</h3>
-<div class="codehilite"><pre><span></span><span class="nv">export</span> <span class="nv">DIB_YUM_REPO_CONF</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">/etc/yum.repos.d/delorean*</span><span class="s2">&quot;</span>
-
-#<span class="nv">Build</span> <span class="nv">the</span> <span class="nv">images</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">Overcloud</span>
-<span class="nv">openstack</span> <span class="nv">overcloud</span> <span class="nv">image</span> <span class="nv">build</span>
-
-# <span class="nv">Upload</span> <span class="nv">the</span> <span class="nv">images</span>
-<span class="nv">openstack</span> <span class="nv">overcloud</span> <span class="nv">image</span> <span class="nv">upload</span>
-</pre></div>
-
-
 <h3 id="add-dns-to-overcloud">Add DNS to Overcloud</h3>
 <div class="codehilite"><pre><span></span><span class="p">(</span><span class="n">undercloud</span><span class="p">)</span><span class="w"> </span><span class="o">[</span><span class="n">stack@director ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">openstack</span><span class="w"> </span><span class="n">subnet</span><span class="w"> </span><span class="n">list</span><span class="w"></span>
 <span class="o">+</span><span class="c1">--------------------------------------+-----------------+--------------------------------------+-----------------+</span>
@@ -1007,6 +1008,17 @@ su - stack
 <span class="o">+</span><span class="c1">--------------------------------------+-----------------+--------------------------------------+-----------------+</span>
 
 <span class="n">openstack</span><span class="w"> </span><span class="n">subnet</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="mi">08</span><span class="n">a306ed</span><span class="o">-</span><span class="n">a5e8</span><span class="o">-</span><span class="mi">47</span><span class="n">cd</span><span class="o">-</span><span class="n">ac66</span><span class="o">-</span><span class="n">a67722d03a42</span><span class="w"> </span><span class="c1">--dns-nameserver 8.8.8.8</span>
+</pre></div>
+
+
+<h3 id="overcloud-deployment">Overcloud Deployment</h3>
+<div class="codehilite"><pre><span></span><span class="nv">export</span> <span class="nv">DIB_YUM_REPO_CONF</span><span class="o">=</span><span class="s2">&quot;</span><span class="s">/etc/yum.repos.d/delorean*</span><span class="s2">&quot;</span>
+
+#<span class="nv">Build</span> <span class="nv">the</span> <span class="nv">images</span> <span class="k">for</span> <span class="nv">the</span> <span class="nv">Overcloud</span>
+<span class="nv">openstack</span> <span class="nv">overcloud</span> <span class="nv">image</span> <span class="nv">build</span>
+
+# <span class="nv">Upload</span> <span class="nv">the</span> <span class="nv">images</span>
+<span class="nv">openstack</span> <span class="nv">overcloud</span> <span class="nv">image</span> <span class="nv">upload</span>
 </pre></div>
 
 

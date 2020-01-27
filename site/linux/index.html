@@ -561,6 +561,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#write-speed-test" title="Write speed test" class="md-nav__link">
+    Write speed test
+  </a>
+  
+</li>
+      
       
       
       
@@ -628,6 +635,18 @@
   <li class="md-nav__item">
     <a href="../kolla/" title="Kolla" class="md-nav__link">
       Kolla
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes/" title="Kubernetes" class="md-nav__link">
+      Kubernetes
     </a>
   </li>
 
@@ -1015,6 +1034,13 @@
         <li class="md-nav__item">
   <a href="#redhat-centos-bonding-lacp-vlan" title="Redhat / Centos bonding LACP - VLAN" class="md-nav__link">
     Redhat / Centos bonding LACP - VLAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-speed-test" title="Write speed test" class="md-nav__link">
+    Write speed test
   </a>
   
 </li>
@@ -1493,6 +1519,11 @@ root@kvm01:/tmp# virsh send-key ooo-director KEY_LEFTALT KEY_SYSRQ KEY_B
 <span class="n">MASTER</span><span class="o">=</span><span class="n">bond0</span>
 <span class="n">SLAVE</span><span class="o">=</span><span class="n">yes</span>
 </pre></div>
+
+
+<h3 id="write-speed-test">Write speed test</h3>
+<p><code>https://www.thomas-krenn.com/en/wiki/Linux_I/O_Performance_Tests_using_dd
+dd if=/dev/zero of=/root/testfile bs=1G count=1 oflag=dsync</code></p>
                 
                   
                 
