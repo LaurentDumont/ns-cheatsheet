@@ -40,7 +40,7 @@
     
     
       
-        <title>Postgres - Laurent Dumont - Internet notepad.</title>
+        <title>Kubernetes - Laurent Dumont - Internet notepad.</title>
       
     
     
@@ -131,7 +131,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#create-a-database-and-a-user-with-admin-privileges" tabindex="1" class="md-skip">
+      <a href="#debugging" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -156,7 +156,7 @@
               Laurent Dumont - Internet notepad.
             </span>
             <span class="md-header-nav__topic">
-              Postgres
+              Kubernetes
             </span>
           
         </div>
@@ -420,11 +420,78 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../kubernetes/" title="Kubernetes" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Kubernetes
+      </label>
+    
+    <a href="./" title="Kubernetes" class="md-nav__link md-nav__link--active">
       Kubernetes
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" title="Debugging" class="md-nav__link">
+    Debugging
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete-pv" title="Delete PV" class="md-nav__link">
+    Delete PV
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" title="Storage" class="md-nav__link">
+    Storage
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-gluster-endpoint" title="Create Gluster Endpoint." class="md-nav__link">
+    Create Gluster Endpoint.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -540,45 +607,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Postgres
-      </label>
-    
-    <a href="./" title="Postgres" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../postgres/" title="Postgres" class="md-nav__link">
       Postgres
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">Table of contents</label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#create-a-database-and-a-user-with-admin-privileges" title="Create a database and a user with admin privileges" class="md-nav__link">
-    Create a database and a user with admin privileges
-  </a>
-  
-</li>
-      
-      
-      
-      
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -661,9 +694,42 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#create-a-database-and-a-user-with-admin-privileges" title="Create a database and a user with admin privileges" class="md-nav__link">
-    Create a database and a user with admin privileges
+  <a href="#debugging" title="Debugging" class="md-nav__link">
+    Debugging
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete-pv" title="Delete PV" class="md-nav__link">
+    Delete PV
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage" title="Storage" class="md-nav__link">
+    Storage
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-gluster-endpoint" title="Create Gluster Endpoint." class="md-nav__link">
+    Create Gluster Endpoint.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -683,17 +749,42 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/postgres.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/kubernetes.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Postgres</h1>
+                  <h1>Kubernetes</h1>
                 
-                <h3 id="create-a-database-and-a-user-with-admin-privileges">Create a database and a user with admin privileges</h3>
-<div class="codehilite"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="k">get</span> <span class="n">install</span> <span class="n">postgresql</span> <span class="n">postgresql</span><span class="o">-</span><span class="n">client</span>
-<span class="n">sudo</span> <span class="o">-</span><span class="n">u</span> <span class="n">postgres</span> <span class="n">psql</span>
-<span class="k">create</span> <span class="k">database</span> <span class="n">netbox</span><span class="p">;</span>
-<span class="k">create</span> <span class="k">user</span> <span class="n">netbox_user</span> <span class="k">with</span> <span class="k">encrypted</span> <span class="n">password</span> <span class="s1">&#39;test&#39;</span><span class="p">;</span>
-<span class="k">grant</span> <span class="k">all</span> <span class="k">privileges</span> <span class="k">on</span> <span class="k">database</span> <span class="n">netbox</span> <span class="k">to</span> <span class="n">netbox_user</span><span class="p">;</span>
+                <h2 id="debugging">Debugging</h2>
+<h3 id="delete-pv">Delete PV</h3>
+<div class="codehilite"><pre><span></span><span class="n">ldumont</span><span class="nv">@docker01</span><span class="err">:</span><span class="o">~</span><span class="err">$</span><span class="w"> </span><span class="n">kubectl</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="n">pv</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="c1">--grace-period=0 --force^C</span>
+<span class="n">ldumont</span><span class="nv">@docker01</span><span class="err">:</span><span class="o">~</span><span class="err">$</span><span class="w"> </span><span class="n">kubectl</span><span class="w"> </span><span class="n">patch</span><span class="w"> </span><span class="n">pv</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="s1">&#39;{&quot;metadata&quot;: {&quot;finalizers&quot;: null}}&#39;</span><span class="w"></span>
+</pre></div>
+
+
+<h2 id="storage">Storage</h2>
+<h3 id="create-gluster-endpoint">Create Gluster Endpoint.</h3>
+<p>gluster-endpoints.yaml</p>
+<div class="codehilite"><pre><span></span> <span class="c1">---</span>
+<span class="n">kind</span><span class="p">:</span> <span class="n">Endpoints</span>
+<span class="n">apiVersion</span><span class="p">:</span> <span class="n">v1</span>
+<span class="n">metadata</span><span class="p">:</span>
+ <span class="n">name</span><span class="p">:</span> <span class="n">glusterfs</span><span class="o">-</span><span class="k">cluster</span>
+<span class="n">subsets</span><span class="p">:</span>
+<span class="o">-</span> <span class="n">addresses</span><span class="p">:</span>
+ <span class="o">-</span> <span class="n">ip</span><span class="p">:</span> <span class="mi">9</span><span class="p">.</span><span class="mi">111</span><span class="p">.</span><span class="mi">249</span><span class="p">.</span><span class="mi">161</span>
+ <span class="n">ports</span><span class="p">:</span>
+ <span class="o">-</span> <span class="n">port</span><span class="p">:</span> <span class="mi">666</span>
+</pre></div>
+
+
+<p>gluster-service.yaml</p>
+<div class="codehilite"><pre><span></span><span class="n">apiVersion</span><span class="o">:</span> <span class="n">v1</span>
+<span class="n">kind</span><span class="o">:</span> <span class="n">Service</span>
+<span class="n">metadata</span><span class="o">:</span>
+  <span class="n">name</span><span class="o">:</span> <span class="n">glusterfs</span><span class="o">-</span><span class="n">cluster</span>
+<span class="n">spec</span><span class="o">:</span>
+  <span class="n">ports</span><span class="o">:</span>
+  <span class="o">-</span> <span class="n">port</span><span class="o">:</span> <span class="mi">666</span>
 </pre></div>
                 
                   
@@ -715,7 +806,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../ovs/" title="OVS" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../kolla/" title="Kolla" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -724,19 +815,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                OVS
+                Kolla
               </span>
             </div>
           </a>
         
         
-          <a href="../prometheus/" title="Prometheus" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../kvm/" title="KVM" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Prometheus
+                KVM
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
