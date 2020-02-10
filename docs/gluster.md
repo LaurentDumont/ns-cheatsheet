@@ -12,6 +12,10 @@ sudo gluster peer status
 ```
 
 ```
+gluster volume status all clients
+```
+
+```
 sudo gluster volume create gluster-vol-1 replica 2 transport tcp kube1:/gluster/gluster-vol-1 kube2:/gluster/gluster-vol-1
 ```
 
