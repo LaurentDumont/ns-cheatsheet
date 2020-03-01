@@ -571,6 +571,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#show-databases" title="Show databases" class="md-nav__link">
+    Show databases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-users" title="Show users" class="md-nav__link">
+    Show users
+  </a>
+  
+</li>
+      
       
       
       
@@ -667,6 +681,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#show-databases" title="Show databases" class="md-nav__link">
+    Show databases
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-users" title="Show users" class="md-nav__link">
+    Show users
+  </a>
+  
+</li>
+      
       
       
       
@@ -694,6 +722,33 @@
 <span class="k">create</span> <span class="k">database</span> <span class="n">netbox</span><span class="p">;</span>
 <span class="k">create</span> <span class="k">user</span> <span class="n">netbox_user</span> <span class="k">with</span> <span class="k">encrypted</span> <span class="n">password</span> <span class="s1">&#39;test&#39;</span><span class="p">;</span>
 <span class="k">grant</span> <span class="k">all</span> <span class="k">privileges</span> <span class="k">on</span> <span class="k">database</span> <span class="n">netbox</span> <span class="k">to</span> <span class="n">netbox_user</span><span class="p">;</span>
+</pre></div>
+
+
+<h3 id="show-databases">Show databases</h3>
+<div class="codehilite"><pre><span></span><span class="n">postgres</span><span class="o">=#</span> <span class="err">\</span><span class="n">l</span>
+                                  <span class="n">List</span> <span class="k">of</span> <span class="n">databases</span>
+   <span class="n">Name</span>    <span class="o">|</span>  <span class="k">Owner</span>   <span class="o">|</span> <span class="k">Encoding</span> <span class="o">|</span>   <span class="k">Collate</span>   <span class="o">|</span>    <span class="n">Ctype</span>    <span class="o">|</span>   <span class="k">Access</span> <span class="k">privileges</span>   
+<span class="c1">-----------+----------+----------+-------------+-------------+-----------------------</span>
+ <span class="n">ara</span>       <span class="o">|</span> <span class="n">postgres</span> <span class="o">|</span> <span class="n">UTF8</span>     <span class="o">|</span> <span class="n">en_US</span><span class="p">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span> <span class="o">|</span> <span class="n">en_US</span><span class="p">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span> <span class="o">|</span> <span class="o">=</span><span class="n">Tc</span><span class="o">/</span><span class="n">postgres</span>         <span class="o">+</span>
+           <span class="o">|</span>          <span class="o">|</span>          <span class="o">|</span>             <span class="o">|</span>             <span class="o">|</span> <span class="n">postgres</span><span class="o">=</span><span class="n">CTc</span><span class="o">/</span><span class="n">postgres</span><span class="o">+</span>
+           <span class="o">|</span>          <span class="o">|</span>          <span class="o">|</span>             <span class="o">|</span>             <span class="o">|</span> <span class="n">ara_user</span><span class="o">=</span><span class="n">CTc</span><span class="o">/</span><span class="n">postgres</span>
+ <span class="n">postgres</span>  <span class="o">|</span> <span class="n">postgres</span> <span class="o">|</span> <span class="n">UTF8</span>     <span class="o">|</span> <span class="n">en_US</span><span class="p">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span> <span class="o">|</span> <span class="n">en_US</span><span class="p">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span> <span class="o">|</span> 
+ <span class="n">template0</span> <span class="o">|</span> <span class="n">postgres</span> <span class="o">|</span> <span class="n">UTF8</span>     <span class="o">|</span> <span class="n">en_US</span><span class="p">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span> <span class="o">|</span> <span class="n">en_US</span><span class="p">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span> <span class="o">|</span> <span class="o">=</span><span class="k">c</span><span class="o">/</span><span class="n">postgres</span>          <span class="o">+</span>
+           <span class="o">|</span>          <span class="o">|</span>          <span class="o">|</span>             <span class="o">|</span>             <span class="o">|</span> <span class="n">postgres</span><span class="o">=</span><span class="n">CTc</span><span class="o">/</span><span class="n">postgres</span>
+ <span class="n">template1</span> <span class="o">|</span> <span class="n">postgres</span> <span class="o">|</span> <span class="n">UTF8</span>     <span class="o">|</span> <span class="n">en_US</span><span class="p">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span> <span class="o">|</span> <span class="n">en_US</span><span class="p">.</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span> <span class="o">|</span> <span class="o">=</span><span class="k">c</span><span class="o">/</span><span class="n">postgres</span>          <span class="o">+</span>
+           <span class="o">|</span>          <span class="o">|</span>          <span class="o">|</span>             <span class="o">|</span>             <span class="o">|</span> <span class="n">postgres</span><span class="o">=</span><span class="n">CTc</span><span class="o">/</span><span class="n">postgres</span>
+<span class="p">(</span><span class="mi">4</span> <span class="k">rows</span><span class="p">)</span>
+</pre></div>
+
+
+<h3 id="show-users">Show users</h3>
+<div class="codehilite"><pre><span></span><span class="n">ara</span><span class="o">=&gt;</span> <span class="err">\</span><span class="n">du</span>
+                                   <span class="n">List</span> <span class="k">of</span> <span class="n">roles</span>
+ <span class="k">Role</span> <span class="n">name</span> <span class="o">|</span>                         <span class="n">Attributes</span>                         <span class="o">|</span> <span class="n">Member</span> <span class="k">of</span> 
+<span class="c1">-----------+------------------------------------------------------------+-----------</span>
+ <span class="n">ara_user</span>  <span class="o">|</span> <span class="k">Create</span> <span class="n">DB</span>                                                  <span class="o">|</span> <span class="err">{}</span>
+ <span class="n">postgres</span>  <span class="o">|</span> <span class="n">Superuser</span><span class="p">,</span> <span class="k">Create</span> <span class="k">role</span><span class="p">,</span> <span class="k">Create</span> <span class="n">DB</span><span class="p">,</span> <span class="n">Replication</span><span class="p">,</span> <span class="n">Bypass</span> <span class="n">RLS</span> <span class="o">|</span> <span class="err">{}</span>
 </pre></div>
                 
                   

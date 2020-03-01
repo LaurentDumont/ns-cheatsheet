@@ -131,7 +131,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#debugging" tabindex="1" class="md-skip">
+      <a href="#pod-configuration" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -445,6 +445,40 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#pod-configuration" title="Pod configuration" class="md-nav__link">
+    Pod configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#config-map" title="Config-map" class="md-nav__link">
+    Config-map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-helm-charts" title="Create helm charts" class="md-nav__link">
+    Create helm charts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-helm-charts" title="Delete helm charts" class="md-nav__link">
+    Delete helm charts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#debugging" title="Debugging" class="md-nav__link">
     Debugging
   </a>
@@ -694,6 +728,40 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#pod-configuration" title="Pod configuration" class="md-nav__link">
+    Pod configuration
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#config-map" title="Config-map" class="md-nav__link">
+    Config-map
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-helm-charts" title="Create helm charts" class="md-nav__link">
+    Create helm charts
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-helm-charts" title="Delete helm charts" class="md-nav__link">
+    Delete helm charts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#debugging" title="Debugging" class="md-nav__link">
     Debugging
   </a>
@@ -754,7 +822,26 @@
                 
                   <h1>Kubernetes</h1>
                 
-                <h2 id="debugging">Debugging</h2>
+                <h2 id="pod-configuration">Pod configuration</h2>
+<h3 id="config-map">Config-map</h3>
+<div class="codehilite"><pre><span></span><span class="n">kubectl</span> <span class="k">create</span> <span class="n">configmap</span> <span class="n">ara</span><span class="o">-</span><span class="n">config</span> <span class="c1">--namespace cmaker-lab-namespace --from-file=config-maps/settings.yaml   </span>
+<span class="n">kubectl</span> <span class="k">get</span> <span class="n">configmap</span> <span class="c1">--namespace cmaker-lab-namespace</span>
+</pre></div>
+
+
+<h3 id="create-helm-charts">Create helm charts</h3>
+<div class="codehilite"><pre><span></span><span class="n">helm</span> <span class="n">install</span> <span class="n">ara</span><span class="o">-</span><span class="n">postgres</span> <span class="c1">--namespace cmaker-lab-namespace  ./postgresql/ --values postgresql/values.yaml</span>
+<span class="n">helm</span> <span class="n">install</span> <span class="n">ara</span><span class="o">-</span><span class="n">ansible</span> <span class="c1">--namespace cmaker-lab-namespace  ./helm-ansible-ara/ --values helm-ansible-ara/values.yaml</span>
+</pre></div>
+
+
+<h3 id="delete-helm-charts">Delete helm charts</h3>
+<div class="codehilite"><pre><span></span><span class="n">helm</span> <span class="k">delete</span> <span class="n">ara</span><span class="o">-</span><span class="n">ansible</span> <span class="c1">--namespace cmaker-lab-namespace</span>
+<span class="n">helm</span> <span class="k">delete</span> <span class="n">ara</span><span class="o">-</span><span class="n">postgres</span> <span class="c1">--namespace cmaker-lab-namespace</span>
+</pre></div>
+
+
+<h2 id="debugging">Debugging</h2>
 <h3 id="delete-pv">Delete PV</h3>
 <div class="codehilite"><pre><span></span><span class="n">ldumont</span><span class="nv">@docker01</span><span class="err">:</span><span class="o">~</span><span class="err">$</span><span class="w"> </span><span class="n">kubectl</span><span class="w"> </span><span class="k">delete</span><span class="w"> </span><span class="n">pv</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="c1">--grace-period=0 --force^C</span>
 <span class="n">ldumont</span><span class="nv">@docker01</span><span class="err">:</span><span class="o">~</span><span class="err">$</span><span class="w"> </span><span class="n">kubectl</span><span class="w"> </span><span class="n">patch</span><span class="w"> </span><span class="n">pv</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="s1">&#39;{&quot;metadata&quot;: {&quot;finalizers&quot;: null}}&#39;</span><span class="w"></span>
@@ -764,7 +851,7 @@
 <h2 id="storage">Storage</h2>
 <h3 id="create-gluster-endpoint">Create Gluster Endpoint.</h3>
 <p>gluster-endpoints.yaml</p>
-<div class="codehilite"><pre><span></span> <span class="c1">---</span>
+<div class="codehilite"><pre><span></span><span class="c1">---</span>
 <span class="n">kind</span><span class="p">:</span> <span class="n">Endpoints</span>
 <span class="n">apiVersion</span><span class="p">:</span> <span class="n">v1</span>
 <span class="n">metadata</span><span class="p">:</span>
