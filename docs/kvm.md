@@ -134,15 +134,15 @@ yum install gcc python-devel
 pip install --upgrade setuptools
 pip install virtualbmc
 ```
-/opt/vbmc/bin/vbmc add ooo-controller001 --port 16001 --username test --password secret
-/opt/vbmc/bin/vbmc add ooo-controller002 --port 16002 --username test --password secret
-/opt/vbmc/bin/vbmc add ooo-controller003 --port 16003 --username test --password secret
-sudo /opt/vbmc/bin/vbmc add ooo-compute001 --port 16004 --username test --password secret
+vbmc add ooo-controller001 --port 16001 --username test --password secret
+vbmc add ooo-controller002 --port 16002 --username test --password secret
+vbmc add ooo-controller003 --port 16003 --username test --password secret
+vbmc add ooo-compute001 --port 16004 --username test --password secret
 
-/opt/vbmc/bin/vbmc start ooo-controller001
-/opt/vbmc/bin/vbmc start ooo-controller002
-/opt/vbmc/bin/vbmc start ooo-controller003
-/opt/vbmc/bin/vbmc start ooo-compute001
+vbmc start ooo-controller001
+vbmc start ooo-controller002
+vbmc start ooo-controller003
+vbmc start ooo-compute001
 ```
 
 ### Enable serial connection over virsh
