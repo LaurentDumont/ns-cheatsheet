@@ -1,3 +1,23 @@
+## Pod configuration
+
+### Config-map
+```
+kubectl create configmap ara-config --namespace cmaker-lab-namespace --from-file=config-maps/settings.yaml   
+kubectl get configmap --namespace cmaker-lab-namespace
+```
+
+### Create helm charts
+```
+helm install ara-postgres --namespace cmaker-lab-namespace  ./postgresql/ --values postgresql/values.yaml
+helm install ara-ansible --namespace cmaker-lab-namespace  ./helm-ansible-ara/ --values helm-ansible-ara/values.yaml
+```
+
+### Delete helm charts
+```
+helm delete ara-ansible --namespace cmaker-lab-namespace
+helm delete ara-postgres --namespace cmaker-lab-namespace
+```
+
 ## Debugging
 
 ### Delete PV
@@ -12,7 +32,7 @@ ldumont@docker01:~$ kubectl patch pv test -p '{"metadata": {"finalizers": null}}
 
 gluster-endpoints.yaml
 ```
- ---
+---
 kind: Endpoints
 apiVersion: v1
 metadata:
@@ -34,3 +54,4 @@ spec:
   ports:
   - port: 666
 ```
+
