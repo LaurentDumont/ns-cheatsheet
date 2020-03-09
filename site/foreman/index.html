@@ -114,7 +114,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#update-foreman" tabindex="0" class="md-skip">
+      <a href="#remove-old-kernel-boot-files-sometimes-necessary-when-the-deployment-fails-with-a-kernel-not-foundmismatch-error" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -344,6 +344,13 @@
   
     <label class="md-nav__title" for="__toc">Table of contents</label>
     <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#remove-old-kernel-boot-files-sometimes-necessary-when-the-deployment-fails-with-a-kernel-not-foundmismatch-error" class="md-nav__link">
+    Remove old kernel boot files (sometimes necessary when the deployment fails with a Kernel not found/mismatch error)
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#update-foreman" class="md-nav__link">
@@ -666,6 +673,13 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#remove-old-kernel-boot-files-sometimes-necessary-when-the-deployment-fails-with-a-kernel-not-foundmismatch-error" class="md-nav__link">
+    Remove old kernel boot files (sometimes necessary when the deployment fails with a Kernel not found/mismatch error)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#update-foreman" class="md-nav__link">
     Update Foreman
   </a>
@@ -713,7 +727,26 @@
                 
                   <h1>Foreman</h1>
                 
-                <h3 id="update-foreman">Update Foreman</h3>
+                <h3 id="remove-old-kernel-boot-files-sometimes-necessary-when-the-deployment-fails-with-a-kernel-not-foundmismatch-error">Remove old kernel boot files (sometimes necessary when the deployment fails with a Kernel not found/mismatch error)</h3>
+<div class="codehilite"><pre><span></span><code>ldumont@foreman:/srv/tftp/boot$ ls -alh
+total 189M
+drwxr-xr-x <span class="m">2</span> foreman-proxy root          <span class="m">4</span>.0K Mar  <span class="m">9</span> <span class="m">12</span>:53 .
+drwxr-xr-x <span class="m">8</span> root          nogroup       <span class="m">4</span>.0K Dec <span class="m">16</span>  <span class="m">2018</span> ..
+-rw-r--r-- <span class="m">1</span> foreman-proxy foreman-proxy  53M Sep  <span class="m">6</span>  <span class="m">2019</span> centos-mirror-qVbSBrznIWMc-initrd.img
+-rw-r--r-- <span class="m">1</span> foreman-proxy foreman-proxy <span class="m">6</span>.5M Aug  <span class="m">7</span>  <span class="m">2019</span> centos-mirror-qVbSBrznIWMc-vmlinuz
+-rw-r--r-- <span class="m">1</span> foreman-proxy foreman-proxy  30M Feb  <span class="m">1</span> <span class="m">09</span>:55 debian-mirror-wXTzvPQ8AfC3-initrd.gz
+-rw-r--r-- <span class="m">1</span> foreman-proxy foreman-proxy <span class="m">5</span>.1M Feb  <span class="m">1</span> <span class="m">09</span>:55 debian-mirror-wXTzvPQ8AfC3-linux
+-rw-r--r-- <span class="m">1</span> foreman-proxy foreman-proxy  36M Apr <span class="m">20</span>  <span class="m">2016</span> ubuntu-16.04-16.04.5-x86_64-initrd.gz
+-rw-r--r-- <span class="m">1</span> foreman-proxy foreman-proxy <span class="m">6</span>.7M Apr <span class="m">20</span>  <span class="m">2016</span> ubuntu-16.04-16.04.5-x86_64-linux
+-rw-r--r-- <span class="m">1</span> foreman-proxy foreman-proxy  45M Apr <span class="m">25</span>  <span class="m">2018</span> ubuntu-mirror-WKCIULkETfqj-initrd.gz
+-rw-r--r-- <span class="m">1</span> foreman-proxy foreman-proxy <span class="m">7</span>.9M Apr <span class="m">25</span>  <span class="m">2018</span> ubuntu-mirror-WKCIULkETfqj-linux
+
+<span class="c1"># Remove the all files related to a single OS.</span>
+sudo rm -f debian-mirror*
+</code></pre></div>
+
+
+<h3 id="update-foreman">Update Foreman</h3>
 <div class="codehilite"><pre><span></span><code><span class="o">#</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">theforeman</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">manuals</span><span class="o">/</span><span class="mi">1</span><span class="p">.</span><span class="mi">22</span><span class="o">/</span><span class="k">index</span><span class="p">.</span><span class="n">html</span><span class="o">#</span><span class="mi">3</span><span class="p">.</span><span class="mi">6</span><span class="n">Upgrade</span>
 
 <span class="n">systemctl</span> <span class="n">apache2</span> <span class="n">stop</span>
