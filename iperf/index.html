@@ -131,6 +131,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#iperf-systemd-file" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -388,9 +392,36 @@
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        iPerf
+      </label>
+    
     <a href="./" title="iPerf" class="md-nav__link md-nav__link--active">
       iPerf
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#iperf-systemd-file" title="Iperf Systemd file" class="md-nav__link">
+    Iperf Systemd file
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -618,6 +649,35 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#iperf-systemd-file" title="Iperf Systemd file" class="md-nav__link">
+    Iperf Systemd file
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
@@ -646,6 +706,21 @@ iPerf3 does not allow you to send traffic directly for UDP. It needs to "connect
 
 <p><strong>IPERF CLIENT TCP UPLOAD AND DOWNLOAD AT THE SAME TIME</strong></p>
 <div class="codehilite"><pre><span></span><span class="p">.</span><span class="o">/</span><span class="n">iperf</span> <span class="c1">--client IPERF_SERVER --dualtest --window 1M</span>
+</pre></div>
+
+
+<h2 id="iperf-systemd-file">Iperf Systemd file</h2>
+<div class="codehilite"><pre><span></span><span class="o">[</span><span class="n">ec2-user@perf-server ~</span><span class="o">]</span><span class="err">$</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">systemd</span><span class="o">/</span><span class="k">system</span><span class="o">/</span><span class="n">iperf3</span><span class="p">.</span><span class="n">service</span><span class="w"> </span>
+<span class="err">#</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">systemd</span><span class="o">/</span><span class="k">system</span><span class="o">/</span><span class="n">iperf</span><span class="p">.</span><span class="n">service</span><span class="w"></span>
+<span class="o">[</span><span class="n">Unit</span><span class="o">]</span><span class="w"></span>
+<span class="n">Description</span><span class="o">=</span><span class="n">iperf</span><span class="w"> </span><span class="n">server</span><span class="w"></span>
+<span class="k">After</span><span class="o">=</span><span class="n">syslog</span><span class="p">.</span><span class="n">target</span><span class="w"> </span><span class="n">network</span><span class="p">.</span><span class="n">target</span><span class="w"> </span><span class="n">auditd</span><span class="p">.</span><span class="n">service</span><span class="w"></span>
+
+<span class="o">[</span><span class="n">Service</span><span class="o">]</span><span class="w"></span>
+<span class="n">ExecStart</span><span class="o">=/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">iperf3</span><span class="w"> </span><span class="c1">--log /var/log/iperf/iperf-server.log --server</span>
+
+<span class="o">[</span><span class="n">Install</span><span class="o">]</span><span class="w"></span>
+<span class="n">WantedBy</span><span class="o">=</span><span class="n">multi</span><span class="o">-</span><span class="k">user</span><span class="p">.</span><span class="n">target</span><span class="w"></span>
 </pre></div>
                 
                   
