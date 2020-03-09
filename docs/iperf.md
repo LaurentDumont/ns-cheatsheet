@@ -16,3 +16,18 @@ iPerf3 does not allow you to send traffic directly for UDP. It needs to "connect
 ```
 ./iperf --client IPERF_SERVER --dualtest --window 1M
 ```
+
+## Iperf Systemd file
+```
+[ec2-user@perf-server ~]$ sudo cat /etc/systemd/system/iperf3.service 
+# /etc/systemd/system/iperf.service
+[Unit]
+Description=iperf server
+After=syslog.target network.target auditd.service
+
+[Service]
+ExecStart=/usr/bin/iperf3 --log /var/log/iperf/iperf-server.log --server
+
+[Install]
+WantedBy=multi-user.target
+```
