@@ -40,3 +40,12 @@ gluster volume set media nfs
 gluster volume set media nfs.disable off
 gluster volume set openstack-storage nfs.disable off
 ```
+
+### Disable ctime for Rancher to be able to mount Gluster volumes.
+```
+root@gluster01:~# history | grep ctime
+  481  gluster volume set kube_vol ctime off
+  498  gluster volume set kube_vol ctime on
+  499  gluster volume set kube_vol ctime off
+  501  history | grep ctime
+```
