@@ -409,6 +409,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#disable-ctime-for-rancher-to-be-able-to-mount-gluster-volumes" class="md-nav__link">
+    Disable ctime for Rancher to be able to mount Gluster volumes.
+  </a>
+  
+</li>
+      
       
       
       
@@ -694,6 +701,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#disable-ctime-for-rancher-to-be-able-to-mount-gluster-volumes" class="md-nav__link">
+    Disable ctime for Rancher to be able to mount Gluster volumes.
+  </a>
+  
+</li>
+      
       
       
       
@@ -755,6 +769,15 @@
 <div class="codehilite"><pre><span></span><code><span class="err">gluster volume set media nfs</span>
 <span class="err">gluster volume set media nfs.disable off</span>
 <span class="err">gluster volume set openstack-storage nfs.disable off</span>
+</code></pre></div>
+
+
+<h3 id="disable-ctime-for-rancher-to-be-able-to-mount-gluster-volumes">Disable ctime for Rancher to be able to mount Gluster volumes.</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">root@gluster01:~# history | grep ctime</span>
+<span class="err">  481  gluster volume set kube_vol ctime off</span>
+<span class="err">  498  gluster volume set kube_vol ctime on</span>
+<span class="err">  499  gluster volume set kube_vol ctime off</span>
+<span class="err">  501  history | grep ctime</span>
 </code></pre></div>
                 
                   
