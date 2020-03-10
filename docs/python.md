@@ -1,6 +1,18 @@
 ### Profiling a python application.
 ```python
 pip3 install line_profiler
+```
+
+Add the `@profile` to each function that is to be profiled
+```
+# Use the decorator
+@profile
+def some_func(*args, **kwargs)
+    ...
+```
+
+Start the profiling process
+```
 python3 -m line_profiler tag-exporter.py.lprof
 ```
 
