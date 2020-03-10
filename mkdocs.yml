@@ -26,12 +26,12 @@ nav:
       - Molecule: molecule.md
       - MySQL/MariaDB: mysql.md
       - Netbox: netbox.md
-      - Python: python.md
       - Openstack: openstack.md
       - OPNFV: opnfv.md
       - OVS: ovs.md
       - Postgres: postgres.md
       - Prometheus: prometheus.md
+      - Python: python.md
       - Security: security.md
       - Splunk: splunk.md
       - Tripleo: tripleo.md
