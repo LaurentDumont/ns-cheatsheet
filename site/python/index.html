@@ -687,7 +687,19 @@
                 
                 <h3 id="profiling-a-python-application">Profiling a python application.</h3>
 <div class="codehilite"><pre><span></span><code><span class="n">pip3</span> <span class="n">install</span> <span class="n">line_profiler</span>
-<span class="n">python3</span> <span class="o">-</span><span class="n">m</span> <span class="n">line_profiler</span> <span class="n">tag</span><span class="o">-</span><span class="n">exporter</span><span class="o">.</span><span class="n">py</span><span class="o">.</span><span class="n">lprof</span>
+</code></pre></div>
+
+
+<p>Add the <code>@profile</code> to each function that is to be profiled</p>
+<div class="codehilite"><pre><span></span><code><span class="err"># Use the decorator</span>
+<span class="err">@profile</span>
+<span class="err">def some_func(*args, **kwargs)</span>
+<span class="err">    ...</span>
+</code></pre></div>
+
+
+<p>Start the profiling process</p>
+<div class="codehilite"><pre><span></span><code><span class="err">python3 -m line_profiler tag-exporter.py.lprof</span>
 </code></pre></div>
 
 
