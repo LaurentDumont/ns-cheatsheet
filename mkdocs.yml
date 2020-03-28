@@ -17,6 +17,7 @@ nav:
       - Git: git.md
       - Gluster: gluster.md
       - iPerf: iperf.md
+      - ISCSI: iscsi.md
       - Juniper: juniper.md
       - Kolla: kolla.md
       - Kubernetes: kubernetes.md
@@ -65,3 +66,6 @@ extra:
         link: 'https://github.com/laurentdumont'
       - type: 'linkedin'
         link: 'https://www.linkedin.com/in/laurentfdumont/'
+
+extra_css:
+  - css/extra.css	  - css/extra.css
