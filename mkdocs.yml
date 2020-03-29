@@ -32,6 +32,7 @@ nav:
       - OVS: ovs.md
       - Postgres: postgres.md
       - Prometheus: prometheus.md
+      - Proxmox: proxmox.md
       - Python: python.md
       - Security: security.md
       - Splunk: splunk.md
