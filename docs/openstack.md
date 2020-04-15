@@ -20,6 +20,8 @@ for OS_SERVICE in $(openstack compute service list --host ${OS_NODE} -c Binary -
     openstack compute service set --disable --disable-reason "Maintenance" ${OS_NODE} ${OS_SERVICE}
 done
  
+openstack compute service set --disable --disable-reason potato qasite1-compute001.localdomain nova-compute
+
 # Search for server witch status error
 openstack server list --all --status ERROR
  
@@ -31,10 +33,20 @@ openstack server list
 openstack server list -c ID -c Name -c Status -c Networks -c Host --long
 ```
 
+### Start all VMs on a single compute
+```
+for x in `openstack server list --all -c ID -f value --host tenlab1-compute002.localdomain`;do openstack server start $x;done 
+```
+
 ### Migrate to specific compute
 ```
 nova host-evacuate --target_host kolla-compute003 kolla-compute004.cmaker.studio
 watch nova migration-list
+```
+
+### Get all the keypairs existing for all users
+```
+for x in `openstack user list -f value -c ID`;do echo $x && nova keypair-list --user $x;done
 ```
 
 ### Migrate single server from compute
