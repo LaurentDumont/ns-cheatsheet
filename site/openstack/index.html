@@ -535,8 +535,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#start-all-vms-on-a-single-compute" class="md-nav__link">
+    Start all VMs on a single compute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#migrate-to-specific-compute" class="md-nav__link">
     Migrate to specific compute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-all-the-keypairs-existing-for-all-users" class="md-nav__link">
+    Get all the keypairs existing for all users
   </a>
   
 </li>
@@ -761,8 +775,22 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#start-all-vms-on-a-single-compute" class="md-nav__link">
+    Start all VMs on a single compute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#migrate-to-specific-compute" class="md-nav__link">
     Migrate to specific compute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-all-the-keypairs-existing-for-all-users" class="md-nav__link">
+    Get all the keypairs existing for all users
   </a>
   
 </li>
@@ -872,6 +900,8 @@ openstack compute service list --host <span class="si">${</span><span class="nv"
     openstack compute service <span class="nb">set</span> --disable --disable-reason <span class="s2">&quot;Maintenance&quot;</span> <span class="si">${</span><span class="nv">OS_NODE</span><span class="si">}</span> <span class="si">${</span><span class="nv">OS_SERVICE</span><span class="si">}</span>
 <span class="k">done</span>
 
+openstack compute service <span class="nb">set</span> --disable --disable-reason potato qasite1-compute001.localdomain nova-compute
+
 <span class="c1"># Search for server witch status error</span>
 openstack server list --all --status ERROR
 
@@ -884,9 +914,19 @@ openstack server list -c ID -c Name -c Status -c Networks -c Host --long
 </code></pre></div>
 
 
+<h3 id="start-all-vms-on-a-single-compute">Start all VMs on a single compute</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">for x in `openstack server list --all -c ID -f value --host tenlab1-compute002.localdomain`;do openstack server start $x;done </span>
+</code></pre></div>
+
+
 <h3 id="migrate-to-specific-compute">Migrate to specific compute</h3>
 <div class="codehilite"><pre><span></span><code><span class="err">nova host-evacuate --target_host kolla-compute003 kolla-compute004.cmaker.studio</span>
 <span class="err">watch nova migration-list</span>
+</code></pre></div>
+
+
+<h3 id="get-all-the-keypairs-existing-for-all-users">Get all the keypairs existing for all users</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">for x in `openstack user list -f value -c ID`;do echo $x &amp;&amp; nova keypair-list --user $x;done</span>
 </code></pre></div>
 
 
