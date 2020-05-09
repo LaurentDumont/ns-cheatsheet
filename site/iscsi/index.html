@@ -414,6 +414,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#show-iscsi-stats" class="md-nav__link">
+    Show iscsi stats
+  </a>
+  
+</li>
+      
       
       
       
@@ -690,6 +697,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#show-iscsi-stats" class="md-nav__link">
+    Show iscsi stats
+  </a>
+  
+</li>
+      
       
       
       
@@ -713,6 +727,11 @@
                 
                 <h3 id="discover-login-targets">Discover login targets</h3>
 <div class="codehilite"><pre><span></span><code><span class="err">iscsiadm --mode discoverydb -t sendtargets --portal $ISCSI_SERVER_IP --discover -d 7</span>
+</code></pre></div>
+
+
+<h3 id="show-iscsi-stats">Show iscsi stats</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">sudo iscsiadm --mode session --stats</span>
 </code></pre></div>
                 
                   
