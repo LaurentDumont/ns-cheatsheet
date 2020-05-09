@@ -1545,8 +1545,20 @@ root@kvm01:/tmp# virsh send-key ooo-director KEY_LEFTALT KEY_SYSRQ KEY_B
 
 
 <h3 id="write-speed-test">Write speed test</h3>
-<p><code>https://www.thomas-krenn.com/en/wiki/Linux_I/O_Performance_Tests_using_dd
-dd if=/dev/zero of=/root/testfile bs=1G count=1 oflag=dsync</code></p>
+<p>``` https://www.thomas-krenn.com/en/wiki/Linux_I/O_Performance_Tests_using_dd
+dd if=/dev/zero of=/root/testfile bs=1G count=1 oflag=dsync</p>
+<div class="codehilite"><pre><span></span><code><span class="err">### Fix openvpn DNS issues with new resolved for DNS</span>
+</code></pre></div>
+
+
+<p>sudo apt install openvpn-systemd-resolved</p>
+<div class="codehilite"><pre><span></span><code><span class="err">### Show disk info</span>
+</code></pre></div>
+
+
+<p>lshw -class disk
+hwinfo --disk
+```</p>
                 
                   
                 
