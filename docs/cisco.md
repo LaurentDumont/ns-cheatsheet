@@ -2,6 +2,12 @@
 **IOS-XR**
 
 ```
+show route vrf all 10.4.229.135/32
+show route vrf all | inc 10.4.229. 
+show evpn evi vpn-id 11034
+```
+
+```
 #IPV4
 show arp vrf $VRF_NAME  Te0/0/0/6.200
 

@@ -49,9 +49,14 @@ watch nova migration-list
 for x in `openstack user list -f value -c ID`;do echo $x && nova keypair-list --user $x;done
 ```
 
-### Migrate single server from compute
+### Evacuate single server from compute
 ```
 nova evacuate 1d6a436b-e18e-45ce-8b01-bee4a7126f81
+```
+
+### Evacuate single server from compute to a specific destination
+```
+nova evacuate 5f58a1bf-a7f9-4952-b980-af9d52a11e66 qasite1-compute001.localdomain
 ```
 
 ### Openstack create image with different id.

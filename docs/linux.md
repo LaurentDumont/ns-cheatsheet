@@ -471,3 +471,14 @@ SLAVE=yes
 ``` https://www.thomas-krenn.com/en/wiki/Linux_I/O_Performance_Tests_using_dd
 dd if=/dev/zero of=/root/testfile bs=1G count=1 oflag=dsync
 ```
+
+### Fix openvpn DNS issues with new resolved for DNS
+```
+sudo apt install openvpn-systemd-resolved
+```
+
+### Show disk info
+```
+lshw -class disk
+hwinfo --disk
+```
