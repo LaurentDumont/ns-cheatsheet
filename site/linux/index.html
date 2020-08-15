@@ -1545,8 +1545,27 @@ root@kvm01:/tmp# virsh send-key ooo-director KEY_LEFTALT KEY_SYSRQ KEY_B
 
 
 <h3 id="write-speed-test">Write speed test</h3>
-<p><code>https://www.thomas-krenn.com/en/wiki/Linux_I/O_Performance_Tests_using_dd
-dd if=/dev/zero of=/root/testfile bs=1G count=1 oflag=dsync</code></p>
+<p>``` https://www.thomas-krenn.com/en/wiki/Linux_I/O_Performance_Tests_using_dd
+dd if=/dev/zero of=/root/testfile bs=1G count=1 oflag=dsync</p>
+<div class="codehilite"><pre><span></span><code><span class="err">### Extend lv</span>
+</code></pre></div>
+
+
+<p>sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+sudo resize2fs /dev/ubuntu-vg/ubuntu-lv</p>
+<div class="codehilite"><pre><span></span><code><span class="err">### Set DNS with resolvctl</span>
+</code></pre></div>
+
+
+<p>laurentdumont@docker01:/srv$ sudo resolvectl dns 
+Global:
+Link 17 (vethc025466):
+Link 15 (vetheb3b292):
+Link 13 (veth45fcbdc):
+Link 3 (docker0):
+Link 2 (ens192): 10.199.199.1</p>
+<p>sudo resolvectl dns ens192 10.199.199.1
+```</p>
                 
                   
                 
