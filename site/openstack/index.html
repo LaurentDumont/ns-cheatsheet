@@ -556,8 +556,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#migrate-single-server-from-compute" class="md-nav__link">
-    Migrate single server from compute
+  <a href="#evacuate-single-server-from-compute" class="md-nav__link">
+    Evacuate single server from compute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evacuate-single-server-from-compute-to-a-specific-destination" class="md-nav__link">
+    Evacuate single server from compute to a specific destination
   </a>
   
 </li>
@@ -796,8 +803,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#migrate-single-server-from-compute" class="md-nav__link">
-    Migrate single server from compute
+  <a href="#evacuate-single-server-from-compute" class="md-nav__link">
+    Evacuate single server from compute
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evacuate-single-server-from-compute-to-a-specific-destination" class="md-nav__link">
+    Evacuate single server from compute to a specific destination
   </a>
   
 </li>
@@ -930,8 +944,13 @@ openstack server list -c ID -c Name -c Status -c Networks -c Host --long
 </code></pre></div>
 
 
-<h3 id="migrate-single-server-from-compute">Migrate single server from compute</h3>
+<h3 id="evacuate-single-server-from-compute">Evacuate single server from compute</h3>
 <div class="codehilite"><pre><span></span><code><span class="err">nova evacuate 1d6a436b-e18e-45ce-8b01-bee4a7126f81</span>
+</code></pre></div>
+
+
+<h3 id="evacuate-single-server-from-compute-to-a-specific-destination">Evacuate single server from compute to a specific destination</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">nova evacuate 5f58a1bf-a7f9-4952-b980-af9d52a11e66 qasite1-compute001.localdomain</span>
 </code></pre></div>
 
 

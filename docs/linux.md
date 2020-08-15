@@ -472,6 +472,7 @@ SLAVE=yes
 dd if=/dev/zero of=/root/testfile bs=1G count=1 oflag=dsync
 ```
 
+<<<<<<< HEAD
 ### Extend lv
 ```
 sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
@@ -491,3 +492,15 @@ Link 2 (ens192): 10.199.199.1
 
 sudo resolvectl dns ens192 10.199.199.1
 ```
+=======
+### Fix openvpn DNS issues with new resolved for DNS
+```
+sudo apt install openvpn-systemd-resolved
+```
+
+### Show disk info
+```
+lshw -class disk
+hwinfo --disk
+```
+>>>>>>> e3d57576ad62b4c8031ef75aefe5b4951e9a75a1
