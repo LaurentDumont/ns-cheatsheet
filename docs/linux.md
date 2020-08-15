@@ -471,3 +471,23 @@ SLAVE=yes
 ``` https://www.thomas-krenn.com/en/wiki/Linux_I/O_Performance_Tests_using_dd
 dd if=/dev/zero of=/root/testfile bs=1G count=1 oflag=dsync
 ```
+
+### Extend lv
+```
+sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+sudo resize2fs /dev/ubuntu-vg/ubuntu-lv
+```
+
+### Set DNS with resolvctl
+```
+laurentdumont@docker01:/srv$ sudo resolvectl dns 
+Global:
+Link 17 (vethc025466):
+Link 15 (vetheb3b292):
+Link 13 (veth45fcbdc):
+Link 3 (docker0):
+Link 2 (ens192): 10.199.199.1
+
+
+sudo resolvectl dns ens192 10.199.199.1
+```
