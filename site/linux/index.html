@@ -555,6 +555,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#extend-lv" class="md-nav__link">
+    Extend lv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-dns-with-resolvctl" class="md-nav__link">
+    Set DNS with resolvctl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-openvpn-dns-issues-with-new-resolved-for-dns" class="md-nav__link">
+    Fix openvpn DNS issues with new resolved for DNS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-disk-info" class="md-nav__link">
+    Show disk info
+  </a>
+  
+</li>
+      
       
       
       
@@ -1068,6 +1096,34 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#extend-lv" class="md-nav__link">
+    Extend lv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-dns-with-resolvctl" class="md-nav__link">
+    Set DNS with resolvctl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-openvpn-dns-issues-with-new-resolved-for-dns" class="md-nav__link">
+    Fix openvpn DNS issues with new resolved for DNS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-disk-info" class="md-nav__link">
+    Show disk info
+  </a>
+  
+</li>
+      
       
       
       
@@ -1545,38 +1601,40 @@ root@kvm01:/tmp# virsh send-key ooo-director KEY_LEFTALT KEY_SYSRQ KEY_B
 
 
 <h3 id="write-speed-test">Write speed test</h3>
-<p>``` https://www.thomas-krenn.com/en/wiki/Linux_I/O_Performance_Tests_using_dd
-dd if=/dev/zero of=/root/testfile bs=1G count=1 oflag=dsync</p>
-<div class="codehilite"><pre><span></span><code><span class="err">### Extend lv</span>
+<p>https://www.thomas-krenn.com/en/wiki/Linux_I/O_Performance_Tests_using_dd</p>
+<div class="codehilite"><pre><span></span><code><span class="err">dd if=/dev/zero of=/root/testfile bs=1G count=1 oflag=dsync</span>
 </code></pre></div>
 
 
-<p>sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
-sudo resize2fs /dev/ubuntu-vg/ubuntu-lv</p>
-<div class="codehilite"><pre><span></span><code><span class="err">### Set DNS with resolvctl</span>
+<h3 id="extend-lv">Extend lv</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv</span>
+<span class="err">sudo resize2fs /dev/ubuntu-vg/ubuntu-lv</span>
 </code></pre></div>
 
 
-<p>laurentdumont@docker01:/srv$ sudo resolvectl dns 
-Global:
-Link 17 (vethc025466):
-Link 15 (vetheb3b292):
-Link 13 (veth45fcbdc):
-Link 3 (docker0):
-Link 2 (ens192): 10.199.199.1</p>
-<p>sudo resolvectl dns ens192 10.199.199.1</p>
-<div class="codehilite"><pre><span></span><code><span class="err">### Fix openvpn DNS issues with new resolved for DNS</span>
+<h3 id="set-dns-with-resolvctl">Set DNS with resolvctl</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">laurentdumont</span><span class="nv">@docker01</span><span class="err">:</span><span class="o">/</span><span class="n">srv</span><span class="err">$</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">resolvectl</span><span class="w"> </span><span class="n">dns</span><span class="w"> </span>
+<span class="k">Global</span><span class="err">:</span><span class="w"></span>
+<span class="n">Link</span><span class="w"> </span><span class="mi">17</span><span class="w"> </span><span class="p">(</span><span class="n">vethc025466</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="n">Link</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="p">(</span><span class="n">vetheb3b292</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="n">Link</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="p">(</span><span class="n">veth45fcbdc</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="n">Link</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">(</span><span class="n">docker0</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="n">Link</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="n">ens192</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mf">10.199.199.1</span><span class="w"></span>
+
+
+<span class="n">sudo</span><span class="w"> </span><span class="n">resolvectl</span><span class="w"> </span><span class="n">dns</span><span class="w"> </span><span class="n">ens192</span><span class="w"> </span><span class="mf">10.199.199.1</span><span class="w"></span>
 </code></pre></div>
 
 
-<p>sudo apt install openvpn-systemd-resolved</p>
-<div class="codehilite"><pre><span></span><code><span class="err">### Show disk info</span>
+<h3 id="fix-openvpn-dns-issues-with-new-resolved-for-dns">Fix openvpn DNS issues with new resolved for DNS</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">sudo apt install openvpn-systemd-resolved</span>
 </code></pre></div>
 
 
-<p>lshw -class disk
-hwinfo --disk
-```</p>
+<h3 id="show-disk-info">Show disk info</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">lshw -class disk</span>
+<span class="err">hwinfo --disk</span>
+</code></pre></div>
                 
                   
                 
