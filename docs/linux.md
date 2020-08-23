@@ -500,5 +500,4 @@ sudo apt install openvpn-systemd-resolved
 ```
 lshw -class disk
 hwinfo --disk
-
 ```
