@@ -38,6 +38,7 @@ nav:
       - Splunk: splunk.md
       - Tripleo: tripleo.md
       - Terraform: terraform.md
+      - FRR: frr.md
 
     
 #Theme customization
