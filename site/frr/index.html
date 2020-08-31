@@ -40,7 +40,7 @@
     
     
       
-        <title>Terraform - Laurent Dumont - Internet notepad.</title>
+        <title>FRR - Laurent Dumont - Internet notepad.</title>
       
     
     
@@ -116,7 +116,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#deployment-flow" tabindex="0" class="md-skip">
+      <a href="#enter-frr-shell" tabindex="0" class="md-skip">
         Skip to content
       </a>
     
@@ -142,7 +142,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Terraform
+                FRR
               
             </span>
           
@@ -623,6 +623,18 @@
       
       
 
+
+  <li class="md-nav__item">
+    <a href="../terraform/" title="Terraform" class="md-nav__link">
+      Terraform
+    </a>
+  </li>
+
+    
+      
+      
+      
+
   
 
 
@@ -632,11 +644,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Terraform
+        FRR
       </label>
     
-    <a href="./" title="Terraform" class="md-nav__link md-nav__link--active">
-      Terraform
+    <a href="./" title="FRR" class="md-nav__link md-nav__link--active">
+      FRR
     </a>
     
       
@@ -648,15 +660,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#deployment-flow" class="md-nav__link">
-    Deployment flow
+  <a href="#enter-frr-shell" class="md-nav__link">
+    Enter FRR shell
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#terraform-debug" class="md-nav__link">
-    Terraform debug
+  <a href="#show-bgp-neigbors" class="md-nav__link">
+    Show bgp neigbors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-information-from-neighbors" class="md-nav__link">
+    Show information from neighbors
   </a>
   
 </li>
@@ -669,18 +688,6 @@
   
 </nav>
     
-  </li>
-
-    
-      
-      
-      
-
-
-  <li class="md-nav__item">
-    <a href="../frr/" title="FRR" class="md-nav__link">
-      FRR
-    </a>
   </li>
 
     
@@ -703,15 +710,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#deployment-flow" class="md-nav__link">
-    Deployment flow
+  <a href="#enter-frr-shell" class="md-nav__link">
+    Enter FRR shell
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#terraform-debug" class="md-nav__link">
-    Terraform debug
+  <a href="#show-bgp-neigbors" class="md-nav__link">
+    Show bgp neigbors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-information-from-neighbors" class="md-nav__link">
+    Show information from neighbors
   </a>
   
 </li>
@@ -732,19 +746,25 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/terraform.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/frr.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                  <h1>Terraform</h1>
+                  <h1>FRR</h1>
                 
-                <h3 id="deployment-flow">Deployment flow</h3>
-<div class="codehilite"><pre><span></span><code><span class="err">terraform init</span>
-<span class="err">terraform apply</span>
+                <h3 id="enter-frr-shell">Enter FRR shell</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">sudo vtyshell</span>
 </code></pre></div>
 
 
-<h3 id="terraform-debug">Terraform debug</h3>
-<div class="codehilite"><pre><span></span><code><span class="err">TF_LOG=DEBUG OS_DEBUG=1 terraform apply</span>
+<h3 id="show-bgp-neigbors">Show bgp neigbors</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">show bgp neighbors</span>
+<span class="err">show bgp summary</span>
+</code></pre></div>
+
+
+<h3 id="show-information-from-neighbors">Show information from neighbors</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">show bgp vrf all ipv4 neighbors x.x.x.x advertised-routes</span>
+<span class="err">show bgp vrf all ipv4 neighbors x.x.x.x received-routes </span>
 </code></pre></div>
                 
                   
@@ -767,7 +787,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../tripleo/" title="Tripleo" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../terraform/" title="Terraform" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -776,25 +796,11 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Tripleo
+                Terraform
               </span>
             </div>
           </a>
         
-        
-          <a href="../frr/" title="FRR" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
-              <span class="md-flex__ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                FRR
-              </span>
-            </div>
-            <div class="md-flex__cell md-flex__cell--shrink">
-              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
-            </div>
-          </a>
         
       </nav>
     </div>
