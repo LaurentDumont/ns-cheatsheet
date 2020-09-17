@@ -48,7 +48,7 @@ theme:
       palette:
         primary: 'grey'
       icon:
-        logo: aterial/cloud
+        logo: material/cloud
       favicon: 'images/tarsier_hi_elbows.ico'
 
 # Repository
