@@ -505,6 +505,6 @@ hwinfo --disk
 
 ### Create one PDF from multiple
 ```
-# From within folder containing the PDF pages
+# From within folder containing the PDF pages 
 qpdf --empty --pages *.pdf -- out.pdf
 ```

@@ -65,9 +65,9 @@ markdown_extensions:
 #Media Footer
 extra:
     social:
-      - type: 'github'
+      - icon: fontawesome/brands/github-alt
         link: 'https://github.com/laurentdumont'
-      - type: 'linkedin'
+      - icon: fontawesome/brands/linkedin
         link: 'https://www.linkedin.com/in/laurentfdumont/'
 
 extra_css:
