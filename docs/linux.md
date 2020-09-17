@@ -482,3 +482,8 @@ sudo apt install openvpn-systemd-resolved
 lshw -class disk
 hwinfo --disk
 ```
+
+### Create one PDF from multiple
+```
+qpdf --empty --pages *.pdf -- out.pdf
+```
