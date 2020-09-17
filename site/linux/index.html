@@ -1,0 +1,1736 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="My own little space">
+      
+      
+      
+        <meta name="author" content="Laurent Dumont">
+      
+      <link rel="shortcut icon" href="../images/tarsier_hi_elbows.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+    
+    
+      
+        <title>Generic Linux - Laurent Dumont - Internet notepad.</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4dd2dd8d.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.6a5ad368.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#757575">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-51757315-3","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#when-windows-10-creator-upgrade-breaks-linux-grub" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Laurent Dumont - Internet notepad." class="md-header-nav__button md-logo" aria-label="Laurent Dumont - Internet notepad.">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.35 10.03A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.03A6.004 6.004 0 000 14a6 6 0 006 6h13a5 5 0 005-5c0-2.64-2.05-4.78-4.65-4.97z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Laurent Dumont - Internet notepad.
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Generic Linux
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Laurent Dumont - Internet notepad." class="md-nav__button md-logo" aria-label="Laurent Dumont - Internet notepad.">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.35 10.03A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.03A6.004 6.004 0 000 14a6 6 0 006 6h13a5 5 0 005-5c0-2.64-2.05-4.78-4.65-4.97z"/></svg>
+
+    </a>
+    Laurent Dumont - Internet notepad.
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chef/" title="Chef" class="md-nav__link">
+      Chef
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ccna/" title="Cisco-CCNA" class="md-nav__link">
+      Cisco-CCNA
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cisco/" title="Cisco" class="md-nav__link">
+      Cisco
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cumulus/" title="Cumulus" class="md-nav__link">
+      Cumulus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../elasticsearch/" title="Elasticsearch" class="md-nav__link">
+      Elasticsearch
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../foreman/" title="Foreman" class="md-nav__link">
+      Foreman
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Generic Linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Generic Linux" class="md-nav__link md-nav__link--active">
+      Generic Linux
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-windows-10-creator-upgrade-breaks-linux-grub" class="md-nav__link">
+    When Windows 10 Creator upgrade breaks Linux Grub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-to-debian-testing-breaks-apt-when-trying-to-downgrade" class="md-nav__link">
+    Upgrading to Debian testing breaks APT when trying to downgrade.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unbalanced-audio-with-pulse-audio" class="md-nav__link">
+    Unbalanced audio with Pulse audio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-gpg-key-and-export-the-key-format-for-signing-github-commits" class="md-nav__link">
+    Create GPG key and export the key format for signing Github commits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-ip-tool-to-change-connecticity" class="md-nav__link">
+    Using the "ip" tool to change connecticity"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-br-and-vmbr-linux-bridges-filtering-lldp-packets" class="md-nav__link">
+    Fix BR and VMBR Linux bridges filtering LLDP packets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-fish-as-the-default-shell-for-ubuntudebian" class="md-nav__link">
+    Add fish as the default shell for Ubuntu/Debian.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-history-file-for-multiple-prompts" class="md-nav__link">
+    One history file for multiple prompts.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-terminus-powerline-on-ubuntu-font-name-is-terminess" class="md-nav__link">
+    Enable Terminus Powerline on Ubuntu (font name is Terminess)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubuntu-1904-disable-ubuntu-dock-completely" class="md-nav__link">
+    Ubuntu 19.04 - Disable Ubuntu dock completely.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-fan-speed-of-a-r710-through-ipmi" class="md-nav__link">
+    Change fan speed of a R710 through IPMI.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-bonding-status" class="md-nav__link">
+    Check bonding status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-low-level-interface-stats" class="md-nav__link">
+    Get low-level interface stats
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-without-using-all-identity-files-automatically" class="md-nav__link">
+    SSH without using all identity files automatically
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-resolvctl-issues-with-openvpn-dns-being-removed" class="md-nav__link">
+    Remove resolvctl (issues with OpenVPN DNS being removed)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshoot-apt-install-errors" class="md-nav__link">
+    Troubleshoot APT install errors.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-hugo" class="md-nav__link">
+    Docker Hugo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-and-clean-for-fstrim" class="md-nav__link">
+    Check and clean for FSTRIM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reduce-swap-size-and-increase-root-fs-size" class="md-nav__link">
+    Reduce swap size and increase root FS size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mount-disk-to-linux" class="md-nav__link">
+    Mount disk to linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-iscsi-disks" class="md-nav__link">
+    Check ISCSI disks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boot-logs" class="md-nav__link">
+    Boot logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-kernel-on-centos7" class="md-nav__link">
+    Upgrade Kernel on Centos7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ps-a-process-list-for-process-accounting" class="md-nav__link">
+    PS a process list for process accounting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send-a-sysrq-though-kvm" class="md-nav__link">
+    Send a sysrq though KVM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-pgcli-postgres-cmd-line-cli-ubuntu-1904" class="md-nav__link">
+    Install pgcli - postgres cmd line CLI - Ubuntu 19.04
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redhat-centos-bonding-lacp-vlan" class="md-nav__link">
+    Redhat / Centos bonding LACP - VLAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-speed-test" class="md-nav__link">
+    Write speed test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extend-lv" class="md-nav__link">
+    Extend lv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-dns-with-resolvctl" class="md-nav__link">
+    Set DNS with resolvctl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-openvpn-dns-issues-with-new-resolved-for-dns" class="md-nav__link">
+    Fix openvpn DNS issues with new resolved for DNS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-disk-info" class="md-nav__link">
+    Show disk info
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-one-pdf-from-multiple" class="md-nav__link">
+    Create one PDF from multiple
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../git/" title="Git" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../gluster/" title="Gluster" class="md-nav__link">
+      Gluster
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../iperf/" title="iPerf" class="md-nav__link">
+      iPerf
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../iscsi/" title="ISCSI" class="md-nav__link">
+      ISCSI
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../juniper/" title="Juniper" class="md-nav__link">
+      Juniper
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../kolla/" title="Kolla" class="md-nav__link">
+      Kolla
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes/" title="Kubernetes" class="md-nav__link">
+      Kubernetes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../kvm/" title="KVM" class="md-nav__link">
+      KVM
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../lvm/" title="LVM" class="md-nav__link">
+      LVM
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../maas/" title="MAAS" class="md-nav__link">
+      MAAS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../molecule/" title="Molecule" class="md-nav__link">
+      Molecule
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../mysql/" title="MySQL/MariaDB" class="md-nav__link">
+      MySQL/MariaDB
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../netbox/" title="Netbox" class="md-nav__link">
+      Netbox
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../openstack/" title="Openstack" class="md-nav__link">
+      Openstack
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../opnfv/" title="OPNFV" class="md-nav__link">
+      OPNFV
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ovs/" title="OVS" class="md-nav__link">
+      OVS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../postgres/" title="Postgres" class="md-nav__link">
+      Postgres
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../prometheus/" title="Prometheus" class="md-nav__link">
+      Prometheus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../proxmox/" title="Proxmox" class="md-nav__link">
+      Proxmox
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../splunk/" title="Splunk" class="md-nav__link">
+      Splunk
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tripleo/" title="Tripleo" class="md-nav__link">
+      Tripleo
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../terraform/" title="Terraform" class="md-nav__link">
+      Terraform
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../frr/" title="FRR" class="md-nav__link">
+      FRR
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#when-windows-10-creator-upgrade-breaks-linux-grub" class="md-nav__link">
+    When Windows 10 Creator upgrade breaks Linux Grub
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrading-to-debian-testing-breaks-apt-when-trying-to-downgrade" class="md-nav__link">
+    Upgrading to Debian testing breaks APT when trying to downgrade.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unbalanced-audio-with-pulse-audio" class="md-nav__link">
+    Unbalanced audio with Pulse audio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-gpg-key-and-export-the-key-format-for-signing-github-commits" class="md-nav__link">
+    Create GPG key and export the key format for signing Github commits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-ip-tool-to-change-connecticity" class="md-nav__link">
+    Using the "ip" tool to change connecticity"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-br-and-vmbr-linux-bridges-filtering-lldp-packets" class="md-nav__link">
+    Fix BR and VMBR Linux bridges filtering LLDP packets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-fish-as-the-default-shell-for-ubuntudebian" class="md-nav__link">
+    Add fish as the default shell for Ubuntu/Debian.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#one-history-file-for-multiple-prompts" class="md-nav__link">
+    One history file for multiple prompts.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enable-terminus-powerline-on-ubuntu-font-name-is-terminess" class="md-nav__link">
+    Enable Terminus Powerline on Ubuntu (font name is Terminess)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubuntu-1904-disable-ubuntu-dock-completely" class="md-nav__link">
+    Ubuntu 19.04 - Disable Ubuntu dock completely.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-fan-speed-of-a-r710-through-ipmi" class="md-nav__link">
+    Change fan speed of a R710 through IPMI.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-bonding-status" class="md-nav__link">
+    Check bonding status
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get-low-level-interface-stats" class="md-nav__link">
+    Get low-level interface stats
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ssh-without-using-all-identity-files-automatically" class="md-nav__link">
+    SSH without using all identity files automatically
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remove-resolvctl-issues-with-openvpn-dns-being-removed" class="md-nav__link">
+    Remove resolvctl (issues with OpenVPN DNS being removed)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshoot-apt-install-errors" class="md-nav__link">
+    Troubleshoot APT install errors.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker-hugo" class="md-nav__link">
+    Docker Hugo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-and-clean-for-fstrim" class="md-nav__link">
+    Check and clean for FSTRIM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reduce-swap-size-and-increase-root-fs-size" class="md-nav__link">
+    Reduce swap size and increase root FS size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mount-disk-to-linux" class="md-nav__link">
+    Mount disk to linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check-iscsi-disks" class="md-nav__link">
+    Check ISCSI disks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boot-logs" class="md-nav__link">
+    Boot logs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-kernel-on-centos7" class="md-nav__link">
+    Upgrade Kernel on Centos7
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ps-a-process-list-for-process-accounting" class="md-nav__link">
+    PS a process list for process accounting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#send-a-sysrq-though-kvm" class="md-nav__link">
+    Send a sysrq though KVM
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-pgcli-postgres-cmd-line-cli-ubuntu-1904" class="md-nav__link">
+    Install pgcli - postgres cmd line CLI - Ubuntu 19.04
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#redhat-centos-bonding-lacp-vlan" class="md-nav__link">
+    Redhat / Centos bonding LACP - VLAN
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write-speed-test" class="md-nav__link">
+    Write speed test
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extend-lv" class="md-nav__link">
+    Extend lv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set-dns-with-resolvctl" class="md-nav__link">
+    Set DNS with resolvctl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fix-openvpn-dns-issues-with-new-resolved-for-dns" class="md-nav__link">
+    Fix openvpn DNS issues with new resolved for DNS
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#show-disk-info" class="md-nav__link">
+    Show disk info
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#create-one-pdf-from-multiple" class="md-nav__link">
+    Create one PDF from multiple
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/linux.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>Generic Linux</h1>
+                
+                <p><strong>Rancid - Check which devices are impacted</strong></p>
+<div class="codehilite"><pre><span></span><code>sort var/logs/VPN.20180109.070410  <span class="p">|</span> grep -i key <span class="p">|</span> uniq
+</code></pre></div>
+
+
+<p><strong>Rancid - Only show the device name to pipe into ssh-keygen</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="n">sort</span> <span class="k">var</span><span class="o">/</span><span class="n">logs</span><span class="o">/</span><span class="n">VPN</span><span class="o">.</span><span class="mf">20180109.070410</span>  <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="n">key</span> <span class="o">|</span> <span class="n">uniq</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">Eo</span> <span class="s1">&#39;^[^ ]+&#39;</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="n">sort</span> <span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">rancid</span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">logs</span><span class="o">/</span><span class="n">VPN</span><span class="o">.</span><span class="mf">20180111.064300</span>  <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">i</span> <span class="n">key</span> <span class="o">|</span> <span class="n">uniq</span> <span class="o">|</span> <span class="n">grep</span> <span class="o">-</span><span class="n">Eo</span> <span class="s1">&#39;^[^ ]+&#39;</span>
+</code></pre></div>
+
+
+<p><strong>SSH - Remove the public keys</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="err">ssh-keygen -f &quot;/opt/rancid/.ssh/known_hosts&quot; -R ###REMOTE_IP_OF_DEVICE###</span>
+</code></pre></div>
+
+
+<p><strong>BIND DNS - Check the master zones (not ARPA or random files ) we are hosting</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="err">ls -alh --ignore=*.arpa* | wc -</span>
+</code></pre></div>
+
+
+<p><strong>SMART HD Data - Get useful smartctl data</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="err">sudo smartctl -a /dev/sdb | egrep &quot;Spin_Up_Time|Reallocated_Sector_Ct|Temperature|Current_Pending_Sector|Offline_Uncorrectable|Power_On_Hours&quot;</span>
+</code></pre></div>
+
+
+<p><strong>Network - Create TAP Interface</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="err">tunctl -t tap0</span>
+<span class="err">ifconfig tap0 10.1.1.100 netmask 255.255.255.0 up</span>
+</code></pre></div>
+
+
+<p><strong>Start Linux stress test</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="err">screen -S stress-test -d -m stress --cpu 100 --io 100 --vm 20 --vm-bytes 1G --hdd 5 --timeout 24h</span>
+</code></pre></div>
+
+
+<p><strong>Install markdown-pdf</strong></p>
+<div class="codehilite"><pre><span></span><code><span class="err">sudo npm install -g phantomjs --unsafe-perm</span>
+<span class="err">sudo npm install -g markdown-pdf --unsafe-perm</span>
+</code></pre></div>
+
+
+<p>Debug Radius, FreeIPA, LDAP</p>
+<div class="codehilite"><pre><span></span><code><span class="n">radiusd</span> <span class="o">-</span><span class="n">X</span> <span class="mi">2</span><span class="o">&gt;&amp;</span><span class="mi">1</span> <span class="o">|</span> <span class="n">tee</span> <span class="n">debugfile</span>
+
+<span class="n">tail</span> <span class="o">-</span><span class="n">f</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">dirsrv</span><span class="o">/</span><span class="n">slapd</span><span class="o">-</span><span class="n">EVENT</span><span class="o">-</span><span class="n">DHMTL</span><span class="o">-</span><span class="n">CA</span><span class="o">/</span><span class="n">access</span>
+
+<span class="n">radtest</span> <span class="n">ldumont</span> <span class="n">user_ldap_password</span> <span class="mf">10.0</span><span class="o">.</span><span class="mf">99.22</span> <span class="mi">1812</span> <span class="n">shared_radius_secret</span>
+
+<span class="n">ldapwhoami</span> <span class="o">-</span><span class="n">vvv</span> <span class="o">-</span><span class="n">h</span> <span class="mf">10.0</span><span class="o">.</span><span class="mf">99.22</span> <span class="o">-</span><span class="n">p</span> <span class="mi">389</span> <span class="o">-</span><span class="n">D</span> <span class="n">uid</span><span class="o">=</span><span class="n">ldumont</span><span class="p">,</span><span class="n">cn</span><span class="o">=</span><span class="n">users</span><span class="p">,</span><span class="n">cn</span><span class="o">=</span><span class="n">accounts</span><span class="p">,</span><span class="n">dc</span><span class="o">=</span><span class="n">event</span><span class="p">,</span><span class="n">dc</span><span class="o">=</span><span class="n">dhmtl</span><span class="p">,</span><span class="n">dc</span><span class="o">=</span><span class="n">ca</span> <span class="o">-</span><span class="n">x</span> <span class="o">-</span><span class="n">w</span> <span class="n">user_ldap_password</span>
+</code></pre></div>
+
+
+<h3 id="when-windows-10-creator-upgrade-breaks-linux-grub">When Windows 10 Creator upgrade breaks Linux Grub</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">set root=(hd0,msdos5)</span>
+<span class="err">set prefix=(hd0,msdos5)/boot/grub</span>
+<span class="err">insmod normal</span>
+<span class="err">normal</span>
+</code></pre></div>
+
+
+<p>When in the OS - to make the changes permanent.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">sudo update-grub</span>
+<span class="err">sudo grub-install disk</span>
+</code></pre></div>
+
+
+<h3 id="upgrading-to-debian-testing-breaks-apt-when-trying-to-downgrade">Upgrading to Debian testing breaks APT when trying to downgrade.</h3>
+<p>Replace "Ubuntu" with "Debian" if you are running Debian
+/etc/apt/preferences.d/allow-downgrade</p>
+<div class="codehilite"><pre><span></span><code><span class="c">Package: *</span>
+<span class="c">Pin: release a=stable</span>
+<span class="c">Pin-Priority: 1001</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="err">apt-get update</span>
+<span class="err">apt-get upgrade</span>
+</code></pre></div>
+
+
+<p>Remove the file after and</p>
+<div class="codehilite"><pre><span></span><code><span class="err">apt-get update</span>
+</code></pre></div>
+
+
+<p>If you are missing gnome and the display doesn't work</p>
+<div class="codehilite"><pre><span></span><code><span class="err">sudo apt-get update</span>
+<span class="err">sudo apt-get upgrade</span>
+<span class="err">sudo apt-get dist-upgrade</span>
+<span class="err">sudo apt-get install nvidia-driver</span>
+<span class="err">sudo shutdown -r now</span>
+</code></pre></div>
+
+
+<p>Should be good to go!</p>
+<h3 id="unbalanced-audio-with-pulse-audio">Unbalanced audio with Pulse audio</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">killall pulseaudio; rm -r ~/.config/pulse/* ; rm -r ~/.pulse*</span>
+<span class="err">pulseaudio -k </span>
+</code></pre></div>
+
+
+<p>Reboot!</p>
+<h3 id="create-gpg-key-and-export-the-key-format-for-signing-github-commits">Create GPG key and export the key format for signing Github commits</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1">#Create the key</span>
+<span class="n">gpg</span> <span class="o">--</span><span class="n">gen</span><span class="o">-</span><span class="n">key</span>
+
+<span class="c1">#Show the key ID</span>
+<span class="n">gpg</span> <span class="o">--</span><span class="n">list</span><span class="o">-</span><span class="n">keys</span>
+
+<span class="c1">#Set the global Git sign key</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">user</span><span class="o">.</span><span class="n">signingkey</span> <span class="o">$</span><span class="n">KEY_ID_HERE</span>
+
+<span class="c1">#Set the GPG sign flag to true for all repos.</span>
+<span class="n">git</span> <span class="n">config</span> <span class="o">--</span><span class="n">global</span> <span class="n">commit</span><span class="o">.</span><span class="n">gpgsign</span> <span class="bp">true</span>
+
+<span class="c1">#Export the key with &quot;-----BEGIN PGP PUBLIC KEY BLOCK-----&quot;</span>
+<span class="n">gpg</span> <span class="o">--</span><span class="n">armor</span> <span class="o">--</span><span class="k">export</span> <span class="n">laurentfdumont</span><span class="err">@</span><span class="n">gmail</span><span class="o">.</span><span class="n">com</span> <span class="o">&gt;</span> <span class="n">mykey</span><span class="o">.</span><span class="n">asc</span>
+</code></pre></div>
+
+
+<h3 id="using-the-ip-tool-to-change-connecticity">Using the "ip" tool to change connecticity"</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">ip</span> <span class="n">link</span> <span class="k">set</span> <span class="err">$</span><span class="n">DEV_NAME</span> <span class="n">down</span>
+<span class="n">ip</span> <span class="n">link</span> <span class="k">set</span> <span class="err">$</span><span class="n">DEV_NAME</span> <span class="n">up</span>
+
+<span class="n">ip</span> <span class="n">route</span> <span class="k">add</span> <span class="k">default</span> <span class="n">via</span> <span class="err">$</span><span class="n">DEF_GW_IP</span> <span class="n">dev</span> <span class="err">$</span><span class="n">DEV_NAME</span>
+<span class="n">ip</span> <span class="n">addr</span> <span class="k">add</span> <span class="err">$</span><span class="n">IP_ADDR_CIDR</span> <span class="n">dev</span> <span class="err">$</span><span class="n">DEV_NAME</span>
+<span class="n">ip</span> <span class="n">addr</span> <span class="k">delete</span> <span class="err">$</span><span class="n">IP_ADDR_CIDR</span> <span class="n">dev</span> <span class="err">$</span><span class="n">DEV_NAME</span>
+</code></pre></div>
+
+
+<h3 id="fix-br-and-vmbr-linux-bridges-filtering-lldp-packets">Fix BR and VMBR Linux bridges filtering LLDP packets</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">interestingtraffic</span><span class="p">.</span><span class="n">nl</span><span class="o">/</span><span class="mi">2017</span><span class="o">/</span><span class="mi">11</span><span class="o">/</span><span class="mi">21</span><span class="o">/</span><span class="n">an</span><span class="o">-</span><span class="n">oddly</span><span class="o">-</span><span class="k">specific</span><span class="o">-</span><span class="n">post</span><span class="o">-</span><span class="n">about</span><span class="o">-</span><span class="n">group_fwd_mask</span><span class="o">/</span>
+
+<span class="n">echo</span> <span class="mi">16384</span> <span class="o">&gt;</span> <span class="o">/</span><span class="n">sys</span><span class="o">/</span><span class="k">class</span><span class="o">/</span><span class="n">net</span><span class="o">/</span><span class="err">$</span><span class="n">VMBR_INTERFACE</span><span class="o">/</span><span class="n">bridge</span><span class="o">/</span><span class="n">group_fwd_mask</span>
+</code></pre></div>
+
+
+<h3 id="add-fish-as-the-default-shell-for-ubuntudebian">Add fish as the default shell for Ubuntu/Debian.</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">apt</span><span class="o">-</span><span class="k">get</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">fish</span><span class="w"></span>
+
+<span class="n">coldadmin</span><span class="nv">@big</span><span class="o">-</span><span class="n">potato</span><span class="w"> </span><span class="o">~&gt;</span><span class="w"> </span><span class="n">cat</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">shells</span><span class="w"> </span>
+<span class="err">#</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="nl">shells</span><span class="p">:</span><span class="w"> </span><span class="n">valid</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="n">shells</span><span class="w"></span>
+<span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">sh</span><span class="w"></span>
+<span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">bash</span><span class="w"></span>
+<span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">rbash</span><span class="w"></span>
+<span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">dash</span><span class="w"></span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">tmux</span><span class="w"></span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">fish</span><span class="w"></span>
+
+<span class="n">chsh</span><span class="w"> </span><span class="o">-</span><span class="n">s</span><span class="w"> </span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">fish</span><span class="w"></span>
+</code></pre></div>
+
+
+<h3 id="one-history-file-for-multiple-prompts">One history file for multiple prompts.</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">vim</span> <span class="o">~/.</span><span class="n">bashrc</span>
+<span class="k">export</span> <span class="n">PROMPT_COMMAND</span><span class="o">=</span><span class="s1">&#39;history -a&#39;</span>
+</code></pre></div>
+
+
+<h3 id="enable-terminus-powerline-on-ubuntu-font-name-is-terminess">Enable Terminus Powerline on Ubuntu (font name is Terminess)</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">powerline</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">issues</span><span class="o">/</span><span class="mi">210</span>
+<span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">superuser</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">questions</span><span class="o">/</span><span class="mi">886023</span><span class="o">/</span><span class="n">linux</span><span class="o">-</span><span class="n">mint</span><span class="o">-</span><span class="n">installing</span><span class="o">-</span><span class="n">bdf</span><span class="o">-</span><span class="n">fonts</span><span class="o">-</span><span class="k">with</span><span class="o">-</span><span class="n">console</span><span class="o">-</span><span class="n">fc</span><span class="o">-</span><span class="k">cache</span><span class="o">-</span><span class="n">fc</span><span class="o">-</span><span class="n">list</span>
+
+<span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">powerline</span><span class="o">/</span><span class="n">fonts</span>
+<span class="n">cd</span> <span class="n">fonts</span>
+<span class="p">.</span><span class="o">/</span><span class="n">install</span><span class="p">.</span><span class="n">sh</span>
+
+<span class="n">cd</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span>
+<span class="n">sudo</span> <span class="n">rm</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">d</span><span class="o">/</span><span class="mi">10</span><span class="o">*</span>  
+<span class="n">sudo</span> <span class="n">rm</span> <span class="o">-</span><span class="n">rf</span> <span class="mi">70</span><span class="o">-</span><span class="k">no</span><span class="o">-</span><span class="n">bitmaps</span><span class="p">.</span><span class="n">conf</span> 
+<span class="n">sudo</span> <span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="p">..</span><span class="o">/</span><span class="n">conf</span><span class="p">.</span><span class="n">avail</span><span class="o">/</span><span class="mi">70</span><span class="o">-</span><span class="n">yes</span><span class="o">-</span><span class="n">bitmaps</span><span class="p">.</span><span class="n">conf</span> <span class="p">.</span>
+<span class="n">sudo</span> <span class="n">dpkg</span><span class="o">-</span><span class="n">reconfigure</span> <span class="n">fontconfig</span>
+</code></pre></div>
+
+
+<h3 id="ubuntu-1904-disable-ubuntu-dock-completely">Ubuntu 19.04 - Disable Ubuntu dock completely.</h3>
+<p>https://askubuntu.com/questions/1030138/how-can-i-get-rid-of-the-dock-in-ubuntu-18</p>
+<div class="codehilite"><pre><span></span><code><span class="err">cd /usr/share/gnome-shell/extensions/</span>
+<span class="err">sudo mv ubuntu-dock@ubuntu.com{,.bak}</span>
+</code></pre></div>
+
+
+<h3 id="change-fan-speed-of-a-r710-through-ipmi">Change fan speed of a R710 through IPMI.</h3>
+<p>IPMI needs to be enabled in ILO!
+You need valid credentials!
+This disables the auto-adjust of the fan speed, be careful of the R710 heating. I am not responsible for fires :)</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">#Get the ENV data from the IPMI</span>
+<span class="n">ipmitool</span>  <span class="o">-</span><span class="n">I</span> <span class="n">lanplus</span> <span class="o">-</span><span class="n">H</span> <span class="mf">10.200</span><span class="o">.</span><span class="mf">10.113</span> <span class="o">-</span><span class="n">U</span> <span class="n">root</span> <span class="o">-</span><span class="n">P</span> <span class="o">$</span><span class="n">PASSWORD</span> <span class="n">sensor</span> <span class="n">reading</span> <span class="s2">&quot;Ambient Temp&quot;</span> <span class="s2">&quot;FAN 1 RPM&quot;</span> <span class="s2">&quot;FAN 2 RPM&quot;</span> <span class="s2">&quot;FAN 3 RPM&quot;</span>
+
+<span class="c1">#Enable manual fan control.</span>
+<span class="n">ipmitool</span>  <span class="o">-</span><span class="n">I</span> <span class="n">lanplus</span> <span class="o">-</span><span class="n">H</span> <span class="mf">10.200</span><span class="o">.</span><span class="mf">10.113</span> <span class="o">-</span><span class="n">U</span> <span class="n">root</span> <span class="o">-</span><span class="n">P</span> <span class="o">$</span><span class="n">PASSWORD</span> <span class="n">raw</span> <span class="mh">0x30</span> <span class="mh">0x30</span> <span class="mh">0x01</span> <span class="mh">0x00</span>
+
+<span class="c1">#&quot;Activating manual fan speeds! (2160 RPM)&quot;</span>
+<span class="n">ipmitool</span>  <span class="o">-</span><span class="n">I</span> <span class="n">lanplus</span> <span class="o">-</span><span class="n">H</span> <span class="mf">10.200</span><span class="o">.</span><span class="mf">10.113</span> <span class="o">-</span><span class="n">U</span> <span class="n">root</span> <span class="o">-</span><span class="n">P</span> <span class="o">$</span><span class="n">PASSWORD</span> <span class="n">raw</span> <span class="mh">0x30</span> <span class="mh">0x30</span> <span class="mh">0x02</span> <span class="mh">0xff</span> <span class="mh">0x09</span>
+</code></pre></div>
+
+
+<h3 id="check-bonding-status">Check bonding status</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">cat /proc/net/bonding/mgmt</span>
+<span class="err">cat /proc/net/bonding/$INTERFACE_NAME_HERE</span>
+</code></pre></div>
+
+
+<h3 id="get-low-level-interface-stats">Get low-level interface stats</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">ethtool</span> <span class="o">-</span><span class="n">S</span> <span class="o">$</span><span class="n">INTERFACE_NAME_HERE</span>
+<span class="n">ethtool</span> <span class="o">-</span><span class="n">S</span> <span class="n">mgmt</span><span class="o">-</span><span class="mi">1</span>
+</code></pre></div>
+
+
+<h3 id="ssh-without-using-all-identity-files-automatically">SSH without using all identity files automatically</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">ssh -o &quot;IdentitiesOnly true&quot; -v -A user@host</span>
+</code></pre></div>
+
+
+<h3 id="remove-resolvctl-issues-with-openvpn-dns-being-removed">Remove resolvctl (issues with OpenVPN DNS being removed)</h3>
+<div class="codehilite"><pre><span></span><code>sudo systemctl disable systemd-resolved.service
+sudo systemctl stop systemd-resolved.service
+
+<span class="nv">dns</span><span class="o">=</span>default in <span class="o">[</span>main<span class="o">]</span> section of <span class="s2">&quot;sudo vi /etc/NetworkManager/NetworkManager.conf&quot;</span>
+
+sudo rm /etc/resolv.conf
+sudo service network-manager restart
+</code></pre></div>
+
+
+<h3 id="troubleshoot-apt-install-errors">Troubleshoot APT install errors.</h3>
+<div class="codehilite"><pre><span></span><code><span class="c1"># Find the correct file from :</span>
+<span class="n">cd</span> <span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">dpkg</span><span class="o">/</span><span class="n">info</span><span class="o">/</span>
+<span class="c1"># In this case, it was the Foreman postinst script</span>
+<span class="n">cat</span> <span class="n">foreman</span><span class="o">.</span><span class="n">postinst</span>
+<span class="c1"># Increase verbosity</span>
+<span class="n">EXPORT</span> <span class="n">DEBUG</span><span class="o">=</span><span class="mi">1</span>
+<span class="c1"># Run the failing configure package</span>
+<span class="n">dpkg</span> <span class="o">--</span><span class="n">configure</span> <span class="n">foreman</span>
+</code></pre></div>
+
+
+<h3 id="docker-hugo">Docker Hugo</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">docker run --rm -it -v /srv/hugo:/src -u hugo laurentfdumont/laurent-hugo hugo new site mysite</span>
+<span class="err">docker run --rm -it -v /srv/hugo/mysite:/src -u hugo laurentfdumont/laurent-hugo hugo new posts/my-first-post.md</span>
+<span class="err">docker run --rm -it -v /srv/hugo/mysite/:/src -u hugo laurentfdumont/laurent-hugo hugo</span>
+<span class="err">docker run --rm -it -v /srv/hugo/mysite:/src -p 1313:1313 -u hugo laurentfdumont/laurent-hugo hugo server -b http://linode2.coldnorthadmin.com -w --bind=0.0.0.0</span>
+<span class="err">docker run --rm -it -v /srv/hugo/mysite:/src -u hugo laurentfdumont/laurent-hugo hugo new posts/my-first-post.md</span>
+<span class="err">docker run --rm -it -v /srv/hugo:/src -u hugo jguyomard/hugo-builder hugo new site mysite </span>
+</code></pre></div>
+
+
+<h3 id="check-and-clean-for-fstrim">Check and clean for FSTRIM</h3>
+<p>Only support for SCSI disk - proxmox.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">#Check</span><span class="w"> </span><span class="k">TRIM</span><span class="w"> </span><span class="n">support</span><span class="w"> </span><span class="n">status</span><span class="w"></span>
+<span class="n">lsblk</span><span class="w"> </span><span class="o">-</span><span class="n">D</span><span class="w"></span>
+
+<span class="err">###</span><span class="w"> </span><span class="n">BAD</span><span class="w"> </span><span class="k">NO</span><span class="w"> </span><span class="n">support</span><span class="w"></span>
+<span class="n">root</span><span class="nv">@kolla</span><span class="o">-</span><span class="nl">controller003</span><span class="p">:</span><span class="o">~</span><span class="err">#</span><span class="w"> </span><span class="n">lsblk</span><span class="w"> </span><span class="o">-</span><span class="n">D</span><span class="w"></span>
+<span class="n">NAME</span><span class="w">              </span><span class="n">DISC</span><span class="o">-</span><span class="n">ALN</span><span class="w"> </span><span class="n">DISC</span><span class="o">-</span><span class="n">GRAN</span><span class="w"> </span><span class="n">DISC</span><span class="o">-</span><span class="nf">MAX</span><span class="w"> </span><span class="n">DISC</span><span class="o">-</span><span class="n">ZERO</span><span class="w"></span>
+<span class="n">vda</span><span class="w">                      </span><span class="mi">0</span><span class="w">        </span><span class="mi">0</span><span class="n">B</span><span class="w">       </span><span class="mi">0</span><span class="n">B</span><span class="w">         </span><span class="mi">0</span><span class="w"></span>
+<span class="o">|-</span><span class="n">vda1</span><span class="w">                   </span><span class="mi">0</span><span class="w">        </span><span class="mi">0</span><span class="n">B</span><span class="w">       </span><span class="mi">0</span><span class="n">B</span><span class="w">         </span><span class="mi">0</span><span class="w"></span>
+<span class="o">|-</span><span class="n">vda2</span><span class="w">                   </span><span class="mi">0</span><span class="w">        </span><span class="mi">0</span><span class="n">B</span><span class="w">       </span><span class="mi">0</span><span class="n">B</span><span class="w">         </span><span class="mi">0</span><span class="w"></span>
+<span class="err">`</span><span class="o">-</span><span class="n">vda5</span><span class="w">                   </span><span class="mi">0</span><span class="w">        </span><span class="mi">0</span><span class="n">B</span><span class="w">       </span><span class="mi">0</span><span class="n">B</span><span class="w">         </span><span class="mi">0</span><span class="w"></span>
+<span class="w">  </span><span class="o">|-</span><span class="k">system</span><span class="o">-</span><span class="n">root</span><span class="w">          </span><span class="mi">0</span><span class="w">        </span><span class="mi">0</span><span class="n">B</span><span class="w">       </span><span class="mi">0</span><span class="n">B</span><span class="w">         </span><span class="mi">0</span><span class="w"></span>
+<span class="w">  </span><span class="err">`</span><span class="o">-</span><span class="k">system</span><span class="o">-</span><span class="n">swap_1</span><span class="w">        </span><span class="mi">0</span><span class="w">        </span><span class="mi">0</span><span class="n">B</span><span class="w">       </span><span class="mi">0</span><span class="n">B</span><span class="w">         </span><span class="mi">0</span><span class="w"></span>
+
+<span class="err">###</span><span class="w"> </span><span class="n">OK</span><span class="w"> </span><span class="n">support</span><span class="w"></span>
+<span class="n">root</span><span class="nv">@kolla</span><span class="o">-</span><span class="nl">compute004</span><span class="p">:</span><span class="o">~</span><span class="err">#</span><span class="w"> </span><span class="n">lsblk</span><span class="w"> </span><span class="o">-</span><span class="n">D</span><span class="w"></span>
+<span class="n">NAME</span><span class="w">              </span><span class="n">DISC</span><span class="o">-</span><span class="n">ALN</span><span class="w"> </span><span class="n">DISC</span><span class="o">-</span><span class="n">GRAN</span><span class="w"> </span><span class="n">DISC</span><span class="o">-</span><span class="nf">MAX</span><span class="w"> </span><span class="n">DISC</span><span class="o">-</span><span class="n">ZERO</span><span class="w"></span>
+<span class="n">sda</span><span class="w">                      </span><span class="mi">0</span><span class="w">        </span><span class="mi">4</span><span class="n">K</span><span class="w">       </span><span class="mi">1</span><span class="n">G</span><span class="w">         </span><span class="mi">0</span><span class="w"></span>
+<span class="o">|-</span><span class="n">sda1</span><span class="w">                   </span><span class="mi">0</span><span class="w">        </span><span class="mi">4</span><span class="n">K</span><span class="w">       </span><span class="mi">1</span><span class="n">G</span><span class="w">         </span><span class="mi">0</span><span class="w"></span>
+<span class="o">|-</span><span class="n">sda2</span><span class="w">                </span><span class="mi">1024</span><span class="w">        </span><span class="mi">4</span><span class="n">K</span><span class="w">       </span><span class="mi">1</span><span class="n">G</span><span class="w">         </span><span class="mi">0</span><span class="w"></span>
+<span class="err">`</span><span class="o">-</span><span class="n">sda5</span><span class="w">                   </span><span class="mi">0</span><span class="w">        </span><span class="mi">4</span><span class="n">K</span><span class="w">       </span><span class="mi">1</span><span class="n">G</span><span class="w">         </span><span class="mi">0</span><span class="w"></span>
+<span class="w">  </span><span class="o">|-</span><span class="k">system</span><span class="o">-</span><span class="n">root</span><span class="w">          </span><span class="mi">0</span><span class="w">        </span><span class="mi">4</span><span class="n">K</span><span class="w">       </span><span class="mi">1</span><span class="n">G</span><span class="w">         </span><span class="mi">0</span><span class="w"></span>
+<span class="w">  </span><span class="err">`</span><span class="o">-</span><span class="k">system</span><span class="o">-</span><span class="n">swap_1</span><span class="w">        </span><span class="mi">0</span><span class="w">        </span><span class="mi">4</span><span class="n">K</span><span class="w">       </span><span class="mi">1</span><span class="n">G</span><span class="w">         </span><span class="mi">0</span><span class="w"></span>
+
+<span class="err">###</span><span class="w"> </span><span class="k">Start</span><span class="w"> </span><span class="k">TRIM</span><span class="w"> </span><span class="n">PROCESS</span><span class="w"></span>
+<span class="n">fstrim</span><span class="w"> </span><span class="o">-</span><span class="n">av</span><span class="w"></span>
+<span class="n">root</span><span class="nv">@kolla</span><span class="o">-</span><span class="nl">compute004</span><span class="p">:</span><span class="o">~</span><span class="err">#</span><span class="w"> </span><span class="n">fstrim</span><span class="w"> </span><span class="o">-</span><span class="n">av</span><span class="w"></span>
+<span class="o">/</span><span class="nl">boot</span><span class="p">:</span><span class="w"> </span><span class="mf">755.4</span><span class="w"> </span><span class="n">MiB</span><span class="w"> </span><span class="p">(</span><span class="mi">792125440</span><span class="w"> </span><span class="n">bytes</span><span class="p">)</span><span class="w"> </span><span class="n">trimmed</span><span class="w"></span>
+<span class="o">/</span><span class="err">:</span><span class="w"> </span><span class="mi">49</span><span class="w"> </span><span class="n">GiB</span><span class="w"> </span><span class="p">(</span><span class="mi">52552167424</span><span class="w"> </span><span class="n">bytes</span><span class="p">)</span><span class="w"> </span><span class="n">trimmed</span><span class="w"></span>
+</code></pre></div>
+
+
+<h3 id="reduce-swap-size-and-increase-root-fs-size">Reduce swap size and increase root FS size</h3>
+<div class="codehilite"><pre><span></span><code><span class="o">#</span> <span class="n">Disable</span> <span class="n">swap</span> <span class="n">temporarly</span><span class="p">.</span>
+<span class="n">swapoff</span> <span class="o">-</span><span class="n">a</span>
+
+<span class="o">#</span> <span class="n">Reduce</span> <span class="n">swap</span> <span class="n">paritition</span><span class="p">.</span>
+<span class="n">lvreduce</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">superbacon</span><span class="o">-</span><span class="n">vg</span><span class="o">/</span><span class="n">swap_1</span> <span class="o">-</span><span class="n">L</span> <span class="o">-</span><span class="mi">67</span><span class="k">G</span>
+
+<span class="o">#</span> <span class="n">Extend</span> <span class="n">LVM</span> <span class="n">root</span> <span class="n">paritition</span><span class="p">.</span>
+<span class="n">lvextend</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">superbacon</span><span class="o">-</span><span class="n">vg</span><span class="o">/</span><span class="n">root</span> <span class="o">-</span><span class="n">L</span> <span class="o">+</span><span class="mi">67</span><span class="k">G</span>
+
+<span class="o">#</span> <span class="n">Extend</span> <span class="n">actual</span> <span class="n">partition</span> <span class="k">size</span><span class="p">.</span>
+<span class="n">resize2fs</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">superbacon</span><span class="o">-</span><span class="n">vg</span><span class="o">/</span><span class="n">root</span>
+
+<span class="o">#</span> <span class="n">Recreate</span> <span class="n">swap</span> <span class="n">partition</span>
+<span class="n">mkswap</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">superbacon</span><span class="o">-</span><span class="n">vg</span><span class="o">/</span><span class="n">swap_1</span>
+
+<span class="o">#</span> <span class="n">Re</span><span class="o">-</span><span class="n">enable</span> <span class="n">swap</span> <span class="n">partition</span>
+<span class="n">swapon</span> <span class="o">-</span><span class="n">a</span>
+</code></pre></div>
+
+
+<h3 id="mount-disk-to-linux">Mount disk to linux</h3>
+<div class="codehilite"><pre><span></span><code><span class="o">#</span> <span class="k">Create</span> <span class="n">an</span> <span class="n">ext4</span> <span class="n">partition</span><span class="p">.</span>
+<span class="n">mkfs</span><span class="p">.</span><span class="n">ext4</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">vg</span><span class="o">-</span><span class="k">storage</span><span class="o">/</span><span class="n">lv</span><span class="o">-</span><span class="k">storage</span>
+
+<span class="o">#</span> <span class="n">Mount</span> <span class="n">the</span> <span class="n">partition</span> <span class="k">to</span> <span class="n">test</span><span class="p">.</span>
+<span class="n">mount</span> <span class="o">-</span><span class="n">t</span> <span class="n">ext4</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">vg</span><span class="o">-</span><span class="k">storage</span><span class="o">/</span><span class="n">lv</span><span class="o">-</span><span class="k">storage</span> <span class="o">/</span><span class="n">mnt</span>
+
+<span class="o">#</span> <span class="n">Mount</span> <span class="k">in</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">fstab</span>
+<span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">mapper</span><span class="o">/</span><span class="n">vg</span><span class="c1">--storage-lv--storage /storage    ext4    defaults,nofail        0    1</span>
+</code></pre></div>
+
+
+<h3 id="check-iscsi-disks">Check ISCSI disks</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">sudo lsblk -S</span>
+</code></pre></div>
+
+
+<h3 id="boot-logs">Boot logs</h3>
+<div class="codehilite"><pre><span></span><code><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">boot</span><span class="o">.</span><span class="n">log</span>  <span class="o">---</span>  <span class="n">System</span> <span class="n">boot</span> <span class="nb">log</span>
+
+<span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">dmesg</span>     <span class="o">---</span>  <span class="nb">print</span> <span class="ow">or</span> <span class="n">control</span> <span class="n">the</span> <span class="n">kernel</span> <span class="n">ring</span> <span class="n">buffer</span>
+</code></pre></div>
+
+
+<h3 id="upgrade-kernel-on-centos7">Upgrade Kernel on Centos7</h3>
+<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="n">root</span><span class="nd">@ooo</span><span class="o">-</span><span class="n">director</span> <span class="o">~</span><span class="p">]</span><span class="c1"># rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span>
+<span class="p">[</span><span class="n">root</span><span class="nd">@ooo</span><span class="o">-</span><span class="n">director</span> <span class="o">~</span><span class="p">]</span><span class="c1"># yum install https://www.elrepo.org/elrepo-release-7.0-4.el7.elrepo.noarch.rpm</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="err">[root@ooo-director ~]# yum repolist</span>
+<span class="err">Loaded plugins: fastestmirror, priorities</span>
+<span class="err">Loading mirror speeds from cached hostfile</span>
+<span class="err"> * base: mirror.calgah.com</span>
+<span class="err"> * elrepo: iad.mirror.rackspace.com</span>
+<span class="err"> * extras: mirror.calgah.com</span>
+<span class="err"> * updates: mirror.calgah.com</span>
+<span class="err">repo id                                                repo name                                                                                       status</span>
+<span class="err">base/7/x86_64                                          CentOS-7 - Base                                                                                  10,097</span>
+<span class="err">delorean-train                                         delorean-openstack-trove-7680b5ef0e3608b2c45f057f65337c4af3d5659d                               801+348</span>
+<span class="err">delorean-train-build-deps                              dlrn-train-build-deps                                                                            139+78</span>
+<span class="err">delorean-train-testing                                 dlrn-train-testing                                                                              875+823</span>
+<span class="err">elrepo                                                 ELRepo.org Community Enterprise Linux Repository - el7                                              139</span>
+<span class="err">extras/7/x86_64                                        CentOS-7 - Extras                                                                                   307</span>
+<span class="err">rdo-qemu-ev/x86_64                                     RDO CentOS-7 - QEMU EV                                                                               87</span>
+<span class="err">updates/7/x86_64                                       CentOS-7 - Updates                                                                                1,010</span>
+<span class="c">repolist: 13,455</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="err">yum --enablerepo=elrepo-kernel install kernel-ml</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="o">[</span><span class="n">root@ooo-director ~</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">awk</span><span class="w"> </span><span class="o">-</span><span class="n">F</span><span class="err">\</span><span class="s1">&#39; &#39;</span><span class="err">$</span><span class="mi">1</span><span class="o">==</span><span class="ss">&quot;menuentry &quot;</span><span class="w"> </span><span class="err">{</span><span class="k">print</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="w"> </span><span class="ss">&quot; : &quot;</span><span class="w"> </span><span class="err">$</span><span class="mi">2</span><span class="err">}&#39;</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">grub2</span><span class="p">.</span><span class="n">cfg</span><span class="w"></span>
+<span class="mi">0</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">CentOS</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="p">(</span><span class="mf">5.4.6</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="p">.</span><span class="n">elrepo</span><span class="p">.</span><span class="n">x86_64</span><span class="p">)</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">(</span><span class="n">Core</span><span class="p">)</span><span class="w"></span>
+<span class="mi">1</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">CentOS</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="p">(</span><span class="mf">3.10.0</span><span class="o">-</span><span class="mf">1062.9.1</span><span class="p">.</span><span class="n">el7</span><span class="p">.</span><span class="n">x86_64</span><span class="p">)</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">(</span><span class="n">Core</span><span class="p">)</span><span class="w"></span>
+<span class="mi">2</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">CentOS</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="p">(</span><span class="mf">3.10.0</span><span class="o">-</span><span class="mf">1062.</span><span class="n">el7</span><span class="p">.</span><span class="n">x86_64</span><span class="p">)</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">(</span><span class="n">Core</span><span class="p">)</span><span class="w"></span>
+<span class="mi">3</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="n">CentOS</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="o">-</span><span class="n">rescue</span><span class="o">-</span><span class="mi">4</span><span class="n">fb19b5248cd40d9b9a1ec7361f4f1fa</span><span class="p">)</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="p">(</span><span class="n">Core</span><span class="p">)</span><span class="w"></span>
+
+<span class="o">[</span><span class="n">root@ooo-director ~</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">grub2</span><span class="o">-</span><span class="k">set</span><span class="o">-</span><span class="k">default</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+
+<span class="o">[</span><span class="n">root@ooo-director ~</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">grub2</span><span class="o">-</span><span class="n">mkconfig</span><span class="w"> </span><span class="o">-</span><span class="n">o</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">grub2</span><span class="o">/</span><span class="n">grub</span><span class="p">.</span><span class="n">cfg</span><span class="w"></span>
+<span class="n">Generating</span><span class="w"> </span><span class="n">grub</span><span class="w"> </span><span class="n">configuration</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="p">...</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">linux</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">vmlinuz</span><span class="o">-</span><span class="mf">5.4.6</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="p">.</span><span class="n">elrepo</span><span class="p">.</span><span class="n">x86_64</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">initrd</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">initramfs</span><span class="o">-</span><span class="mf">5.4.6</span><span class="o">-</span><span class="mf">1.</span><span class="n">el7</span><span class="p">.</span><span class="n">elrepo</span><span class="p">.</span><span class="n">x86_64</span><span class="p">.</span><span class="n">img</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">linux</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">vmlinuz</span><span class="o">-</span><span class="mf">3.10.0</span><span class="o">-</span><span class="mf">1062.9.1</span><span class="p">.</span><span class="n">el7</span><span class="p">.</span><span class="n">x86_64</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">initrd</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">initramfs</span><span class="o">-</span><span class="mf">3.10.0</span><span class="o">-</span><span class="mf">1062.9.1</span><span class="p">.</span><span class="n">el7</span><span class="p">.</span><span class="n">x86_64</span><span class="p">.</span><span class="n">img</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">linux</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">vmlinuz</span><span class="o">-</span><span class="mf">3.10.0</span><span class="o">-</span><span class="mf">1062.</span><span class="n">el7</span><span class="p">.</span><span class="n">x86_64</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">initrd</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">initramfs</span><span class="o">-</span><span class="mf">3.10.0</span><span class="o">-</span><span class="mf">1062.</span><span class="n">el7</span><span class="p">.</span><span class="n">x86_64</span><span class="p">.</span><span class="n">img</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">linux</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">vmlinuz</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="n">rescue</span><span class="o">-</span><span class="mi">4</span><span class="n">fb19b5248cd40d9b9a1ec7361f4f1fa</span><span class="w"></span>
+<span class="k">Found</span><span class="w"> </span><span class="n">initrd</span><span class="w"> </span><span class="nc">image</span><span class="err">:</span><span class="w"> </span><span class="o">/</span><span class="n">boot</span><span class="o">/</span><span class="n">initramfs</span><span class="o">-</span><span class="mi">0</span><span class="o">-</span><span class="n">rescue</span><span class="o">-</span><span class="mi">4</span><span class="n">fb19b5248cd40d9b9a1ec7361f4f1fa</span><span class="p">.</span><span class="n">img</span><span class="w"></span>
+<span class="n">done</span><span class="w"></span>
+</code></pre></div>
+
+
+<h3 id="ps-a-process-list-for-process-accounting">PS a process list for process accounting</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">ps -eo cmd </span>
+</code></pre></div>
+
+
+<h3 id="send-a-sysrq-though-kvm">Send a sysrq though KVM</h3>
+<p>Types of event
+<code>Dec 26 20:04:49 director kernel: SysRq : HELP : loglevel(0-9) reboot(b) crash(c) terminate-all-tasks(e) memory-full-oom-kill(f) kill-all-tasks(i) thaw-filesystems(j) sak(k) show-backtrace-all-active-cpus(l) show-memory-usage(m) nice-all-RT-tasks(n) poweroff(o) show-registers(p) show-all-timers(q) unraw(r) sync(s) show-task-states(t) unmount(u) force-fb(V) show-blocked-tasks(w) dump-ftrace-buffer(z)</code></p>
+<div class="codehilite"><pre><span></span><code><span class="c1">#In the guest VM</span>
+<span class="nb">echo</span> <span class="m">1</span> &gt; /proc/sys/kernel/sysrq
+
+<span class="c1">#To make it permanent</span>
+<span class="o">[</span>root@director ~<span class="o">]</span><span class="c1"># cat /etc/sysctl.d/sysrq.conf </span>
+kernel.sysrq <span class="o">=</span> <span class="m">1</span>
+
+<span class="c1">#From the Hypervisor</span>
+<span class="c1">#KEY_B replace what is after the _ for the correct action. This will reboot the target host.</span>
+root@kvm01:/tmp# virsh send-key ooo-director KEY_LEFTALT KEY_SYSRQ KEY_B
+</code></pre></div>
+
+
+<h3 id="install-pgcli-postgres-cmd-line-cli-ubuntu-1904">Install pgcli - postgres cmd line CLI - Ubuntu 19.04</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">sudo apt-get install libpq-dev python-dev</span>
+<span class="err">pip3 install pgcli</span>
+<span class="err">pgcli --host 127.0.0.1 --port 5432 --user ara_user --dbname ara --password</span>
+</code></pre></div>
+
+
+<h3 id="redhat-centos-bonding-lacp-vlan">Redhat / Centos bonding LACP - VLAN</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">modprobe</span> <span class="n">bonding</span>
+
+<span class="o">#</span><span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysconfig</span><span class="o">/</span><span class="n">network</span><span class="o">-</span><span class="n">scripts</span><span class="o">/</span><span class="n">ifcfg</span><span class="o">-</span><span class="n">bond0</span>
+<span class="n">DEVICE</span><span class="o">=</span><span class="n">bond0</span>
+<span class="k">Type</span><span class="o">=</span><span class="n">Bond</span>
+<span class="n">NAME</span><span class="o">=</span><span class="n">bond0</span>
+<span class="n">BONDING_MASTER</span><span class="o">=</span><span class="n">yes</span>
+<span class="n">BOOTPROTO</span><span class="o">=</span><span class="k">none</span>
+<span class="n">ONBOOT</span><span class="o">=</span><span class="n">yes</span>
+<span class="n">NM_CONTROLLED</span><span class="o">=</span><span class="k">no</span>
+<span class="n">BONDING_OPTS</span><span class="o">=</span><span class="ss">&quot;mode=4 miimon=100 lacp_rate=1&quot;</span>
+
+<span class="o">#</span><span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysconfig</span><span class="o">/</span><span class="n">network</span><span class="o">-</span><span class="n">scripts</span><span class="o">/</span><span class="n">ifcfg</span><span class="o">-</span><span class="n">em1</span>
+<span class="n">DEVICE</span><span class="o">=</span><span class="n">em1</span>
+<span class="k">TYPE</span><span class="o">=</span><span class="n">Ethernet</span>
+<span class="n">BOOTPROTO</span><span class="o">=</span><span class="k">none</span>
+<span class="n">ONBOOT</span><span class="o">=</span><span class="n">yes</span>
+<span class="n">NM_CONTROLLED</span><span class="o">=</span><span class="k">no</span>
+<span class="n">IPV6INIT</span><span class="o">=</span><span class="k">no</span>
+<span class="n">MASTER</span><span class="o">=</span><span class="n">bond0</span>
+<span class="n">SLAVE</span><span class="o">=</span><span class="n">yes</span>
+
+<span class="o">#</span><span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysconfig</span><span class="o">/</span><span class="n">network</span><span class="o">-</span><span class="n">scripts</span><span class="o">/</span><span class="n">ifcfg</span><span class="o">-</span><span class="n">em2</span>
+<span class="n">DEVICE</span><span class="o">=</span><span class="n">em2</span>
+<span class="k">TYPE</span><span class="o">=</span><span class="n">Ethernet</span>
+<span class="n">BOOTPROTO</span><span class="o">=</span><span class="k">none</span>
+<span class="n">ONBOOT</span><span class="o">=</span><span class="n">yes</span>
+<span class="n">NM_CONTROLLED</span><span class="o">=</span><span class="k">no</span>
+<span class="n">IPV6INIT</span><span class="o">=</span><span class="k">no</span>
+<span class="n">MASTER</span><span class="o">=</span><span class="n">bond0</span>
+<span class="n">SLAVE</span><span class="o">=</span><span class="n">yes</span>
+
+<span class="o">#</span><span class="n">vi</span> <span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">sysconfig</span><span class="o">/</span><span class="n">network</span><span class="o">-</span><span class="n">scripts</span><span class="o">/</span><span class="n">ifcfg</span><span class="o">-</span><span class="n">em3</span>
+<span class="n">DEVICE</span><span class="o">=</span><span class="n">em3</span>
+<span class="k">TYPE</span><span class="o">=</span><span class="n">Ethernet</span>
+<span class="n">BOOTPROTO</span><span class="o">=</span><span class="k">none</span>
+<span class="n">ONBOOT</span><span class="o">=</span><span class="n">yes</span>
+<span class="n">NM_CONTROLLED</span><span class="o">=</span><span class="k">no</span>
+<span class="n">IPV6INIT</span><span class="o">=</span><span class="k">no</span>
+<span class="n">MASTER</span><span class="o">=</span><span class="n">bond0</span>
+<span class="n">SLAVE</span><span class="o">=</span><span class="n">yes</span>
+</code></pre></div>
+
+
+<h3 id="write-speed-test">Write speed test</h3>
+<p>https://www.thomas-krenn.com/en/wiki/Linux_I/O_Performance_Tests_using_dd</p>
+<div class="codehilite"><pre><span></span><code><span class="err">dd if=/dev/zero of=/root/testfile bs=1G count=1 oflag=dsync</span>
+</code></pre></div>
+
+
+<h3 id="extend-lv">Extend lv</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">sudo lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv</span>
+<span class="err">sudo resize2fs /dev/ubuntu-vg/ubuntu-lv</span>
+</code></pre></div>
+
+
+<h3 id="set-dns-with-resolvctl">Set DNS with resolvctl</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">laurentdumont</span><span class="nv">@docker01</span><span class="err">:</span><span class="o">/</span><span class="n">srv</span><span class="err">$</span><span class="w"> </span><span class="n">sudo</span><span class="w"> </span><span class="n">resolvectl</span><span class="w"> </span><span class="n">dns</span><span class="w"> </span>
+<span class="k">Global</span><span class="err">:</span><span class="w"></span>
+<span class="n">Link</span><span class="w"> </span><span class="mi">17</span><span class="w"> </span><span class="p">(</span><span class="n">vethc025466</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="n">Link</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="p">(</span><span class="n">vetheb3b292</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="n">Link</span><span class="w"> </span><span class="mi">13</span><span class="w"> </span><span class="p">(</span><span class="n">veth45fcbdc</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="n">Link</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="p">(</span><span class="n">docker0</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="n">Link</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="p">(</span><span class="n">ens192</span><span class="p">)</span><span class="err">:</span><span class="w"> </span><span class="mf">10.199.199.1</span><span class="w"></span>
+
+
+<span class="n">sudo</span><span class="w"> </span><span class="n">resolvectl</span><span class="w"> </span><span class="n">dns</span><span class="w"> </span><span class="n">ens192</span><span class="w"> </span><span class="mf">10.199.199.1</span><span class="w"></span>
+</code></pre></div>
+
+
+<h3 id="fix-openvpn-dns-issues-with-new-resolved-for-dns">Fix openvpn DNS issues with new resolved for DNS</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">sudo apt install openvpn-systemd-resolved</span>
+</code></pre></div>
+
+
+<h3 id="show-disk-info">Show disk info</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">lshw -class disk</span>
+<span class="err">hwinfo --disk</span>
+</code></pre></div>
+
+
+<h3 id="create-one-pdf-from-multiple">Create one PDF from multiple</h3>
+<div class="codehilite"><pre><span></span><code><span class="err"># From within folder containing the PDF pages </span>
+<span class="err">qpdf --empty --pages *.pdf -- out.pdf</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../foreman/" title="Foreman" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Foreman
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../git/" title="Git" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Git
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Potato Tomato - Send me bitcoins - Laurent Dumont
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/laurentdumont" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.linkedin.com/in/laurentfdumont/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.3636a4ec.min.js"></script>
+      <script src="../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

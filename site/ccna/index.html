@@ -1,0 +1,2812 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="My own little space">
+      
+      
+      
+        <meta name="author" content="Laurent Dumont">
+      
+      <link rel="shortcut icon" href="../images/tarsier_hi_elbows.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.12">
+    
+    
+      
+        <title>Cisco-CCNA - Laurent Dumont - Internet notepad.</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4dd2dd8d.min.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/palette.6a5ad368.min.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#757575">
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-51757315-3","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){if(this.value){var e=document.location.pathname;ga("send","pageview",e+"?q="+this.value)}})}),document.addEventListener("DOMContentSwitch",function(){ga("send","pageview",document.location.pathname)})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="grey" data-md-color-accent="">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ethernet-and-frames" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Laurent Dumont - Internet notepad." class="md-header-nav__button md-logo" aria-label="Laurent Dumont - Internet notepad.">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.35 10.03A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.03A6.004 6.004 0 000 14a6 6 0 006 6h13a5 5 0 005-5c0-2.64-2.05-4.78-4.65-4.97z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Laurent Dumont - Internet notepad.
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Cisco-CCNA
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Laurent Dumont - Internet notepad." class="md-nav__button md-logo" aria-label="Laurent Dumont - Internet notepad.">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.35 10.03A7.49 7.49 0 0012 4C9.11 4 6.6 5.64 5.35 8.03A6.004 6.004 0 000 14a6 6 0 006 6h13a5 5 0 005-5c0-2.64-2.05-4.78-4.65-4.97z"/></svg>
+
+    </a>
+    Laurent Dumont - Internet notepad.
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/LaurentDumont/ns-cheatsheet/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ns-cheatsheet
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../chef/" title="Chef" class="md-nav__link">
+      Chef
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Cisco-CCNA
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Cisco-CCNA" class="md-nav__link md-nav__link--active">
+      Cisco-CCNA
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ethernet-and-frames" class="md-nav__link">
+    Ethernet and Frames
+  </a>
+  
+    <nav class="md-nav" aria-label="Ethernet and Frames">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ethernet-type-field" class="md-nav__link">
+    Ethernet "Type" field
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cisco-security" class="md-nav__link">
+    Cisco Security
+  </a>
+  
+    <nav class="md-nav" aria-label="Cisco Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-and-access-management" class="md-nav__link">
+    User and access management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-security" class="md-nav__link">
+    Port-Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac-aging" class="md-nav__link">
+    MAC aging
+  </a>
+  
+    <nav class="md-nav" aria-label="MAC aging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mac-address-conversion" class="md-nav__link">
+    MAC address conversion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#violation-option" class="md-nav__link">
+    Violation option
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlan-interfaces-svi" class="md-nav__link">
+    VLAN interfaces (SVI)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autonegociation-speed-and-duplex" class="md-nav__link">
+    Autonegociation - Speed and Duplex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-range" class="md-nav__link">
+    Interface range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp-and-udp" class="md-nav__link">
+    TCP and UDP
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP and UDP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp" class="md-nav__link">
+    TCP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp" class="md-nav__link">
+    UDP
+  </a>
+  
+    <nav class="md-nav" aria-label="UDP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-numbers" class="md-nav__link">
+    Port Numbers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp" class="md-nav__link">
+    DHCP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-static-routes" class="md-nav__link">
+    Routing - Static Routes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-distance-vector-protocols-rip" class="md-nav__link">
+    Routing - Distance Vector Protocols - RIP
+  </a>
+  
+    <nav class="md-nav" aria-label="Routing - Distance Vector Protocols - RIP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-ripv2" class="md-nav__link">
+    Enabling RIPv2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passive-interfaces" class="md-nav__link">
+    Passive interfaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rip-load-balancing" class="md-nav__link">
+    RIP Load Balancing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-route-in-rip" class="md-nav__link">
+    Default route in RIP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-administrative-distance" class="md-nav__link">
+    Routing Administrative distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-static-routes" class="md-nav__link">
+    Floating static routes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subnetting" class="md-nav__link">
+    Subnetting
+  </a>
+  
+    <nav class="md-nav" aria-label="Subnetting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-class" class="md-nav__link">
+    Network class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-of-subnet-in-a-network-200110-27" class="md-nav__link">
+    Number of subnet in a network - 200.1.1.0 /27
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-of-hosts-per-subnet-200110-27" class="md-nav__link">
+    Number of hosts per subnet - 200.1.1.0 /27
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-the-subnet-of-an-ip-address-101721418" class="md-nav__link">
+    Find the Subnet of an IP address - 10.17.2.14/18
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-the-broadcast-and-range-of-valid-addresses-in-subnet-210461100-25" class="md-nav__link">
+    Find the broadcast and range of valid addresses in subnet - 210.46.110.0 /25
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-the-broadcast-and-range-of-valid-addresses-in-subnet-15010640-18" class="md-nav__link">
+    Find the broadcast and range of valid addresses in subnet - 150.10.64.0 /18
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-lists" class="md-nav__link">
+    Access Lists
+  </a>
+  
+    <nav class="md-nav" aria-label="Access Lists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wildcard-masks" class="md-nav__link">
+    Wildcard masks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-acl" class="md-nav__link">
+    Standard ACL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-acl" class="md-nav__link">
+    Extended ACL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#named-extendedstandard-acl" class="md-nav__link">
+    Named Extended/Standard ACL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acl-on-vty-lines" class="md-nav__link">
+    ACL on VTY lines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acl-sequence-numbers" class="md-nav__link">
+    ACL Sequence numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-to-apply-acls" class="md-nav__link">
+    Where to apply ACLs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ntp-network-time-protocol" class="md-nav__link">
+    NTP - Network Time Protocol
+  </a>
+  
+    <nav class="md-nav" aria-label="NTP - Network Time Protocol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stratum-level-of-accuracy-of-the-ntp-server" class="md-nav__link">
+    Stratum - Level of accuracy of the NTP server.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ntp-modes" class="md-nav__link">
+    NTP Modes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-pat-network-address-translation-port-address-translation" class="md-nav__link">
+    NAT / PAT - Network Address Translation / Port Address Translation
+  </a>
+  
+    <nav class="md-nav" aria-label="NAT / PAT - Network Address Translation / Port Address Translation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-nat" class="md-nav__link">
+    Static NAT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-nat" class="md-nav__link">
+    Dynamic NAT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-address-translation-nat-overload" class="md-nav__link">
+    Port address translation - NAT Overload
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv6" class="md-nav__link">
+    IPv6
+  </a>
+  
+    <nav class="md-nav" aria-label="IPv6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compressing-ipv6-addresses" class="md-nav__link">
+    Compressing IPv6 addresses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assigning-ipv6-addresses-to-interfaces" class="md-nav__link">
+    Assigning IPv6 addresses to interfaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-ipv6-addresses" class="md-nav__link">
+    Types of IPv6 addresses.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eui-64-process" class="md-nav__link">
+    EUI-64 Process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-eui-64-process-for-global-unicast-address" class="md-nav__link">
+    Use EUI-64 process for global unicast address.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv6-ndp-neighbor-discovery-process" class="md-nav__link">
+    IPv6 NDP - Neighbor Discovery Process
+  </a>
+  
+    <nav class="md-nav" aria-label="IPv6 NDP - Neighbor Discovery Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ndp-router-discovery" class="md-nav__link">
+    NDP - Router Discovery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ndp-host-discovery" class="md-nav__link">
+    NDP - Host Discovery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-and-ipv6" class="md-nav__link">
+    DHCP and IPv6
+  </a>
+  
+    <nav class="md-nav" aria-label="DHCP and IPv6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stateful-dhcp" class="md-nav__link">
+    Stateful DHCP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stateless-dhcp" class="md-nav__link">
+    Stateless DHCP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv6-duplicate-address-detection-dad" class="md-nav__link">
+    IPv6 - Duplicate Address Detection - DAD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv6-packet-header" class="md-nav__link">
+    IPv6 Packet Header
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-and-timestamps" class="md-nav__link">
+    Logging and Timestamps
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging and Timestamps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logging-to-remote-server" class="md-nav__link">
+    Logging to remote server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#banner-configuration" class="md-nav__link">
+    Banner configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdp-cisco-discovery-protocol" class="md-nav__link">
+    CDP - Cisco Discovery Protocol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lldp-link-layer-discovery-protocols" class="md-nav__link">
+    LLDP - Link Layer Discovery Protocols
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confreg-register-and-password-recovery" class="md-nav__link">
+    Confreg Register and Password Recovery
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cisco/" title="Cisco" class="md-nav__link">
+      Cisco
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../cumulus/" title="Cumulus" class="md-nav__link">
+      Cumulus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../docker/" title="Docker" class="md-nav__link">
+      Docker
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../elasticsearch/" title="Elasticsearch" class="md-nav__link">
+      Elasticsearch
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../foreman/" title="Foreman" class="md-nav__link">
+      Foreman
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../linux/" title="Generic Linux" class="md-nav__link">
+      Generic Linux
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../git/" title="Git" class="md-nav__link">
+      Git
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../gluster/" title="Gluster" class="md-nav__link">
+      Gluster
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../iperf/" title="iPerf" class="md-nav__link">
+      iPerf
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../iscsi/" title="ISCSI" class="md-nav__link">
+      ISCSI
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../juniper/" title="Juniper" class="md-nav__link">
+      Juniper
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../kolla/" title="Kolla" class="md-nav__link">
+      Kolla
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../kubernetes/" title="Kubernetes" class="md-nav__link">
+      Kubernetes
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../kvm/" title="KVM" class="md-nav__link">
+      KVM
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../lvm/" title="LVM" class="md-nav__link">
+      LVM
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../maas/" title="MAAS" class="md-nav__link">
+      MAAS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../molecule/" title="Molecule" class="md-nav__link">
+      Molecule
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../mysql/" title="MySQL/MariaDB" class="md-nav__link">
+      MySQL/MariaDB
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../netbox/" title="Netbox" class="md-nav__link">
+      Netbox
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../openstack/" title="Openstack" class="md-nav__link">
+      Openstack
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../opnfv/" title="OPNFV" class="md-nav__link">
+      OPNFV
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../ovs/" title="OVS" class="md-nav__link">
+      OVS
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../postgres/" title="Postgres" class="md-nav__link">
+      Postgres
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../prometheus/" title="Prometheus" class="md-nav__link">
+      Prometheus
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../proxmox/" title="Proxmox" class="md-nav__link">
+      Proxmox
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../python/" title="Python" class="md-nav__link">
+      Python
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../security/" title="Security" class="md-nav__link">
+      Security
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../splunk/" title="Splunk" class="md-nav__link">
+      Splunk
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../tripleo/" title="Tripleo" class="md-nav__link">
+      Tripleo
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../terraform/" title="Terraform" class="md-nav__link">
+      Terraform
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../frr/" title="FRR" class="md-nav__link">
+      FRR
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ethernet-and-frames" class="md-nav__link">
+    Ethernet and Frames
+  </a>
+  
+    <nav class="md-nav" aria-label="Ethernet and Frames">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ethernet-type-field" class="md-nav__link">
+    Ethernet "Type" field
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cisco-security" class="md-nav__link">
+    Cisco Security
+  </a>
+  
+    <nav class="md-nav" aria-label="Cisco Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user-and-access-management" class="md-nav__link">
+    User and access management
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-security" class="md-nav__link">
+    Port-Security
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mac-aging" class="md-nav__link">
+    MAC aging
+  </a>
+  
+    <nav class="md-nav" aria-label="MAC aging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mac-address-conversion" class="md-nav__link">
+    MAC address conversion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#violation-option" class="md-nav__link">
+    Violation option
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vlan-interfaces-svi" class="md-nav__link">
+    VLAN interfaces (SVI)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autonegociation-speed-and-duplex" class="md-nav__link">
+    Autonegociation - Speed and Duplex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-range" class="md-nav__link">
+    Interface range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcp-and-udp" class="md-nav__link">
+    TCP and UDP
+  </a>
+  
+    <nav class="md-nav" aria-label="TCP and UDP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp" class="md-nav__link">
+    TCP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#udp" class="md-nav__link">
+    UDP
+  </a>
+  
+    <nav class="md-nav" aria-label="UDP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#port-numbers" class="md-nav__link">
+    Port Numbers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp" class="md-nav__link">
+    DHCP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-static-routes" class="md-nav__link">
+    Routing - Static Routes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-distance-vector-protocols-rip" class="md-nav__link">
+    Routing - Distance Vector Protocols - RIP
+  </a>
+  
+    <nav class="md-nav" aria-label="Routing - Distance Vector Protocols - RIP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enabling-ripv2" class="md-nav__link">
+    Enabling RIPv2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#passive-interfaces" class="md-nav__link">
+    Passive interfaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rip-load-balancing" class="md-nav__link">
+    RIP Load Balancing
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#default-route-in-rip" class="md-nav__link">
+    Default route in RIP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#routing-administrative-distance" class="md-nav__link">
+    Routing Administrative distance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#floating-static-routes" class="md-nav__link">
+    Floating static routes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subnetting" class="md-nav__link">
+    Subnetting
+  </a>
+  
+    <nav class="md-nav" aria-label="Subnetting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#network-class" class="md-nav__link">
+    Network class
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-of-subnet-in-a-network-200110-27" class="md-nav__link">
+    Number of subnet in a network - 200.1.1.0 /27
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#number-of-hosts-per-subnet-200110-27" class="md-nav__link">
+    Number of hosts per subnet - 200.1.1.0 /27
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-the-subnet-of-an-ip-address-101721418" class="md-nav__link">
+    Find the Subnet of an IP address - 10.17.2.14/18
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-the-broadcast-and-range-of-valid-addresses-in-subnet-210461100-25" class="md-nav__link">
+    Find the broadcast and range of valid addresses in subnet - 210.46.110.0 /25
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-the-broadcast-and-range-of-valid-addresses-in-subnet-15010640-18" class="md-nav__link">
+    Find the broadcast and range of valid addresses in subnet - 150.10.64.0 /18
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#access-lists" class="md-nav__link">
+    Access Lists
+  </a>
+  
+    <nav class="md-nav" aria-label="Access Lists">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wildcard-masks" class="md-nav__link">
+    Wildcard masks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#standard-acl" class="md-nav__link">
+    Standard ACL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extended-acl" class="md-nav__link">
+    Extended ACL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#named-extendedstandard-acl" class="md-nav__link">
+    Named Extended/Standard ACL
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acl-on-vty-lines" class="md-nav__link">
+    ACL on VTY lines
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acl-sequence-numbers" class="md-nav__link">
+    ACL Sequence numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-to-apply-acls" class="md-nav__link">
+    Where to apply ACLs
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ntp-network-time-protocol" class="md-nav__link">
+    NTP - Network Time Protocol
+  </a>
+  
+    <nav class="md-nav" aria-label="NTP - Network Time Protocol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stratum-level-of-accuracy-of-the-ntp-server" class="md-nav__link">
+    Stratum - Level of accuracy of the NTP server.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ntp-modes" class="md-nav__link">
+    NTP Modes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nat-pat-network-address-translation-port-address-translation" class="md-nav__link">
+    NAT / PAT - Network Address Translation / Port Address Translation
+  </a>
+  
+    <nav class="md-nav" aria-label="NAT / PAT - Network Address Translation / Port Address Translation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#static-nat" class="md-nav__link">
+    Static NAT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dynamic-nat" class="md-nav__link">
+    Dynamic NAT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#port-address-translation-nat-overload" class="md-nav__link">
+    Port address translation - NAT Overload
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv6" class="md-nav__link">
+    IPv6
+  </a>
+  
+    <nav class="md-nav" aria-label="IPv6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compressing-ipv6-addresses" class="md-nav__link">
+    Compressing IPv6 addresses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assigning-ipv6-addresses-to-interfaces" class="md-nav__link">
+    Assigning IPv6 addresses to interfaces
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#types-of-ipv6-addresses" class="md-nav__link">
+    Types of IPv6 addresses.
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#eui-64-process" class="md-nav__link">
+    EUI-64 Process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-eui-64-process-for-global-unicast-address" class="md-nav__link">
+    Use EUI-64 process for global unicast address.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv6-ndp-neighbor-discovery-process" class="md-nav__link">
+    IPv6 NDP - Neighbor Discovery Process
+  </a>
+  
+    <nav class="md-nav" aria-label="IPv6 NDP - Neighbor Discovery Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ndp-router-discovery" class="md-nav__link">
+    NDP - Router Discovery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ndp-host-discovery" class="md-nav__link">
+    NDP - Host Discovery
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dhcp-and-ipv6" class="md-nav__link">
+    DHCP and IPv6
+  </a>
+  
+    <nav class="md-nav" aria-label="DHCP and IPv6">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stateful-dhcp" class="md-nav__link">
+    Stateful DHCP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stateless-dhcp" class="md-nav__link">
+    Stateless DHCP
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv6-duplicate-address-detection-dad" class="md-nav__link">
+    IPv6 - Duplicate Address Detection - DAD
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ipv6-packet-header" class="md-nav__link">
+    IPv6 Packet Header
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-and-timestamps" class="md-nav__link">
+    Logging and Timestamps
+  </a>
+  
+    <nav class="md-nav" aria-label="Logging and Timestamps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logging-to-remote-server" class="md-nav__link">
+    Logging to remote server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#banner-configuration" class="md-nav__link">
+    Banner configuration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cdp-cisco-discovery-protocol" class="md-nav__link">
+    CDP - Cisco Discovery Protocol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lldp-link-layer-discovery-protocols" class="md-nav__link">
+    LLDP - Link Layer Discovery Protocols
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confreg-register-and-password-recovery" class="md-nav__link">
+    Confreg Register and Password Recovery
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/ccna.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  
+                
+                
+                  <h1>Cisco-CCNA</h1>
+                
+                <h2 id="ethernet-and-frames">Ethernet and Frames</h2>
+<ul>
+<li>Unicast frames: For just one host</li>
+<li>Broadcast frames: ff:ff:ff:ff:ff:ff - For all devices on a single internet LAN.</li>
+<li>Multicast frames: Forwarded to a subnet for the hosts on a ethernet LAN.</li>
+</ul>
+<h5 id="ethernet-type-field">Ethernet "Type" field</h5>
+<ul>
+<li>0800 = IPv4</li>
+<li>86DD = IPv6</li>
+</ul>
+<p>Hub = port needs to be at half-duplex</p>
+<h2 id="cisco-security">Cisco Security</h2>
+<h3 id="user-and-access-management">User and access management</h3>
+<p>Enable secret takes precedence over enable password.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">enable</span> <span class="n">password</span> <span class="n">potato</span>
+<span class="n">enable</span> <span class="n">secret</span> <span class="n">potato2</span>
+
+<span class="n">enable</span> <span class="n">password</span> <span class="o">=</span> <span class="n">potato2</span>
+</code></pre></div>
+
+
+<p>Enable AAA (allow user with privilege 15 to login straight into enable mode)</p>
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">aaa new-model</span>
+<span class="err">aaa authentication login default group local</span>
+<span class="err">aaa authorization exec default group local</span>
+</code></pre></div>
+
+
+<p>Create user with default privilege 15 level</p>
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">username $USERNAME privilege 15 secret $PASSWORD</span>
+</code></pre></div>
+
+
+<p>login = password and username of the vty itself.
+login local = Local username database</p>
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">line con 0</span>
+<span class="err">login local</span>
+<span class="err">exec-timeout 0 0</span>
+<span class="err">logging synchronous</span>
+</code></pre></div>
+
+
+<p>Line VTY user are set to privilege 15 automatically.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">line vty 0 15</span>
+<span class="err">privilege level 15</span>
+</code></pre></div>
+
+
+<p>"Encrypt" passwords in the startup-config.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">service password-encryption</span>
+</code></pre></div>
+
+
+<h3 id="port-security">Port-Security</h3>
+<p>Enabling port security on port
+Cannot be enabled on a trunk/dynamic/auto port. Must be an access port.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">interface gigabitethernet0/1</span>
+<span class="err">switchport port-security</span>
+</code></pre></div>
+
+
+<p>Keep MAC addresses when port-shutdown or switch reload.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">interface gigabitethernet0/1</span>
+<span class="err">switchport port-security</span>
+<span class="err">switchport port-security mac-address sticky</span>
+</code></pre></div>
+
+
+<h3 id="mac-aging">MAC aging</h3>
+<p>Dynamic MAC aging default = 0<br />
+absolute timer = Counts down irregardless of traffic<br />
+inactivity timer = resets when traffic is seen from MAC.<br />
+maximum - Default 1
+If you raise the number of max MAC addresses on a port, you can run static and dynamic MAC detection.</p>
+<h4 id="mac-address-conversion">MAC address conversion</h4>
+<table>
+<thead>
+<tr>
+<th>Character</th>
+<th>HEX</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>10</td>
+</tr>
+<tr>
+<td>b</td>
+<td>11</td>
+</tr>
+<tr>
+<td>c</td>
+<td>12</td>
+</tr>
+<tr>
+<td>d</td>
+<td>13</td>
+</tr>
+<tr>
+<td>e</td>
+<td>14</td>
+</tr>
+<tr>
+<td>f</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>One digit hex ---&gt; 0-9 or A-F</li>
+<li>Two digit hex ---&gt; Left to Right, units of 16 ---&gt; units of 1.</li>
+</ul>
+<p>Hexadecimal A7 to decimal
+A = 10 units of 16 (A=16) ---&gt; 160<br />
+7 = 7 units of 1 ---&gt; 7<br />
+160 + 7 = 167</p>
+<p>Decimal 241 to Hexadecimal
+1. f = 15 * 16
+2. 1 = 1 * 1
+3. F1</p>
+<h4 id="violation-option">Violation option</h4>
+<p><strong>protect</strong> - Drops traffic, no SYSLOG, no SNMP Trap, no counters increased  <br />
+<strong>restrict</strong> - Drops traffic, generate SNMP trap, generate SYSLOG.<br />
+<strong>shutdown</strong> - Default, increase violation counters, Port shutdown in error-disabled.  </p>
+<p>Show port-security commands</p>
+<div class="codehilite"><pre><span></span><code><span class="err">show port-security interface fastethernet 0/1</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="err">show port-security address</span>
+</code></pre></div>
+
+
+<p>Error disabled recovery<br />
+Default recovery 300 seconds</p>
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">errordisable recovery cause ?</span>
+<span class="err">errordisable recovery cause psecure-violation</span>
+<span class="err">errdisable recovery interval 30</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="err">show errdisable recovery</span>
+</code></pre></div>
+
+
+<h3 id="vlan-interfaces-svi">VLAN interfaces (SVI)</h3>
+<ul>
+<li>Layer 2 vlan must exist</li>
+<li>Physical interface with vlan attached to must be in UP and UP.</li>
+<li>Can be a trunk with vlan allowed or an access port with the vlan.</li>
+</ul>
+<h3 id="autonegociation-speed-and-duplex">Autonegociation - Speed and Duplex</h3>
+<ul>
+<li>Highest speed supported by both is used.</li>
+<li>Full duplex supported by both is used.</li>
+<li><strong>DO NOT</strong> set one side auto and the other side forced.</li>
+<li>Symptoms --&gt; Slow Upload, irregular speed, packet loss, CRC/Runt frames errors on the interface</li>
+</ul>
+<h3 id="interface-range">Interface range</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">interface range fastethernet 0/1-24</span>
+<span class="err">interface range fastethernet 0/1-24,25,26</span>
+</code></pre></div>
+
+
+<h3 id="tcp-and-udp">TCP and UDP</h3>
+<h4 id="tcp">TCP</h4>
+<ul>
+<li>Guarantees delivery of segments</li>
+<li>Error Detection and recovery</li>
+<li>Sequence numbers and ACK to recover from lost/corrupt packets</li>
+<li>TCP Windowing</li>
+<li>Connection-oriented</li>
+<li>Three-way handshake</li>
+<li>SYN FLAG / ACK FLAG</li>
+<li>Source ---&gt; Destination : SYN</li>
+<li>Destination ---&gt; Source : SYN-ACK</li>
+<li>Source ---&gt; Destination : ACK</li>
+<li>Connection Established</li>
+<li>When connection is terminated - 4 Way Handshake</li>
+<li>Client ---&gt; Server : FIN, ACK</li>
+<li>Client &lt;--- Server : ACK</li>
+<li>Client &lt;--- Server : ACK, FIN</li>
+<li>Client ---&gt; Server : ACK</li>
+<li>Flow control and Windowing</li>
+<li>The receiver increases the Window size / controls the flow.</li>
+<li>The receiver asks for more data when traffic flows well --&gt; No errors/retransmits on packets.</li>
+</ul>
+<p><img alt="TCP-3WAY" src="/images/tcp-3way-handshake.gif" /></p>
+<h3 id="udp">UDP</h3>
+<ul>
+<li>"Best Effort"</li>
+<li>No Error Detection</li>
+<li>No Windowing</li>
+<li>Connectionless - Data is sent without the remote peer being aware.</li>
+</ul>
+<h4 id="port-numbers">Port Numbers</h4>
+<p>Well-known port numbers:  </p>
+<table>
+<thead>
+<tr>
+<th>Protocol / Transport</th>
+<th>Port</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTTPS / TCP</td>
+<td>443</td>
+</tr>
+<tr>
+<td>SNMP / UDP</td>
+<td>161</td>
+</tr>
+<tr>
+<td>SMTP / TCP</td>
+<td>25</td>
+</tr>
+<tr>
+<td>TELNET / TCP</td>
+<td>22</td>
+</tr>
+<tr>
+<td>SSH / TCP</td>
+<td>23</td>
+</tr>
+</tbody>
+</table>
+<p>Socket ---&gt; Combination of an ipaddress and a port number.<br />
+192.168.1.1:10000</p>
+<h3 id="dhcp">DHCP</h3>
+<p><strong>DORA</strong><br />
+1. Discover - Broadcast from client.<br />
+2. Offer - DHCP server receives Discover and sends unicast offer to client.<br />
+3. Request - Client sends request for the offered IP address.<br />
+4. Ack - DHCP server ack the client request and assigns the IP.  </p>
+<h3 id="routing-static-routes">Routing - Static Routes</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">ip</span> <span class="n">route</span> <span class="n">destination_subnet</span> <span class="n">destination_mask</span> <span class="p">[</span><span class="k">local</span><span class="o">-</span><span class="n">router</span><span class="o">-</span><span class="n">exit</span><span class="o">-</span><span class="n">interface</span> <span class="o">|</span> <span class="k">next</span><span class="o">-</span><span class="n">hop</span><span class="o">-</span><span class="n">ip</span><span class="o">-</span><span class="n">address</span><span class="p">]</span>
+
+<span class="n">ip</span> <span class="n">route</span> <span class="mi">2</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">2</span><span class="p">.</span><span class="mi">2</span> <span class="mi">255</span><span class="p">.</span><span class="mi">255</span><span class="p">.</span><span class="mi">255</span><span class="p">.</span><span class="mi">0</span> <span class="mi">192</span><span class="p">.</span><span class="mi">168</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span>
+
+<span class="o">#</span><span class="k">Default</span> <span class="n">Route</span>
+<span class="n">ip</span> <span class="n">route</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span> <span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span><span class="p">.</span><span class="mi">0</span> <span class="p">[</span><span class="k">local</span><span class="o">-</span><span class="n">router</span><span class="o">-</span><span class="n">exit</span><span class="o">-</span><span class="n">interface</span> <span class="o">|</span> <span class="k">next</span><span class="o">-</span><span class="n">hop</span><span class="o">-</span><span class="n">ip</span><span class="o">-</span><span class="n">address</span><span class="p">]</span>
+</code></pre></div>
+
+
+<h3 id="routing-distance-vector-protocols-rip">Routing - Distance Vector Protocols - RIP</h3>
+<p><strong>RIPv1 / IGRP</strong></p>
+<ul>
+<li>Full route table update at fixed interval. Every 30 seconds for RIP.</li>
+<li>Do not subnet VLSM.</li>
+<li>No Packet authentication.</li>
+</ul>
+<p><strong>RIPv2</strong></p>
+<ul>
+<li>Supports VLSM.</li>
+<li>Multicasts from router updates - 224.0.0.9 instead of broadcast (RIPv1)</li>
+<li>Supports Authentication.</li>
+<li>Supports route summarization.</li>
+</ul>
+<p><strong>Split Horizon</strong></p>
+<ul>
+<li>A route cannot be advertised via an interface that received the route in the first place.</li>
+<li>No split horizon on frame-relay.</li>
+</ul>
+<p><strong>Route Poisoning</strong></p>
+<ul>
+<li>When all routers have the same routing table --&gt; State of convergence  </li>
+<li>Slow to converge</li>
+<li>When router removes a subnet that is local to itself.</li>
+<li>Send update that shows 16 hops for the removed subnet.</li>
+<li>Other routers will receive the update and remove the route from their own routing tables as 16 hops marks a subnet as unreachable.</li>
+</ul>
+<p><strong>Hops</strong></p>
+<ul>
+<li>Metric for RIPv2.</li>
+<li>Measures of distance to reach a specific subnet.</li>
+<li>Does not care about interface speed - only hop count.</li>
+</ul>
+<h4 id="enabling-ripv2">Enabling RIPv2</h4>
+<div class="codehilite"><pre><span></span><code><span class="n">conf</span> <span class="n">t</span>
+<span class="n">router</span> <span class="n">rip</span>
+
+<span class="o">#</span><span class="k">Show</span> <span class="n">protocols</span> <span class="n">active</span> <span class="k">on</span> <span class="n">router</span>
+<span class="k">show</span> <span class="n">ip</span> <span class="n">protocols</span>
+
+<span class="o">#</span><span class="n">Enable</span> <span class="k">specific</span> <span class="k">version</span> <span class="k">of</span> <span class="n">RIPv2</span> <span class="n">per</span> <span class="n">interface</span> <span class="k">or</span> <span class="k">global</span><span class="p">.</span>
+<span class="n">interface</span> <span class="n">gig0</span><span class="o">/</span><span class="mi">1</span>
+<span class="n">ip</span> <span class="n">rip</span> <span class="n">send</span> <span class="k">version</span> <span class="mi">2</span>
+
+<span class="n">conf</span> <span class="n">t</span>
+<span class="n">router</span> <span class="n">rip</span>
+<span class="n">rip</span> <span class="k">version</span> <span class="mi">2</span>
+<span class="n">network</span> <span class="mi">10</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">0</span>
+<span class="n">network</span> <span class="mi">10</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">11</span><span class="p">.</span><span class="mi">0</span>
+
+<span class="o">#</span><span class="n">Disable</span> <span class="n">auto</span> <span class="n">summary</span>
+<span class="n">conf</span> <span class="n">t</span>
+<span class="n">router</span> <span class="n">rip</span>
+<span class="k">no</span> <span class="n">auto</span><span class="o">-</span><span class="n">summary</span>
+
+<span class="o">#</span><span class="n">Enable</span> <span class="n">split</span> <span class="n">Horizon</span>
+<span class="n">interface</span> <span class="n">serial0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="n">ip</span> <span class="n">split</span><span class="o">-</span><span class="n">horizon</span>
+</code></pre></div>
+
+
+<p>Confirming that RIPV2 works.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">show ip protocols</span>
+<span class="err">show ip rip database</span>
+</code></pre></div>
+
+
+<p>Clear RIP routes.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">clear ip route *</span>
+</code></pre></div>
+
+
+<h4 id="passive-interfaces">Passive interfaces</h4>
+<p>Prevents sending RIPv2 updates from interfaces where it's not necessary.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">router rip</span>
+<span class="err">passive-interface fastethernet0/1</span>
+<span class="err">passive-interface fastethernet0/2</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">router rip</span>
+<span class="err">passive-interface default</span>
+<span class="err">no passive-interface fastethernet0/1</span>
+<span class="err">no passive-interface fastethernet0/2</span>
+</code></pre></div>
+
+
+<h4 id="rip-load-balancing">RIP Load Balancing</h4>
+<p>1) If a subnet is reachable through two paths with the same hope count --&gt; Load balance across the two links.</p>
+<p>Disabling equal cost load balancing</p>
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">router rip</span>
+<span class="err">maximum-path 1</span>
+</code></pre></div>
+
+
+<h4 id="default-route-in-rip">Default route in RIP</h4>
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">router rip</span>
+<span class="err">default-information originate</span>
+</code></pre></div>
+
+
+<h3 id="routing-administrative-distance">Routing Administrative distance</h3>
+<p>1) The prefix mask is considered first. The more specific route is installed.<br />
+2) If the prefix max is "=" ---&gt; Administrative Distance is checked. The route with the lowest ADs wins.  </p>
+<p><img alt="ROUTING-AD" src="/images/admin-routing-dist.png" /></p>
+<h3 id="floating-static-routes">Floating static routes</h3>
+<p>If a route with a lower AD is removed from the routing table, the static route will be added and become active.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">ip route 2.2.2.0 255.255.255.0 21.1.1.2 [static route metric here | higher than routing protocol 1-255 ]</span>
+</code></pre></div>
+
+
+<h3 id="subnetting">Subnetting</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>128</th>
+<th>64</th>
+<th>32</th>
+<th>16</th>
+<th>8</th>
+<th>4</th>
+<th>2</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>45</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>200.17.100.3</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>128</th>
+<th>64</th>
+<th>32</th>
+<th>16</th>
+<th>8</th>
+<th>4</th>
+<th>2</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>17</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>100</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>11001000.00010001.01100100.00000011</p>
+<h4 id="network-class">Network class</h4>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Class A</th>
+<th>Class B</th>
+<th>Class C</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1st Octet range</td>
+<td>1 - 126</td>
+<td>128 - 191</td>
+<td>192 - 223</td>
+</tr>
+<tr>
+<td>Network Mask</td>
+<td>255.0.0.0 - /8</td>
+<td>255.255.0.0 - /16</td>
+<td>255.255.255.0 - /24</td>
+</tr>
+</tbody>
+</table>
+<h4 id="number-of-subnet-in-a-network-200110-27">Number of subnet in a network - 200.1.1.0 /27</h4>
+<ol>
+<li>Find the class of the subnet --&gt; Class C (+192)</li>
+<li>A class C is a /24 by default.</li>
+<li>/27 - /24 = 3 subnet bits.</li>
+<li>Number of subnet --&gt; 2^Number_subnet_bits_remaining --&gt; 2^3 --&gt; 2 * 2 * 2 = 8 subnets</li>
+</ol>
+<h4 id="number-of-hosts-per-subnet-200110-27">Number of hosts per subnet - 200.1.1.0 /27</h4>
+<ol>
+<li>Find the number of host bits --&gt; /32 - /27 --&gt; /5 host bits</li>
+<li>Find the number of valid host per subnet - remove subnet and broadcast address.</li>
+<li>(2^(number of host bits))-2 --&gt; 2^5 --&gt; 2 * 2 * 2 * 2 * 2 --&gt; 32 - 2 --&gt; 30</li>
+</ol>
+<h4 id="find-the-subnet-of-an-ip-address-101721418">Find the Subnet of an IP address - 10.17.2.14/18</h4>
+<ol>
+<li>/18 = First two octets = 16 bits + 2 bits from third octet</li>
+<li>10.17.00000010</li>
+<li>10.17.<strong>00</strong> 000000 --&gt; Total of 18 bits for subnet address</li>
+<li>Subnet address = 10.17.0.0/18</li>
+</ol>
+<h4 id="find-the-broadcast-and-range-of-valid-addresses-in-subnet-210461100-25">Find the broadcast and range of valid addresses in subnet - 210.46.110.0 /25</h4>
+<ol>
+<li>/32 - /25 = last 7 bits --&gt; host bits</li>
+<li>01111111 --&gt; 64 + 32 +16 +8 + 4 + 2 +1 --&gt; 96 + 16 + 15 --&gt; 96 + 31 --&gt; Broadcast = 210.46.110.127</li>
+</ol>
+<h4 id="find-the-broadcast-and-range-of-valid-addresses-in-subnet-15010640-18">Find the broadcast and range of valid addresses in subnet - 150.10.64.0 /18</h4>
+<ol>
+<li>/32 - /18 = last 14 bits --&gt; host bits</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>128</th>
+<th>64</th>
+<th>32</th>
+<th>16</th>
+<th>8</th>
+<th>4</th>
+<th>2</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>64</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Broadcast --&gt; 150.10.0<strong>1111111.11111111</strong> --&gt; 150.10.127.255</li>
+<li>Range of valid addresses --&gt; 150.10.64.1 to 150.10.127.254</li>
+</ol>
+<h3 id="access-lists">Access Lists</h3>
+<ul>
+<li>All ACL have an implicit DENY ALL ALL at the end.</li>
+<li>The search is done TOP to BOTTOM</li>
+<li>When a match is found, that's the end of the search. Any remaining lines are not examined.</li>
+</ul>
+<h4 id="wildcard-masks">Wildcard masks</h4>
+<ul>
+<li>0 --&gt; All bits must match.</li>
+<li>1 --&gt; Does not need to match.</li>
+</ul>
+<h4 id="standard-acl">Standard ACL</h4>
+<ul>
+<li>Can only match on the SOURCE ip address of a packet.</li>
+<li>Standard Access list number : 1 --&gt; 99</li>
+<li>Standard expanded access list number : 1300 --&gt; 1999</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="err">&lt;1-99&gt;       Standard IP access-list number</span>
+<span class="err">&lt;1300-1999&gt;  Standard IP access-list number (expanded range)</span>
+<span class="err">WORD         Access-list name</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="err">ip access-list standard 5 deny 3.3.3.0 0.0.0.255</span>
+<span class="err">interface fastethernet0</span>
+<span class="err">ip access-group 5 in</span>
+</code></pre></div>
+
+
+<h4 id="extended-acl">Extended ACL</h4>
+<ul>
+<li>Can match on source AND/OR destination.</li>
+</ul>
+<h4 id="named-extendedstandard-acl">Named Extended/Standard ACL</h4>
+<ul>
+<li>Allows naming of Access list instead of number.</li>
+<li>Valid for Standard and Extended ACL.</li>
+<li>Cannot have an Extended and Standard ACL with the same name.</li>
+<li>You need to use <code>ip access-list standard | extended</code> instead of <code>access-list</code></li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">ip access-list extended BLOCK11</span>
+<span class="err">deny ip 3.3.3.0 0.0.0.255 11.11.11.0 0.0.0.255</span>
+<span class="err">permet ip any any</span>
+</code></pre></div>
+
+
+<h4 id="acl-on-vty-lines">ACL on VTY lines</h4>
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">line vty 0 14</span>
+<span class="err">access-class MGMT-NETWORKS in</span>
+</code></pre></div>
+
+
+<h4 id="acl-sequence-numbers">ACL Sequence numbers</h4>
+<ul>
+<li>Allows moving and deletion of specific lines within the ACL.</li>
+<li>You cannot move or reassign a sequence number.</li>
+<li>You need to delete and recreate the line with the new sequence number.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">ip access-list extended 101</span>
+<span class="err">no $SEQUENCE_NUMVER</span>
+</code></pre></div>
+
+
+<h4 id="where-to-apply-acls">Where to apply ACLs</h4>
+<ul>
+<li>Apply Extended ACLs as close to the <strong>source</strong> of the traffic.</li>
+<li>Apply Standard ACL as close to the <strong>destination</strong> as possible.</li>
+</ul>
+<h3 id="ntp-network-time-protocol">NTP - Network Time Protocol</h3>
+<ul>
+<li>Creates a single source of time for all device on the network.</li>
+<li>UDP Port 123</li>
+</ul>
+<h4 id="stratum-level-of-accuracy-of-the-ntp-server">Stratum - Level of accuracy of the NTP server.</h4>
+<ul>
+<li>0 --&gt; Atomic clocks</li>
+<li>1 --&gt; Gets time from a stratum 0 NTP server.</li>
+</ul>
+<h4 id="ntp-modes">NTP Modes</h4>
+<ul>
+<li>Master : Set the device itself as the master and will synch with itself to synchronize time.</li>
+<li>Peer : The two devices will dynamically synchronize time between the two.</li>
+<li>Server : The client device will ask time from the server. Does not send time synchronize requests to the server.</li>
+<li>Broadcast Mode : Broadcast mode for NTP packets.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="err">!*** Set the device itself as the master NTP server.</span>
+<span class="err">conf t</span>
+<span class="err">ntp master</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="err">!*** Set the NTP server for the device.</span>
+<span class="err">conf t</span>
+<span class="err">ntp server ntp.nist.ca</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">ntp peer ntp.potato.com</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="o">!***</span> <span class="k">Show</span> <span class="k">all</span> <span class="n">ntp</span> <span class="n">services</span> <span class="k">from</span> <span class="n">which</span> <span class="n">the</span> <span class="n">device</span> <span class="n">will</span> <span class="n">sync</span> <span class="n">it</span><span class="err">&#39;</span><span class="n">s</span> <span class="n">clock</span><span class="p">.</span> <span class="n">Also</span> <span class="n">shows</span> <span class="n">the</span> <span class="n">preferred</span> <span class="n">device</span><span class="p">.</span>
+<span class="k">show</span> <span class="n">ntp</span> <span class="n">associations</span>
+
+<span class="k">show</span> <span class="n">ntp</span> <span class="n">status</span>
+
+<span class="k">show</span> <span class="n">clock</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="o">!***</span> <span class="k">Under</span> <span class="n">device</span> <span class="n">interface</span> <span class="n">configuration</span><span class="p">.</span>
+<span class="o">!***</span> <span class="k">Sets</span> <span class="n">broadcast</span> <span class="n">server</span> <span class="k">mode</span> <span class="p">(</span><span class="n">send</span> <span class="n">updates</span><span class="p">)</span>
+<span class="n">conf</span> <span class="n">t</span>
+<span class="n">interface</span> <span class="nb">serial</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="n">ntp</span> <span class="n">broadcast</span>
+
+
+<span class="o">!***</span> <span class="k">Set</span> <span class="n">client</span> <span class="n">broadcast</span> <span class="k">mode</span>
+<span class="n">conf</span> <span class="n">t</span>
+<span class="n">interface</span> <span class="nb">serial</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span>
+<span class="n">ntp</span> <span class="n">broadcast</span> <span class="n">client</span>
+</code></pre></div>
+
+
+<h3 id="nat-pat-network-address-translation-port-address-translation">NAT / PAT - Network Address Translation / Port Address Translation</h3>
+<ul>
+<li>Local --&gt; Private address</li>
+<li>
+<p>Global --&gt; Public routable address</p>
+</li>
+<li>
+<p>Inside Local --&gt; <strong>Local Address</strong> being translated to External.</p>
+</li>
+<li>Inside Global --&gt; <strong>External Address</strong> that is used during the NAT.</li>
+<li>Outside Local --&gt; <strong>Non-routable</strong> addresses of the host on the remote network.</li>
+<li>Outside Global --&gt; <strong>Routable</strong> addresses of the host on the remote network.</li>
+</ul>
+<h4 id="static-nat">Static NAT</h4>
+<ul>
+<li>One to one mapping of an Inside Local to a Inside Global.</li>
+<li>I.E : Map a public IP to the internal IP of a server.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="o">!***</span> <span class="n">Place</span> <span class="k">on</span> <span class="n">the</span> <span class="n">interfaces</span> <span class="n">closest</span> <span class="k">to</span> <span class="n">the</span> <span class="n">hosts</span><span class="p">.</span>
+<span class="n">ip</span> <span class="n">nat</span> <span class="n">inside</span>
+
+<span class="o">!***</span> <span class="n">Place</span> <span class="k">on</span> <span class="n">the</span> <span class="n">WAN</span> <span class="n">interface</span><span class="p">.</span>
+<span class="n">ip</span> <span class="n">nat</span> <span class="n">outside</span>
+
+<span class="o">!***</span> <span class="n">Setup</span> <span class="k">Static</span> <span class="n">NAT</span> <span class="o">/</span> <span class="n">One</span> <span class="k">to</span> <span class="n">one</span> <span class="n">mapping</span>
+<span class="n">ip</span> <span class="n">nat</span> <span class="n">inside</span> <span class="k">source</span> <span class="k">static</span> <span class="mi">10</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">2</span> <span class="mi">200</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span>
+
+
+<span class="o">!***</span> <span class="k">Show</span> <span class="n">translations</span>
+<span class="k">show</span> <span class="n">ip</span> <span class="n">nat</span> <span class="n">translations</span>
+
+<span class="o">!***</span> <span class="k">Show</span> <span class="n">NAT</span> <span class="k">statistics</span>
+<span class="k">show</span> <span class="n">ip</span> <span class="n">nat</span> <span class="k">statistics</span>
+
+<span class="o">!***</span> <span class="n">clear</span> <span class="n">ip</span> <span class="n">nat</span> <span class="k">table</span> <span class="k">to</span> <span class="k">reset</span> <span class="n">the</span> <span class="n">NAT</span> <span class="n">mappings</span>
+<span class="n">clear</span> <span class="n">ip</span> <span class="n">nat</span> <span class="n">translations</span> <span class="o">*</span>
+</code></pre></div>
+
+
+<h4 id="dynamic-nat">Dynamic NAT</h4>
+<p>Allow the NAT of a pool of internal address to a pool of outside addresses.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">!***</span> <span class="k">Create</span> <span class="n">IP</span> <span class="n">NAT</span> <span class="n">Pool</span>
+<span class="n">ip</span> <span class="n">nat</span> <span class="n">pool</span> <span class="n">CCNA</span> <span class="mi">200</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span> <span class="mi">200</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">5</span> <span class="k">prefix</span><span class="o">-</span><span class="k">length</span> <span class="mi">24</span>
+
+<span class="o">!***</span> <span class="k">Create</span> <span class="n">the</span> <span class="k">access</span><span class="o">-</span><span class="n">list</span> <span class="k">of</span> <span class="n">internal</span> <span class="k">host</span> <span class="n">that</span> <span class="n">will</span> <span class="n">be</span> <span class="n">NAT</span><span class="p">.</span>
+<span class="k">access</span><span class="o">-</span><span class="n">list</span> <span class="mi">2</span> <span class="n">permit</span> <span class="k">host</span> <span class="mi">10</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">2</span>
+<span class="k">access</span><span class="o">-</span><span class="n">list</span> <span class="mi">2</span> <span class="n">permit</span> <span class="k">host</span> <span class="mi">10</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">1</span><span class="p">.</span><span class="mi">22</span>
+
+<span class="o">!***</span> <span class="k">Create</span> <span class="n">the</span> <span class="n">NAT</span> <span class="k">function</span> <span class="k">for</span> <span class="n">the</span> <span class="k">access</span><span class="o">-</span><span class="n">list</span> <span class="mi">2</span> <span class="k">and</span> <span class="n">the</span> <span class="n">pool</span> <span class="n">CCNA</span>  
+<span class="n">ip</span> <span class="n">nat</span> <span class="n">inside</span> <span class="k">source</span> <span class="n">list</span> <span class="mi">2</span> <span class="n">pool</span> <span class="n">CCNA</span>
+</code></pre></div>
+
+
+<h4 id="port-address-translation-nat-overload">Port address translation - NAT Overload</h4>
+<p>Allows the mapping of multiple inside addresses to a single outside address using a combination of the IP address / Port Number in ordre to uniquely identify each flow of data.</p>
+<div class="codehilite"><pre><span></span><code><span class="o">!***</span> <span class="n">Overload</span> <span class="n">of</span> <span class="n">the</span> <span class="n">inside</span> <span class="n">addresses</span> <span class="n">to</span> <span class="n">the</span> <span class="n">outside</span> <span class="n">address</span>
+<span class="n">ip</span> <span class="n">nat</span> <span class="n">inside</span> <span class="n">source</span> <span class="n">list</span> <span class="mi">2</span> <span class="n">interface</span> <span class="n">serial0</span><span class="o">/</span><span class="mi">1</span><span class="o">/</span><span class="mi">0</span> <span class="n">overload</span>
+</code></pre></div>
+
+
+<h3 id="ipv6">IPv6</h3>
+<ul>
+<li>Solution to the IPv4 exhaustion.</li>
+<li>128 bit addresses</li>
+<li>8 blocks of 4 HEX characters.</li>
+<li>No more broadcast - only multicasts.</li>
+<li>Easier summarization.</li>
+<li>Can be run without a DHCP server.</li>
+<li>IANA (Internet Assigned Numbers Authority) - Assigns IP blocks to RIR (Regional Internet Registry - ARIN, RIPE, AFRINIC, APNIC, LACNIC.</li>
+</ul>
+<h4 id="compressing-ipv6-addresses">Compressing IPv6 addresses</h4>
+<ul>
+<li>Compress consecutive blocks of 0000 with ::</li>
+<li>Can only do once per IPv6 addresses</li>
+<li>Remove leading 0 in blocks.</li>
+</ul>
+<h4 id="assigning-ipv6-addresses-to-interfaces">Assigning IPv6 addresses to interfaces</h4>
+<div class="codehilite"><pre><span></span><code><span class="o">!###</span> <span class="n">Enable</span> <span class="n">IPv6</span> <span class="n">Routing</span> <span class="k">for</span> <span class="n">the</span> <span class="n">router</span><span class="p">.</span>
+<span class="n">ipv6</span> <span class="n">unicast</span><span class="o">-</span><span class="n">routing</span>
+
+<span class="o">!###</span> <span class="n">Assign</span> <span class="n">an</span> <span class="n">IPv6</span> <span class="n">address</span> <span class="k">to</span> <span class="n">an</span> <span class="n">interface</span>
+<span class="n">interface</span> <span class="n">fastethernet0</span><span class="o">/</span><span class="mi">1</span>
+<span class="n">ipv6</span> <span class="n">address</span> <span class="mi">2001</span><span class="p">:</span><span class="mi">1111</span><span class="p">:</span><span class="mi">2222</span><span class="p">:</span><span class="mi">1</span><span class="p">::</span><span class="mi">1</span><span class="o">/</span><span class="mi">64</span>
+</code></pre></div>
+
+
+<h4 id="types-of-ipv6-addresses">Types of IPv6 addresses.</h4>
+<ul>
+<li>
+<p>There is no broadcast - only Unicast and Multicast.</p>
+</li>
+<li>
+<p>Global Unicast addresses</p>
+</li>
+<li>
+<p>Routable public addresses</p>
+</li>
+<li>
+<p>Link-local addresses : Addresses used in links directly.</p>
+</li>
+<li>Routers will not route those packets.</li>
+<li>Addresses will always start FE80:0000:0000:0000 (FE80:/10)</li>
+<li>64-bit interface identifier - EUI-64 process</li>
+</ul>
+<h4 id="eui-64-process">EUI-64 Process</h4>
+<ol>
+<li>Take MAC address of the interface</li>
+<li>11-22-33-aa-bb-cc</li>
+<li>Divide in half and insert FFFE.</li>
+<li>11-22-33-FF-FE-AA-BB-CC</li>
+<li>1122:33FF:FEAA:BBCC</li>
+<li>Do the bit inversion (invert the 7th bit of the address)</li>
+<li>1122:33FF:FEAA:BBCC --&gt; 1322:33FF:FEAA:BBCC</li>
+</ol>
+<h4 id="use-eui-64-process-for-global-unicast-address">Use EUI-64 process for global unicast address.</h4>
+<div class="codehilite"><pre><span></span><code><span class="err">ipv6 address 2001:1111:2222:1::/64 eui-64</span>
+</code></pre></div>
+
+
+<h3 id="ipv6-ndp-neighbor-discovery-process">IPv6 NDP - Neighbor Discovery Process</h3>
+<ul>
+<li>Allows IPv6 enabled device to discover hosts and routers on an IPv6 enabled network. The discovery process is different for routers and hosts.</li>
+</ul>
+<h4 id="ndp-router-discovery">NDP - Router Discovery</h4>
+<ol>
+<li>Hosts multicast packet - Router Solicitation (RS) message - Destination address FF02::2 - All-IPv6-Routers address</li>
+<li>Routers receives RS on FF02::2 and sends RA (Router Advertisement).</li>
+<li>If the soliciting node <strong>HAS</strong> an IPv6 address --&gt; RA is unicast to the host.</li>
+<li>If the soliciting node <strong>DOES NOT</strong> have an IPv6 address --&gt; RA is sent to FF02::1 - "All-IPV6-Nodes"</li>
+<li>RA are also sent to FF02::1 every 200 seconds.</li>
+<li>FF02::1 --&gt; All IPv6 hosts.</li>
+</ol>
+<h4 id="ndp-host-discovery">NDP - Host Discovery</h4>
+<ul>
+<li>NS --&gt; Neighbor Solicitation.</li>
+<li>NA --&gt; Neighbor Advertisement.</li>
+<li>NA is sent to SNMA - Solicited-node multicast address.<ul>
+<li>Always begin with FF02::1:FF</li>
+<li>Contains the last 6 HEX characters of the interface mac address. That way only the relevant hosts will receive the requested NA.</li>
+</ul>
+</li>
+<li>Host that receives the NA, add the entry to the NDP table - same purpose as the ARP table.</li>
+</ul>
+<h4 id="dhcp-and-ipv6">DHCP and IPv6</h4>
+<ul>
+<li>Same basic functionality as IPv4 but two different types of DHCPv6 servers : Stateful and Stateless.</li>
+</ul>
+<h5 id="stateful-dhcp">Stateful DHCP</h5>
+<ul>
+<li>SARR (instead of DORA)</li>
+<li>Solicit - Client</li>
+<li>Advertise - Server offers the address to the Client</li>
+<li>Request - Client request the previously offered lease to the server</li>
+<li>Reply - The Server confirms the lease to the client</li>
+</ul>
+<p>Stateful DHCP does not send "Default Gateway" in the DHCP lease. That part is discovered during the NDP process with NA and NS messages.</p>
+<h5 id="stateless-dhcp">Stateless DHCP</h5>
+<ul>
+<li>Stateless autoconfiguration - SLAAC.</li>
+<li>Hosts will generate their own ip addresses from information received during the RA - RS process. RA messages will contain the subnet prefix and the prefix length. The host will then create it's own IP address adding it's own interface identifier at the end.</li>
+</ul>
+<h4 id="ipv6-duplicate-address-detection-dad">IPv6 - Duplicate Address Detection - DAD</h4>
+<p>Prevents duplicate addresses from being used on the network.
+1. The host will send an NS (with the source address all :: - 128 zeros - unspecified ipv6 address) to the address it wants to use to FF02::1 (All IPV6 nodes)
+2. If it gets a response, it means that a host is already using that address.</p>
+<h4 id="ipv6-packet-header">IPv6 Packet Header</h4>
+<ul>
+<li>Version : Set to 6</li>
+<li>Traffic class : Replaces "Type of Service". Allow level of importance with QOS.</li>
+<li>Flow Label: NEW FIELD - Allow traffic priorities and categorization. Works with QOS and Traffic Class.</li>
+<li>Payload Length: Total length of packet</li>
+<li>Hop Limit : Like the TTL field of IPv4. Each hope decreases the counter by 1.</li>
+<li>Next Header : Equivalent to the Protocol field.</li>
+<li>Source Address : Source Address of the packet</li>
+<li>Destination Address : Destination Address of the packet</li>
+</ul>
+<h3 id="logging-and-timestamps">Logging and Timestamps</h3>
+<p>Change the aspect and format of timestamps for SYSLOG and DEBUG message.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">service</span> <span class="n">timestamps</span> <span class="n">log</span> <span class="n">datetime</span>
+
+<span class="o">!###</span> <span class="k">Add</span> <span class="k">year</span> <span class="k">to</span> <span class="n">log</span> <span class="n">timestamps</span><span class="p">.</span>
+<span class="n">service</span> <span class="n">timestamps</span> <span class="n">log</span> <span class="n">datetime</span> <span class="k">year</span>
+
+<span class="o">!###</span> <span class="k">Add</span> <span class="n">millisecond</span> <span class="k">to</span> <span class="n">log</span> <span class="n">timestamps</span><span class="p">.</span>
+<span class="n">service</span> <span class="n">timestamps</span> <span class="n">log</span> <span class="n">datetime</span> <span class="n">msec</span>
+
+<span class="n">service</span> <span class="n">timestamps</span> <span class="n">log</span> <span class="n">datetime</span> <span class="k">year</span> <span class="n">msec</span> <span class="k">show</span><span class="o">-</span><span class="n">timezone</span>
+</code></pre></div>
+
+
+<h4 id="logging-to-remote-server">Logging to remote server</h4>
+<p><img alt="SYSLOG-SEV-LEVELS" src="/images/syslog-sev-levels.png" /></p>
+<p>Enable logging to the console.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">logging console</span>
+</code></pre></div>
+
+
+<p>Enable buffered logging. Local buffer on the server.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">logging buffer</span>
+</code></pre></div>
+
+
+<p>Enable logging to a remote server.</p>
+<div class="codehilite"><pre><span></span><code><span class="err">logging host $SYSLOG_SERVER_IPADDRESS</span>
+</code></pre></div>
+
+
+<p>Enable console logging on SSH/Telnet session</p>
+<div class="codehilite"><pre><span></span><code><span class="err">conf t</span>
+<span class="err">logging monitor</span>
+<span class="err">exit</span>
+<span class="err">terminal monitor</span>
+</code></pre></div>
+
+
+<h3 id="banner-configuration">Banner configuration</h3>
+<p>Three types of banners.</p>
+<ul>
+<li>Login : Shown during the login prompt. Telnet and SSH.</li>
+<li>Exec : Shown after the user logs in. Telnet and SSH.</li>
+<li>MOTD : Shown along the login prompt. SSHv2 --&gt; SHOWN AFTER LOGIN INTO THE DEVICE WITH EXEC BANNER.</li>
+</ul>
+<h3 id="cdp-cisco-discovery-protocol">CDP - Cisco Discovery Protocol</h3>
+<ul>
+<li>Default timers</li>
+<li>Hold Timer - 180 seconds - After 180 seconds, the entry is removed.</li>
+<li>Advertisement timer - 60 seconds.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="n">cdp</span> <span class="n">neighbors</span>
+<span class="k">show</span> <span class="n">cdp</span> <span class="n">neighbors</span> <span class="n">details</span>
+<span class="k">show</span> <span class="n">cdp</span> <span class="n">entry</span> <span class="err">$</span><span class="n">REMOTE_DEVICE_HOSTNAME</span>
+
+<span class="o">!***</span> <span class="n">Enable</span> <span class="n">CDP</span> <span class="n">globally</span><span class="p">.</span>
+<span class="n">cdp</span> <span class="n">run</span>
+<span class="k">no</span> <span class="n">cdp</span> <span class="n">run</span>
+
+<span class="o">!***</span> <span class="n">Enable</span> <span class="n">CDP</span> <span class="k">on</span> <span class="n">an</span> <span class="n">interface</span>
+<span class="n">interface</span> <span class="n">fastethernet0</span><span class="o">/</span><span class="mi">0</span>
+<span class="n">cdp</span> <span class="n">enable</span>
+<span class="k">no</span> <span class="n">cdp</span> <span class="n">enable</span>
+
+<span class="o">!***</span> <span class="k">Show</span> <span class="n">CDP</span> <span class="n">information</span>
+<span class="k">show</span> <span class="n">cdp</span> <span class="n">information</span>
+<span class="k">show</span> <span class="n">cdp</span> <span class="n">interface</span> <span class="n">fastethernet</span> <span class="mi">0</span><span class="o">/</span><span class="mi">0</span>
+</code></pre></div>
+
+
+<h3 id="lldp-link-layer-discovery-protocols">LLDP - Link Layer Discovery Protocols</h3>
+<p>You can disable the received and transmit of LLDP packets per interface. That is not possible for CDP.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="n">lldp</span>
+
+<span class="n">conf</span> <span class="n">t</span>
+<span class="n">lldp</span> <span class="n">run</span>
+
+<span class="k">show</span> <span class="n">lldp</span> <span class="n">neighbor</span> <span class="n">detail</span>
+</code></pre></div>
+
+
+<p><img alt="SYSLOG-SEV-LEVELS" src="/images/cdp-lldp.png" /></p>
+<h3 id="confreg-register-and-password-recovery">Confreg Register and Password Recovery</h3>
+<ul>
+<li>RONMON mode --&gt; Allow to boot IOS without reading the NVRAM router config.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="err">show version | include register</span>
+<span class="err">config-register 0x2142</span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../chef/" title="Chef" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Chef
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../cisco/" title="Cisco" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Cisco
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; Potato Tomato - Send me bitcoins - Laurent Dumont
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/laurentdumont" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.linkedin.com/in/laurentfdumont/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.3636a4ec.min.js"></script>
+      <script src="../assets/javascripts/bundle.e9fe3281.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.5eca75d3.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
