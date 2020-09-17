@@ -10,6 +10,7 @@ nav:
       - Chef: chef.md
       - Cisco-CCNA: ccna.md
       - Cisco: cisco.md
+      - Cumulus: cumulus.md
       - Docker: docker.md
       - Elasticsearch: elasticsearch.md
       - Foreman: foreman.md
@@ -38,6 +39,7 @@ nav:
       - Splunk: splunk.md
       - Tripleo: tripleo.md
       - Terraform: terraform.md
+      - FRR: frr.md
 
     
 #Theme customization
