@@ -19,7 +19,7 @@
     
     
       
-        <title>Cumulus - Laurent Dumont - Internet notepad.</title>
+        <title>Metasploit - Laurent Dumont - Internet notepad.</title>
       
     
     
@@ -68,7 +68,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#random-commands" class="md-skip">
+        <a href="#metasploit-plugins" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +96,7 @@
           </span>
           <span class="md-header-nav__topic md-ellipsis">
             
-              Cumulus
+              Metasploit
             
           </span>
         </div>
@@ -242,45 +242,11 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-      <label class="md-nav__link md-nav__link--active" for="__toc">
-        Cumulus
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-    
-    <a href="./" title="Cumulus" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../cumulus/" title="Cumulus" class="md-nav__link">
       Cumulus
     </a>
-    
-      
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#random-commands" class="md-nav__link">
-    Random commands
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-    
   </li>
 
     
@@ -444,11 +410,65 @@
       
       
 
+  
 
-  <li class="md-nav__item">
-    <a href="../metasploit/" title="Metasploit" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Metasploit
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="./" title="Metasploit" class="md-nav__link md-nav__link--active">
       Metasploit
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#metasploit-plugins" class="md-nav__link">
+    Metasploit plugins
+  </a>
+  
+    <nav class="md-nav" aria-label="Metasploit plugins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use-an-ssh-login-as-a-msf-session" class="md-nav__link">
+    How to use an ssh login as a msf session
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-the-msf-exploit-suggestion" class="md-nav__link">
+    Use the msf exploit suggestion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
     
@@ -666,9 +686,29 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#random-commands" class="md-nav__link">
-    Random commands
+  <a href="#metasploit-plugins" class="md-nav__link">
+    Metasploit plugins
   </a>
+  
+    <nav class="md-nav" aria-label="Metasploit plugins">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-use-an-ssh-login-as-a-msf-session" class="md-nav__link">
+    How to use an ssh login as a msf session
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#use-the-msf-exploit-suggestion" class="md-nav__link">
+    Use the msf exploit suggestion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -684,7 +724,7 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/cumulus.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/metasploit.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
@@ -692,42 +732,35 @@
                   
                 
                 
-                  <h1>Cumulus</h1>
+                  <h1>Metasploit</h1>
                 
-                <h3 id="random-commands">Random commands</h3>
-<div class="codehilite"><pre><span></span><code><span class="n">net</span> <span class="k">add</span> <span class="n">interface</span> <span class="n">swp1</span> <span class="n">ip</span> <span class="n">address</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">82</span><span class="o">/</span><span class="mi">32</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">autonomous</span><span class="o">-</span><span class="k">system</span> <span class="mi">65000</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">neighbor</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">81</span> <span class="n">remote</span><span class="o">-</span><span class="k">as</span> <span class="mi">65000</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">neighbor</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">81</span> <span class="n">password</span> <span class="n">PASSWORD</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">ipv4</span> <span class="n">unicast</span> <span class="n">neighbor</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">81</span> <span class="k">next</span><span class="o">-</span><span class="n">hop</span><span class="o">-</span><span class="k">self</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">redistribute</span> <span class="n">connected</span>
+                <h2 id="metasploit-plugins">Metasploit plugins</h2>
+<h3 id="how-to-use-an-ssh-login-as-a-msf-session">How to use an ssh login as a msf session</h3>
+<div class="codehilite"><pre><span></span><code><span class="n">use</span> <span class="n">auxiliary</span><span class="o">/</span><span class="n">scanner</span><span class="o">/</span><span class="n">ssh</span><span class="o">/</span><span class="n">ssh_login</span>
+<span class="k">set</span> <span class="n">rhosts</span> <span class="mi">10</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">127</span><span class="p">.</span><span class="mi">204</span>
+<span class="k">set</span> <span class="n">username</span> <span class="n">typhoon</span>
+<span class="k">set</span> <span class="n">password</span> <span class="mi">789456123</span>
+
+<span class="o">#</span> <span class="k">show</span> <span class="n">sessions</span>
+<span class="n">sessions</span>
+
+<span class="n">msf5</span> <span class="n">post</span><span class="p">(</span><span class="n">multi</span><span class="o">/</span><span class="n">recon</span><span class="o">/</span><span class="n">local_exploit_suggester</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">sessions</span>
+
+<span class="n">Active</span> <span class="n">sessions</span>
+<span class="o">===============</span>
+
+  <span class="n">Id</span>  <span class="n">Name</span>  <span class="k">Type</span>         <span class="n">Information</span>                               <span class="k">Connection</span>
+  <span class="c1">--  ----  ----         -----------                               ----------</span>
+  <span class="mi">1</span>         <span class="n">shell</span> <span class="n">linux</span>  <span class="n">SSH</span> <span class="n">typhoon</span><span class="p">:</span><span class="mi">789456123</span> <span class="p">(</span><span class="mi">10</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">127</span><span class="p">.</span><span class="mi">204</span><span class="p">:</span><span class="mi">22</span><span class="p">)</span>  <span class="mi">10</span><span class="p">.</span><span class="mi">9</span><span class="p">.</span><span class="mi">179</span><span class="p">.</span><span class="mi">67</span><span class="p">:</span><span class="mi">40461</span> <span class="o">-&gt;</span> <span class="mi">10</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">127</span><span class="p">.</span><span class="mi">204</span><span class="p">:</span><span class="mi">22</span> <span class="p">(</span><span class="mi">10</span><span class="p">.</span><span class="mi">10</span><span class="p">.</span><span class="mi">127</span><span class="p">.</span><span class="mi">204</span><span class="p">)</span>
+
+<span class="o">#</span> <span class="n">use</span> <span class="k">specific</span> <span class="k">session</span>
+<span class="k">set</span> <span class="k">session</span> <span class="mi">1</span>
+</code></pre></div>
 
 
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">neighbor</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">85</span> <span class="n">remote</span><span class="o">-</span><span class="k">as</span> <span class="mi">65000</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">neighbor</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">85</span> <span class="n">password</span> <span class="n">PASSWORD</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">ipv4</span> <span class="n">unicast</span> <span class="n">neighbor</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">81</span> <span class="k">next</span><span class="o">-</span><span class="n">hop</span><span class="o">-</span><span class="k">self</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">redistribute</span> <span class="n">connected</span>
-
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">neighbor</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">84</span> <span class="n">remote</span><span class="o">-</span><span class="k">as</span> <span class="mi">65000</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">neighbor</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">84</span> <span class="n">password</span> <span class="n">PASSWORD</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">ipv4</span> <span class="n">unicast</span> <span class="n">neighbor</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">81</span> <span class="k">next</span><span class="o">-</span><span class="n">hop</span><span class="o">-</span><span class="k">self</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">redistribute</span> <span class="n">connected</span>
-
-
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">neighbor</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">89</span> <span class="n">remote</span><span class="o">-</span><span class="k">as</span> <span class="mi">65000</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">neighbor</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">89</span> <span class="n">password</span> <span class="n">PASSWORD</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">ipv4</span> <span class="n">unicast</span> <span class="n">neighbor</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">89</span> <span class="k">next</span><span class="o">-</span><span class="n">hop</span><span class="o">-</span><span class="k">self</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">redistribute</span> <span class="n">connected</span>
-
-
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">ipv4</span> <span class="n">unicast</span> <span class="n">neighbor</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">84</span> <span class="k">next</span><span class="o">-</span><span class="n">hop</span><span class="o">-</span><span class="k">self</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">bgp</span> <span class="n">ipv4</span> <span class="n">unicast</span> <span class="n">neighbor</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">87</span> <span class="k">next</span><span class="o">-</span><span class="n">hop</span><span class="o">-</span><span class="k">self</span>
-
-
-<span class="n">net</span> <span class="k">add</span> <span class="n">ospf</span> <span class="n">network</span> <span class="mi">170</span><span class="p">.</span><span class="mi">39</span><span class="p">.</span><span class="mi">196</span><span class="p">.</span><span class="mi">80</span><span class="o">/</span><span class="mi">28</span> <span class="n">area</span> <span class="mi">0</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">ospf</span> <span class="k">default</span><span class="o">-</span><span class="n">information</span> <span class="n">originate</span>
-<span class="n">net</span> <span class="k">add</span> <span class="n">ospf</span> <span class="n">redistribute</span> <span class="n">connected</span>
-<span class="n">net</span> <span class="k">commit</span>
+<h3 id="use-the-msf-exploit-suggestion">Use the msf exploit suggestion</h3>
+<div class="codehilite"><pre><span></span><code><span class="err">use post/multi/recon/local_exploit_suggester</span>
+<span class="err">exploit</span>
 </code></pre></div>
                 
               
@@ -747,7 +780,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../cisco/" title="Cisco" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../lvm/" title="LVM" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -756,19 +789,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Cisco
+                LVM
               </div>
             </div>
           </a>
         
         
-          <a href="../docker/" title="Docker" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../maas/" title="MAAS" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Docker
+                MAAS
               </div>
             </div>
             <div class="md-footer-nav__button md-icon">
