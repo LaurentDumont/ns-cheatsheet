@@ -24,6 +24,7 @@ nav:
       - Kubernetes: kubernetes.md
       - KVM: kvm.md
       - LVM: lvm.md
+      - Metasploit: metasploit.md
       - MAAS: maas.md
       - Molecule: molecule.md
       - MySQL/MariaDB: mysql.md
