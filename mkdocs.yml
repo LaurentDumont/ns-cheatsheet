@@ -32,6 +32,7 @@ nav:
       - Openstack: openstack.md
       - OPNFV: opnfv.md
       - OVS: ovs.md
+      - Pentesting: pentest.md
       - Postgres: postgres.md
       - Prometheus: prometheus.md
       - Proxmox: proxmox.md
