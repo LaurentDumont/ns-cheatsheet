@@ -42,6 +42,7 @@ nav:
       - Tripleo: tripleo.md
       - Terraform: terraform.md
       - FRR: frr.md
+      - Wireshark: wireshark.md
 
     
 #Theme customization
