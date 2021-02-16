@@ -18,7 +18,7 @@
     
     
       
-        <title>FRR - Laurent Dumont - Internet notepad.</title>
+        <title>Wireshark - Laurent Dumont - Internet notepad.</title>
       
     
     
@@ -72,7 +72,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enter-frr-shell" class="md-skip">
+        <a href="#get-packets-containing-a-specific-string" class="md-skip">
           Skip to content
         </a>
       
@@ -104,7 +104,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              FRR
+              Wireshark
             
           </span>
         </div>
@@ -733,6 +733,21 @@
 
   
   
+  
+    <li class="md-nav__item">
+      <a href="../frr/" class="md-nav__link">
+        FRR
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
     
   
   
@@ -742,12 +757,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          FRR
+          Wireshark
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        FRR
+        Wireshark
       </a>
       
         
@@ -762,22 +777,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enter-frr-shell" class="md-nav__link">
-    Enter FRR shell
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#show-bgp-neigbors" class="md-nav__link">
-    Show bgp neigbors
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#show-information-from-neighbors" class="md-nav__link">
-    Show information from neighbors
+  <a href="#get-packets-containing-a-specific-string" class="md-nav__link">
+    Get packets containing a specific string.
   </a>
   
 </li>
@@ -786,21 +787,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../wireshark/" class="md-nav__link">
-        Wireshark
-      </a>
     </li>
   
 
@@ -828,22 +814,8 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enter-frr-shell" class="md-nav__link">
-    Enter FRR shell
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#show-bgp-neigbors" class="md-nav__link">
-    Show bgp neigbors
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#show-information-from-neighbors" class="md-nav__link">
-    Show information from neighbors
+  <a href="#get-packets-containing-a-specific-string" class="md-nav__link">
+    Get packets containing a specific string.
   </a>
   
 </li>
@@ -860,25 +832,15 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/frr.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/wireshark.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                  <h1>FRR</h1>
+                  <h1>Wireshark</h1>
                 
-                <h3 id="enter-frr-shell">Enter FRR shell</h3>
-<div class="codehilite"><pre><span></span><code>sudo vtyshell
-</code></pre></div>
-
-<h3 id="show-bgp-neigbors">Show bgp neigbors</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">bgp</span> <span class="nv">neighbors</span>
-<span class="k">show</span> <span class="nv">bgp</span> <span class="nv">summary</span>
-</code></pre></div>
-
-<h3 id="show-information-from-neighbors">Show information from neighbors</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">bgp</span> <span class="nv">vrf</span> <span class="nv">all</span> <span class="nv">ipv4</span> <span class="nv">neighbors</span> <span class="nv">x</span>.<span class="nv">x</span>.<span class="nv">x</span>.<span class="nv">x</span> <span class="nv">advertised</span><span class="o">-</span><span class="nv">routes</span>
-<span class="k">show</span> <span class="nv">bgp</span> <span class="nv">vrf</span> <span class="nv">all</span> <span class="nv">ipv4</span> <span class="nv">neighbors</span> <span class="nv">x</span>.<span class="nv">x</span>.<span class="nv">x</span>.<span class="nv">x</span> <span class="nv">received</span><span class="o">-</span><span class="nv">routes</span> 
+                <h3 id="get-packets-containing-a-specific-string">Get packets containing a specific string.</h3>
+<div class="codehilite"><pre><span></span><code>frame contains potato
 </code></pre></div>
                 
               
@@ -898,7 +860,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../terraform/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../frr/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -907,25 +869,11 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Terraform
+                FRR
               </div>
             </div>
           </a>
         
-        
-          <a href="../wireshark/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
-            <div class="md-footer-nav__title">
-              <div class="md-ellipsis">
-                <span class="md-footer-nav__direction">
-                  Next
-                </span>
-                Wireshark
-              </div>
-            </div>
-            <div class="md-footer-nav__button md-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-            </div>
-          </a>
         
       </nav>
     </div>
