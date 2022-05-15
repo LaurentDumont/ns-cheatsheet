@@ -1,3 +1,33 @@
+### Customize qcow2 images
+
+Download the .img first
+
+```
+virt-customize --install ethtool,traceroute,iputils-ping,socat,dnsutils,tcpdump,tshark,iperf,iperf3,mtr,fping,lldpd --root-password password:potato123 -a 22.04-server.img
+```
+
+Sysprep is necessary to remove any static information from a VM (hostname, ssh host keys, interfaces MAC/config). Similar to Windows sysprep.
+
+In this case, we do not remove the ssh-hostkeys because of possible issues with ssh access if the keys are not re-generated.
+
+```
+virt-sysprep --operations defaults,-ssh-hostkeys -a 22.04-server.img
+```
+
+### Using uvtools for Ubuntu minimal images
+
+Download the images
+```
+uvt-kvm  uvt-simplestreams-libvirt sync --source https://cloud-images.ubuntu.com/minimal/daily/ release=bionic arch=amd64
+```
+
+
+```
+uvt-kvm create --packages iperf,iperf3,dnsutils,tcpdump,--disk 5 --password potato123 --memory 2048 --cpu 2 myminimalvm-jammy release=jammy arch=amd64 "label=minimal daily"
+```
+
+Download images are in `/var/lib/uvtool/libvirt/images/`
+
 ### Get list of `os-variants` valid for KVM
 ```
 ldumont@kvm01:~$ osinfo-query os | grep -i centos
