@@ -164,6 +164,8 @@ yum install gcc python-devel
 pip install --upgrade setuptools
 pip install virtualbmc
 ```
+
+```
 vbmc add ooo-controller001 --port 16001 --username test --password secret
 vbmc add ooo-controller002 --port 16002 --username test --password secret
 vbmc add ooo-controller003 --port 16003 --username test --password secret
