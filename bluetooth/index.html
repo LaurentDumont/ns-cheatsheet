@@ -13,17 +13,15 @@
       
       
       
-        <link rel="prev" href="../kvm/">
+        <link rel="prev" href="../wireshark/">
       
-      
-        <link rel="next" href="../metasploit/">
       
       <link rel="icon" href="../images/tarsier_hi_elbows.ico">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
-        <title>LVM - Laurent Dumont - Internet notepad.</title>
+        <title>Bluetooth - Laurent Dumont - Internet notepad.</title>
       
     
     
@@ -73,7 +71,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reduce-swap-and-extend-other-lvm-module" class="md-skip">
+        <a href="#basic-bluetooth-troubleshooting-commands" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              LVM
+              Bluetooth
             
           </span>
         </div>
@@ -473,48 +471,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          LVM
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../lvm/" class="md-nav__link">
         LVM
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#reduce-swap-and-extend-other-lvm-module" class="md-nav__link">
-    Reduce swap and extend other LVM module
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -810,11 +771,48 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../bluetooth/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Bluetooth
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Bluetooth
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#basic-bluetooth-troubleshooting-commands" class="md-nav__link">
+    Basic bluetooth troubleshooting commands
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -844,8 +842,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#reduce-swap-and-extend-other-lvm-module" class="md-nav__link">
-    Reduce swap and extend other LVM module
+  <a href="#basic-bluetooth-troubleshooting-commands" class="md-nav__link">
+    Basic bluetooth troubleshooting commands
   </a>
   
 </li>
@@ -868,81 +866,25 @@
   
 
 
-  <h1>LVM</h1>
+  <h1>Bluetooth</h1>
 
-<h3 id="reduce-swap-and-extend-other-lvm-module">Reduce swap and extend other LVM module</h3>
-<div class="codehilite"><pre><span></span><code><span class="c1"># Disable swap temporarly.</span>
-swapoff<span class="w"> </span>-a
-
-<span class="c1"># Reduce swap paritition.</span>
-lvreduce<span class="w"> </span>/dev/superbacon-vg/swap_1<span class="w"> </span>-L<span class="w"> </span>-67G
-
-<span class="c1"># Extend LVM root paritition.</span>
-lvextend<span class="w"> </span>/dev/superbacon-vg/root<span class="w"> </span>-L<span class="w"> </span>+67G
-
-<span class="c1"># Extend actual partition size.</span>
-resize2fs<span class="w"> </span>/dev/superbacon-vg/root
-
-<span class="c1"># Recreate swap partition</span>
-mkswap<span class="w"> </span>/dev/superbacon-vg/swap_1
-
-<span class="c1"># Re-enable swap partition</span>
-swapon<span class="w"> </span>-a
-
------------------<span class="w"> </span>Mount<span class="w"> </span>partition<span class="w"> </span>from<span class="w"> </span>existing<span class="w"> </span>VG/LV<span class="w"> </span>-----------------
-<span class="c1"># Create an ext4 partition.</span>
-mkfs.ext4<span class="w"> </span>/dev/vg-storage/lv-storage
-
-<span class="c1"># Mount the partition to test.</span>
-mount<span class="w"> </span>-t<span class="w"> </span>ext4<span class="w"> </span>/dev/vg-storage/lv-storage<span class="w"> </span>/mnt
-
-<span class="c1"># Mount in /etc/fstab</span>
-/dev/mapper/vg--storage-lv--storage<span class="w"> </span>/storage<span class="w">    </span>ext4<span class="w">    </span>defaults,nofail<span class="w">        </span><span class="m">0</span><span class="w">    </span><span class="m">1</span>
+<p>Ubuntu reference
+https://wiki.ubuntu.com/DebuggingBluetooth#:~:text=On%20desktop%3A,%2Fvar%2Flog%2Fsyslog</p>
+<h2 id="basic-bluetooth-troubleshooting-commands">Basic bluetooth troubleshooting commands</h2>
+<div class="codehilite"><pre><span></span><code>bluetoothctl --version
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="mi">7</span><span class="w">  </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;deb http://download.proxmox.com/debian/pve stretch pve-no-subscription&quot;</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">sources</span><span class="o">.</span><span class="n">list</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">pve</span><span class="o">-</span><span class="n">install</span><span class="o">-</span><span class="n">repo</span><span class="o">.</span><span class="n">list</span>
-<span class="w">    </span><span class="mi">8</span><span class="w">  </span><span class="n">wget</span><span class="w"> </span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">proxmox</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">debian</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">ve</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">5.</span><span class="n">x</span><span class="o">.</span><span class="n">gpg</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">apt</span><span class="o">/</span><span class="n">trusted</span><span class="o">.</span><span class="n">gpg</span><span class="o">.</span><span class="n">d</span><span class="o">/</span><span class="n">proxmox</span><span class="o">-</span><span class="n">ve</span><span class="o">-</span><span class="n">release</span><span class="o">-</span><span class="mf">5.</span><span class="n">x</span><span class="o">.</span><span class="n">gpg</span>
-<span class="w">    </span><span class="mi">9</span><span class="w">  </span><span class="n">apt</span><span class="w"> </span><span class="n">update</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">apt</span><span class="w"> </span><span class="n">dist</span><span class="o">-</span><span class="n">upgrade</span>
-<span class="w">   </span><span class="mi">10</span><span class="w">  </span><span class="n">apt</span><span class="w"> </span><span class="n">install</span><span class="w"> </span><span class="n">proxmox</span><span class="o">-</span><span class="n">ve</span><span class="w"> </span><span class="n">postfix</span><span class="w"> </span><span class="n">open</span><span class="o">-</span><span class="n">iscsi</span>
-<span class="w">   </span><span class="mi">11</span><span class="w">  </span><span class="n">clear</span>
-<span class="w">   </span><span class="mi">12</span><span class="w">  </span><span class="n">shutdown</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="n">now</span>
-<span class="w">   </span><span class="mi">13</span><span class="w">  </span><span class="n">mount</span><span class="w"> </span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb1</span><span class="w"> </span><span class="o">/</span><span class="n">storage</span>
-<span class="w">   </span><span class="mi">14</span><span class="w">  </span><span class="n">mkdir</span><span class="w"> </span><span class="o">/</span><span class="n">storage</span>
-<span class="w">   </span><span class="mi">15</span><span class="w">  </span><span class="n">mount</span><span class="w"> </span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb1</span><span class="w"> </span><span class="o">/</span><span class="n">storage</span>
-<span class="w">   </span><span class="mi">16</span><span class="w">  </span><span class="n">mount</span><span class="w"> </span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb</span><span class="w"> </span><span class="o">/</span><span class="n">storage</span>
-<span class="w">   </span><span class="mi">17</span><span class="w">  </span><span class="n">mount</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="n">ext4</span><span class="w"> </span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb</span><span class="w"> </span><span class="o">/</span><span class="n">storage</span>
-<span class="w">   </span><span class="mi">18</span><span class="w">  </span><span class="n">dmesg</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">tail</span>
-<span class="w">   </span><span class="mi">19</span><span class="w">  </span><span class="n">fdisk</span><span class="w"> </span><span class="o">-</span><span class="n">l</span>
-<span class="w">   </span><span class="mi">20</span><span class="w">  </span><span class="n">lvdisplay</span><span class="w"> </span>
-<span class="w">   </span><span class="mi">21</span><span class="w">  </span><span class="n">vgdisplay</span><span class="w"> </span>
-<span class="w">   </span><span class="mi">22</span><span class="w">  </span><span class="n">vgscan</span><span class="w"> </span>
-<span class="w">   </span><span class="mi">23</span><span class="w">  </span><span class="n">fdisk</span><span class="w"> </span><span class="o">-</span><span class="n">l</span>
-<span class="w">   </span><span class="mi">24</span><span class="w">  </span><span class="n">clear</span>
-<span class="w">   </span><span class="mi">25</span><span class="w">  </span><span class="n">vgdisplay</span><span class="w"> </span>
-<span class="w">   </span><span class="mi">26</span><span class="w">  </span><span class="n">lvmdiskscan</span><span class="w"> </span>
-<span class="w">   </span><span class="mi">27</span><span class="w">  </span><span class="n">vgcreate</span><span class="w"> </span>
-<span class="w">   </span><span class="mi">28</span><span class="w">  </span><span class="n">vgcreate</span><span class="w"> </span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb1</span>
-<span class="w">   </span><span class="mi">29</span><span class="w">  </span><span class="n">pvs</span>
-<span class="w">   </span><span class="mi">30</span><span class="w">  </span><span class="n">vgcreate</span><span class="w"> </span><span class="n">vg</span><span class="o">-</span><span class="n">storage</span><span class="w"> </span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb1</span>
-<span class="w">   </span><span class="mi">31</span><span class="w">  </span><span class="n">vgdisplay</span><span class="w"> </span>
-<span class="w">   </span><span class="mi">32</span><span class="w">  </span><span class="n">man</span><span class="w"> </span><span class="n">lvcreate</span><span class="w"> </span>
-<span class="w">   </span><span class="mi">33</span><span class="w">  </span><span class="n">lvcreate</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="n">storage</span><span class="w"> </span><span class="o">-</span><span class="n">l</span><span class="w"> </span><span class="mi">100</span><span class="o">%</span><span class="n">FREE</span><span class="w"> </span><span class="n">vg</span><span class="o">-</span><span class="n">storage</span>
-<span class="w">   </span><span class="mi">34</span><span class="w">  </span><span class="n">lvdisplay</span><span class="w"> </span>
-<span class="w">   </span><span class="mi">35</span><span class="w">  </span><span class="n">clear</span>
-<span class="w">   </span><span class="mi">36</span><span class="w">  </span><span class="n">mkfs</span><span class="o">.</span><span class="n">ext4</span><span class="w"> </span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">vg</span><span class="o">-</span><span class="n">storage</span><span class="o">/</span><span class="n">storage</span>
-<span class="w">   </span><span class="mi">37</span><span class="w">  </span><span class="n">lvdisplay</span><span class="w"> </span>
-<span class="w">   </span><span class="mi">38</span><span class="w">  </span><span class="n">man</span><span class="w"> </span><span class="n">mount</span>
-<span class="w">   </span><span class="mi">39</span><span class="w">  </span><span class="n">man</span><span class="w"> </span><span class="n">mount</span>
-<span class="w">   </span><span class="mi">40</span><span class="w">  </span><span class="n">man</span><span class="w"> </span><span class="n">mount</span>
-<span class="w">   </span><span class="mi">41</span><span class="w">  </span><span class="n">mount</span><span class="w"> </span><span class="o">-</span><span class="n">t</span><span class="w"> </span><span class="n">ext4</span><span class="w"> </span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">vg</span><span class="o">-</span><span class="n">storage</span><span class="o">/</span><span class="n">storage</span><span class="w"> </span><span class="o">/</span><span class="n">storage</span>
-<span class="w">   </span><span class="mi">42</span><span class="w">  </span><span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">storage</span>
-<span class="w">   </span><span class="mi">43</span><span class="w">  </span><span class="n">mkdir</span><span class="w"> </span><span class="n">tata</span>
-<span class="w">   </span><span class="mi">44</span><span class="w">  </span><span class="n">ls</span>
-<span class="w">   </span><span class="mi">45</span><span class="w">  </span><span class="n">rm</span><span class="w"> </span><span class="n">tata</span>
-<span class="w">   </span><span class="mi">46</span><span class="w">  </span><span class="n">rm</span><span class="w"> </span><span class="o">-</span><span class="n">rf</span><span class="w"> </span><span class="n">tata</span>
-<span class="w">   </span><span class="mi">47</span><span class="w">  </span><span class="n">clear</span>
-<span class="w">   </span><span class="mi">48</span><span class="w">  </span><span class="n">exit</span>
-<span class="w">   </span><span class="mi">49</span><span class="w">  </span><span class="n">history</span>
+<div class="codehilite"><pre><span></span><code>hciconfig -a
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code><span class="n">bluetoothctl</span>
+<span class="o">[</span><span class="n">bluetooth</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">show</span>
+<span class="o">[</span><span class="n">bluetooth</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">devices</span>
+<span class="o">[</span><span class="n">bluetooth</span><span class="o">]</span><span class="err">#</span><span class="w"> </span><span class="n">info</span><span class="w"> </span><span class="o">&lt;</span><span class="n">mac</span><span class="w"> </span><span class="n">addr</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="ow">any</span><span class="w"> </span><span class="n">device</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">have</span><span class="w"> </span><span class="n">problems</span><span class="w"> </span><span class="k">with</span><span class="o">&gt;</span>
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>rfkill list
+Necessary bluetooth log files in debug mode as per below
 </code></pre></div>
 
 
