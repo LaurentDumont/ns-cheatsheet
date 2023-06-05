@@ -43,6 +43,7 @@ nav:
       - Terraform: terraform.md
       - FRR: frr.md
       - Wireshark: wireshark.md
+      - Bluetooth: bluetooth.md
 
     
 #Theme customization
