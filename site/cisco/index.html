@@ -12,8 +12,14 @@
         <meta name="author" content="Laurent Dumont">
       
       
+      
+        <link rel="prev" href="../ccna/">
+      
+      
+        <link rel="next" href="../cumulus/">
+      
       <link rel="icon" href="../images/tarsier_hi_elbows.ico">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.15">
     
     
       
@@ -21,16 +27,13 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.c382b1dc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.26e3688c.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
-        
-          
-          
-          <meta name="theme-color" content="#757575">
-        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ecc896b0.min.css">
       
+      
+
     
     
     
@@ -45,10 +48,11 @@
     
       <link rel="stylesheet" href="../css/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
+    
     
     
   </head>
@@ -59,7 +63,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="">
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="indigo">
   
     
     
@@ -81,12 +85,14 @@
     
       
 
-<header class="md-header" data-md-component="header">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Laurent Dumont - Internet notepad." class="md-header__button md-logo" aria-label="Laurent Dumont - Internet notepad." data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.35 10.03A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.03A6.004 6.004 0 0 0 0 14a6 6 0 0 0 6 6h13a5 5 0 0 0 5-5c0-2.64-2.05-4.78-4.65-4.97Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 20q-2.28 0-3.89-1.57Q1 16.85 1 14.58q0-1.95 1.17-3.48 1.18-1.53 3.08-1.95.63-2.3 2.5-3.72Q9.63 4 12 4q2.93 0 4.96 2.04Q19 8.07 19 11q1.73.2 2.86 1.5 1.14 1.28 1.14 3 0 1.88-1.31 3.19T18.5 20Z"/></svg>
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -109,6 +115,8 @@
       </div>
     </div>
     
+      
+    
     
     
       <label class="md-header__button md-icon" for="__search">
@@ -125,7 +133,7 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
         </button>
       </nav>
@@ -137,7 +145,7 @@
           <div class="md-search-result__meta">
             Initializing search
           </div>
-          <ol class="md-search-result__list"></ol>
+          <ol class="md-search-result__list" role="presentation"></ol>
         </div>
       </div>
     </div>
@@ -149,7 +157,7 @@
         <a href="https://github.com/LaurentDumont/ns-cheatsheet" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     ns-cheatsheet
@@ -184,7 +192,7 @@
     <a href=".." title="Laurent Dumont - Internet notepad." class="md-nav__button md-logo" aria-label="Laurent Dumont - Internet notepad." data-md-component="logo">
       
   
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.35 10.03A7.49 7.49 0 0 0 12 4C9.11 4 6.6 5.64 5.35 8.03A6.004 6.004 0 0 0 0 14a6 6 0 0 0 6 6h13a5 5 0 0 0 5-5c0-2.64-2.05-4.78-4.65-4.97Z"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.5 20q-2.28 0-3.89-1.57Q1 16.85 1 14.58q0-1.95 1.17-3.48 1.18-1.53 3.08-1.95.63-2.3 2.5-3.72Q9.63 4 12 4q2.93 0 4.96 2.04Q19 8.07 19 11q1.73.2 2.86 1.5 1.14 1.28 1.14 3 0 1.88-1.31 3.19T18.5 20Z"/></svg>
 
     </a>
     Laurent Dumont - Internet notepad.
@@ -194,7 +202,7 @@
       <a href="https://github.com/LaurentDumont/ns-cheatsheet" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
   </div>
   <div class="md-source__repository">
     ns-cheatsheet
@@ -260,7 +268,7 @@
   
     <li class="md-nav__item md-nav__item--active">
       
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
       
@@ -838,6 +846,21 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bluetooth/" class="md-nav__link">
+        Bluetooth
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -919,90 +942,90 @@
               </div>
             
           
-          <div class="md-content" data-md-component="content">
-            <article class="md-content__inner md-typeset">
-              
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-  <a href="https://github.com/LaurentDumont/ns-cheatsheet/edit/master/docs/cisco.md" title="Edit this page" class="md-content__button md-icon">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
-  </a>
+                  
 
+  
+  
 
 
   <h1>Cisco</h1>
 
 <h3 id="general-troubleshooting">General Troubleshooting</h3>
 <p><strong>IOS-XR</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">route</span> <span class="nv">vrf</span> <span class="nv">all</span> <span class="mi">10</span>.<span class="mi">4</span>.<span class="mi">229</span>.<span class="mi">135</span><span class="o">/</span><span class="mi">32</span>
-<span class="k">show</span> <span class="nv">route</span> <span class="nv">vrf</span> <span class="nv">all</span> <span class="o">|</span> <span class="nv">inc</span> <span class="mi">10</span>.<span class="mi">4</span>.<span class="mi">229</span>. 
-<span class="k">show</span> <span class="nv">evpn</span> <span class="nv">evi</span> <span class="nv">vpn</span><span class="o">-</span><span class="nv">id</span> <span class="mi">11034</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">route</span><span class="w"> </span><span class="nv">vrf</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="mi">10</span>.<span class="mi">4</span>.<span class="mi">229</span>.<span class="mi">135</span><span class="o">/</span><span class="mi">32</span>
+<span class="k">show</span><span class="w"> </span><span class="nv">route</span><span class="w"> </span><span class="nv">vrf</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">inc</span><span class="w"> </span><span class="mi">10</span>.<span class="mi">4</span>.<span class="mi">229</span>.<span class="w"> </span>
+<span class="k">show</span><span class="w"> </span><span class="nv">evpn</span><span class="w"> </span><span class="nv">evi</span><span class="w"> </span><span class="nv">vpn</span><span class="o">-</span><span class="nv">id</span><span class="w"> </span><span class="mi">11034</span>
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code>#<span class="nv">IPV4</span>
-<span class="k">show</span> <span class="nv">arp</span> <span class="nv">vrf</span> $<span class="nv">VRF_NAME</span>  <span class="nv">Te0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">6</span>.<span class="mi">200</span>
+<span class="k">show</span><span class="w"> </span><span class="nv">arp</span><span class="w"> </span><span class="nv">vrf</span><span class="w"> </span>$<span class="nv">VRF_NAME</span><span class="w">  </span><span class="nv">Te0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">6</span>.<span class="mi">200</span>
 
 #<span class="nv">IPV6</span>
-<span class="k">show</span> <span class="nv">ipv6</span> <span class="nv">neighbors</span> <span class="nv">vrf</span> $<span class="nv">VRF_NAME</span> <span class="nv">Te0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">6</span>.<span class="mi">198</span>
+<span class="k">show</span><span class="w"> </span><span class="nv">ipv6</span><span class="w"> </span><span class="nv">neighbors</span><span class="w"> </span><span class="nv">vrf</span><span class="w"> </span>$<span class="nv">VRF_NAME</span><span class="w"> </span><span class="nv">Te0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">6</span>.<span class="mi">198</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">bgp</span> <span class="nv">vrf</span> <span class="nv">BMCE</span> <span class="nv">ipv6</span> <span class="nv">unicast</span> <span class="nv">summary</span>
-<span class="k">show</span> <span class="nv">bgp</span> <span class="nv">vrf</span> <span class="nv">BMCE</span> <span class="nv">ipv4</span> <span class="nv">unicast</span> <span class="nv">summary</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">vrf</span><span class="w"> </span><span class="nv">BMCE</span><span class="w"> </span><span class="nv">ipv6</span><span class="w"> </span><span class="nv">unicast</span><span class="w"> </span><span class="nv">summary</span>
+<span class="k">show</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">vrf</span><span class="w"> </span><span class="nv">BMCE</span><span class="w"> </span><span class="nv">ipv4</span><span class="w"> </span><span class="nv">unicast</span><span class="w"> </span><span class="nv">summary</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">bfd</span> <span class="nv">ipv6</span> <span class="nv">session</span>
-<span class="k">show</span> <span class="nv">bfd</span> <span class="nv">ipv4</span> <span class="nv">session</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">bfd</span><span class="w"> </span><span class="nv">ipv6</span><span class="w"> </span><span class="nv">session</span>
+<span class="k">show</span><span class="w"> </span><span class="nv">bfd</span><span class="w"> </span><span class="nv">ipv4</span><span class="w"> </span><span class="nv">session</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">running</span><span class="o">-</span><span class="nv">config</span>  <span class="o">|</span> <span class="nv">utility</span> <span class="nv">egrep</span> <span class="o">-</span><span class="nv">C5</span> <span class="nv">bfd</span>
-<span class="k">show</span> <span class="nv">isis</span> <span class="nv">neighbors</span>
-<span class="k">show</span> <span class="nv">bgp</span> <span class="nv">ipv4</span> <span class="nv">all</span> <span class="nv">summary</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">running</span><span class="o">-</span><span class="nv">config</span><span class="w">  </span><span class="o">|</span><span class="w"> </span><span class="nv">utility</span><span class="w"> </span><span class="nv">egrep</span><span class="w"> </span><span class="o">-</span><span class="nv">C5</span><span class="w"> </span><span class="nv">bfd</span>
+<span class="k">show</span><span class="w"> </span><span class="nv">isis</span><span class="w"> </span><span class="nv">neighbors</span>
+<span class="k">show</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">ipv4</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="nv">summary</span>
 </code></pre></div>
 
 <h3 id="show-detailed-information-about-interface">Show detailed information about interface</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">controllers</span> <span class="nv">TenGigE0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">18</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">controllers</span><span class="w"> </span><span class="nv">TenGigE0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">0</span><span class="o">/</span><span class="mi">18</span>
 </code></pre></div>
 
 <h3 id="show-control-plane-policing">Show control plane policing</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">running</span><span class="o">-</span><span class="nv">config</span> <span class="nv">control</span><span class="o">-</span><span class="nv">plane</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">running</span><span class="o">-</span><span class="nv">config</span><span class="w"> </span><span class="nv">control</span><span class="o">-</span><span class="nv">plane</span>
 </code></pre></div>
 
 <p><strong>!Check Policy-Map drops/number of packet matching the policy.</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">policy</span><span class="o">-</span><span class="nv">map</span> <span class="nv">interface</span> $<span class="nv">PHYSICAL_INTERFACE</span> <span class="nv">service</span> <span class="nv">instance</span> $<span class="nv">SVC_INST_ID</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">policy</span><span class="o">-</span><span class="nv">map</span><span class="w"> </span><span class="nv">interface</span><span class="w"> </span>$<span class="nv">PHYSICAL_INTERFACE</span><span class="w"> </span><span class="nv">service</span><span class="w"> </span><span class="nv">instance</span><span class="w"> </span>$<span class="nv">SVC_INST_ID</span>
 </code></pre></div>
 
 <p><strong>!Show l2vpn xconnect status (ASR 9k)</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">l2vpn</span> <span class="nv">service</span> <span class="nv">xconnect</span> <span class="nv">interface</span> <span class="nv">gigabitEthernet</span> <span class="mi">0</span><span class="o">/</span><span class="mi">1</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">l2vpn</span><span class="w"> </span><span class="nv">service</span><span class="w"> </span><span class="nv">xconnect</span><span class="w"> </span><span class="nv">interface</span><span class="w"> </span><span class="nv">gigabitEthernet</span><span class="w"> </span><span class="mi">0</span><span class="o">/</span><span class="mi">1</span>
 </code></pre></div>
 
 <p><strong>!Show l2vpn xconnect status with details (ASR 9k)</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">l2vpn</span> <span class="nv">xconnect</span> <span class="nv">neighbor</span> <span class="mi">192</span>.<span class="mi">252</span>.<span class="mi">143</span>.<span class="mi">75</span> <span class="nv">pw</span><span class="o">-</span><span class="nv">id</span> <span class="mi">702</span> <span class="nv">detail</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">l2vpn</span><span class="w"> </span><span class="nv">xconnect</span><span class="w"> </span><span class="nv">neighbor</span><span class="w"> </span><span class="mi">192</span>.<span class="mi">252</span>.<span class="mi">143</span>.<span class="mi">75</span><span class="w"> </span><span class="nv">pw</span><span class="o">-</span><span class="nv">id</span><span class="w"> </span><span class="mi">702</span><span class="w"> </span><span class="nv">detail</span>
 </code></pre></div>
 
 <p><strong>!Show service-instance traffic details (not xconnect, just local service instance)</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">ethernet</span> <span class="nv">service</span> <span class="nv">instance</span> <span class="nv">id</span> <span class="mi">205</span> <span class="nv">int</span> <span class="nv">ten0</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="mi">0</span> <span class="nv">detail</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">ethernet</span><span class="w"> </span><span class="nv">service</span><span class="w"> </span><span class="nv">instance</span><span class="w"> </span><span class="nv">id</span><span class="w"> </span><span class="mi">205</span><span class="w"> </span><span class="nv">int</span><span class="w"> </span><span class="nv">ten0</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="mi">0</span><span class="w"> </span><span class="nv">detail</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">mpls</span> <span class="nv">l2transport</span> <span class="nv">vc</span> <span class="nv">vcid</span> <span class="mi">395</span> <span class="nv">detail</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">mpls</span><span class="w"> </span><span class="nv">l2transport</span><span class="w"> </span><span class="nv">vc</span><span class="w"> </span><span class="nv">vcid</span><span class="w"> </span><span class="mi">395</span><span class="w"> </span><span class="nv">detail</span>
 </code></pre></div>
 
 <p><strong>!ASR 9000 | IOS-XE</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">l2vpn</span> <span class="nv">service</span> <span class="nv">xconnect</span> <span class="nv">interface</span> <span class="nv">TenGigabitEthernet0</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="mi">0</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">l2vpn</span><span class="w"> </span><span class="nv">service</span><span class="w"> </span><span class="nv">xconnect</span><span class="w"> </span><span class="nv">interface</span><span class="w"> </span><span class="nv">TenGigabitEthernet0</span><span class="o">/</span><span class="mi">3</span><span class="o">/</span><span class="mi">0</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">l2vpn</span> <span class="nv">xconnect</span> <span class="nv">group</span> <span class="nv">OPEN01</span> <span class="nv">xc</span><span class="o">-</span><span class="nv">name</span> <span class="nv">OPEN01</span><span class="o">-</span><span class="nv">C220</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">l2vpn</span><span class="w"> </span><span class="nv">xconnect</span><span class="w"> </span><span class="nv">group</span><span class="w"> </span><span class="nv">OPEN01</span><span class="w"> </span><span class="nv">xc</span><span class="o">-</span><span class="nv">name</span><span class="w"> </span><span class="nv">OPEN01</span><span class="o">-</span><span class="nv">C220</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">l2vpn</span> <span class="nv">xconnect</span> <span class="nv">group</span> <span class="nv">PARA07</span> <span class="nv">detail</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">l2vpn</span><span class="w"> </span><span class="nv">xconnect</span><span class="w"> </span><span class="nv">group</span><span class="w"> </span><span class="nv">PARA07</span><span class="w"> </span><span class="nv">detail</span>
 </code></pre></div>
 
 <p><strong>!BGP stuff | IOS-XE</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">bgp</span> <span class="nv">summary</span> <span class="o">|</span> <span class="nv">inc</span> <span class="nv">NEIGHBOR_IP</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">summary</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">inc</span><span class="w"> </span><span class="nv">NEIGHBOR_IP</span>
 </code></pre></div>
 
 <p><strong>!BGP stuff | IOS-XR</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">ip</span> <span class="nv">bgp</span> <span class="nv">summary</span>
-<span class="k">show</span> <span class="nv">ip</span> <span class="nv">bgp</span> <span class="nv">neighbors</span>
-<span class="k">show</span> <span class="nv">ip</span> <span class="nv">bgp</span> <span class="nv">neighbors</span> <span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">ip</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">summary</span>
+<span class="k">show</span><span class="w"> </span><span class="nv">ip</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">neighbors</span>
+<span class="k">show</span><span class="w"> </span><span class="nv">ip</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">neighbors</span><span class="w"> </span><span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span>
 </code></pre></div>
 
 <p><strong>!Montrer les routes recu d'un neighbor en particulier</strong></p>
@@ -1011,10 +1034,10 @@ router bgp AS_NUMBER
 </code></pre></div>
 
 <p><strong>!Il faut activer le log des routes pour chacun des neighbors BGP concernés</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="nv">neighbor</span> <span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span> <span class="nv">soft</span><span class="o">-</span><span class="nv">reconfiguration</span> <span class="nv">inbound</span>
+<div class="codehilite"><pre><span></span><code><span class="nv">neighbor</span><span class="w"> </span><span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span><span class="w"> </span><span class="nv">soft</span><span class="o">-</span><span class="nv">reconfiguration</span><span class="w"> </span><span class="nv">inbound</span>
 <span class="k">exit</span>
-<span class="nv">sh</span> <span class="nv">ip</span> <span class="nv">bgp</span> <span class="nv">neighbors</span> <span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span> <span class="nv">received</span><span class="o">-</span><span class="nv">routes</span>
-<span class="nv">sh</span> <span class="nv">ip</span> <span class="nv">bgp</span> <span class="nv">neighbors</span> <span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span> <span class="nv">advertised</span><span class="o">-</span><span class="nv">routes</span>
+<span class="nv">sh</span><span class="w"> </span><span class="nv">ip</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">neighbors</span><span class="w"> </span><span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span><span class="w"> </span><span class="nv">received</span><span class="o">-</span><span class="nv">routes</span>
+<span class="nv">sh</span><span class="w"> </span><span class="nv">ip</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">neighbors</span><span class="w"> </span><span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span>.<span class="mi">1</span><span class="w"> </span><span class="nv">advertised</span><span class="o">-</span><span class="nv">routes</span>
 </code></pre></div>
 
 <div class="codehilite"><pre><span></span><code>conf t
@@ -1023,33 +1046,33 @@ neighbor 1.1.1.1 shutdown
 </code></pre></div>
 
 <p><strong>!Satellite 9k light levels</strong></p>
-<div class="codehilite"><pre><span></span><code><span class="n">show</span><span class="w"> </span><span class="s">nV</span><span class="w"> </span><span class="s">satellite</span><span class="w"> </span><span class="s">status</span><span class="w"></span>
-<span class="n">telnet</span><span class="w"> </span><span class="s">vrf</span><span class="w"> </span><span class="o">**</span><span class="n">nVSatellite</span><span class="w"> </span><span class="mf">10.0</span><span class="p">.</span><span class="mf">100.1</span><span class="w"></span>
+<div class="codehilite"><pre><span></span><code><span class="n">show</span><span class="w"> </span><span class="s">nV</span><span class="w"> </span><span class="s">satellite</span><span class="w"> </span><span class="s">status</span>
+<span class="n">telnet</span><span class="w"> </span><span class="s">vrf</span><span class="w"> </span><span class="o">**</span><span class="n">nVSatellite</span><span class="w"> </span><span class="mf">10.0</span><span class="p">.</span><span class="mf">100.1</span>
 
-<span class="sx">!GigabitEthernet112/0/0/17 ---&gt; Satellite 112</span><span class="w"></span>
-<span class="n">telnet</span><span class="w"> </span><span class="s">vrf</span><span class="w"> </span><span class="o">**</span><span class="n">nVSatellite</span><span class="w"> </span><span class="mf">10.0</span><span class="p">.</span><span class="mf">112.1</span><span class="w"></span>
-<span class="sx">!Port 17 on ASR = Port 18 on Satellite</span><span class="w"></span>
-<span class="n">sh</span><span class="w"> </span><span class="s">satellite</span><span class="w"> </span><span class="s">powerlevels</span><span class="w"> </span><span class="s">port</span><span class="w"> </span><span class="s">18</span><span class="w"></span>
+<span class="sx">!GigabitEthernet112/0/0/17 ---&gt; Satellite 112</span>
+<span class="n">telnet</span><span class="w"> </span><span class="s">vrf</span><span class="w"> </span><span class="o">**</span><span class="n">nVSatellite</span><span class="w"> </span><span class="mf">10.0</span><span class="p">.</span><span class="mf">112.1</span>
+<span class="sx">!Port 17 on ASR = Port 18 on Satellite</span>
+<span class="n">sh</span><span class="w"> </span><span class="s">satellite</span><span class="w"> </span><span class="s">powerlevels</span><span class="w"> </span><span class="s">port</span><span class="w"> </span><span class="s">18</span>
 </code></pre></div>
 
 <p><a href="https://www.cisco.com/c/en/us/td/docs/routers/access/4400/troubleshooting/memorytroubleshooting/isr4000_mem.html">https://www.cisco.com/c/en/us/td/docs/routers/access/4400/troubleshooting/memorytroubleshooting/isr4000_mem.html</a>
 <a href="https://www.cisco.com/c/en/us/support/docs/routers/4000-series-integrated-services-routers/210760-Monitor-CPU-Usage-On-ISR4300-Series.html">https://www.cisco.com/c/en/us/support/docs/routers/4000-series-integrated-services-routers/210760-Monitor-CPU-Usage-On-ISR4300-Series.html</a></p>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">process</span> <span class="nv">cpu</span> <span class="nv">sorted</span> <span class="o">|</span> <span class="nv">ex</span> <span class="mi">0</span>.<span class="mi">0</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">process</span><span class="w"> </span><span class="nv">cpu</span><span class="w"> </span><span class="nv">sorted</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">ex</span><span class="w"> </span><span class="mi">0</span>.<span class="mi">0</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">platform</span> <span class="nv">hardware</span> <span class="nv">qfp</span> <span class="nv">active</span> <span class="nv">datapath</span> <span class="nv">utilization</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">platform</span><span class="w"> </span><span class="nv">hardware</span><span class="w"> </span><span class="nv">qfp</span><span class="w"> </span><span class="nv">active</span><span class="w"> </span><span class="nv">datapath</span><span class="w"> </span><span class="nv">utilization</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">platform</span> <span class="nv">software</span> <span class="nv">status</span> <span class="nv">control</span><span class="o">-</span><span class="nv">processor</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">platform</span><span class="w"> </span><span class="nv">software</span><span class="w"> </span><span class="nv">status</span><span class="w"> </span><span class="nv">control</span><span class="o">-</span><span class="nv">processor</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">platform</span> <span class="nv">software</span> <span class="nv">status</span> <span class="nv">control</span><span class="o">-</span><span class="nv">processor</span> <span class="nv">brief</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">platform</span><span class="w"> </span><span class="nv">software</span><span class="w"> </span><span class="nv">status</span><span class="w"> </span><span class="nv">control</span><span class="o">-</span><span class="nv">processor</span><span class="w"> </span><span class="nv">brief</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">processes</span> <span class="nv">cpu</span> <span class="nv">platform</span> <span class="nv">sorted</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">processes</span><span class="w"> </span><span class="nv">cpu</span><span class="w"> </span><span class="nv">platform</span><span class="w"> </span><span class="nv">sorted</span>
 </code></pre></div>
 
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">platform</span> <span class="nv">software</span> <span class="nv">status</span> <span class="nv">control</span><span class="o">-</span><span class="nv">processor</span> <span class="nv">brief</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">platform</span><span class="w"> </span><span class="nv">software</span><span class="w"> </span><span class="nv">status</span><span class="w"> </span><span class="nv">control</span><span class="o">-</span><span class="nv">processor</span><span class="w"> </span><span class="nv">brief</span>
 </code></pre></div>
 
 <p><strong>Show CPU and Memory like "htop" for Linux</strong></p>
@@ -1058,44 +1081,44 @@ neighbor 1.1.1.1 shutdown
 
 <h3 id="troubleshooting-cisco-isr-memory">Troubleshooting Cisco ISR Memory.</h3>
 <p>Show IOS processes memory usage.</p>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">processes</span> <span class="nv">memory</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">processes</span><span class="w"> </span><span class="nv">memory</span>
 </code></pre></div>
 
 <p>Show platform CPU and Memory usage</p>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">platform</span> <span class="nv">resources</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">platform</span><span class="w"> </span><span class="nv">resources</span>
 </code></pre></div>
 
 <p>Show IOS-XE Memory usage (not IOS)</p>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span> <span class="nv">platform</span> <span class="nv">software</span> <span class="nv">status</span> <span class="nv">control</span><span class="o">-</span><span class="nv">processor</span> <span class="nv">brief</span>
+<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">platform</span><span class="w"> </span><span class="nv">software</span><span class="w"> </span><span class="nv">status</span><span class="w"> </span><span class="nv">control</span><span class="o">-</span><span class="nv">processor</span><span class="w"> </span><span class="nv">brief</span>
 </code></pre></div>
 
 <h3 id="cisco-barebones-iosxr-bgp-config">Cisco barebones IOSXR BGP config</h3>
-<div class="codehilite"><pre><span></span><code>router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253
-router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 remote-as 65505
-router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 bfd fast-detect
-router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 bfd multiplier 3
-router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 bfd minimum-interval 100
-router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 address-family ipv4 unicast
-router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 address-family ipv4 unicast route-policy pass-all in
-router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 address-family ipv4 unicast route-policy pass-all out
-router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 address-family ipv4 unicast as-override
-router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 address-family ipv4 unicast soft-reconfiguration inbound always
+<div class="codehilite"><pre><span></span><code><span class="nx">router</span><span class="w"> </span><span class="nx">bgp</span><span class="w"> </span><span class="mi">64501</span><span class="w"> </span><span class="nx">vrf</span><span class="w"> </span><span class="nx">super</span><span class="o">-</span><span class="nx">potato</span><span class="o">-</span><span class="nx">laurent</span><span class="w"> </span><span class="nx">neighbor</span><span class="w"> </span><span class="m m-Double">199.199.199.2</span><span class="mi">53</span>
+<span class="nx">router</span><span class="w"> </span><span class="nx">bgp</span><span class="w"> </span><span class="mi">64501</span><span class="w"> </span><span class="nx">vrf</span><span class="w"> </span><span class="nx">super</span><span class="o">-</span><span class="nx">potato</span><span class="o">-</span><span class="nx">laurent</span><span class="w"> </span><span class="nx">neighbor</span><span class="w"> </span><span class="m m-Double">199.199.199.2</span><span class="mi">53</span><span class="w"> </span><span class="nx">remote</span><span class="o">-</span><span class="k">as</span><span class="w"> </span><span class="mi">65505</span>
+<span class="nx">router</span><span class="w"> </span><span class="nx">bgp</span><span class="w"> </span><span class="mi">64501</span><span class="w"> </span><span class="nx">vrf</span><span class="w"> </span><span class="nx">super</span><span class="o">-</span><span class="nx">potato</span><span class="o">-</span><span class="nx">laurent</span><span class="w"> </span><span class="nx">neighbor</span><span class="w"> </span><span class="m m-Double">199.199.199.2</span><span class="mi">53</span><span class="w"> </span><span class="nx">bfd</span><span class="w"> </span><span class="nx">fast</span><span class="o">-</span><span class="nx">detect</span>
+<span class="nx">router</span><span class="w"> </span><span class="nx">bgp</span><span class="w"> </span><span class="mi">64501</span><span class="w"> </span><span class="nx">vrf</span><span class="w"> </span><span class="nx">super</span><span class="o">-</span><span class="nx">potato</span><span class="o">-</span><span class="nx">laurent</span><span class="w"> </span><span class="nx">neighbor</span><span class="w"> </span><span class="m m-Double">199.199.199.2</span><span class="mi">53</span><span class="w"> </span><span class="nx">bfd</span><span class="w"> </span><span class="nx">multiplier</span><span class="w"> </span><span class="mi">3</span>
+<span class="nx">router</span><span class="w"> </span><span class="nx">bgp</span><span class="w"> </span><span class="mi">64501</span><span class="w"> </span><span class="nx">vrf</span><span class="w"> </span><span class="nx">super</span><span class="o">-</span><span class="nx">potato</span><span class="o">-</span><span class="nx">laurent</span><span class="w"> </span><span class="nx">neighbor</span><span class="w"> </span><span class="m m-Double">199.199.199.2</span><span class="mi">53</span><span class="w"> </span><span class="nx">bfd</span><span class="w"> </span><span class="nx">minimum</span><span class="o">-</span><span class="nx">interval</span><span class="w"> </span><span class="mi">100</span>
+<span class="nx">router</span><span class="w"> </span><span class="nx">bgp</span><span class="w"> </span><span class="mi">64501</span><span class="w"> </span><span class="nx">vrf</span><span class="w"> </span><span class="nx">super</span><span class="o">-</span><span class="nx">potato</span><span class="o">-</span><span class="nx">laurent</span><span class="w"> </span><span class="nx">neighbor</span><span class="w"> </span><span class="m m-Double">199.199.199.2</span><span class="mi">53</span><span class="w"> </span><span class="nx">address</span><span class="o">-</span><span class="nx">family</span><span class="w"> </span><span class="nx">ipv4</span><span class="w"> </span><span class="nx">unicast</span>
+<span class="nx">router</span><span class="w"> </span><span class="nx">bgp</span><span class="w"> </span><span class="mi">64501</span><span class="w"> </span><span class="nx">vrf</span><span class="w"> </span><span class="nx">super</span><span class="o">-</span><span class="nx">potato</span><span class="o">-</span><span class="nx">laurent</span><span class="w"> </span><span class="nx">neighbor</span><span class="w"> </span><span class="m m-Double">199.199.199.2</span><span class="mi">53</span><span class="w"> </span><span class="nx">address</span><span class="o">-</span><span class="nx">family</span><span class="w"> </span><span class="nx">ipv4</span><span class="w"> </span><span class="nx">unicast</span><span class="w"> </span><span class="nx">route</span><span class="o">-</span><span class="nx">policy</span><span class="w"> </span><span class="nx">pass</span><span class="o">-</span><span class="nx">all</span><span class="w"> </span><span class="k">in</span>
+<span class="nx">router</span><span class="w"> </span><span class="nx">bgp</span><span class="w"> </span><span class="mi">64501</span><span class="w"> </span><span class="nx">vrf</span><span class="w"> </span><span class="nx">super</span><span class="o">-</span><span class="nx">potato</span><span class="o">-</span><span class="nx">laurent</span><span class="w"> </span><span class="nx">neighbor</span><span class="w"> </span><span class="m m-Double">199.199.199.2</span><span class="mi">53</span><span class="w"> </span><span class="nx">address</span><span class="o">-</span><span class="nx">family</span><span class="w"> </span><span class="nx">ipv4</span><span class="w"> </span><span class="nx">unicast</span><span class="w"> </span><span class="nx">route</span><span class="o">-</span><span class="nx">policy</span><span class="w"> </span><span class="nx">pass</span><span class="o">-</span><span class="nx">all</span><span class="w"> </span><span class="nx">out</span>
+<span class="nx">router</span><span class="w"> </span><span class="nx">bgp</span><span class="w"> </span><span class="mi">64501</span><span class="w"> </span><span class="nx">vrf</span><span class="w"> </span><span class="nx">super</span><span class="o">-</span><span class="nx">potato</span><span class="o">-</span><span class="nx">laurent</span><span class="w"> </span><span class="nx">neighbor</span><span class="w"> </span><span class="m m-Double">199.199.199.2</span><span class="mi">53</span><span class="w"> </span><span class="nx">address</span><span class="o">-</span><span class="nx">family</span><span class="w"> </span><span class="nx">ipv4</span><span class="w"> </span><span class="nx">unicast</span><span class="w"> </span><span class="k">as</span><span class="o">-</span><span class="k">override</span>
+<span class="nx">router</span><span class="w"> </span><span class="nx">bgp</span><span class="w"> </span><span class="mi">64501</span><span class="w"> </span><span class="nx">vrf</span><span class="w"> </span><span class="nx">super</span><span class="o">-</span><span class="nx">potato</span><span class="o">-</span><span class="nx">laurent</span><span class="w"> </span><span class="nx">neighbor</span><span class="w"> </span><span class="m m-Double">199.199.199.2</span><span class="mi">53</span><span class="w"> </span><span class="nx">address</span><span class="o">-</span><span class="nx">family</span><span class="w"> </span><span class="nx">ipv4</span><span class="w"> </span><span class="nx">unicast</span><span class="w"> </span><span class="nx">soft</span><span class="o">-</span><span class="nx">reconfiguration</span><span class="w"> </span><span class="nx">inbound</span><span class="w"> </span><span class="nx">always</span>
 </code></pre></div>
 
 <h3 id="cisco-radius">Cisco Radius</h3>
-<div class="codehilite"><pre><span></span><code><span class="nv">conf</span> <span class="nv">t</span>
-<span class="nv">aaa</span> <span class="nv">new</span><span class="o">-</span><span class="nv">model</span>
+<div class="codehilite"><pre><span></span><code><span class="nv">conf</span><span class="w"> </span><span class="nv">t</span>
+<span class="nv">aaa</span><span class="w"> </span><span class="nv">new</span><span class="o">-</span><span class="nv">model</span>
 
-<span class="nv">aaa</span> <span class="nv">group</span> <span class="nv">server</span> <span class="nv">radius</span> <span class="nv">DHMTL</span><span class="o">-</span><span class="nv">RADIUS</span>
- <span class="nv">server</span><span class="o">-</span><span class="nv">private</span> <span class="mi">10</span>.<span class="mi">0</span>.<span class="mi">99</span>.<span class="mi">22</span> <span class="nv">auth</span><span class="o">-</span><span class="nv">port</span> <span class="mi">1812</span> <span class="nv">acct</span><span class="o">-</span><span class="nv">port</span> <span class="mi">1813</span> <span class="nv">key</span> $<span class="nv">INSERT_KEY_HERE</span>
+<span class="nv">aaa</span><span class="w"> </span><span class="nv">group</span><span class="w"> </span><span class="nv">server</span><span class="w"> </span><span class="nv">radius</span><span class="w"> </span><span class="nv">DHMTL</span><span class="o">-</span><span class="nv">RADIUS</span>
+<span class="w"> </span><span class="nv">server</span><span class="o">-</span><span class="nv">private</span><span class="w"> </span><span class="mi">10</span>.<span class="mi">0</span>.<span class="mi">99</span>.<span class="mi">22</span><span class="w"> </span><span class="nv">auth</span><span class="o">-</span><span class="nv">port</span><span class="w"> </span><span class="mi">1812</span><span class="w"> </span><span class="nv">acct</span><span class="o">-</span><span class="nv">port</span><span class="w"> </span><span class="mi">1813</span><span class="w"> </span><span class="nv">key</span><span class="w"> </span>$<span class="nv">INSERT_KEY_HERE</span>
 
-<span class="nv">aaa</span> <span class="nv">group</span> <span class="nv">server</span> <span class="nv">tacacs</span><span class="o">+</span> <span class="nv">DHMTL</span><span class="o">-</span><span class="nv">TACACS</span>
- <span class="nv">server</span><span class="o">-</span><span class="nv">private</span> <span class="mi">10</span>.<span class="mi">0</span>.<span class="mi">99</span>.<span class="mi">22</span> <span class="nv">key</span> $<span class="nv">INSERT_KEY_HERE</span>
+<span class="nv">aaa</span><span class="w"> </span><span class="nv">group</span><span class="w"> </span><span class="nv">server</span><span class="w"> </span><span class="nv">tacacs</span><span class="o">+</span><span class="w"> </span><span class="nv">DHMTL</span><span class="o">-</span><span class="nv">TACACS</span>
+<span class="w"> </span><span class="nv">server</span><span class="o">-</span><span class="nv">private</span><span class="w"> </span><span class="mi">10</span>.<span class="mi">0</span>.<span class="mi">99</span>.<span class="mi">22</span><span class="w"> </span><span class="nv">key</span><span class="w"> </span>$<span class="nv">INSERT_KEY_HERE</span>
 
-<span class="nv">aaa</span> <span class="nv">authentication</span> <span class="nv">login</span> <span class="nv">default</span> <span class="nv">group</span> <span class="nv">DHMTL</span><span class="o">-</span><span class="nv">RADIUS</span> <span class="nv">local</span>
-<span class="nv">aaa</span> <span class="nv">authorization</span> <span class="k">exec</span> <span class="nv">default</span> <span class="nv">group</span> <span class="nv">DHMTL</span><span class="o">-</span><span class="nv">RADIUS</span> <span class="nv">local</span>
-<span class="nv">aaa</span> <span class="nv">accounting</span> <span class="nv">commands</span> <span class="mi">15</span> <span class="nv">default</span> <span class="nv">start</span><span class="o">-</span><span class="nv">stop</span> <span class="nv">group</span> <span class="nv">DHMTL</span><span class="o">-</span><span class="nv">TACACS</span>
-<span class="nv">aaa</span> <span class="nv">accounting</span> <span class="nv">commands</span> <span class="mi">3</span> <span class="nv">default</span> <span class="nv">start</span><span class="o">-</span><span class="nv">stop</span> <span class="nv">group</span> <span class="nv">DHMTL</span><span class="o">-</span><span class="nv">TACACS</span>
+<span class="nv">aaa</span><span class="w"> </span><span class="nv">authentication</span><span class="w"> </span><span class="nv">login</span><span class="w"> </span><span class="nv">default</span><span class="w"> </span><span class="nv">group</span><span class="w"> </span><span class="nv">DHMTL</span><span class="o">-</span><span class="nv">RADIUS</span><span class="w"> </span><span class="nv">local</span>
+<span class="nv">aaa</span><span class="w"> </span><span class="nv">authorization</span><span class="w"> </span><span class="k">exec</span><span class="w"> </span><span class="nv">default</span><span class="w"> </span><span class="nv">group</span><span class="w"> </span><span class="nv">DHMTL</span><span class="o">-</span><span class="nv">RADIUS</span><span class="w"> </span><span class="nv">local</span>
+<span class="nv">aaa</span><span class="w"> </span><span class="nv">accounting</span><span class="w"> </span><span class="nv">commands</span><span class="w"> </span><span class="mi">15</span><span class="w"> </span><span class="nv">default</span><span class="w"> </span><span class="nv">start</span><span class="o">-</span><span class="nv">stop</span><span class="w"> </span><span class="nv">group</span><span class="w"> </span><span class="nv">DHMTL</span><span class="o">-</span><span class="nv">TACACS</span>
+<span class="nv">aaa</span><span class="w"> </span><span class="nv">accounting</span><span class="w"> </span><span class="nv">commands</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="nv">default</span><span class="w"> </span><span class="nv">start</span><span class="o">-</span><span class="nv">stop</span><span class="w"> </span><span class="nv">group</span><span class="w"> </span><span class="nv">DHMTL</span><span class="o">-</span><span class="nv">TACACS</span>
 </code></pre></div>
 
 <h3 id="activate-telnet-on-ios-xr">Activate Telnet on IOS-XR</h3>
@@ -1103,49 +1126,20 @@ router bgp 64501 vrf super-potato-laurent neighbor 199.199.199.253 address-famil
 telnet vrf $VRF_NAME ipv6 server max-servers $MAX_CONCURRENT_TELNET_CONNECTIONS
 </code></pre></div>
 
-              
-            </article>
-          </div>
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
         </div>
         
       </main>
       
         <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../ccna/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Cisco-CCNA" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Cisco-CCNA
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../cumulus/" class="md-footer__link md-footer__link--next" aria-label="Next: Cumulus" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Cumulus
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -1167,20 +1161,24 @@ telnet vrf $VRF_NAME ipv6 server max-servers $MAX_CONCURRENT_TELNET_CONNECTIONS
   
     
     
+    
+    
       
       
     
     <a href="https://github.com/laurentdumont" target="_blank" rel="noopener" title="github.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
     </a>
   
+    
+    
     
     
       
       
     
     <a href="https://www.linkedin.com/in/laurentfdumont/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
     </a>
   
 </div>
@@ -1193,10 +1191,11 @@ telnet vrf $VRF_NAME ipv6 server max-servers $MAX_CONCURRENT_TELNET_CONNECTIONS
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.a6c66575.min.js"></script>
+      <script src="../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   </body>
