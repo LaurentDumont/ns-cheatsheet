@@ -1,5 +1,5 @@
 #!/bin/bash
-source venv/bin/activate 
+#source venv/bin/activate 
 git add .
 git commit -m "More Stuff"
 git push origin master
