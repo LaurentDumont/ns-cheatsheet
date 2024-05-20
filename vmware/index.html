@@ -13,10 +13,6 @@
       
       
       
-        <link rel="prev" href="../maas/">
-      
-      
-        <link rel="next" href="../mysql/">
       
       
       <link rel="icon" href="../images/tarsier_hi_elbows.ico">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Molecule - Laurent Dumont - Internet notepad.</title>
+        <title>Vmware - Laurent Dumont - Internet notepad.</title>
       
     
     
@@ -75,11 +71,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#testing-framework-for-ansible" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -112,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Molecule
+              Vmware
             
           </span>
         </div>
@@ -626,28 +617,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Molecule
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../molecule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -656,66 +629,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#testing-framework-for-ansible" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing framework for Ansible.
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Testing framework for Ansible.">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installation-ubuntu-1804-lts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation Ubuntu 18.04 LTS
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-test-setup-in-an-existing-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create a test setup in an existing role
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#start-a-full-testing-run" class="md-nav__link">
-    <span class="md-ellipsis">
-      Start a full testing run
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1078,56 +991,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#testing-framework-for-ansible" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing framework for Ansible.
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Testing framework for Ansible.">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installation-ubuntu-1804-lts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation Ubuntu 18.04 LTS
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-test-setup-in-an-existing-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create a test setup in an existing role
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#start-a-full-testing-run" class="md-nav__link">
-    <span class="md-ellipsis">
-      Start a full testing run
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1144,22 +1007,136 @@
   
 
 
-  <h1>Molecule</h1>
+  <h1>Vmware</h1>
 
-<h2 id="testing-framework-for-ansible">Testing framework for Ansible.</h2>
-<h3 id="installation-ubuntu-1804-lts">Installation Ubuntu 18.04 LTS</h3>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install -y python-pip libssl-dev
-pip install --user molecule
+<div class="codehilite"><pre><span></span><code><span class="mf">1</span><span class="w">  </span><span class="n">df</span><span class="w"> </span><span class="o">-</span><span class="n">h</span>
+<span class="mf">2</span><span class="w">  </span><span class="n">cd</span><span class="w"> </span><span class="o">/</span><span class="n">storage</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span>
+<span class="mf">3</span><span class="w">  </span><span class="n">ls</span>
+<span class="mf">4</span><span class="w">  </span><span class="n">cd</span><span class="w"> </span><span class="n">vmware</span><span class="o">/</span>
+<span class="mf">5</span><span class="w">  </span><span class="n">ls</span>
+<span class="mf">6</span><span class="w">  </span><span class="n">du</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="n">var</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="n">head</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="mf">10</span>
+<span class="mf">7</span><span class="w">  </span><span class="n">du</span><span class="w"> </span><span class="n">h</span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="n">var</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="n">sort</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="o">-</span><span class="n">r</span><span class="w"> </span><span class="err">|</span><span class="w"> </span><span class="n">head</span><span class="w"> </span><span class="o">-</span><span class="n">n</span><span class="w"> </span><span class="mf">10</span>
+<span class="mf">8</span><span class="w">  </span><span class="n">df</span><span class="w"> </span><span class="o">-</span><span class="n">h</span>
+<span class="mf">9</span><span class="w">  </span><span class="n">cd</span><span class="w"> </span><span class="mf">..</span>
 </code></pre></div>
 
-<h3 id="create-a-test-setup-in-an-existing-role">Create a test setup in an existing role</h3>
-<div class="codehilite"><pre><span></span><code>#From within the role folder
-molecule init scenario -r my-role-name
-</code></pre></div>
-
-<h3 id="start-a-full-testing-run">Start a full testing run</h3>
-<div class="codehilite"><pre><span></span><code>sudo molecule test
-</code></pre></div>
+<p>10  du h-a /var | sort -n -r | head -n 10
+   11  cd /var/log/
+   12  ls
+   13  du -ha /var | sort -n -r | head -n 10
+   14  ls -alh
+   15  cd vmware
+   16  ls
+   17  du -ha /var | sort -n -r | head -n 10
+   18  ls -alh
+   19  du -ha /var | sort -n -r | head -n 100
+   20  ls -alh /storage/log/vmware/sso/tomcat/
+   21  du -hs /storage/log/vmware/sso/tomcat/
+   22  du -hs /storage/log/vmware
+   23  du -hs /storage/log/vmware/eam/
+   24  du -hs /storage/log/vmware/lookupsvc/
+   25  du -hs /storage/log/vmware/lookupsvc/tomcat/
+   26  ls -alh /storage/log/vmware/lookupsvc/tomcat/
+   27  du -hs /storage/log/vmware/lookupsvc/tomcat/<em>
+   28  rm /storage/log/vmware/lookupsvc/tomcat/localhost_access.2021-</em>
+   29  df -h
+   30  /usr/lib/vmware-vmca/bin/certificate-manager
+   31  cat /var/log/vmware/vmcad/certificate-manager.log
+   32  ping colo.coldnorthadmin.com
+   33  /usr/lib/vmware-vmca/bin/certificate-manager
+   34  ping 10.199.199.1
+   35  dig google.ca
+   36  dig colo.coldnorthadmin.com
+   37  dig vcenter.colo.coldnorthadmin.com
+   38  clear
+   39  /usr/lib/vmware-vmca/bin/certificate-manager
+   40  cd/etc/vmware-sso
+   41   cd /etc/vmware-sso
+   42  ls
+   43  cd keys/
+   44  ls
+   45  history | grep vcenter
+   46  ls
+   47  ls -alh
+   48  cat ssoserverRoot.crt 
+   49  htop
+   50  top
+   51  service-control --status
+   52  toptop
+   53  top
+   54  service-control --status
+   55  watch -n 1 "service-control --status"
+   56  cd /etc/ssl/certs
+   57  ls
+   58  ls -alh
+   59  service-control
+   60  service-control --help
+   61  service-control --start vmware-vapi-endpoint 
+   62  service-control
+   63  service-control --list-status
+   64  service-control --status
+   65  /usr/lib/vmware-vmafd/bin/dir-cli
+   66  cd /usr/lib/vmware-vmafd/bin/dir-cli
+   67  tail -n 100 /var/log/vmware/vpxd/vpxd.log 
+   68  date
+   69  tail -n 100 /var/log/vmware/vpxd/vpxd.log 
+   70  grep -ir ssl /var/log/vmware/vpxd/vpxd.log 
+   71  cd /etc/vm
+   72  cd /etc/vmware
+   73  ls
+   74  cat backup/
+   75  cat .buildInfo 
+   76  /usr/lib/vmware-vmca/bin/certificate-manager
+   77  cd /tmp/vmware-root
+   78  ls
+   79  cd /var/log/vmware
+   80  ls
+   81  tail -n 100 vpxd/vpxd.log 
+   82  service-control --status
+   83  /usr/lib/vmware-vmafd/bin/vecs-cli entry list --store TRUSTED_ROOTS --text | less
+   84  usr/lib/vmware-vmafd/bin/vecs-cli entry list --store MACHINE_SSL_CERT --text | less
+   85  usr/lib/vmware-vmafd/bin/vecs-cli entry list --store MACHINE_SSL_CERT --text
+   86  /usr/lib/vmware-vmafd/bin/vecs-cli entry list --store MACHINE_SSL_CERT --text
+   87  /usr/lib/vmware-vmafd/bin/vecs-cli entry list --store vpxd --text | less
+   88  /usr/lib/vmware-vmafd/bin/vecs-cli entry list --store vsphere-webclient --text | less
+   89  cd /tmp/
+   90  vi fixsts.sh
+   91  chmod +x fixsts.sh 
+   92  ./fixsts.sh 
+   93  service-control --stop --all
+   94  service-control --start --all
+   95  top
+   96  cd /var/log/vmware/vapi/
+   97  ls
+   98  cd endpoint/
+   99  ls
+  100  tail -n 100 -f endpoint.log
+  101  /usr/lib/vmware-vmca/bin/certificate-manager
+  102  tail -n 100 /var/log/vmware/vmcad/certificate-manager.log
+  103  ping vcenter.colo.coldnorthadmin.com
+  104  reset
+  105  tail -n 100 /var/log/vmware/vmcad/certificate-manager.log
+  106  /usr/lib/vmware-vmca/bin/certificate-manager
+  107  cat /etc/hostname 
+  108  /usr/lib/vmware-vmca/bin/certificate-manager
+  109  tail -n 100 /var/log/vmware/vmcad/certificate-manager.log
+  110  python /usr/lib/vmidentity/tools/scripts/lstool.py list --url http://localhost:7080/lookupservice/sdk | less
+  111  python /usr/lib/vmidentity/tools/scripts/lstool.py list --url http://vcenter.colo.coldnorthadmin.com:7080/lookupservice/sdk | less
+  112  ls /usr/lib/vmidentity/tools/scripts/lstool.py
+  113  ls /usr/lib/vmware-lookupsvc/tools/lstool.py 
+  114  python /usr/lib/vmware-lookupsvc/tools/lstool.py  list --url http://vcenter.colo.coldnorthadmin.com:7080/lookupservice/sdk | less
+  115  clear
+  116  cd /usr/lib/vmware/site-packages/cis
+  117  ls
+  118  cp certificateManagerHelper.py certificateManagerHelper.py.bak
+  119  vi certificateManagerHelper.py
+  120  reset
+  121  /usr/lib/vmware-vmca/bin/certificate-manager
+  122  clear
+  123  htop
+  124  clear
+  125  df -h
+  126  history</p>
 
 
 
