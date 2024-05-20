@@ -13,10 +13,6 @@
       
       
       
-        <link rel="prev" href="../maas/">
-      
-      
-        <link rel="next" href="../mysql/">
       
       
       <link rel="icon" href="../images/tarsier_hi_elbows.ico">
@@ -24,7 +20,7 @@
     
     
       
-        <title>Molecule - Laurent Dumont - Internet notepad.</title>
+        <title>Rasppi - Laurent Dumont - Internet notepad.</title>
       
     
     
@@ -75,11 +71,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#testing-framework-for-ansible" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -112,7 +103,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Molecule
+              Rasppi
             
           </span>
         </div>
@@ -626,28 +617,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Molecule
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../molecule/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -656,66 +629,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#testing-framework-for-ansible" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing framework for Ansible.
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Testing framework for Ansible.">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installation-ubuntu-1804-lts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation Ubuntu 18.04 LTS
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-test-setup-in-an-existing-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create a test setup in an existing role
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#start-a-full-testing-run" class="md-nav__link">
-    <span class="md-ellipsis">
-      Start a full testing run
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1078,56 +991,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#testing-framework-for-ansible" class="md-nav__link">
-    <span class="md-ellipsis">
-      Testing framework for Ansible.
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Testing framework for Ansible.">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#installation-ubuntu-1804-lts" class="md-nav__link">
-    <span class="md-ellipsis">
-      Installation Ubuntu 18.04 LTS
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#create-a-test-setup-in-an-existing-role" class="md-nav__link">
-    <span class="md-ellipsis">
-      Create a test setup in an existing role
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#start-a-full-testing-run" class="md-nav__link">
-    <span class="md-ellipsis">
-      Start a full testing run
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1144,21 +1007,13 @@
   
 
 
-  <h1>Molecule</h1>
+  <h1>Rasppi</h1>
 
-<h2 id="testing-framework-for-ansible">Testing framework for Ansible.</h2>
-<h3 id="installation-ubuntu-1804-lts">Installation Ubuntu 18.04 LTS</h3>
-<div class="codehilite"><pre><span></span><code>sudo apt-get install -y python-pip libssl-dev
-pip install --user molecule
-</code></pre></div>
+<div class="codehilite"><pre><span></span><code><span class="err">/home/user/.config/autostart/.desktop</span>
 
-<h3 id="create-a-test-setup-in-an-existing-role">Create a test setup in an existing role</h3>
-<div class="codehilite"><pre><span></span><code>#From within the role folder
-molecule init scenario -r my-role-name
-</code></pre></div>
-
-<h3 id="start-a-full-testing-run">Start a full testing run</h3>
-<div class="codehilite"><pre><span></span><code>sudo molecule test
+<span class="k">[Desktop Entry]</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">Application</span>
+<span class="na">Exec</span><span class="o">=</span><span class="s">lxterminal -e &quot;vlc --fullscreen --loop --no-osd /home/bacon/Documents/ccop-loop.mp4&quot;</span>
 </code></pre></div>
 
 
