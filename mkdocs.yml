@@ -44,6 +44,7 @@ nav:
       - FRR: frr.md
       - Wireshark: wireshark.md
       - Bluetooth: bluetooth.md
+      - RaspPi: rasppi.md
 
     
 #Theme customization
