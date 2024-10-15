@@ -508,3 +508,8 @@ hwinfo --disk
 # From within folder containing the PDF pages 
 qpdf --empty --pages *.pdf -- out.pdf
 ```
+
+### Change image size
+```
+convert myfigure.png -resize 200x100 myfigure.jpg
+```

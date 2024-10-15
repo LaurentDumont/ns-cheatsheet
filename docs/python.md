@@ -1,3 +1,10 @@
+### Install latest python on Ubuntu side by side with OS version
+```
+sudo add-apt-repository ppa:deadsnakes/ppa
+sudo apt install python3.13-full
+python3.13 --version
+```
+
 ### Profiling a python application.
 ```python
 pip3 install line_profiler
