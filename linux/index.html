@@ -727,6 +727,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#change-image-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change image size
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1656,6 +1665,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#change-image-size" class="md-nav__link">
+    <span class="md-ellipsis">
+      Change image size
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2122,6 +2140,10 @@ hwinfo --disk
 <h3 id="create-one-pdf-from-multiple">Create one PDF from multiple</h3>
 <div class="codehilite"><pre><span></span><code><span class="gh">#</span> From within folder containing the PDF pages 
 qpdf --empty --pages *.pdf -- out.pdf
+</code></pre></div>
+
+<h3 id="change-image-size">Change image size</h3>
+<div class="codehilite"><pre><span></span><code>convert myfigure.png -resize 200x100 myfigure.jpg
 </code></pre></div>
 
 
