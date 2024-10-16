@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="../terraform/">
+        <link rel="prev" href="../netbox/">
       
       
-        <link rel="next" href="../wireshark/">
+        <link rel="next" href="../openstack/">
       
       
       <link rel="icon" href="../images/tarsier_hi_elbows.ico">
@@ -24,7 +24,7 @@
     
     
       
-        <title>FRR - Laurent Dumont - Internet notepad.</title>
+        <title>OpenVPN - Laurent Dumont - Internet notepad.</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#enter-frr-shell" class="md-skip">
+        <a href="#connect-to-a-remote-server" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              FRR
+              OpenVPN
             
           </span>
         </div>
@@ -706,10 +706,28 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../openvpn/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    OpenVPN
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -718,6 +736,33 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connect-to-a-remote-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      Connect to a remote server
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -966,28 +1011,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    FRR
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../frr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -996,60 +1023,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#enter-frr-shell" class="md-nav__link">
-    <span class="md-ellipsis">
-      Enter FRR shell
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#show-bgp-neigbors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Show bgp neigbors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#show-information-from-neighbors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Show information from neighbors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#frr-pfsense" class="md-nav__link">
-    <span class="md-ellipsis">
-      FRR pfsense
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1139,36 +1112,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#enter-frr-shell" class="md-nav__link">
+  <a href="#connect-to-a-remote-server" class="md-nav__link">
     <span class="md-ellipsis">
-      Enter FRR shell
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#show-bgp-neigbors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Show bgp neigbors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#show-information-from-neighbors" class="md-nav__link">
-    <span class="md-ellipsis">
-      Show information from neighbors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#frr-pfsense" class="md-nav__link">
-    <span class="md-ellipsis">
-      FRR pfsense
+      Connect to a remote server
     </span>
   </a>
   
@@ -1192,25 +1138,13 @@
   
 
 
-  <h1>FRR</h1>
+  <h1>OpenVPN</h1>
 
-<h3 id="enter-frr-shell">Enter FRR shell</h3>
-<div class="codehilite"><pre><span></span><code>sudo vtyshell
-</code></pre></div>
-
-<h3 id="show-bgp-neigbors">Show bgp neigbors</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">neighbors</span>
-<span class="k">show</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">summary</span>
-</code></pre></div>
-
-<h3 id="show-information-from-neighbors">Show information from neighbors</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">vrf</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="nv">ipv4</span><span class="w"> </span><span class="nv">neighbors</span><span class="w"> </span><span class="nv">x</span>.<span class="nv">x</span>.<span class="nv">x</span>.<span class="nv">x</span><span class="w"> </span><span class="nv">advertised</span><span class="o">-</span><span class="nv">routes</span>
-<span class="k">show</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">vrf</span><span class="w"> </span><span class="nv">all</span><span class="w"> </span><span class="nv">ipv4</span><span class="w"> </span><span class="nv">neighbors</span><span class="w"> </span><span class="nv">x</span>.<span class="nv">x</span>.<span class="nv">x</span>.<span class="nv">x</span><span class="w"> </span><span class="nv">received</span><span class="o">-</span><span class="nv">routes</span><span class="w"> </span>
-</code></pre></div>
-
-<h3 id="frr-pfsense">FRR pfsense</h3>
-<div class="codehilite"><pre><span></span><code><span class="k">show</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">ipv4</span><span class="w"> </span><span class="nv">unicast</span><span class="w"> </span><span class="nv">neighbors</span><span class="w"> </span><span class="mi">170</span>.<span class="mi">39</span>.<span class="mi">196</span>.<span class="mi">221</span><span class="w"> </span><span class="nv">advertised</span><span class="o">-</span><span class="nv">routes</span>
-<span class="k">show</span><span class="w"> </span><span class="nv">bgp</span><span class="w"> </span><span class="nv">summary</span>
+<h3 id="connect-to-a-remote-server">Connect to a remote server</h3>
+<ul>
+<li>Enable the log of the current status to a file, every 5 seconds</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="n">sudo</span><span class="w"> </span><span class="n">openvpn</span><span class="w"> </span><span class="o">--</span><span class="n">config</span><span class="w"> </span><span class="n">s2s</span><span class="o">-</span><span class="n">client</span><span class="o">.</span><span class="n">ovpn</span><span class="w"> </span><span class="o">--</span><span class="n">daemon</span><span class="w"> </span><span class="o">--</span><span class="n">status</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">openvpn</span><span class="o">-</span><span class="n">status</span><span class="w"> </span><span class="mi">5</span>
 </code></pre></div>
 
 
