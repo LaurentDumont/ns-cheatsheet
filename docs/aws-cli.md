@@ -8,7 +8,6 @@ Useful things
  - There is an autocomplete built into the CLI
    - You can use `--cli-auto-prompt` with each prompt
 
-
 ### List certificates
 ```
 aws acm list-certificates --output json --no-cli-pager --query 'CertificateSummaryList[*].CertificateArn'
@@ -55,4 +54,16 @@ aws apigatewayv2 get-apis --query 'Items[*]['ApiId']' --no-cli-pager
 Delete an API
 ```
 aws apigatewayv2 delete-api --api-id 80wxwwwn2l
+```
+
+## EC2
+
+### Delete Security Groups
+```
+aws ec2 describe-security-groups --query "SecurityGroups[*].GroupName" --no-cli-pager --output json | jq -r '.[]' | while IFS= read -r sg; do aws ec2 delete-security-group --group-name $sg; done 
+```
+
+### Delete key pairs
+```
+aws ec2 describe-key-pairs --query "KeyPairs[*].KeyName" --no-cli-pager | jq -r '.[]' | while IFS= read -r key; do aws ec2 delete-key-pair --key-name $key --no-cli-pager; done
 ```
