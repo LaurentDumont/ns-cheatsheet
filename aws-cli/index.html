@@ -365,6 +365,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ec2" class="md-nav__link">
+    <span class="md-ellipsis">
+      EC2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EC2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete-security-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete Security Groups
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-key-pairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete key pairs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1252,6 +1285,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ec2" class="md-nav__link">
+    <span class="md-ellipsis">
+      EC2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="EC2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete-security-groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete Security Groups
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#delete-key-pairs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Delete key pairs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1313,6 +1379,15 @@
 
 <p>Delete an API</p>
 <div class="codehilite"><pre><span></span><code>aws apigatewayv2 delete-api --api-id 80wxwwwn2l
+</code></pre></div>
+
+<h2 id="ec2">EC2</h2>
+<h3 id="delete-security-groups">Delete Security Groups</h3>
+<div class="codehilite"><pre><span></span><code>aws ec2 describe-security-groups --query &quot;SecurityGroups[*].GroupName&quot; --no-cli-pager --output json | jq -r &#39;.[]&#39; | while IFS= read -r sg; do aws ec2 delete-security-group --group-name $sg; done 
+</code></pre></div>
+
+<h3 id="delete-key-pairs">Delete key pairs</h3>
+<div class="codehilite"><pre><span></span><code>aws ec2 describe-key-pairs --query &quot;KeyPairs[*].KeyName&quot; --no-cli-pager | jq -r &#39;.[]&#39; | while IFS= read -r key; do aws ec2 delete-key-pair --key-name $key --no-cli-pager; done
 </code></pre></div>
 
 
