@@ -756,6 +756,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fix-apt-after-using-the-deadsnakes-ppa-for-other-python-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fix APT after using the deadsnakes PPA for other python versions
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1714,6 +1723,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#fix-apt-after-using-the-deadsnakes-ppa-for-other-python-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fix APT after using the deadsnakes PPA for other python versions
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2184,6 +2202,10 @@ qpdf --empty --pages *.pdf -- out.pdf
 
 <h3 id="change-image-size">Change image size</h3>
 <div class="codehilite"><pre><span></span><code>convert myfigure.png -resize 200x100 myfigure.jpg
+</code></pre></div>
+
+<h3 id="fix-apt-after-using-the-deadsnakes-ppa-for-other-python-versions">Fix APT after using the deadsnakes PPA for other python versions</h3>
+<div class="codehilite"><pre><span></span><code>sudo apt --fix-missing purge $(dpkg -l | grep &#39;python3\.1[3]&#39; | awk &#39;{print $2}&#39;)
 </code></pre></div>
 
 
