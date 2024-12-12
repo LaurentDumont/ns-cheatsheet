@@ -513,3 +513,8 @@ qpdf --empty --pages *.pdf -- out.pdf
 ```
 convert myfigure.png -resize 200x100 myfigure.jpg
 ```
+
+### Fix APT after using the deadsnakes PPA for other python versions
+```
+sudo apt --fix-missing purge $(dpkg -l | grep 'python3\.1[3]' | awk '{print $2}')
+```
